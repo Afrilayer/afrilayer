@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Afrilayer
+
+> Discover the APIs powering Africa.
+
+Afrilayer is the developer-first platform for discovering African APIs. Search, compare and explore APIs for payments, identity, logistics, banking, SMS, Mobile Money and more built for Africa.
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: PostgreSQL (Supabase)
+- **Deployment**: Vercel + Supabase
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- Supabase account
+
+### Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-org/afrilayer.git
+cd afrilayer
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Set up environment variables:
+
+```bash
+cp .env.example .env.local
+# Edit .env.local with your Supabase credentials
+```
+
+4. Set up Supabase:
+
+- Create a new Supabase project
+- Run the SQL schema in `app/db/schema.sql` in the SQL Editor
+- Enable authentication and storage
+
+5. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/app
+  /admin          # Admin CMS routes
+  /apis           # API detail pages
+  /categories     # Category browsing
+  /countries      # Country pages
+  /providers      # Provider pages
+  /search         # Search functionality
+  /changelog      # Platform updates
+  /db             # Database schema
+  /components     # Reusable UI components
+/lib
+  /supabase       # Supabase client utilities
+  /types.ts       # TypeScript types
+  /utils.ts       # Helper functions
+```
 
-## Learn More
+## Database Setup
 
-To learn more about Next.js, take a look at the following resources:
+Run the SQL schema in `app/db/schema.sql` in your Supabase SQL Editor. This creates all necessary tables with indexes and row-level security policies.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Admin Access
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Admin routes are protected by Supabase Auth. Configure admin users in your Supabase Auth settings.
 
-## Deploy on Vercel
+## SEO Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Server-side rendering
+- Dynamic metadata
+- Structured data (Schema.org)
+- XML sitemap generation
+- Canonical URLs
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+See `TECHNICAL_SPEC.md` for architecture and contribution guidelines.
+
+## License
+
+MIT License
