@@ -25,7 +25,7 @@ Afrilayer is the developer-first platform for discovering African APIs. Search, 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-org/afrilayer.git
+git clone https://github.com/mystrdan/afrilayer.git
 cd afrilayer
 ```
 
