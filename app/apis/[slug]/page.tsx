@@ -1,288 +1,197 @@
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Badge, ConfidenceIndicator } from '@/components/ui';
-import { Book, Globe, TestTube, HelpCircle, CheckCircle, AlertCircle } from 'lucide-react';
-import type { Metadata } from 'next';
+"use client";
 
-// Mock API data - will be fetched from database
-const mockApi = {
-  id: '1',
-  name: 'MTN Mobile Money API',
-  slug: 'mtn-momo',
-  provider: {
-    name: 'MTN Group',
-    slug: 'mtn-group',
-  },
-  description:
-    'The MTN Mobile Money API enables businesses to integrate mobile money services for seamless payments across multiple African markets. Access to Ghana, Uganda, Zambia, and more.',
-  short_summary:
-    'Integrate MTN Mobile Money for seamless payments across Africa.',
-  categories: [
-    { name: 'Mobile Money', slug: 'mobile-money' },
-    { name: 'Payments', slug: 'payments' },
-  ],
-  countries: [
-    { name: 'Ghana', code: 'GH', flag_emoji: '🇬🇭' },
-    { name: 'Uganda', code: 'UG', flag_emoji: '🇺🇬' },
-  ],
-  documentation_url: 'https://developers.mtn.com',
-  official_website: 'https://mtn.com',
-  pricing_model: 'Revenue share model - 1.5% transaction fee',
-  auth_method: 'OAuth 2.0',
-  sandbox_url: 'https://sandbox.mtn.com',
-  status: 'active' as const,
-  api_version: 'v3.2',
-  rate_limit: '1000 requests per minute',
-  webhook_support: true,
-  support_email: 'support@mtn.com',
-  support_url: 'https://support.mtn.com',
-  last_verified: '2026-07-01',
-  last_updated: '2026-07-12',
-  verification_status: 'verified' as const,
-};
+import * as React from "react";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { APIS } from "@/lib/mock-data";
+import { StatusPill, Stamp, DocPreview, ChangelogTimeline, SimilarApisTable, QuickFacts } from "@/components/ui";
 
-// Breadcrumb component
-function Breadcrumb() {
-  return (
-    <nav className="mb-6 flex items-center gap-2 text-sm text-charcoal/70" aria-label="Breadcrumb">
-      <Link href="/" className="hover:text-charcoal">
-        Home
-      </Link>
-      <span className="text-charcoal/40">/</span>
-      <Link href="/apis" className="hover:text-charcoal">
-        APIs
-      </Link>
-      <span className="text-charcoal/40">/</span>
-      <span className="text-charcoal">{mockApi.name}</span>
-    </nav>
-  );
-}
+export default function ApiPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = React.use(params);
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  return {
-    title: `${mockApi.name} - Afrilayer`,
-    description: mockApi.short_summary,
-    openGraph: {
-      title: `${mockApi.name} - Afrilayer`,
-      description: mockApi.short_summary,
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/apis/${mockApi.slug}`,
-      type: 'website',
-    },
-  };
-}
-
-export default async function ApiPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  await params; // Await params to satisfy Next.js 15 type requirements
-  // In production, fetch from Supabase
-  const api = mockApi;
+  // Find the API by slug (id)
+  const api = APIS.find((a) => a.id === slug);
 
   if (!api) {
-    notFound();
+    return (
+      <div className="container mx-auto px-6 md:px-10 py-20">
+        <p style={{ color: "#F2EFE9" }}>API not found</p>
+      </div>
+    );
   }
 
-  return (
-    <div className="container mx-auto px-4 py-12">
-      {/* Breadcrumb */}
-      <Breadcrumb />
+  const similar = APIS.filter((a) => a.category === api.category && a.id !== api.id).slice(0, 2);
 
-      {/* Hero Section */}
-      <div className="border-b border-sand-100 pb-8">
-        <h1 className="text-3xl font-semibold text-charcoal">
-          {api.name}
-        </h1>
-        <div className="mt-4 flex items-center gap-4">
-          <Link
-            href={`/providers/${api.provider.slug}`}
-            className="text-lg text-charcoal/70 hover:text-charcoal"
-          >
-            {api.provider.name}
-          </Link>
-          <ConfidenceIndicator
-            lastVerified={api.last_verified}
-            verificationStatus={api.verification_status}
-            providerClaimed={false}
-          />
+  return (
+    <div className="px-6 md:px-10 py-10 max-w-4xl mx-auto">
+      {/* Back Link */}
+      <Link
+        href="/"
+        className="inline-flex items-center gap-1.5 text-xs font-mono mb-8"
+        style={{ color: "#5D6058" }}
+      >
+        <ArrowLeft size={13} /> back to directory
+      </Link>
+
+      {/* Top Section */}
+      <div className="flex items-start justify-between gap-6 flex-wrap">
+        <div>
+          <div className="flex items-center gap-3 mb-3">
+            <StatusPill status={api.status} />
+            <span className="text-[10px] font-mono" style={{ color: "#5D6058" }}>
+              uptime {api.uptime}
+            </span>
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight" style={{ color: "#F2EFE9" }}>
+            {api.name}
+          </h1>
+          <p className="text-sm mt-1 font-mono" style={{ color: "#5D6058" }}>
+            {api.provider} · {api.category}
+          </p>
+          <p className="mt-4 max-w-lg text-sm leading-relaxed" style={{ color: "#93968D" }}>
+            {api.description}
+          </p>
         </div>
-        <p className="mt-4 text-lg text-charcoal/80">
-          {api.description}
-        </p>
-        <div className="mt-6 flex flex-wrap gap-2">
-          {api.categories.map((category) => (
-            <Badge key={category.slug} variant="default">
-              <Link href={`/categories/${category.slug}`}>{category.name}</Link>
-            </Badge>
-          ))}
+        <Stamp label={api.status} sublabel={api.lastVerified} />
+      </div>
+
+      {/* Country Tags */}
+      <div className="flex flex-wrap gap-1.5 mt-5">
+        {api.countries.map((c) => (
+          <span
+            key={c}
+            className="text-[10px] font-mono px-2 py-0.5 rounded"
+            style={{
+              background: "#14171A",
+              color: "#93968D",
+              border: "1px solid #262A25",
+            }}
+          >
+            {c}
+          </span>
+        ))}
+      </div>
+
+      {/* Verification Strip */}
+      <div className="mt-8">
+        <div
+          className="w-full px-3 py-2 flex items-center justify-between text-[10px] font-mono"
+          style={{
+            borderTop: "1px solid #262A25",
+            borderBottom: "1px solid #262A25",
+            background: "#14171A",
+          }}
+        >
+          <div className="flex items-center gap-1.5" style={{ color: "#5FA97C" }}>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#5FA97C" }} />
+            <span>VERIFIED TODAY</span>
+          </div>
+          <div className="flex items-center gap-1.5" style={{ color: "#93968D" }}>
+            <span>Confidence: {api.status}</span>
+          </div>
+          <span style={{ color: "#5D6058" }}>Latency: {api.latency}</span>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
-        {/* Left Column - API Details */}
-        <div className="lg:col-span-2">
-          {/* Overview */}
-          <section className="mb-8">
-            <h2 className="text-xl font-semibold text-charcoal">
-              Overview
-            </h2>
-            <p className="mt-2 text-charcoal/80">
-              {api.description}
-            </p>
-          </section>
+      {/* Main Content Grid */}
+      <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left - Documentation and Details */}
+        <div className="lg:col-span-2 space-y-10">
+          {/* Documentation Preview */}
+          <DocPreview
+            curl={api.curl}
+            js={api.js}
+            python={api.python}
+            go={api.go}
+          />
 
           {/* Pricing */}
-          <section className="mb-8">
-            <h2 className="text-xl font-semibold text-charcoal">
+          <div>
+            <h2 className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#5D6058" }}>
               Pricing
             </h2>
-            <p className="mt-2 text-charcoal/80">
-              {api.pricing_model}
-            </p>
-          </section>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {api.pricing.map((p) => (
+                <div
+                  key={p.tier}
+                  className="p-4 rounded-lg"
+                  style={{
+                    background: "#14171A",
+                    border: "1px solid #262A25",
+                  }}
+                >
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-sm font-semibold" style={{ color: "#F2EFE9" }}>
+                      {p.tier}
+                    </span>
+                    <span className="text-sm font-mono" style={{ color: "#C9722A" }}>
+                      {p.price}
+                    </span>
+                  </div>
+                  <p className="text-xs mt-1.5" style={{ color: "#93968D" }}>
+                    {p.note}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          {/* Authentication */}
-          <section className="mb-8">
-            <h2 className="text-xl font-semibold text-charcoal">
-              Authentication
-            </h2>
-            <p className="mt-2 text-charcoal/80">
-              {api.auth_method}
-            </p>
-          </section>
-
-          {/* Rate Limits */}
-          {api.rate_limit && (
-            <section className="mb-8">
-              <h2 className="text-xl font-semibold text-charcoal">
-                Rate Limits
-              </h2>
-              <p className="mt-2 text-charcoal/80">
-                {api.rate_limit}
+          {/* Info Grid */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <h3 className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "#5D6058" }}>
+                Auth Method
+              </h3>
+              <p className="text-sm font-mono mt-1" style={{ color: "#F2EFE9" }}>
+                {api.authMethod}
               </p>
-            </section>
-          )}
-
-          {/* Webhooks */}
-          {api.webhook_support && (
-            <section className="mb-8">
-              <h2 className="text-xl font-semibold text-charcoal">
+            </div>
+            <div>
+              <h3 className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "#5D6058" }}>
+                Rate Limit
+              </h3>
+              <p className="text-sm font-mono mt-1" style={{ color: "#F2EFE9" }}>
+                {api.rateLimit}
+              </p>
+            </div>
+            <div>
+              <h3 className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "#5D6058" }}>
                 Webhooks
-              </h2>
-              <p className="mt-2 text-charcoal/80">
-                Webhooks are supported for real-time notifications.
+              </h3>
+              <p className="text-sm font-mono mt-1" style={{ color: api.webhookSupport ? "#5FA97C" : "#C05A45" }}>
+                {api.webhookSupport ? "Supported" : "Not Supported"}
               </p>
-            </section>
-          )}
+            </div>
+            <div>
+              <h3 className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "#5D6058" }}>
+                Version
+              </h3>
+              <p className="text-sm font-mono mt-1" style={{ color: "#F2EFE9" }}>
+                {api.version}
+              </p>
+            </div>
+          </div>
+
+          {/* Changelog */}
+          <ChangelogTimeline changelog={api.changelog} />
         </div>
 
-        {/* Right Column - Quick Links */}
+        {/* Right Sidebar - Quick Facts */}
         <div className="lg:sticky lg:top-24 lg:self-start">
-          {/* Quick Links */}
-          <div className="rounded-xl border border-sand-100 bg-sand-50 p-6">
-            <h3 className="font-semibold text-charcoal">
-              Quick Links
-            </h3>
-            <ul className="mt-4 space-y-3">
-              <li>
-                <a
-                  href={api.documentation_url || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-baobab-600 hover:text-baobab-700 transition-colors"
-                >
-                  <Book className="h-4 w-4" />
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href={api.official_website || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-baobab-600 hover:text-baobab-700 transition-colors"
-                >
-                  <Globe className="h-4 w-4" />
-                  Official Website
-                </a>
-              </li>
-              {api.sandbox_url && (
-                <li>
-                  <a
-                    href={api.sandbox_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-baobab-600 hover:text-baobab-700 transition-colors"
-                  >
-                    <TestTube className="h-4 w-4" />
-                    Sandbox
-                  </a>
-                </li>
-              )}
-              {api.support_url && (
-                <li>
-                  <a
-                    href={api.support_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-baobab-600 hover:text-baobab-700 transition-colors"
-                  >
-                    <HelpCircle className="h-4 w-4" />
-                    Support
-                  </a>
-                </li>
-              )}
-            </ul>
-          </div>
-
-          {/* API Info */}
-          <div className="mt-6 rounded-xl border border-sand-100 bg-sand-50 p-6">
-            <h3 className="font-semibold text-charcoal">
-              API Info
-            </h3>
-            <dl className="mt-4 space-y-2 text-sm">
-              <div className="flex justify-between">
-                <dt className="text-charcoal/60">Status</dt>
-                <dd className="flex items-center gap-1 font-medium">
-                  {api.status === 'active' ? (
-                    <>
-                      <CheckCircle className="h-4 w-4 text-success" />
-                      <span className="text-success">Active</span>
-                    </>
-                  ) : (
-                    <>
-                      <AlertCircle className="h-4 w-4 text-warning" />
-                      <span className="text-warning">Beta</span>
-                    </>
-                  )}
-                </dd>
-              </div>
-              {api.api_version && (
-                <div className="flex justify-between">
-                  <dt className="text-charcoal/60">Version</dt>
-                  <dd className="text-charcoal">
-                    {api.api_version}
-                  </dd>
-                </div>
-              )}
-              <div className="flex justify-between">
-                <dt className="text-charcoal/60">Last Updated</dt>
-                <dd className="text-charcoal">
-                  {api.last_updated}
-                </dd>
-              </div>
-            </dl>
-          </div>
+          <QuickFacts
+            countries={api.countries}
+            categories={[api.category]}
+            documentationUrl={"https://developers." + api.id.replace(/-/g, "") + ".com"}
+            officialWebsite={"https://" + api.id.replace(/-/g, "") + ".com"}
+            supportUrl={"https://support." + api.id.replace(/-/g, "") + ".com"}
+            sandboxUrl={"https://sandbox." + api.id.replace(/-/g, "") + ".com"}
+            lastCrawl="2026-07-12 08:24 UTC"
+          />
         </div>
       </div>
+
+      {/* Similar APIs */}
+      <SimilarApisTable apis={similar} onSelect={(id) => {}} />
     </div>
   );
 }
