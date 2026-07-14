@@ -1,5 +1,11 @@
 -- Afrilayer Database Schema
 -- Run this in Supabase SQL Editor
+-- This schema is split into parts to avoid the "relation afri_admins does not exist" error
+-- Run each section in order if you encounter issues.
+
+-- =============================================================================
+-- PART 1: Extensions and Core Tables
+-- =============================================================================
 
 -- Enable UUID extension
 create extension if not exists "uuid-ossp";
@@ -13,23 +19,6 @@ create table afri_countries (
   flag_emoji varchar(10),
   region varchar(50),
   created_at timestamp with time zone default now()
-);
-
--- Providers Table
-create table afri_providers (
-  id uuid primary key default uuid_generate_v4(),
-  name varchar(255) not null,
-  slug varchar(255) not null unique,
-  description text,
-  website varchar(500),
-  logo_url varchar(500),
-  country_id uuid references afri_countries(id),
-  founded_year integer,
-  social_links jsonb,
-  verification_status varchar(20) default 'pending' check (verification_status in ('verified', 'pending', 'unverified')),
-  created_at timestamp with time zone default now(),
-  updated_at timestamp with time zone default now(),
-  archived_at timestamp with time zone
 );
 
 -- Categories Table
@@ -49,6 +38,23 @@ create table afri_tags (
   name varchar(50) not null,
   slug varchar(50) not null unique,
   created_at timestamp with time zone default now()
+);
+
+-- Providers Table
+create table afri_providers (
+  id uuid primary key default uuid_generate_v4(),
+  name varchar(255) not null,
+  slug varchar(255) not null unique,
+  description text,
+  website varchar(500),
+  logo_url varchar(500),
+  country_id uuid references afri_countries(id),
+  founded_year integer,
+  social_links jsonb,
+  verification_status varchar(20) default 'pending' check (verification_status in ('verified', 'pending', 'unverified')),
+  created_at timestamp with time zone default now(),
+  updated_at timestamp with time zone default now(),
+  archived_at timestamp with time zone
 );
 
 -- APIs Table
@@ -79,7 +85,9 @@ create table afri_apis (
   archived_at timestamp with time zone
 );
 
--- Junction Tables
+-- =============================================================================
+-- PART 2: Junction Tables
+-- =============================================================================
 
 -- API Countries (many-to-many)
 create table afri_api_country (
@@ -161,6 +169,16 @@ create table afri_provider_claims (
   created_at timestamp with time zone default now()
 );
 
+-- =============================================================================
+-- PART 3: Admins and Organizations
+-- =============================================================================
+
+-- Admins Table (for RLS policies)
+create table afri_admins (
+  id uuid primary key references auth.users(id) on delete cascade,
+  created_at timestamp with time zone default now()
+);
+
 -- Organizations (for future versions)
 create table afri_organizations (
   id uuid primary key default uuid_generate_v4(),
@@ -180,7 +198,10 @@ create table afri_organization_members (
   created_at timestamp with time zone default now()
 );
 
--- Indexes for performance
+-- =============================================================================
+-- PART 4: Indexes for performance
+-- =============================================================================
+
 create index idx_afri_apis_slug on afri_apis(slug);
 create index idx_afri_providers_slug on afri_providers(slug);
 create index idx_afri_categories_slug on afri_categories(slug);
@@ -193,7 +214,10 @@ create index idx_afri_apis_updated on afri_apis(updated_at desc);
 create index idx_afri_apis_search on afri_apis using gin(to_tsvector('english', name || ' ' || coalesce(description, '')));
 create index idx_afri_providers_search on afri_providers using gin(to_tsvector('english', name || ' ' || coalesce(description, '')));
 
--- Row Level Security Policies
+-- =============================================================================
+-- PART 5: Row Level Security Policies
+-- =============================================================================
+
 alter table afri_apis enable row level security;
 alter table afri_providers enable row level security;
 alter table afri_categories enable row level security;
@@ -220,21 +244,40 @@ create policy "Public read access" on afri_tags
 create policy "Public read access" on afri_collections
   for select using (true);
 
--- Admin write access
+-- Admin write access (using a helper function to avoid RLS recursion)
+create or replace function is_afri_admin()
+returns boolean
+language sql
+security definer
+set search_path = public
+stable
+as $$
+  select exists (
+    select 1 from afri_admins where id = auth.uid()
+  );
+$$;
+
+-- Grant execute permission to authenticated users
+grant execute on function is_afri_admin() to authenticated;
+
 create policy "Admin write access" on afri_apis
-  for all using (auth.uid() in (select id from afri_admins));
+  for all using (is_afri_admin());
 
 create policy "Admin write access" on afri_providers
-  for all using (auth.uid() in (select id from afri_admins));
+  for all using (is_afri_admin());
 
 create policy "Admin write access" on afri_categories
-  for all using (auth.uid() in (select id from afri_admins));
+  for all using (is_afri_admin());
 
 create policy "Admin write access" on afri_countries
-  for all using (auth.uid() in (select id from afri_admins));
+  for all using (is_afri_admin());
 
 create policy "Admin write access" on afri_tags
-  for all using (auth.uid() in (select id from afri_admins));
+  for all using (is_afri_admin());
+
+-- =============================================================================
+-- PART 6: Triggers
+-- =============================================================================
 
 -- Trigger to update updated_at
 create or replace function update_updated_at()
