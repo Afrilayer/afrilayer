@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Badge, ConfidenceIndicator } from '@/components/ui';
+import { Book, Globe, TestTube, HelpCircle, CheckCircle, AlertCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
 // Mock API data - will be fetched from database
@@ -41,6 +42,23 @@ const mockApi = {
   verification_status: 'verified' as const,
 };
 
+// Breadcrumb component
+function Breadcrumb() {
+  return (
+    <nav className="mb-6 flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
+      <Link href="/" className="hover:text-gray-900 dark:hover:text-gray-100">
+        Home
+      </Link>
+      <span className="text-gray-400">/</span>
+      <Link href="/apis" className="hover:text-gray-900 dark:hover:text-gray-100">
+        APIs
+      </Link>
+      <span className="text-gray-400">/</span>
+      <span className="text-gray-900 dark:text-white">{mockApi.name}</span>
+    </nav>
+  );
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -74,6 +92,9 @@ export default async function ApiPage({
 
   return (
     <div className="container mx-auto px-4 py-12">
+      {/* Breadcrumb */}
+      <Breadcrumb />
+
       {/* Hero Section */}
       <div className="border-b border-gray-200 pb-8 dark:border-gray-700">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
@@ -164,7 +185,8 @@ export default async function ApiPage({
         </div>
 
         {/* Right Column - Quick Links */}
-        <div>
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          {/* Quick Links */}
           <div className="rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800">
             <h3 className="font-semibold text-gray-900 dark:text-white">
               Quick Links
@@ -175,9 +197,10 @@ export default async function ApiPage({
                   href={api.documentation_url || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                  className="inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
                 >
-                  📖 Documentation
+                  <Book className="h-4 w-4" />
+                  Documentation
                 </a>
               </li>
               <li>
@@ -185,9 +208,10 @@ export default async function ApiPage({
                   href={api.official_website || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                  className="inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
                 >
-                  🌐 Official Website
+                  <Globe className="h-4 w-4" />
+                  Official Website
                 </a>
               </li>
               {api.sandbox_url && (
@@ -196,9 +220,10 @@ export default async function ApiPage({
                     href={api.sandbox_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                    className="inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
                   >
-                    🧪 Sandbox
+                    <TestTube className="h-4 w-4" />
+                    Sandbox
                   </a>
                 </li>
               )}
@@ -208,9 +233,10 @@ export default async function ApiPage({
                     href={api.support_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                    className="inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
                   >
-                    💬 Support
+                    <HelpCircle className="h-4 w-4" />
+                    Support
                   </a>
                 </li>
               )}
@@ -223,21 +249,31 @@ export default async function ApiPage({
               API Info
             </h3>
             <dl className="mt-4 space-y-2 text-sm">
-              <div>
+              <div className="flex justify-between">
                 <dt className="text-gray-500 dark:text-gray-400">Status</dt>
-                <dd className="text-gray-900 dark:text-white">
-                  {api.status === 'active' ? '✅ Active' : '⚠️ Beta'}
+                <dd className="flex items-center gap-1 font-medium">
+                  {api.status === 'active' ? (
+                    <>
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-green-700 dark:text-green-400">Active</span>
+                    </>
+                  ) : (
+                    <>
+                      <AlertCircle className="h-4 w-4 text-amber-500" />
+                      <span className="text-amber-700 dark:text-amber-400">Beta</span>
+                    </>
+                  )}
                 </dd>
               </div>
               {api.api_version && (
-                <div>
+                <div className="flex justify-between">
                   <dt className="text-gray-500 dark:text-gray-400">Version</dt>
                   <dd className="text-gray-900 dark:text-white">
                     {api.api_version}
                   </dd>
                 </div>
               )}
-              <div>
+              <div className="flex justify-between">
                 <dt className="text-gray-500 dark:text-gray-400">Last Updated</dt>
                 <dd className="text-gray-900 dark:text-white">
                   {api.last_updated}
