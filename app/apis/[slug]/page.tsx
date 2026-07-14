@@ -44,8 +44,9 @@ const mockApi = {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const { slug } = await params;
   return {
     title: `${mockApi.name} - Afrilayer`,
     description: mockApi.short_summary,
@@ -61,8 +62,9 @@ export async function generateMetadata({
 export default async function ApiPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  await params; // Await params to satisfy Next.js 15 type requirements
   // In production, fetch from Supabase
   const api = mockApi;
 

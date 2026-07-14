@@ -5,7 +5,7 @@ import { Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface SearchInputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'onSubmit'> {
   onChange?: (value: string) => void;
   onSubmit?: (value: string) => void;
   containerClassName?: string;

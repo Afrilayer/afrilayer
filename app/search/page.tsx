@@ -47,7 +47,7 @@ export default function SearchPage() {
         <SearchInput
           placeholder="Search APIs, providers, categories..."
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={setQuery}
           className="max-w-2xl"
         />
       </div>
@@ -58,19 +58,19 @@ export default function SearchPage() {
             key={result.id}
             className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800"
           >
-            {'type' in result && result.type === 'api' ? (
+             {'type' in result && result.type === 'api' ? (
               <Link href={`/apis/${result.slug}`}>
                 <h2 className="text-xl font-semibold text-gray-900 hover:text-primary-600 dark:text-white">
                   {result.name}
                 </h2>
                 <p className="mt-1 text-gray-500 dark:text-gray-400">
-                  by {(result as typeof mockResults[0]).provider}
+                  by {result.provider}
                 </p>
                 <p className="mt-3 text-gray-600 dark:text-gray-300">
                   {result.description}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {(result as typeof mockResults[0]).categories.map((cat) => (
+                  {result.categories?.map((cat) => (
                     <Badge key={cat} variant="default">
                       {cat}
                     </Badge>
