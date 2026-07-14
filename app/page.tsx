@@ -22,21 +22,21 @@ export default function Home() {
   }, [category, country, query]);
 
   return (
-    <div style={{ background: "#0B0D0C", minHeight: "100vh" }}>
+    <div className="bg-bg min-h-screen">
       {/* Hero Section */}
       <section className="px-6 md:px-10 pt-16 pb-14 max-w-5xl mx-auto">
         <div className="flex items-start justify-between gap-8 flex-wrap">
           <div className="max-w-xl">
             <div className="flex items-center gap-2 mb-5">
-              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#5FA97C" }} />
-              <span className="text-xs font-mono tracking-widest uppercase" style={{ color: "#5D6058" }}>
+              <span className="w-1.5 h-1.5 rounded-full bg-verified" />
+              <span className="text-xs font-mono tracking-widest uppercase text-muted-dim">
                 50+ · verified this week
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight" style={{ color: "#F2EFE9" }}>
+            <h1 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-text">
               The verification layer for African digital infrastructure.
             </h1>
-            <p className="mt-5 text-base leading-relaxed" style={{ color: "#93968D" }}>
+            <p className="mt-5 text-base leading-relaxed text-muted">
               Discover production-ready APIs powering Africa — payments, mobile money, KYC, SMS, and banking.
               Each listing is continuously monitored, verification-dated, and rated for operational confidence.
             </p>
@@ -70,19 +70,16 @@ export default function Home() {
       {/* API Grid */}
       <section className="px-6 md:px-10 max-w-5xl mx-auto pb-20">
         <div className="flex items-center justify-between mb-4">
-          <span className="text-xs font-mono" style={{ color: "#5D6058" }}>
+          <span className="text-xs font-mono text-muted-dim">
             {filtered.length} API{filtered.length !== 1 ? "s" : ""}
           </span>
         </div>
         {filtered.length === 0 ? (
-          <div
-            className="text-center py-16 rounded-lg"
-            style={{ border: "1px dashed #262A25" }}
-          >
-            <p className="text-sm" style={{ color: "#93968D" }}>
+          <div className="text-center py-16 rounded-lg border border-dashed border-border">
+            <p className="text-sm text-muted">
               No APIs match these filters yet.
             </p>
-            <p className="text-xs mt-1 font-mono" style={{ color: "#5D6058" }}>
+            <p className="text-xs mt-1 font-mono text-muted-dim">
               Try a different category or country.
             </p>
           </div>
@@ -102,7 +99,7 @@ export default function Home() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Link href={`/apis/${api.id}`}>
+                  <Link href={`/apis/${api.id}`} className="block focus:outline-none focus:ring-2 focus:ring-copper focus:ring-offset-2 rounded-lg">
                     <ApiCard api={api} />
                   </Link>
                 </motion.div>
@@ -114,3 +111,4 @@ export default function Home() {
     </div>
   );
 }
+```

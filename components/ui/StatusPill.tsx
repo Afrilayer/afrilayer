@@ -25,8 +25,8 @@ export const StatusPill: React.FC<StatusPillProps> = ({ status }) => {
       className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-mono text-[10px] tracking-wide uppercase"
       style={{
         color,
-        border: `1px solid ${color}55`,
-        background: `${color}14`,
+        borderColor: `${color}55`,
+        backgroundColor: `${color}14`,
       }}
     >
       <Icon size={10} strokeWidth={2.5} />

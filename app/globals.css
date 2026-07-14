@@ -4,7 +4,7 @@
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
 
-  /* Dark Theme Colors - Reference Design */
+  /* Dark Theme Colors - Afrilayer Design System */
   --color-bg: #0B0D0C;
   --color-surface: #14171A;
   --color-surface-hover: #1B1F1C;
@@ -13,7 +13,7 @@
   --color-muted: #93968D;
   --color-muted-dim: #5D6058;
 
-  /* Copper/Amber Accent Colors */
+  /* Copper/Amber Accent Colors - Africa-inspired */
   --color-copper: #C9722A;
   --color-amber: #E0A34E;
 

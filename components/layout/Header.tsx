@@ -19,18 +19,17 @@ export function Header() {
 
   return (
     <>
-      <header
-        className="sticky top-0 z-40 backdrop-blur"
-        style={{
-          background: "#0B0D0CE6",
-          borderBottom: "1px solid #262A25",
-        }}
-      >
+      {/* Skip link for accessibility */}
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 z-50 bg-copper text-bg px-3 py-1 rounded text-sm font-mono">
+        Skip to main content
+      </a>
+      
+      <header className="sticky top-0 z-40 backdrop-blur bg-bg/90 border-b border-border">
         <div className="container mx-auto flex h-14 items-center justify-between px-6 md:px-10">
           <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full" style={{ background: "#C9722A" }} />
-              <span className="font-mono font-semibold tracking-tight text-sm" style={{ color: "#F2EFE9" }}>
+            <Link href="/" className="flex items-center gap-2" aria-label="Afrilayer home">
+              <span className="w-2 h-2 rounded-full bg-copper" />
+              <span className="font-mono font-semibold tracking-tight text-sm text-text">
                 Afrilayer
               </span>
             </Link>
@@ -41,10 +40,10 @@ export function Header() {
                   href={item.href}
                   className={cn(
                     "text-xs font-mono transition-colors",
-                    pathname === item.href ? "font-semibold" : ""
+                    pathname === item.href && "font-semibold text-copper"
                   )}
                   style={{
-                    color: pathname === item.href ? "#C9722A" : "#93968D",
+                    color: pathname === item.href ? "var(--color-copper)" : "var(--color-muted)",
                   }}
                 >
                   {item.name}
@@ -54,29 +53,22 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div
-              className="flex items-center gap-2 px-3 py-2 rounded-lg w-64 max-w-sm"
-              style={{
-                background: "#14171A",
-                border: "1px solid #262A25",
-              }}
-            >
-              <Search size={14} style={{ color: "#5D6058" }} />
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg w-64 max-w-sm bg-surface border border-border">
+              <Search size={14} className="text-muted" />
               <input
                 placeholder="Search APIs, providers..."
-                className="bg-transparent outline-none text-xs w-full font-mono"
-                style={{ color: "#F2EFE9" }}
+                className="bg-transparent outline-none text-xs w-full font-mono text-text placeholder:text-muted"
+                aria-label="Search APIs and providers"
               />
             </div>
 
-            <Link href="/admin/login" className="text-xs font-mono" style={{ color: "#5D6058" }}>
+            <Link href="/admin/login" className="text-xs font-mono text-muted hover:text-text transition-colors">
               Sign In
             </Link>
 
             {/* Mobile menu button */}
             <button
-              className="flex h-8 w-8 items-center justify-center rounded-lg md:hidden"
-              style={{ color: "#5D6058" }}
+              className="flex h-8 w-8 items-center justify-center rounded-lg md:hidden text-muted hover:text-text transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
@@ -88,14 +80,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav
-            className="border-t"
-            style={{
-              background: "#0B0D0C",
-              borderTop: "1px solid #262A25",
-            }}
-            aria-label="Mobile navigation"
-          >
+          <nav className="border-t bg-bg border-t border-border" aria-label="Mobile navigation">
             <div className="container mx-auto px-6 md:px-10 py-4">
               <div className="flex flex-col gap-4">
                 {navigation.map((item) => (
@@ -104,11 +89,8 @@ export function Header() {
                     href={item.href}
                     className={cn(
                       "text-xs font-mono transition-colors",
-                      pathname === item.href ? "font-semibold" : ""
+                      pathname === item.href && "font-semibold text-copper"
                     )}
-                    style={{
-                      color: pathname === item.href ? "#C9722A" : "#93968D",
-                    }}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}

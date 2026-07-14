@@ -15,13 +15,9 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick }) => {
   return (
     <motion.button
       onClick={onClick}
-      className="text-left rounded-lg p-5 flex flex-col gap-3 transition-colors w-full"
-      style={{
-        background: "#14171A",
-        border: "1px solid #262A25",
-      }}
+      className="text-left rounded-lg p-5 flex flex-col gap-3 transition-colors w-full bg-surface border border-border hover-lift"
       whileHover={{
-        background: "#1B1F1C",
+        background: "var(--color-surface-hover)",
       }}
       whileTap={{
         scale: 0.98,
@@ -29,17 +25,17 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick }) => {
     >
       <div className="flex items-start justify-between gap-2">
         <div>
-          <h3 className="font-semibold text-base leading-snug" style={{ color: "#F2EFE9" }}>
+          <h3 className="font-semibold text-base leading-snug text-text">
             {api.name}
           </h3>
-          <p className="text-xs mt-0.5 font-mono" style={{ color: "#5D6058" }}>
+          <p className="text-xs mt-0.5 font-mono text-muted-dim">
             {api.provider}
           </p>
         </div>
         <StatusPill status={api.status} />
       </div>
 
-      <p className="text-sm leading-relaxed" style={{ color: "#93968D" }}>
+      <p className="text-sm leading-relaxed text-muted">
         {api.description}
       </p>
 
@@ -47,23 +43,18 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick }) => {
         {api.countries.slice(0, 3).map((c) => (
           <span
             key={c}
-            className="text-[10px] font-mono px-2 py-0.5 rounded"
-            style={{
-              background: "#0B0D0C",
-              color: "#93968D",
-              border: "1px solid #262A25",
-            }}
+            className="text-[10px] font-mono px-2 py-0.5 rounded bg-bg text-muted-dim border border-border"
           >
             {c}
           </span>
         ))}
       </div>
 
-      <div className="flex items-center justify-between pt-2 mt-1" style={{ borderTop: "1px solid #262A25" }}>
-        <span className="text-[10px] font-mono" style={{ color: "#5D6058" }}>
+      <div className="flex items-center justify-between pt-2 mt-1 border-t border-border">
+        <span className="text-[10px] font-mono text-muted-dim">
           verified {api.lastVerified}
         </span>
-        <ChevronRight size={14} style={{ color: "#C9722A" }} />
+        <ChevronRight size={14} className="text-copper" />
       </div>
     </motion.button>
   );
