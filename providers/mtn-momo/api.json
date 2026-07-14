@@ -1,0 +1,19 @@
+{
+  "uptime": "99.95%",
+  "pricing": [
+    { "tier": "Sandbox", "price": "Free", "note": "Test credentials, rate-limited" },
+    { "tier": "Production", "price": "1.5% per txn", "note": "Volume discounts above ₵50k/mo" }
+  ],
+  "curl": "curl -X POST https://api.mtn.com/momo/v2/collect \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -d '{\"amount\":\"25.00\",\"currency\":\"GHS\",\"payer\":\"233241234567\"}'",
+  "js": "const res = await fetch(\"https://api.mtn.com/momo/v2/collect\", {\n  method: \"POST\",\n  headers: { Authorization: `Bearer ${TOKEN}` },\n  body: JSON.stringify({ amount: \"25.00\", currency: \"GHS\", payer: \"233241234567\" })\n});",
+  "python": "import requests\nr = requests.post(\"https://api.mtn.com/momo/v2/collect\",\n  headers={\"Authorization\": f\"Bearer {TOKEN}\"},\n  json={\"amount\": \"25.00\", \"currency\": \"GHS\", \"payer\": \"233241234567\"})",
+  "go": "req, _ := http.NewRequest(\"POST\", \"https://api.mtn.com/momo/v2/collect\",\n  bytes.NewBufferString(`{\"amount\":\"25.00\",\"currency\":\"GHS\",\"payer\":\"233241234567\"}\"))\nreq.Header.Set(\"Authorization\", \"Bearer \"+TOKEN)",
+  "changelog": [
+    { "date": "2026-07-10", "note": "Re-verified endpoint latency and auth flow — no changes." },
+    { "date": "2026-05-22", "note": "Provider added disbursement webhook retries." }
+  ],
+  "version": "v3.2",
+  "latency": "234ms",
+  "rateLimit": "2000 req/min",
+  "webhookSupport": true
+}

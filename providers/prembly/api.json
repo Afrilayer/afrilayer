@@ -1,0 +1,17 @@
+{
+  "uptime": "99.6%",
+  "pricing": [
+    { "tier": "Pay as you go", "price": "$0.08 / check", "note": "No monthly fee" }
+  ],
+  "curl": "curl https://api.prembly.com/v1/verify \\\n  -H \"x-api-key: $API_KEY\" \\\n  -d '{\"document_type\":\"passport\",\"document_number\":\"A1234567\"}'",
+  "js": "const res = await fetch(\"https://api.prembly.com/v1/verify\", {\n  method: \"POST\",\n  headers: { \"x-api-key\": API_KEY },\n  body: JSON.stringify({ document_type: \"passport\", document_number: \"A1234567\" })\n});",
+  "python": "import requests\nr = requests.post(\"https://api.prembly.com/v1/verify\",\n  headers={\"x-api-key\": API_KEY},\n  json={\"document_type\": \"passport\", \"document_number\": \"A1234567\"})",
+  "go": "req, _ := http.NewRequest(\"POST\", \"https://api.prembly.com/v1/verify\",\n  bytes.NewBufferString(`{\"document_type\":\"passport\",\"document_number\":\"A1234567\"}\"))\nreq.Header.Set(\"x-api-key\", API_KEY)",
+  "changelog": [
+    { "date": "2026-07-09", "note": "New facial recognition endpoints added to documentation." }
+  ],
+  "version": "v1.8",
+  "latency": "278ms",
+  "rateLimit": "200 req/min",
+  "webhookSupport": true
+}

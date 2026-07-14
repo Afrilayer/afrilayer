@@ -23,9 +23,9 @@ export function Header() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 z-50 bg-copper text-bg px-3 py-1 rounded text-sm font-mono">
         Skip to main content
       </a>
-      
+
       <header className="sticky top-0 z-40 backdrop-blur bg-bg/90 border-b border-border">
-        <div className="container mx-auto flex h-14 items-center justify-between px-6 md:px-10">
+        <div className="max-w-5xl mx-auto flex h-14 items-center justify-between px-6 md:px-10">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2" aria-label="Afrilayer home">
               <span className="w-2 h-2 rounded-full bg-copper" />
@@ -62,8 +62,8 @@ export function Header() {
               />
             </div>
 
-            <Link href="/admin/login" className="text-xs font-mono text-muted hover:text-text transition-colors">
-              Sign In
+            <Link href="/contribute" className="text-xs font-mono text-muted hover:text-text transition-colors">
+              Contribute
             </Link>
 
             {/* Mobile menu button */}
@@ -81,7 +81,7 @@ export function Header() {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <nav className="border-t bg-bg border-t border-border" aria-label="Mobile navigation">
-            <div className="container mx-auto px-6 md:px-10 py-4">
+            <div className="max-w-5xl mx-auto px-6 md:px-10 py-4">
               <div className="flex flex-col gap-4">
                 {navigation.map((item) => (
                   <Link
@@ -96,6 +96,13 @@ export function Header() {
                     {item.name}
                   </Link>
                 ))}
+                <Link
+                  href="/contribute"
+                  className="text-xs font-mono text-copper"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contribute
+                </Link>
               </div>
             </div>
           </nav>

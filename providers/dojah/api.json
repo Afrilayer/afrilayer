@@ -1,0 +1,17 @@
+{
+  "uptime": "~99.5%",
+  "pricing": [
+    { "tier": "Pay as you go", "price": "₦150 / verification", "note": "No minimum" }
+  ],
+  "curl": "curl https://api.dojah.io/api/v1/kyc/bvn \\\n  -H \"AppId: $APP_ID\" -H \"Authorization: $API_KEY\" \\\n  -d '{\"bvn\":\"22190123456\"}'",
+  "js": "const res = await fetch(\"https://api.dojah.io/api/v1/kyc/bvn\", {\n  method: \"POST\",\n  headers: { AppId: APP_ID, Authorization: API_KEY },\n  body: JSON.stringify({ bvn: \"22190123456\" })\n});",
+  "python": "import requests\nr = requests.post(\"https://api.dojah.io/api/v1/kyc/bvn\",\n  headers={\"AppId\": APP_ID, \"Authorization\": API_KEY},\n  json={\"bvn\": \"22190123456\"})",
+  "go": "req, _ := http.NewRequest(\"POST\", \"https://api.dojah.io/api/v1/kyc/bvn\",\n  bytes.NewBufferString(`{\"bvn\":\"22190123456\"}\"))\nreq.Header.Set(\"AppId\", APP_ID)\nreq.Header.Set(\"Authorization\", API_KEY)",
+  "changelog": [
+    { "date": "2026-06-28", "note": "Uptime figure estimated from third-party status page — provider dashboard unreachable." }
+  ],
+  "version": "v1.3",
+  "latency": "412ms",
+  "rateLimit": "100 req/min",
+  "webhookSupport": false
+}

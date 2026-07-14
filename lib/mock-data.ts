@@ -1,4 +1,4 @@
-// Afrilayer Mock Data
+﻿// Afrilayer Mock Data
 // Dark theme design tokens (matching reference design)
 
 export const C = {
@@ -26,7 +26,7 @@ export const STATUS_META: Record<string, { color: string; icon: string; label: s
 
 export const CATEGORIES = ["All", "Payments", "Mobile Money", "KYC", "SMS", "Banking", "Airtime", "Telecom", "Government", "Logistics"];
 
-export const COUNTRIES = ["All", "Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "Côte d'Ivoire", "Egypt", "Morocco", "Senegal", "Zambia"];
+export const COUNTRIES = ["All", "Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "CÃ´te d'Ivoire", "Egypt", "Morocco", "Senegal", "Zambia"];
 
 // API Status type matching reference
 export type ApiStatus = "Live" | "Estimated" | "Cached" | "Unavailable";
@@ -77,7 +77,7 @@ export const APIS: ApiMock[] = [
     lastVerified: "2026-07-08",
     uptime: "99.97%",
     pricing: [
-      { tier: "Standard", price: "1.4%", note: "Local cards, capped at ₦2,000" },
+      { tier: "Standard", price: "1.4%", note: "Local cards, capped at â‚¦2,000" },
     ],
     curl: `curl https://api.flutterwave.com/v3/payments \\
   -H "Authorization: Bearer $FLW_KEY" \\
@@ -115,7 +115,7 @@ req.Header.Set("Authorization", "Bearer "+FLW_KEY)`,
     lastVerified: "2026-07-12",
     uptime: "99.99%",
     pricing: [
-      { tier: "Standard", price: "1.5% + ₦100", note: "Capped at ₦2,000 for local cards" },
+      { tier: "Standard", price: "1.5% + â‚¦100", note: "Capped at â‚¦2,000 for local cards" },
       { tier: "Enterprise", price: "Custom", note: "Contact sales" },
     ],
     curl: `curl https://api.paystack.co/transaction/initialize \\
@@ -148,14 +148,14 @@ req.Header.Set("Authorization", "Bearer "+SECRET_KEY)`,
     name: "MTN Mobile Money API",
     provider: "MTN Group",
     category: "Mobile Money",
-    countries: ["Ghana", "Uganda", "Côte d'Ivoire"],
+    countries: ["Ghana", "Uganda", "CÃ´te d'Ivoire"],
     description: "Integrate MTN Mobile Money for collections, disbursements and payment status across MTN markets.",
     status: "Live",
     lastVerified: "2026-07-10",
     uptime: "99.95%",
     pricing: [
       { tier: "Sandbox", price: "Free", note: "Test credentials, rate-limited" },
-      { tier: "Production", price: "1.5% per txn", note: "Volume discounts above ₵50k/mo" },
+      { tier: "Production", price: "1.5% per txn", note: "Volume discounts above â‚µ50k/mo" },
     ],
     curl: `curl -X POST https://api.mtn.com/momo/v2/collect \\
   -H "Authorization: Bearer $TOKEN" \\
@@ -173,7 +173,7 @@ r = requests.post("https://api.mtn.com/momo/v2/collect",
   bytes.NewBufferString(\`{"amount":"25.00","currency":"GHS","payer":"233241234567"}\`))
 req.Header.Set("Authorization", "Bearer "+TOKEN)`,
     changelog: [
-      { date: "2026-07-10", note: "Re-verified endpoint latency and auth flow — no changes." },
+      { date: "2026-07-10", note: "Re-verified endpoint latency and auth flow â€” no changes." },
       { date: "2026-05-22", note: "Provider added disbursement webhook retries." },
     ],
     version: "v3.2",
@@ -193,7 +193,7 @@ req.Header.Set("Authorization", "Bearer "+TOKEN)`,
     lastVerified: "2026-06-28",
     uptime: "~99.5%",
     pricing: [
-      { tier: "Pay as you go", price: "₦150 / verification", note: "No minimum" },
+      { tier: "Pay as you go", price: "â‚¦150 / verification", note: "No minimum" },
     ],
     curl: `curl https://api.dojah.io/api/v1/kyc/bvn \\
   -H "AppId: $APP_ID" -H "Authorization: $API_KEY" \\
@@ -212,7 +212,7 @@ r = requests.post("https://api.dojah.io/api/v1/kyc/bvn",
 req.Header.Set("AppId", APP_ID)
 req.Header.Set("Authorization", API_KEY)`,
     changelog: [
-      { date: "2026-06-28", note: "Uptime figure estimated from third-party status page — provider dashboard unreachable." },
+      { date: "2026-06-28", note: "Uptime figure estimated from third-party status page â€” provider dashboard unreachable." },
     ],
     version: "v1.3",
     latency: "412ms",
@@ -232,7 +232,7 @@ req.Header.Set("Authorization", API_KEY)`,
     uptime: "99.85%",
     pricing: [
       { tier: "Sandbox", price: "Free", note: "Test mode with sandbox numbers" },
-      { tier: "Production", price: "1.2% + ₵10", note: "Standard rates apply" },
+      { tier: "Production", price: "1.2% + â‚µ10", note: "Standard rates apply" },
     ],
     curl: `curl https://teltoobdirect.hubtel.com/v1/messages/send \\
   -H "Authorization: Basic $TOKEN" \\
@@ -269,8 +269,8 @@ req.Header.Set("Authorization", "Basic "+TOKEN)`,
     lastVerified: "2026-07-10",
     uptime: "99.7%",
     pricing: [
-      { tier: "Starter", price: "₵0.02 / SMS", note: "First 10K SMS" },
-      { tier: "Business", price: "₵0.015 / SMS", note: "10K+ volume" },
+      { tier: "Starter", price: "â‚µ0.02 / SMS", note: "First 10K SMS" },
+      { tier: "Business", price: "â‚µ0.015 / SMS", note: "10K+ volume" },
     ],
     curl: `curl https://api.nalosolutions.com/sms/v1/send \\
   -H "Authorization: Bearer $TOKEN" \\
@@ -302,12 +302,12 @@ req.Header.Set("Authorization", "Bearer "+TOKEN)`,
     provider: "Smile Identity",
     category: "KYC",
     countries: ["Nigeria", "Kenya", "South Africa", "Ghana"],
-    description: "Biometric KYC — selfie liveness, document verification and AML screening.",
+    description: "Biometric KYC â€” selfie liveness, document verification and AML screening.",
     status: "Cached",
     lastVerified: "2026-05-30",
     uptime: "n/a",
     pricing: [
-      { tier: "Standard", price: "Custom", note: "Contact sales — pricing not publicly listed" },
+      { tier: "Standard", price: "Custom", note: "Contact sales â€” pricing not publicly listed" },
     ],
     curl: `curl https://api.smileidentity.com/v1/id_verification \\
   -H "Authorization: Bearer $TOKEN" \\
@@ -325,7 +325,7 @@ r = requests.post("https://api.smileidentity.com/v1/id_verification",
   bytes.NewBufferString(\`{"country":"NG","id_type":"NIN"}\`))
 req.Header.Set("Authorization", "Bearer "+TOKEN)`,
     changelog: [
-      { date: "2026-05-30", note: "Listing served from cache — provider docs required login to re-verify." },
+      { date: "2026-05-30", note: "Listing served from cache â€” provider docs required login to re-verify." },
     ],
     version: "v2.3",
     latency: "~300ms",

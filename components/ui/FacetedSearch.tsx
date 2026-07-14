@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { Search } from "lucide-react";
-import { CATEGORIES, COUNTRIES } from "@/lib/mock-data";
 
 interface FacetedSearchProps {
   query: string;
@@ -11,6 +10,8 @@ interface FacetedSearchProps {
   onQueryChange: (query: string) => void;
   onCategoryChange: (category: string) => void;
   onCountryChange: (country: string) => void;
+  categories?: string[];
+  countries?: string[];
 }
 
 export const FacetedSearch: React.FC<FacetedSearchProps> = ({
@@ -20,46 +21,45 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
   onQueryChange,
   onCategoryChange,
   onCountryChange,
+  categories = ["All"],
+  countries = ["All"],
 }) => {
   const selectCls = (active: boolean) =>
-    `text-xs font-mono px-3 py-1.5 rounded-full transition-colors whitespace-nowrap ${active ? "font-semibold" : ""}`;
+    `text-xs font-mono px-3 py-1.5 rounded-full transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-copper ${active ? "font-semibold" : ""}`;
 
   return (
     <div className="flex flex-col gap-3">
       {/* Search Input */}
       <div
-        className="flex items-center gap-2 px-4 py-3 rounded-lg w-full"
-        style={{
-          background: "#14171A",
-          border: "1px solid #262A25",
-        }}
+        className="flex items-center gap-2 px-4 py-3 rounded-lg w-full bg-surface border border-border"
       >
-        <Search size={15} style={{ color: "#5D6058" }} />
+        <Search size={15} className="text-muted-dim" />
         <input
           value={query}
           onChange={(e) => onQueryChange(e.target.value)}
           placeholder="Search APIs, providers, categories…"
-          className="bg-transparent outline-none text-sm w-full"
-          style={{ color: "#F2EFE9" }}
+          className="bg-transparent outline-none text-sm w-full font-mono text-text placeholder:text-muted-dim"
+          aria-label="Search APIs and providers"
         />
       </div>
 
-      {/* Category Filters */}
+      {/* Category Filters - horizontally scrollable on mobile */}
       <div>
-        <div className="text-[10px] font-mono uppercase tracking-widest mb-2" style={{ color: "#5D6058" }}>
+        <div className="text-[10px] font-mono uppercase tracking-widest mb-2 text-muted-dim">
           Category
         </div>
-        <div className="flex gap-2 overflow-x-auto pb-1">
-          {CATEGORIES.map((c) => (
+        <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
+          {categories.map((c) => (
             <button
               key={c}
               onClick={() => onCategoryChange(c)}
               className={selectCls(category === c)}
               style={{
-                background: category === c ? "#C9722A" : "#14171A",
-                color: category === c ? "#0B0D0C" : "#93968D",
-                border: `1px solid ${category === c ? "#C9722A" : "#262A25"}`,
+                background: category === c ? "var(--color-copper)" : "var(--color-surface)",
+                color: category === c ? "var(--color-bg)" : "var(--color-muted)",
+                border: `1px solid ${category === c ? "var(--color-copper)" : "var(--color-border)"}`,
               }}
+              aria-pressed={category === c}
             >
               {c}
             </button>
@@ -67,22 +67,23 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
         </div>
       </div>
 
-      {/* Country Filters */}
+      {/* Country Filters - horizontally scrollable on mobile */}
       <div>
-        <div className="text-[10px] font-mono uppercase tracking-widest mb-2" style={{ color: "#5D6058" }}>
+        <div className="text-[10px] font-mono uppercase tracking-widest mb-2 text-muted-dim">
           Country
         </div>
-        <div className="flex gap-2 overflow-x-auto pb-1">
-          {COUNTRIES.map((c) => (
+        <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
+          {countries.map((c) => (
             <button
               key={c}
               onClick={() => onCountryChange(c)}
               className={selectCls(country === c)}
               style={{
-                background: country === c ? "#C9722A" : "#14171A",
-                color: country === c ? "#0B0D0C" : "#93968D",
-                border: `1px solid ${country === c ? "#C9722A" : "#262A25"}`,
+                background: country === c ? "var(--color-copper)" : "var(--color-surface)",
+                color: country === c ? "var(--color-bg)" : "var(--color-muted)",
+                border: `1px solid ${country === c ? "var(--color-copper)" : "var(--color-border)"}`,
               }}
+              aria-pressed={country === c}
             >
               {c}
             </button>

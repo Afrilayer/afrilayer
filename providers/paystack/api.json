@@ -1,0 +1,19 @@
+{
+  "uptime": "99.99%",
+  "pricing": [
+    { "tier": "Standard", "price": "1.5% + ₦100", "note": "Capped at ₦2,000 for local cards" },
+    { "tier": "Enterprise", "price": "Custom", "note": "Contact sales" }
+  ],
+  "curl": "curl https://api.paystack.co/transaction/initialize \\\n  -H \"Authorization: Bearer $SECRET_KEY\" \\\n  -d '{\"email\":\"user@example.com\",\"amount\":\"50000\"}'",
+  "js": "const res = await fetch(\"https://api.paystack.co/transaction/initialize\", {\n  method: \"POST\",\n  headers: { Authorization: `Bearer ${SECRET_KEY}` },\n  body: JSON.stringify({ email: \"user@example.com\", amount: \"50000\" })\n});",
+  "python": "import requests\nr = requests.post(\"https://api.paystack.co/transaction/initialize\",\n  headers={\"Authorization\": f\"Bearer {SECRET_KEY}\"},\n  json={\"email\": \"user@example.com\", \"amount\": \"50000\"})",
+  "go": "req, _ := http.NewRequest(\"POST\", \"https://api.paystack.co/transaction/initialize\",\n  bytes.NewBufferString(`{\"email\":\"user@example.com\",\"amount\":\"50000\"}\"))\nreq.Header.Set(\"Authorization\", \"Bearer \"+SECRET_KEY)",
+  "changelog": [
+    { "date": "2026-07-12", "note": "Confirmed new split-payment endpoint in docs." },
+    { "date": "2026-04-22", "note": "Added Ghana Mobile Money collection support." }
+  ],
+  "version": "v2.1",
+  "latency": "98ms",
+  "rateLimit": "500 req/min",
+  "webhookSupport": true
+}

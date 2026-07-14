@@ -1,0 +1,18 @@
+{
+  "uptime": "99.7%",
+  "pricing": [
+    { "tier": "Starter", "price": "₵0.02 / SMS", "note": "First 10K SMS" },
+    { "tier": "Business", "price": "₵0.015 / SMS", "note": "10K+ volume" }
+  ],
+  "curl": "curl https://api.nalosolutions.com/sms/v1/send \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -d '{\"from\":\"INFO\",\"to\":\"233241234567\",\"message\":\"Test\"}'",
+  "js": "const res = await fetch(\"https://api.nalosolutions.com/sms/v1/send\", {\n  method: \"POST\",\n  headers: { Authorization: `Bearer ${TOKEN}` },\n  body: JSON.stringify({ from: \"INFO\", to: \"233241234567\", message: \"Test\" })\n});",
+  "python": "import requests\nr = requests.post(\"https://api.nalosolutions.com/sms/v1/send\",\n  headers={\"Authorization\": f\"Bearer {TOKEN}\"},\n  json={\"from\": \"INFO\", \"to\": \"233241234567\", \"message\": \"Test\"})",
+  "go": "req, _ := http.NewRequest(\"POST\", \"https://api.nalosolutions.com/sms/v1/send\",\n  bytes.NewBufferString(`{\"from\":\"INFO\",\"to\":\"233241234567\",\"message\":\"Test\"}\"))\nreq.Header.Set(\"Authorization\", \"Bearer \"+TOKEN)",
+  "changelog": [
+    { "date": "2026-07-10", "note": "Re-verified HTTP 429 handling and rate limit behavior." }
+  ],
+  "version": "v1.1",
+  "latency": "89ms",
+  "rateLimit": "1000 req/hour",
+  "webhookSupport": false
+}

@@ -1,0 +1,18 @@
+{
+  "uptime": "99.97%",
+  "pricing": [
+    { "tier": "Standard", "price": "1.4%", "note": "Local cards, capped at ₦2,000" }
+  ],
+  "curl": "curl https://api.flutterwave.com/v3/payments \\\n  -H \"Authorization: Bearer $FLW_KEY\" \\\n  -d '{\"tx_ref\":\"tx-001\",\"amount\":\"5000\",\"currency\":\"NGN\"}'",
+  "js": "const res = await fetch(\"https://api.flutterwave.com/v3/payments\", {\n  method: \"POST\",\n  headers: { Authorization: `Bearer ${FLW_KEY}` },\n  body: JSON.stringify({ tx_ref: \"tx-001\", amount: \"5000\", currency: \"NGN\" })\n});",
+  "python": "import requests\nr = requests.post(\"https://api.flutterwave.com/v3/payments\",\n  headers={\"Authorization\": f\"Bearer {FLW_KEY}\"},\n  json={\"tx_ref\": \"tx-001\", \"amount\": \"5000\", \"currency\": \"NGN\"})",
+  "go": "req, _ := http.NewRequest(\"POST\", \"https://api.flutterwave.com/v3/payments\",\n  bytes.NewBufferString(`{\"tx_ref\":\"tx-001\",\"amount\":\"5000\",\"currency\":\"NGN\"}\"))\nreq.Header.Set(\"Authorization\", \"Bearer \"+FLW_KEY)",
+  "changelog": [
+    { "date": "2026-07-08", "note": "Re-verified. Added support for Kenyan M-Pesa payouts." },
+    { "date": "2026-05-15", "note": "API version bumped to v3.4 with new settlement endpoints." }
+  ],
+  "version": "v3.4",
+  "latency": "142ms",
+  "rateLimit": "1000 req/min",
+  "webhookSupport": true
+}

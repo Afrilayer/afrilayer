@@ -1,0 +1,18 @@
+{
+  "uptime": "99.85%",
+  "pricing": [
+    { "tier": "Sandbox", "price": "Free", "note": "Test mode with sandbox numbers" },
+    { "tier": "Production", "price": "1.2% + ₵10", "note": "Standard rates apply" }
+  ],
+  "curl": "curl https://teltoobdirect.hubtel.com/v1/messages/send \\\n  -H \"Authorization: Basic $TOKEN\" \\\n  -d '{\"from\":\"Afrilayer\",\"to\":\"233241234567\",\"content\":\"Hello\"}'",
+  "js": "const res = await fetch(\"https://teltoobdirect.hubtel.com/v1/messages/send\", {\n  method: \"POST\",\n  headers: { Authorization: `Basic ${TOKEN}` },\n  body: JSON.stringify({ from: \"Afrilayer\", to: \"233241234567\", content: \"Hello\" })\n});",
+  "python": "import requests\nr = requests.post(\"https://teltoobdirect.hubtel.com/v1/messages/send\",\n  headers={\"Authorization\": f\"Basic {TOKEN}\"},\n  json={\"from\": \"Afrilayer\", \"to\": \"233241234567\", \"content\": \"Hello\"})",
+  "go": "req, _ := http.NewRequest(\"POST\", \"https://teltoobdirect.hubtel.com/v1/messages/send\",\n  bytes.NewBufferString(`{\"from\":\"Afrilayer\",\"to\":\"233241234567\",\"content\":\"Hello\"}\"))\nreq.Header.Set(\"Authorization\", \"Basic \"+TOKEN)",
+  "changelog": [
+    { "date": "2026-07-11", "note": "Verified mobile money endpoints and webhook signatures." }
+  ],
+  "version": "v2.0",
+  "latency": "156ms",
+  "rateLimit": "500 req/min",
+  "webhookSupport": true
+}

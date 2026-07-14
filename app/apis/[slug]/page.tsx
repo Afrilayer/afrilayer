@@ -1,26 +1,50 @@
-"use client";
+export const dynamic = 'force-static';
+export const revalidate = 3600; // Revalidate every hour
 
-import * as React from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { APIS } from "@/lib/mock-data";
+import { getApiBySlug, getAllApiSlugs, getAllApis } from "@/lib/data";
 import { StatusPill, Stamp, DocPreview, ChangelogTimeline, SimilarApisTable, QuickFacts } from "@/components/ui";
+import type { Metadata } from "next";
 
-export default function ApiPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = React.use(params);
+// Generate static params for all providers
+export async function generateStaticParams() {
+  const slugs = await getAllApiSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
 
-  // Find the API by slug (id)
-  const api = APIS.find((a) => a.id === slug);
+// Generate metadata for each page
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const api = await getApiBySlug(slug);
+  
+  if (!api) {
+    return {
+      title: 'API Not Found',
+    };
+  }
+  
+  return {
+    title: api.name,
+    description: api.description,
+  };
+}
+
+export default async function ApiPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const api = await getApiBySlug(slug);
 
   if (!api) {
     return (
       <div className="container mx-auto px-6 md:px-10 py-20">
-        <p style={{ color: "#F2EFE9" }}>API not found</p>
+        <p className="text-text">API not found</p>
       </div>
     );
   }
 
-  const similar = APIS.filter((a) => a.category === api.category && a.id !== api.id).slice(0, 2);
+  // Get similar APIs from the same category
+  const allApis = await getAllApis();
+  const similar = allApis.filter((a) => a.category === api.category && a.id !== api.id).slice(0, 2);
 
   return (
     <div className="px-6 md:px-10 py-10 max-w-4xl mx-auto">
@@ -191,7 +215,7 @@ export default function ApiPage({ params }: { params: Promise<{ slug: string }> 
       </div>
 
       {/* Similar APIs */}
-      <SimilarApisTable apis={similar} onSelect={(id) => {}} />
+      <SimilarApisTable apis={similar} />
     </div>
   );
 }

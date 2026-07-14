@@ -60,3 +60,5 @@ export { ChangelogTimeline } from './ChangelogTimeline';
 export { SimilarApisTable } from './SimilarApisTable';
 
 export { QuickFacts } from './QuickFacts';
+
+export { ApiGrid } from './ApiGrid';

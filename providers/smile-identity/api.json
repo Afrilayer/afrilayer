@@ -1,0 +1,17 @@
+{
+  "uptime": "n/a",
+  "pricing": [
+    { "tier": "Standard", "price": "Custom", "note": "Contact sales — pricing not publicly listed" }
+  ],
+  "curl": "curl https://api.smileidentity.com/v1/id_verification \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -d '{\"country\":\"NG\",\"id_type\":\"NIN\"}'",
+  "js": "const res = await fetch(\"https://api.smileidentity.com/v1/id_verification\", {\n  method: \"POST\",\n  headers: { Authorization: `Bearer ${TOKEN}` },\n  body: JSON.stringify({ country: \"NG\", id_type: \"NIN\" })\n});",
+  "python": "import requests\nr = requests.post(\"https://api.smileidentity.com/v1/id_verification\",\n  headers={\"Authorization\": f\"Bearer {TOKEN}\"},\n  json={\"country\": \"NG\", \"id_type\": \"NIN\"})",
+  "go": "req, _ := http.NewRequest(\"POST\", \"https://api.smileidentity.com/v1/id_verification\",\n  bytes.NewBufferString(`{\"country\":\"NG\",\"id_type\":\"NIN\"}\"))\nreq.Header.Set(\"Authorization\", \"Bearer \"+TOKEN)",
+  "changelog": [
+    { "date": "2026-05-30", "note": "Listing served from cache — provider docs required login to re-verify." }
+  ],
+  "version": "v2.3",
+  "latency": "~300ms",
+  "rateLimit": "Unknown",
+  "webhookSupport": true
+}

@@ -1,25 +1,17 @@
-"use client";
+export const revalidate = 3600; // Revalidate every hour
 
-import * as React from "react";
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { APIS } from "@/lib/mock-data";
+import { getAllApis } from "@/lib/data";
 import { Stamp, FacetedSearch, ApiCard, HeroDashboard, LiveVerificationFeed } from "@/components/ui";
+import { ApiGrid } from "@/components/ui/ApiGrid";
 
-export default function Home() {
-  const [category, setCategory] = React.useState("All");
-  const [country, setCountry] = React.useState("All");
-  const [query, setQuery] = React.useState("");
-
-  const filtered = React.useMemo(() => {
-    return APIS.filter((a) => {
-      if (category !== "All" && a.category !== category) return false;
-      if (country !== "All" && !a.countries.includes(country)) return false;
-      if (query && !`${a.name} ${a.provider} ${a.category}`.toLowerCase().includes(query.toLowerCase()))
-        return false;
-      return true;
-    });
-  }, [category, country, query]);
+// Homepage now loads APIs from filesystem at build time
+export default async function Home() {
+  // Load all APIs from filesystem
+  const apis = await getAllApis();
+  
+  // Get unique categories and countries from loaded APIs
+  const categories = ["All", ...new Set(apis.map(api => api.category))].filter(Boolean);
+  const countries = ["All", ...new Set(apis.flatMap(api => api.countries))].filter(Boolean);
 
   return (
     <div className="bg-bg min-h-screen">
@@ -30,7 +22,7 @@ export default function Home() {
             <div className="flex items-center gap-2 mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-verified" />
               <span className="text-xs font-mono tracking-widest uppercase text-muted-dim">
-                50+ · verified this week
+                {apis.length}+ · verified this week
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-text">
@@ -55,60 +47,8 @@ export default function Home() {
         <LiveVerificationFeed />
       </section>
 
-      {/* Faceted Search */}
-      <section className="px-6 md:px-10 max-w-5xl mx-auto mt-12 mb-6">
-        <FacetedSearch
-          query={query}
-          category={category}
-          country={country}
-          onQueryChange={setQuery}
-          onCategoryChange={setCategory}
-          onCountryChange={setCountry}
-        />
-      </section>
-
-      {/* API Grid */}
-      <section className="px-6 md:px-10 max-w-5xl mx-auto pb-20">
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-xs font-mono text-muted-dim">
-            {filtered.length} API{filtered.length !== 1 ? "s" : ""}
-          </span>
-        </div>
-        {filtered.length === 0 ? (
-          <div className="text-center py-16 rounded-lg border border-dashed border-border">
-            <p className="text-sm text-muted">
-              No APIs match these filters yet.
-            </p>
-            <p className="text-xs mt-1 font-mono text-muted-dim">
-              Try a different category or country.
-            </p>
-          </div>
-        ) : (
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-          >
-            <AnimatePresence>
-              {filtered.map((api) => (
-                <motion.div
-                  key={api.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Link href={`/apis/${api.id}`} className="block focus:outline-none focus:ring-2 focus:ring-copper focus:ring-offset-2 rounded-lg">
-                    <ApiCard api={api} />
-                  </Link>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-        )}
-      </section>
+      {/* Client-side interactive components */}
+      <ApiGrid apis={apis} categories={categories} countries={countries} />
     </div>
   );
 }
-```
