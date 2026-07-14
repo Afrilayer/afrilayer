@@ -87,7 +87,7 @@ export default function ApiPage({ params }: { params: Promise<{ slug: string }> 
             <span>VERIFIED TODAY</span>
           </div>
           <div className="flex items-center gap-1.5" style={{ color: "#93968D" }}>
-            <span>Confidence: {api.status}</span>
+            <span>Operational confidence: {api.status}</span>
           </div>
           <span style={{ color: "#5D6058" }}>Latency: {api.latency}</span>
         </div>
@@ -108,7 +108,7 @@ export default function ApiPage({ params }: { params: Promise<{ slug: string }> 
           {/* Pricing */}
           <div>
             <h2 className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#5D6058" }}>
-              Pricing
+              Pricing tiers
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {api.pricing.map((p) => (

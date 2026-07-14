@@ -30,15 +30,15 @@ export default function Home() {
             <div className="flex items-center gap-2 mb-5">
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#5FA97C" }} />
               <span className="text-xs font-mono tracking-widest uppercase" style={{ color: "#5D6058" }}>
-                50 APIs · verified this week
+                50+ · verified this week
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight" style={{ color: "#F2EFE9" }}>
-              Every listing carries a verification date.
+              The verification layer for African digital infrastructure.
             </h1>
             <p className="mt-5 text-base leading-relaxed" style={{ color: "#93968D" }}>
-              Afrilayer is the infrastructure layer connecting developers to Africa's digital ecosystem — payments, 
-              mobile money, KYC, SMS, and banking APIs, each one checked, dated, and rated for how current it is.
+              Discover production-ready APIs powering Africa — payments, mobile money, KYC, SMS, and banking.
+              Each listing is continuously monitored, verification-dated, and rated for operational confidence.
             </p>
           </div>
           <Stamp label="VERIFIED" sublabel="JUL 2026" size="lg" />

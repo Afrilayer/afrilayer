@@ -26,10 +26,10 @@ export default function CountriesPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <h1 className="text-3xl font-semibold text-charcoal">
-        Browse APIs by Country
+        API coverage by country
       </h1>
       <p className="mt-2 text-charcoal/70 max-w-2xl">
-        Find APIs available in specific African countries.
+        Discover verified APIs operating in 15+ African markets.
       </p>
 
       <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 stagger-children">
@@ -44,7 +44,7 @@ export default function CountriesPage() {
               {country.name}
             </span>
             <span className="text-xs text-charcoal/60">
-              {country.apiCount} APIs
+              {country.apiCount} verified APIs
             </span>
           </Link>
         ))}

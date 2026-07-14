@@ -20,10 +20,10 @@ export default function CategoriesPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <h1 className="text-3xl font-semibold text-charcoal">
-        Browse APIs by Category
+        API categories
       </h1>
       <p className="mt-2 text-charcoal/70 max-w-2xl">
-        Discover African APIs organized by their primary use case.
+        Compare infrastructure by type. Payments, KYC, SMS, and telecom APIs verified for production use.
       </p>
 
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-children">
@@ -41,7 +41,7 @@ export default function CategoriesPage() {
                 {category.name}
               </h2>
               <p className="text-sm text-charcoal/60">
-                {category.count} APIs
+                {category.count} verified APIs
               </p>
             </div>
           </Link>

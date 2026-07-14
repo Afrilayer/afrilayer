@@ -44,7 +44,7 @@ export default function NewApiPage() {
   return (
     <div>
       <h1 className="text-2xl font-semibold text-charcoal">
-        Add New API
+        Submit an API
       </h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-6">
