@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Search, Menu, X, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeProvider";
 
 const navigation = [
   { name: "Categories", href: "/categories" },
@@ -20,7 +21,7 @@ export function Header() {
   return (
     <>
       {/* Skip link for accessibility */}
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 z-50 bg-copper text-bg px-3 py-1 rounded text-sm font-mono">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 z-50 bg-clay text-bg px-3 py-1 rounded-full text-sm font-mono">
         Skip to main content
       </a>
 
@@ -28,8 +29,17 @@ export function Header() {
         <div className="max-w-5xl mx-auto flex h-14 items-center justify-between px-6 md:px-10">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2" aria-label="Afrilayer home">
-              <span className="w-2 h-2 rounded-full bg-copper" />
-              <span className="font-mono font-semibold tracking-tight text-sm text-text">
+              {/* Logo mark: 20x20 inline SVG */}
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Bottom-left gray dot */}
+                <circle cx="5" cy="15" r="2.5" fill="var(--color-muted-dim)" />
+                {/* Bottom-right gray dot */}
+                <circle cx="15" cy="15" r="2.5" fill="var(--color-muted-dim)" />
+                {/* Center node with terracotta outer ring and live green core */}
+                <circle cx="10" cy="9" r="3" fill="var(--color-surface-dark)" />
+                <circle cx="10" cy="9" r="1.2" fill="var(--color-verified)" />
+              </svg>
+              <span className="font-outfit font-semibold tracking-tight text-sm text-text">
                 Afrilayer
               </span>
             </Link>
@@ -40,10 +50,10 @@ export function Header() {
                   href={item.href}
                   className={cn(
                     "text-xs font-mono transition-colors",
-                    pathname === item.href && "font-semibold text-copper"
+                    pathname === item.href && "font-semibold text-clay"
                   )}
                   style={{
-                    color: pathname === item.href ? "var(--color-copper)" : "var(--color-muted)",
+                    color: pathname === item.href ? "var(--color-clay)" : "var(--color-muted)",
                   }}
                 >
                   {item.name}
@@ -53,10 +63,11 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg w-64 max-w-sm bg-surface border border-border">
+            {/* Search pill */}
+            <div className="flex items-center gap-2 pl-3 pr-4 py-2 rounded-full w-64 max-w-sm bg-surface">
               <Search size={14} className="text-muted" />
               <input
-                placeholder="Search APIs, providers..."
+                placeholder="Search APIs..."
                 className="bg-transparent outline-none text-xs w-full font-mono text-text placeholder:text-muted"
                 aria-label="Search APIs and providers"
               />
@@ -64,11 +75,14 @@ export function Header() {
 
             <Link
               href="/contribute"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-surface border border-border text-copper hover:text-amber hover:bg-surface/80 transition-colors"
+              className="inline-flex items-center gap-1.5 pl-3 pr-4 py-1.5 rounded-full text-xs font-mono bg-clay text-bg hover:bg-clay/90 transition-colors"
             >
               <Plus size={12} />
               Contribute
             </Link>
+
+            {/* Theme toggle */}
+            <ThemeToggle />
 
             {/* Mobile menu button */}
             <button
@@ -93,7 +107,7 @@ export function Header() {
                     href={item.href}
                     className={cn(
                       "text-xs font-mono transition-colors",
-                      pathname === item.href && "font-semibold text-copper"
+                      pathname === item.href && "font-semibold text-clay"
                     )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -102,7 +116,7 @@ export function Header() {
                 ))}
                 <Link
                   href="/contribute"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono text-copper"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono text-clay"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Plus size={12} />

@@ -57,8 +57,8 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
             href={`/countries/${code.toLowerCase()}`}
             className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface/50 transition-colors"
             style={{
-              background: "var(--color-bg)",
-              color: "var(--color-muted-dim)",
+              background: "var(--color-surface)",
+              color: "var(--color-muted)",
               border: "1px solid var(--color-border)",
             }}
             onClick={(e) => e.stopPropagation()}
@@ -76,8 +76,8 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
         key={c}
         className="text-[10px] font-mono px-2 py-0.5 rounded"
         style={{
-          background: "var(--color-bg)",
-          color: "var(--color-muted-dim)",
+          background: "var(--color-surface)",
+          color: "var(--color-muted)",
           border: "1px solid var(--color-border)",
         }}
       >
@@ -89,7 +89,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
   return (
     <motion.button
       onClick={onClick}
-      className="text-left rounded-lg p-5 flex flex-col gap-3 transition-colors w-full bg-surface border border-border hover-lift"
+      className="text-left rounded-[18px] p-5 flex flex-col gap-3 transition-colors w-full bg-surface shadow-card"
       whileHover={{
         background: "var(--color-surface-hover)",
       }}
@@ -102,7 +102,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
           <h3 className="font-semibold text-base leading-snug text-text">
             {api.name}
           </h3>
-          <p className="text-xs mt-0.5 font-mono text-muted-dim">
+          <p className="text-xs mt-0.5 font-mono text-muted">
             {api.provider}
           </p>
         </div>
@@ -120,8 +120,8 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
             href={`/categories/${CATEGORY_TO_SLUG[api.category] || api.category.toLowerCase()}`}
             className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface/50 transition-colors"
             style={{
-              background: "var(--color-bg)",
-              color: "var(--color-muted-dim)",
+              background: "var(--color-surface)",
+              color: "var(--color-muted)",
               border: "1px solid var(--color-border)",
             }}
             onClick={(e) => e.stopPropagation()}
@@ -131,11 +131,13 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
         )}
       </div>
 
-      <div className="flex items-center justify-between pt-2 mt-1 border-t border-border">
-        <span className="text-[10px] font-mono text-muted-dim">
-          verified {api.lastVerified}
+      <div className="flex items-center justify-between pt-2 mt-1" style={{ 
+        borderTop: "0.5px solid var(--color-border)" 
+      }}>
+        <span className="text-[10px] font-mono text-muted">
+          last checked {api.lastVerified}
         </span>
-        <ChevronRight size={14} className="text-copper" />
+        <ChevronRight size={14} className="text-clay" />
       </div>
     </motion.button>
   );
