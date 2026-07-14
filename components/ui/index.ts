@@ -62,3 +62,6 @@ export { SimilarApisTable } from './SimilarApisTable';
 export { QuickFacts } from './QuickFacts';
 
 export { ApiGrid } from './ApiGrid';
+
+export { CountryFlag } from './CountryFlag';
+export { getCountryFlag } from './CountryFlag';

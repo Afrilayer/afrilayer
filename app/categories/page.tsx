@@ -18,11 +18,11 @@ const categories = [
 
 export default function CategoriesPage() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="text-3xl font-semibold text-charcoal">
+    <div className="max-w-5xl mx-auto px-6 md:px-10 py-16">
+      <h1 className="text-3xl font-semibold text-text">
         API categories
       </h1>
-      <p className="mt-2 text-charcoal/70 max-w-2xl">
+      <p className="mt-2 text-muted max-w-2xl">
         Compare infrastructure by type. Payments, KYC, SMS, and telecom APIs verified for production use.
       </p>
 
@@ -31,16 +31,16 @@ export default function CategoriesPage() {
           <Link
             key={category.id}
             href={`/categories/${category.slug}`}
-            className="flex items-center gap-4 rounded-xl border border-sand-100 bg-white p-6 transition-all hover-lift"
+            className="flex items-center gap-4 rounded-lg border border-border bg-surface p-6 transition-all hover-lift"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-baobab-100">
-              <category.icon className="h-6 w-6 text-baobab-600" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-copper/10">
+              <category.icon className="h-6 w-6 text-copper" />
             </div>
             <div>
-              <h2 className="font-semibold text-charcoal">
+              <h2 className="font-semibold text-text">
                 {category.name}
               </h2>
-              <p className="text-sm text-charcoal/60">
+              <p className="text-sm text-muted">
                 {category.count} verified APIs
               </p>
             </div>

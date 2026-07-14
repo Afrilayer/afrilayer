@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu, X, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navigation = [
@@ -62,7 +62,11 @@ export function Header() {
               />
             </div>
 
-            <Link href="/contribute" className="text-xs font-mono text-muted hover:text-text transition-colors">
+            <Link
+              href="/contribute"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-surface border border-border text-copper hover:text-amber hover:bg-surface/80 transition-colors"
+            >
+              <Plus size={12} />
               Contribute
             </Link>
 
@@ -98,9 +102,10 @@ export function Header() {
                 ))}
                 <Link
                   href="/contribute"
-                  className="text-xs font-mono text-copper"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono text-copper"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
+                  <Plus size={12} />
                   Contribute
                 </Link>
               </div>

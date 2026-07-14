@@ -5,7 +5,40 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getApiBySlug, getAllApiSlugs, getAllApis } from "@/lib/data";
 import { StatusPill, Stamp, DocPreview, ChangelogTimeline, SimilarApisTable, QuickFacts } from "@/components/ui";
+import { CountryFlag } from "@/components/ui/CountryFlag";
 import type { Metadata } from "next";
+
+// Country name to ISO code mapping
+const COUNTRY_TO_CODE: Record<string, string> = {
+  'Nigeria': 'NG',
+  'South Africa': 'ZA',
+  'Ghana': 'GH',
+  'Kenya': 'KE',
+  'Uganda': 'UG',
+  'Tanzania': 'TZ',
+  'Egypt': 'EG',
+  'Morocco': 'MA',
+  "Côte d'Ivoire": 'CI',
+  'Senegal': 'SN',
+  'Rwanda': 'RW',
+  'Tunisia': 'TN',
+};
+
+// Category slug mapping
+const CATEGORY_TO_SLUG: Record<string, string> = {
+  'Mobile Money': 'mobile-money',
+  'Payments': 'payments',
+  'KYC': 'kyc',
+  'Identity': 'identity',
+  'SMS': 'sms',
+  'Airtime': 'airtime',
+  'Banking': 'banking',
+  'Logistics': 'logistics',
+  'Government': 'government',
+  'Crypto': 'crypto',
+  'Maps': 'maps',
+  'AI': 'ai',
+};
 
 // Generate static params for all providers
 export async function generateStaticParams() {
@@ -36,7 +69,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
 
   if (!api) {
     return (
-      <div className="container mx-auto px-6 md:px-10 py-20">
+      <div className="max-w-5xl mx-auto px-6 md:px-10 py-20">
         <p className="text-text">API not found</p>
       </div>
     );
@@ -79,21 +112,28 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
         <Stamp label={api.status} sublabel={api.lastVerified} />
       </div>
 
-      {/* Country Tags */}
+      {/* Country Tags with Links */}
       <div className="flex flex-wrap gap-1.5 mt-5">
-        {api.countries.map((c) => (
-          <span
-            key={c}
-            className="text-[10px] font-mono px-2 py-0.5 rounded"
-            style={{
-              background: "#14171A",
-              color: "#93968D",
-              border: "1px solid #262A25",
-            }}
-          >
-            {c}
-          </span>
-        ))}
+        {api.countries.map((c) => {
+          const code = COUNTRY_TO_CODE[c] || c;
+          return (
+            <Link
+              key={c}
+              href={`/countries/${code.toLowerCase()}`}
+              className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface/50 transition-colors"
+              style={{
+                background: "#14171A",
+                color: "#93968D",
+                border: "1px solid #262A25",
+              }}
+            >
+              <span className="flex items-center gap-1">
+                <CountryFlag code={code} size="sm" />
+                {c}
+              </span>
+            </Link>
+          );
+        })}
       </div>
 
       {/* Verification Strip */}

@@ -1,6 +1,8 @@
 export const revalidate = 3600; // Revalidate every hour
 
+import Link from "next/link";
 import { getAllApis } from "@/lib/data";
+import { getHomepageStats, getRecentVerifications } from "@/lib/stats";
 import { Stamp, FacetedSearch, ApiCard, HeroDashboard, LiveVerificationFeed } from "@/components/ui";
 import { ApiGrid } from "@/components/ui/ApiGrid";
 
@@ -12,6 +14,12 @@ export default async function Home() {
   // Get unique categories and countries from loaded APIs
   const categories = ["All", ...new Set(apis.map(api => api.category))].filter(Boolean);
   const countries = ["All", ...new Set(apis.flatMap(api => api.countries))].filter(Boolean);
+  
+  // Get live stats
+  const stats = await getHomepageStats();
+  
+  // Get recent verifications
+  const recentVerifications = await getRecentVerifications(5);
 
   return (
     <div className="bg-bg min-h-screen">
@@ -22,7 +30,7 @@ export default async function Home() {
             <div className="flex items-center gap-2 mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-verified" />
               <span className="text-xs font-mono tracking-widest uppercase text-muted-dim">
-                {apis.length}+ · verified this week
+                {stats.liveApis}+ verified APIs
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-text">
@@ -33,18 +41,18 @@ export default async function Home() {
               Each listing is continuously monitored, verification-dated, and rated for operational confidence.
             </p>
           </div>
-          <Stamp label="VERIFIED" sublabel="JUL 2026" size="lg" />
+          <Stamp label={`${stats.liveApis} Verified`} sublabel={stats.averageVerificationAge} size="lg" />
         </div>
       </section>
 
       {/* Hero Dashboard Stats */}
       <section className="px-6 md:px-10 max-w-5xl mx-auto">
-        <HeroDashboard />
+        <HeroDashboard stats={stats} />
       </section>
 
       {/* Live Verification Feed */}
       <section className="px-6 md:px-10 max-w-5xl mx-auto mt-12">
-        <LiveVerificationFeed />
+        <LiveVerificationFeed verifications={recentVerifications} />
       </section>
 
       {/* Client-side interactive components */}

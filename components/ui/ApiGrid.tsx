@@ -76,7 +76,7 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
                   transition={{ duration: 0.3 }}
                 >
                   <Link href={`/apis/${api.id}`} className="block focus:outline-none focus:ring-2 focus:ring-copper focus:ring-offset-2 rounded-lg">
-                    <ApiCard api={api} />
+                    <ApiCard api={api} showCountryLinks={true} showCategoryLink={true} />
                   </Link>
                 </motion.div>
               ))}
