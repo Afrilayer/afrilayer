@@ -56,8 +56,8 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
+    <div className="container mx-auto px-4 py-16">
+      <h1 className="mb-6 text-3xl font-semibold text-charcoal">
         Search APIs
       </h1>
 
@@ -72,7 +72,7 @@ export default function SearchPage() {
 
       {/* Results count */}
       {query && !isLoading && (
-        <p className="mb-4 text-sm text-gray-600 dark:text-gray-400" aria-live="polite">
+        <p className="mb-4 text-sm text-charcoal/70" aria-live="polite">
           Found <span className="font-medium">{results.length}</span> results for "{query}"
         </p>
       )}
@@ -92,17 +92,17 @@ export default function SearchPage() {
           {results.map((result) => (
             <div
               key={result.id}
-              className="rounded-lg border border-gray-200 bg-white p-6 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
+              className="rounded-xl border border-sand-100 bg-white p-6 transition-all hover-lift"
             >
               {'type' in result && result.type === 'api' ? (
                 <Link href={`/apis/${result.slug}`}>
-                  <h2 className="text-xl font-semibold text-gray-900 hover:text-primary-600 dark:text-white">
+                  <h2 className="text-xl font-semibold text-charcoal hover:text-baobab-600">
                     {result.name}
                   </h2>
-                  <p className="mt-1 text-gray-500 dark:text-gray-400">
+                  <p className="mt-1 text-charcoal/60">
                     by {result.provider}
                   </p>
-                  <p className="mt-3 text-gray-600 dark:text-gray-300">
+                  <p className="mt-3 text-charcoal/80">
                     {result.description}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -115,13 +115,13 @@ export default function SearchPage() {
                 </Link>
               ) : (
                 <Link href={`/providers/${(result as typeof mockResults[2]).slug}`}>
-                  <h2 className="text-xl font-semibold text-gray-900 hover:text-primary-600 dark:text-white">
+                  <h2 className="text-xl font-semibold text-charcoal hover:text-baobab-600">
                     {(result as typeof mockResults[2]).name}
                   </h2>
-                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                  <p className="mt-1 text-sm text-charcoal/60">
                     {(result as typeof mockResults[2]).apiCount} APIs
                   </p>
-                  <p className="mt-3 text-gray-600 dark:text-gray-300">
+                  <p className="mt-3 text-charcoal/80">
                     {result.description}
                   </p>
                 </Link>

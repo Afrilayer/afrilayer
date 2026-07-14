@@ -11,25 +11,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Afrilayer — Discover the APIs Powering Africa',
+  title: {
+    default: 'Afrilayer — Africa’s API Discovery Platform',
+    template: '%s — Afrilayer',
+  },
   description:
-    'Search, compare and explore APIs for payments, identity, logistics, banking, SMS, Mobile Money and more built for Africa.',
-  keywords: 'Africa, API, payments, mobile money, KYC, identity, banking, SMS, airtime',
+    'Discover, compare, and evaluate African APIs for payments, telecom, identity, logistics, government services, and digital infrastructure.',
+  keywords: 'Africa, API, payments, mobile money, KYC, identity, banking, SMS, airtime, developers, infrastructure',
   authors: [{ name: 'Afrilayer' }],
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: process.env.NEXT_PUBLIC_SITE_URL,
-    title: 'Afrilayer — Discover the APIs Powering Africa',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://afrilayer.com',
+    title: 'Afrilayer — Africa’s API Discovery Platform',
     description:
-      'The developer-first platform for discovering African APIs.',
+      'The trusted infrastructure layer connecting developers to Africa’s digital ecosystem.',
     siteName: 'Afrilayer',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Afrilayer — Discover the APIs Powering Africa',
+    title: 'Afrilayer — Africa’s API Discovery Platform',
     description:
-      'The developer-first platform for discovering African APIs.',
+      'The trusted infrastructure layer connecting developers to Africa’s digital ecosystem.',
   },
 };
 
@@ -39,8 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+    <html lang="en" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-background text-foreground antialiased">
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />

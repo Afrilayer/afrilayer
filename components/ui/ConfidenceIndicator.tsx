@@ -10,25 +10,25 @@ const levelConfig: Record<
   verified: {
     label: 'Verified',
     className:
-      'bg-green-50 text-green-700 border-green-200 dark:bg-green-950 dark:text-green-300 dark:border-green-800',
+      'bg-success/10 text-success border-success/20',
     Icon: ShieldCheck,
   },
   'needs-review': {
     label: 'Needs Review',
     className:
-      'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-800',
+      'bg-warning/10 text-warning border-warning/20',
     Icon: AlertCircle,
   },
   stale: {
     label: 'Stale Data',
     className:
-      'bg-gray-50 text-gray-700 border-gray-200 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700',
+      'bg-sand-100 text-charcoal/70 border-sand-200',
     Icon: Clock,
   },
   community: {
-    label: 'Community',
+    label: 'Provider Managed',
     className:
-      'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-800',
+      'bg-baobab-100 text-baobab-700 border-baobab-200',
     Icon: Users,
   },
 };

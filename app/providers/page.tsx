@@ -42,30 +42,30 @@ const providers = [
 
 export default function ProvidersPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+    <div className="container mx-auto px-4 py-16">
+      <h1 className="text-3xl font-semibold text-charcoal">
         API Providers
       </h1>
-      <p className="mt-2 text-gray-600 dark:text-gray-400">
+      <p className="mt-2 text-charcoal/70 max-w-2xl">
         Explore companies building APIs for the African market.
       </p>
 
-      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 stagger-children">
         {providers.map((provider) => (
           <Link
             key={provider.id}
             href={`/providers/${provider.slug}`}
-            className="rounded-lg border border-gray-200 bg-white p-6 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
+            className="rounded-xl border border-sand-100 bg-white p-6 transition-all hover-lift"
           >
             <div className="flex items-start justify-between">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+              <h2 className="text-xl font-semibold text-charcoal">
                 {provider.name}
               </h2>
               <Badge variant="success" className="text-xs">
                 {provider.apiCount} APIs
               </Badge>
             </div>
-            <p className="mt-2 text-gray-600 dark:text-gray-300">
+            <p className="mt-2 text-charcoal/80">
               {provider.description}
             </p>
           </Link>

@@ -60,18 +60,18 @@ const recentActivity = [
 
 // Helper to get change color
 function getChangeColor(changeType: 'positive' | 'neutral') {
-  if (changeType === 'positive') return 'text-green-600';
-  return 'text-gray-500';
+  if (changeType === 'positive') return 'text-success';
+  return 'text-charcoal/60';
 }
 
 export default function AdminDashboard() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+        <h1 className="text-2xl font-semibold text-charcoal">
           Admin Dashboard
         </h1>
-        <p className="mt-1 text-gray-600 dark:text-gray-400">
+        <p className="mt-1 text-charcoal/70">
           Manage your API listings and platform content.
         </p>
       </div>
@@ -84,10 +84,10 @@ export default function AdminDashboard() {
               <CardTitle className="text-sm font-medium">
                 {stat.title}
               </CardTitle>
-              <stat.icon className="h-4 w-4 text-gray-500" />
+              <stat.icon className="h-4 w-4 text-charcoal/60" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{stat.value}</div>
+              <div className="text-2xl font-semibold">{stat.value}</div>
               <p className="text-xs">
                 <span className={getChangeColor(stat.changeType)}>
                   {stat.change}
@@ -100,22 +100,22 @@ export default function AdminDashboard() {
 
       {/* Quick Actions */}
       <div className="mt-8">
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+        <h2 className="text-lg font-semibold text-charcoal">
           Quick Actions
         </h2>
-        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3 stagger-children">
           <Link href="/admin/apis/new">
-            <Card className="h-full transition-all hover:shadow-md hover:-translate-y-0.5">
+            <Card className="h-full transition-all hover-lift">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900">
-                    <Plus className="h-5 w-5 text-primary-600 dark:text-primary-400" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-baobab-100">
+                    <Plus className="h-5 w-5 text-baobab-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-900 dark:text-white">
+                    <h3 className="font-medium text-charcoal">
                       Add New API
                     </h3>
-                    <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                    <p className="mt-1 text-sm text-charcoal/70">
                       Create a new API listing with full details.
                     </p>
                   </div>
@@ -124,17 +124,17 @@ export default function AdminDashboard() {
             </Card>
           </Link>
           <Link href="/admin/providers/new">
-            <Card className="h-full transition-all hover:shadow-md hover:-translate-y-0.5">
+            <Card className="h-full transition-all hover-lift">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900">
-                    <Package className="h-5 w-5 text-primary-600 dark:text-primary-400" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-baobab-100">
+                    <Package className="h-5 w-5 text-baobab-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-900 dark:text-white">
+                    <h3 className="font-medium text-charcoal">
                       Add Provider
                     </h3>
-                    <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                    <p className="mt-1 text-sm text-charcoal/70">
                       Register a new API provider.
                     </p>
                   </div>
@@ -143,17 +143,17 @@ export default function AdminDashboard() {
             </Card>
           </Link>
           <Link href="/admin/changelog">
-            <Card className="h-full transition-all hover:shadow-md hover:-translate-y-0.5">
+            <Card className="h-full transition-all hover-lift">
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900">
-                    <FileText className="h-5 w-5 text-primary-600 dark:text-primary-400" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-baobab-100">
+                    <FileText className="h-5 w-5 text-baobab-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-900 dark:text-white">
+                    <h3 className="font-medium text-charcoal">
                       View Changelog
                     </h3>
-                    <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                    <p className="mt-1 text-sm text-charcoal/70">
                       Check platform updates and changes.
                     </p>
                   </div>
@@ -166,7 +166,7 @@ export default function AdminDashboard() {
 
       {/* Recent Activity */}
       <div className="mt-8">
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+        <h2 className="text-lg font-semibold text-charcoal">
           Recent Activity
         </h2>
         <Card className="mt-4">
@@ -175,25 +175,25 @@ export default function AdminDashboard() {
               {recentActivity.map((activity) => (
                 <li key={activity.id} className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700">
-                      <Activity className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-sand-100">
+                      <Activity className="h-4 w-4 text-charcoal/60" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-900 dark:text-white">
+                      <p className="text-sm font-medium text-charcoal">
                         {activity.action}:{' '}
                         <Link
                           href={`/admin/apis/${activity.id}`}
-                          className="text-primary-600 hover:underline dark:text-primary-400"
+                          className="text-baobab-600 hover:underline"
                         >
                           {activity.target}
                         </Link>
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                      <p className="text-xs text-charcoal/60">
                         by {activity.user}
                       </p>
                     </div>
                   </div>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">
+                  <span className="text-xs text-charcoal/60">
                     {activity.time}
                   </span>
                 </li>
@@ -202,7 +202,7 @@ export default function AdminDashboard() {
             <div className="mt-6 text-center">
               <Link
                 href="/admin/changelog"
-                className="text-sm font-medium text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                className="text-sm font-medium text-baobab-600 hover:text-baobab-700 transition-colors"
               >
                 View all activity
               </Link>

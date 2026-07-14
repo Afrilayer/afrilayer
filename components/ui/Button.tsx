@@ -5,27 +5,29 @@ import { cn } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-[0.98]',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-baobab-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
         default:
-          'bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600',
+          'bg-baobab-600 text-white hover:bg-baobab-700 shadow-subtle',
+        gold:
+          'bg-gold-600 text-white hover:bg-gold-700 shadow-subtle',
         destructive:
-          'bg-red-600 text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600',
+          'bg-error text-white hover:bg-error/90 shadow-subtle',
         outline:
-          'border border-gray-300 bg-white hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700',
+          'border border-sand-100 bg-white hover:bg-sand-50',
         secondary:
-          'bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600',
+          'bg-sand-50 text-charcoal hover:bg-sand-100',
         ghost:
-          'hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-100',
-        link: 'text-primary-600 underline-offset-4 hover:underline dark:text-primary-400',
+          'hover:bg-sand-50 hover:text-charcoal',
+        link: 'text-baobab-600 underline-offset-4 hover:underline',
       },
       size: {
-        default: 'h-9 px-4 py-2',
+        default: 'h-10 px-5 py-2',
         sm: 'h-8 px-3 text-xs',
-        lg: 'h-10 px-6',
-        icon: 'h-9 w-9',
+        lg: 'h-12 px-6',
+        icon: 'h-10 w-10',
       },
     },
     defaultVariants: {

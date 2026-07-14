@@ -18,29 +18,29 @@ const categories = [
 
 export default function CategoriesPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+    <div className="container mx-auto px-4 py-16">
+      <h1 className="text-3xl font-semibold text-charcoal">
         Browse APIs by Category
       </h1>
-      <p className="mt-2 text-gray-600 dark:text-gray-400">
+      <p className="mt-2 text-charcoal/70 max-w-2xl">
         Discover African APIs organized by their primary use case.
       </p>
-      
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-children">
         {categories.map((category) => (
           <Link
             key={category.id}
             href={`/categories/${category.slug}`}
-            className="flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
+            className="flex items-center gap-4 rounded-xl border border-sand-100 bg-white p-6 transition-all hover-lift"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900">
-              <category.icon className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-baobab-100">
+              <category.icon className="h-6 w-6 text-baobab-600" />
             </div>
             <div>
-              <h2 className="font-semibold text-gray-900 dark:text-white">
+              <h2 className="font-semibold text-charcoal">
                 {category.name}
               </h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-sm text-charcoal/60">
                 {category.count} APIs
               </p>
             </div>

@@ -29,11 +29,11 @@ export function BackToTop({ className }: { className?: string }) {
 
   if (!isVisible) return null;
 
-  return (
+return (
     <button
       onClick={scrollToTop}
       className={cn(
-        'fixed bottom-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white shadow-lg transition-all hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 animate-fade-in',
+        'fixed bottom-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-baobab-600 text-white shadow-subtle transition-all hover:bg-baobab-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-baobab-600 focus-visible:ring-offset-2 animate-fade-in',
         className
       )}
       aria-label="Back to top"

@@ -45,16 +45,16 @@ const mockApi = {
 // Breadcrumb component
 function Breadcrumb() {
   return (
-    <nav className="mb-6 flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
-      <Link href="/" className="hover:text-gray-900 dark:hover:text-gray-100">
+    <nav className="mb-6 flex items-center gap-2 text-sm text-charcoal/70" aria-label="Breadcrumb">
+      <Link href="/" className="hover:text-charcoal">
         Home
       </Link>
-      <span className="text-gray-400">/</span>
-      <Link href="/apis" className="hover:text-gray-900 dark:hover:text-gray-100">
+      <span className="text-charcoal/40">/</span>
+      <Link href="/apis" className="hover:text-charcoal">
         APIs
       </Link>
-      <span className="text-gray-400">/</span>
-      <span className="text-gray-900 dark:text-white">{mockApi.name}</span>
+      <span className="text-charcoal/40">/</span>
+      <span className="text-charcoal">{mockApi.name}</span>
     </nav>
   );
 }
@@ -96,14 +96,14 @@ export default async function ApiPage({
       <Breadcrumb />
 
       {/* Hero Section */}
-      <div className="border-b border-gray-200 pb-8 dark:border-gray-700">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+      <div className="border-b border-sand-100 pb-8">
+        <h1 className="text-3xl font-semibold text-charcoal">
           {api.name}
         </h1>
         <div className="mt-4 flex items-center gap-4">
           <Link
             href={`/providers/${api.provider.slug}`}
-            className="text-lg text-gray-600 hover:text-gray-900 dark:text-gray-400"
+            className="text-lg text-charcoal/70 hover:text-charcoal"
           >
             {api.provider.name}
           </Link>
@@ -113,7 +113,7 @@ export default async function ApiPage({
             providerClaimed={false}
           />
         </div>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        <p className="mt-4 text-lg text-charcoal/80">
           {api.description}
         </p>
         <div className="mt-6 flex flex-wrap gap-2">
@@ -131,30 +131,30 @@ export default async function ApiPage({
         <div className="lg:col-span-2">
           {/* Overview */}
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-xl font-semibold text-charcoal">
               Overview
             </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-300">
+            <p className="mt-2 text-charcoal/80">
               {api.description}
             </p>
           </section>
 
           {/* Pricing */}
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-xl font-semibold text-charcoal">
               Pricing
             </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-300">
+            <p className="mt-2 text-charcoal/80">
               {api.pricing_model}
             </p>
           </section>
 
           {/* Authentication */}
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-xl font-semibold text-charcoal">
               Authentication
             </h2>
-            <p className="mt-2 text-gray-600 dark:text-gray-300">
+            <p className="mt-2 text-charcoal/80">
               {api.auth_method}
             </p>
           </section>
@@ -162,10 +162,10 @@ export default async function ApiPage({
           {/* Rate Limits */}
           {api.rate_limit && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+              <h2 className="text-xl font-semibold text-charcoal">
                 Rate Limits
               </h2>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
+              <p className="mt-2 text-charcoal/80">
                 {api.rate_limit}
               </p>
             </section>
@@ -174,10 +174,10 @@ export default async function ApiPage({
           {/* Webhooks */}
           {api.webhook_support && (
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+              <h2 className="text-xl font-semibold text-charcoal">
                 Webhooks
               </h2>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
+              <p className="mt-2 text-charcoal/80">
                 Webhooks are supported for real-time notifications.
               </p>
             </section>
@@ -187,8 +187,8 @@ export default async function ApiPage({
         {/* Right Column - Quick Links */}
         <div className="lg:sticky lg:top-24 lg:self-start">
           {/* Quick Links */}
-          <div className="rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800">
-            <h3 className="font-semibold text-gray-900 dark:text-white">
+          <div className="rounded-xl border border-sand-100 bg-sand-50 p-6">
+            <h3 className="font-semibold text-charcoal">
               Quick Links
             </h3>
             <ul className="mt-4 space-y-3">
@@ -197,7 +197,7 @@ export default async function ApiPage({
                   href={api.documentation_url || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                  className="inline-flex items-center gap-2 text-sm text-baobab-600 hover:text-baobab-700 transition-colors"
                 >
                   <Book className="h-4 w-4" />
                   Documentation
@@ -208,7 +208,7 @@ export default async function ApiPage({
                   href={api.official_website || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                  className="inline-flex items-center gap-2 text-sm text-baobab-600 hover:text-baobab-700 transition-colors"
                 >
                   <Globe className="h-4 w-4" />
                   Official Website
@@ -220,7 +220,7 @@ export default async function ApiPage({
                     href={api.sandbox_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                    className="inline-flex items-center gap-2 text-sm text-baobab-600 hover:text-baobab-700 transition-colors"
                   >
                     <TestTube className="h-4 w-4" />
                     Sandbox
@@ -233,7 +233,7 @@ export default async function ApiPage({
                     href={api.support_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                    className="inline-flex items-center gap-2 text-sm text-baobab-600 hover:text-baobab-700 transition-colors"
                   >
                     <HelpCircle className="h-4 w-4" />
                     Support
@@ -244,38 +244,38 @@ export default async function ApiPage({
           </div>
 
           {/* API Info */}
-          <div className="mt-6 rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800">
-            <h3 className="font-semibold text-gray-900 dark:text-white">
+          <div className="mt-6 rounded-xl border border-sand-100 bg-sand-50 p-6">
+            <h3 className="font-semibold text-charcoal">
               API Info
             </h3>
             <dl className="mt-4 space-y-2 text-sm">
               <div className="flex justify-between">
-                <dt className="text-gray-500 dark:text-gray-400">Status</dt>
+                <dt className="text-charcoal/60">Status</dt>
                 <dd className="flex items-center gap-1 font-medium">
                   {api.status === 'active' ? (
                     <>
-                      <CheckCircle className="h-4 w-4 text-green-500" />
-                      <span className="text-green-700 dark:text-green-400">Active</span>
+                      <CheckCircle className="h-4 w-4 text-success" />
+                      <span className="text-success">Active</span>
                     </>
                   ) : (
                     <>
-                      <AlertCircle className="h-4 w-4 text-amber-500" />
-                      <span className="text-amber-700 dark:text-amber-400">Beta</span>
+                      <AlertCircle className="h-4 w-4 text-warning" />
+                      <span className="text-warning">Beta</span>
                     </>
                   )}
                 </dd>
               </div>
               {api.api_version && (
                 <div className="flex justify-between">
-                  <dt className="text-gray-500 dark:text-gray-400">Version</dt>
-                  <dd className="text-gray-900 dark:text-white">
+                  <dt className="text-charcoal/60">Version</dt>
+                  <dd className="text-charcoal">
                     {api.api_version}
                   </dd>
                 </div>
               )}
               <div className="flex justify-between">
-                <dt className="text-gray-500 dark:text-gray-400">Last Updated</dt>
-                <dd className="text-gray-900 dark:text-white">
+                <dt className="text-charcoal/60">Last Updated</dt>
+                <dd className="text-charcoal">
                   {api.last_updated}
                 </dd>
               </div>

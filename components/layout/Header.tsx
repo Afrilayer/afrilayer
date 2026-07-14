@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search, Menu, X, Moon, Sun } from 'lucide-react';
+import { Search, Menu, X } from 'lucide-react';
 import { SearchInput } from '@/components/ui';
 import { cn } from '@/lib/utils';
 
@@ -16,28 +16,7 @@ const navigation = [
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const [isDark, setIsDark] = React.useState(false);
   const pathname = usePathname();
-
-  // Check system preference and localStorage on mount
-  React.useEffect(() => {
-    const isDarkStored = localStorage.getItem('theme') === 'dark';
-    const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDark(isDarkStored || (!isDarkStored && isSystemDark));
-  }, []);
-
-  // Apply theme changes
-  React.useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDark]);
-
-  const toggleTheme = () => setIsDark(!isDark);
 
   return (
     <>
@@ -46,10 +25,10 @@ export function Header() {
         Skip to main content
       </a>
 
-      <header className="sticky top-0 z-40 border-b border-gray-200 bg-white/80 backdrop-blur dark:border-gray-800 dark:bg-gray-950/80">
+      <header className="sticky top-0 z-40 border-b border-sand-100 bg-sand-50/90 backdrop-blur">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-8">
-            <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
+            <Link href="/" className="text-xl font-semibold text-charcoal">
               Afrilayer
             </Link>
             <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
@@ -58,10 +37,10 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-100',
+                    'text-sm font-medium transition-colors hover:text-charcoal',
                     pathname === item.href
-                      ? 'text-gray-900 dark:text-white'
-                      : 'text-gray-600 dark:text-gray-400'
+                      ? 'text-baobab-600'
+                      : 'text-charcoal/70'
                   )}
                 >
                   {item.name}
@@ -72,7 +51,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             {/* Mobile search toggle */}
             <button
-              className="flex h-9 w-9 items-center justify-center rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-900 md:hidden dark:text-gray-400 dark:hover:bg-gray-800"
+              className="flex h-9 w-9 items-center justify-center rounded-lg text-charcoal/70 hover:bg-sand-100 hover:text-charcoal"
               aria-label="Toggle search"
               onClick={() => {
                 const event = new CustomEvent('open-mobile-search');
@@ -86,25 +65,16 @@ export function Header() {
               <SearchInput placeholder="Search APIs, providers..." aria-label="Search APIs and providers" />
             </div>
 
-            {/* Theme toggle */}
-            <button
-              onClick={toggleTheme}
-              className="flex h-9 w-9 items-center justify-center rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800"
-              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </button>
-
             <Link
               href="/admin/login"
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+              className="text-sm font-medium text-charcoal/70 hover:text-charcoal"
             >
               Admin
             </Link>
 
             {/* Mobile menu button */}
             <button
-              className="flex h-9 w-9 items-center justify-center rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-900 md:hidden dark:text-gray-400 dark:hover:bg-gray-800"
+              className="flex h-9 w-9 items-center justify-center rounded-lg text-charcoal/70 hover:bg-sand-100 hover:text-charcoal md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMobileMenuOpen}
@@ -117,7 +87,7 @@ export function Header() {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <nav
-            className="border-t border-gray-200 bg-white md:hidden dark:border-gray-800 dark:bg-gray-950"
+            className="border-t border-sand-100 bg-sand-50"
             aria-label="Mobile navigation"
           >
             <div className="container mx-auto px-4 py-4">
@@ -127,10 +97,10 @@ export function Header() {
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      'text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-100',
+                      'text-sm font-medium transition-colors hover:text-charcoal',
                       pathname === item.href
-                        ? 'text-gray-900 dark:text-white'
-                        : 'text-gray-600 dark:text-gray-400'
+                        ? 'text-baobab-600'
+                        : 'text-charcoal/70'
                     )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

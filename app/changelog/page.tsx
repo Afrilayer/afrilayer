@@ -33,29 +33,29 @@ const updates = [
 
 export default function ChangelogPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+    <div className="container mx-auto px-4 py-16">
+      <h1 className="text-3xl font-semibold text-charcoal">
         Changelog
       </h1>
-      <p className="mt-2 text-gray-600 dark:text-gray-400">
+      <p className="mt-2 text-charcoal/70 max-w-2xl">
         Latest updates to the Afrilayer platform and API listings.
       </p>
 
-      <div className="mt-8">
+      <div className="mt-10">
         <div className="relative">
-          <div className="absolute left-4 top-0 h-full w-0.5 bg-gray-200 dark:bg-gray-700" />
+          <div className="absolute left-4 top-0 h-full w-0.5 bg-sand-200" />
           <div className="space-y-8">
             {updates.map((update) => (
               <div key={update.id} className="relative pl-12">
-                <div className="absolute left-2 top-2 h-4 w-4 rounded-full bg-primary-600 dark:bg-primary-500" />
+                <div className="absolute left-2 top-2 h-4 w-4 rounded-full bg-baobab-600" />
                 <div>
-                  <time className="text-sm text-gray-500 dark:text-gray-400">
+                  <time className="text-sm text-charcoal/60">
                     {formatDate(update.published_at)}
                   </time>
-                  <h2 className="mt-1 text-xl font-semibold text-gray-900 dark:text-white">
+                  <h2 className="mt-1 text-xl font-semibold text-charcoal">
                     {update.title}
                   </h2>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300">
+                  <p className="mt-2 text-charcoal/80">
                     {update.content}
                   </p>
                 </div>

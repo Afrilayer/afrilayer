@@ -43,7 +43,7 @@ export default function NewApiPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+      <h1 className="text-2xl font-semibold text-charcoal">
         Add New API
       </h1>
 
@@ -54,25 +54,25 @@ export default function NewApiPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-medium text-charcoal/80">
                 API Name
               </label>
               <input
                 {...register('name')}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 dark:border-gray-600 dark:bg-gray-800"
+                className="mt-1 block w-full rounded-lg border border-sand-100 bg-white px-3 py-2"
               />
               {errors.name && (
-                <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                <p className="mt-1 text-sm text-error">{errors.name.message}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-medium text-charcoal/80">
                 Provider
               </label>
               <select
                 {...register('provider_id')}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 dark:border-gray-600 dark:bg-gray-800"
+                className="mt-1 block w-full rounded-lg border border-sand-100 bg-white px-3 py-2"
               >
                 <option value="">Select a provider</option>
                 <option value="1">MTN Group</option>
@@ -82,13 +82,13 @@ export default function NewApiPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-medium text-charcoal/80">
                 Description
               </label>
               <textarea
                 {...register('description')}
                 rows={4}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 dark:border-gray-600 dark:bg-gray-800"
+                className="mt-1 block w-full rounded-lg border border-sand-100 bg-white px-3 py-2"
               />
             </div>
           </CardContent>
@@ -100,35 +100,35 @@ export default function NewApiPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-medium text-charcoal/80">
                 Documentation URL
               </label>
               <input
                 {...register('documentation_url')}
                 type="url"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 dark:border-gray-600 dark:bg-gray-800"
+                className="mt-1 block w-full rounded-lg border border-sand-100 bg-white px-3 py-2"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-medium text-charcoal/80">
                 Official Website
               </label>
               <input
                 {...register('official_website')}
                 type="url"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 dark:border-gray-600 dark:bg-gray-800"
+                className="mt-1 block w-full rounded-lg border border-sand-100 bg-white px-3 py-2"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-medium text-charcoal/80">
                 Sandbox URL
               </label>
               <input
                 {...register('sandbox_url')}
                 type="url"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 dark:border-gray-600 dark:bg-gray-800"
+                className="mt-1 block w-full rounded-lg border border-sand-100 bg-white px-3 py-2"
               />
             </div>
           </CardContent>

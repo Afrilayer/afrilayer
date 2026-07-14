@@ -33,12 +33,12 @@ export default function AdminApisPage() {
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+        <h1 className="text-2xl font-semibold text-charcoal">
           API Listings
         </h1>
         <Link
           href="/admin/apis/new"
-          className="inline-flex h-9 items-center justify-center rounded-md bg-primary-600 px-4 text-sm font-medium text-white hover:bg-primary-700"
+          className="inline-flex h-10 items-center justify-center rounded-lg bg-baobab-600 px-4 text-sm font-medium text-white hover:bg-baobab-700 shadow-subtle transition-all"
         >
           Add API
         </Link>
@@ -47,7 +47,7 @@ export default function AdminApisPage() {
       <div className="mt-6 overflow-x-auto">
         <table className="w-full border-separate border-spacing-y-2">
           <thead>
-            <tr className="text-left text-sm font-medium text-gray-500">
+            <tr className="text-left text-sm font-medium text-charcoal/60">
               <th className="pb-2">Name</th>
               <th className="pb-2">Provider</th>
               <th className="pb-2">Status</th>
@@ -59,12 +59,12 @@ export default function AdminApisPage() {
             {apis.map((api) => (
               <tr
                 key={api.id}
-                className="rounded-lg bg-white dark:bg-gray-800"
+                className="rounded-lg bg-white"
               >
-                <td className="px-4 py-3 font-medium text-gray-900 dark:text-white">
+                <td className="px-4 py-3 font-medium text-charcoal">
                   {api.name}
                 </td>
-                <td className="px-4 py-3 text-gray-600 dark:text-gray-300">
+                <td className="px-4 py-3 text-charcoal/70">
                   {api.provider}
                 </td>
                 <td className="px-4 py-3">
@@ -80,13 +80,13 @@ export default function AdminApisPage() {
                     {api.listing_status}
                   </Badge>
                 </td>
-                <td className="px-4 py-3 text-gray-600 dark:text-gray-300">
+                <td className="px-4 py-3 text-charcoal/70">
                   {api.last_updated}
                 </td>
                 <td className="px-4 py-3">
                   <Link
                     href={`/admin/apis/${api.id}/edit`}
-                    className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                    className="text-sm text-baobab-600 hover:text-baobab-700"
                   >
                     Edit
                   </Link>
