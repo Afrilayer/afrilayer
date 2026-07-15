@@ -1,8 +1,8 @@
-{
+﻿{
   "slug": "dojah",
   "name": "Dojah",
   "tagline": "Identity verification, BVN/NIN lookups and document checks for onboarding flows.",
-  "logoUrl": "/logos/dojah.svg",
+  "logoUrl": "/providers/dojah/logo.svg",
   "description": "Identity verification, BVN/NIN lookups and document checks for onboarding flows. Secure KYC and identity verification APIs for Africa.",
   "website": "https://dojah.io",
   "documentation": "https://docs.dojah.io",

@@ -1,8 +1,8 @@
-{
+﻿{
   "slug": "paystack",
   "name": "Paystack",
   "tagline": "Payments infrastructure for businesses in Africa.",
-  "logoUrl": "/logos/paystack.svg",
+  "logoUrl": "/providers/paystack/logo.svg",
   "description": "Accept card, bank transfer and mobile money payments from customers across Africa with Paystack's simple, secure payments infrastructure.",
   "website": "https://paystack.com",
   "documentation": "https://paystack.com/docs",

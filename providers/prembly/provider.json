@@ -1,8 +1,8 @@
-{
+﻿{
   "slug": "prembly",
   "name": "Prembly",
   "tagline": "Document verification, facial matching and AML checks for financial services.",
-  "logoUrl": "/logos/prembly.svg",
+  "logoUrl": "/providers/prembly/logo.svg",
   "description": "Document verification, facial matching and AML checks for financial services. Identity verification platform tailored for African markets.",
   "website": "https://prembly.com",
   "documentation": "https://docs.prembly.com",

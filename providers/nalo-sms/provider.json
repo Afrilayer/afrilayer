@@ -1,8 +1,8 @@
-{
+﻿{
   "slug": "nalo-sms",
   "name": "Nalo Solutions",
   "tagline": "Bulk SMS and messaging API with delivery reports across West Africa.",
-  "logoUrl": "/logos/nalo.svg",
+  "logoUrl": "/providers/nalo-sms/logo.svg",
   "description": "Bulk SMS and messaging API with delivery reports across West Africa. Send SMS via API to Ghanaian and Nigerian phone numbers.",
   "website": "https://nalosolutions.com",
   "documentation": "https://nalosolutions.com/sms-api",

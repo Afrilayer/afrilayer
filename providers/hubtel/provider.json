@@ -1,8 +1,8 @@
-{
+﻿{
   "slug": "hubtel",
   "name": "Hubtel",
   "tagline": "Ghana-focused mobile money and SMS API for collections, payouts and messaging.",
-  "logoUrl": "/logos/hubtel.svg",
+  "logoUrl": "/providers/hubtel/logo.svg",
   "description": "Ghana-focused mobile money and SMS API for collections, payouts and messaging. Send and receive mobile money, send SMS to any Ghanaian number.",
   "website": "https://hubtel.com",
   "documentation": "https://dev.hubtel.com",

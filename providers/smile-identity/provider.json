@@ -1,9 +1,9 @@
-{
+﻿{
   "slug": "smile-identity",
   "name": "Smile Identity",
-  "tagline": "Biometric KYC — selfie liveness, document verification and AML screening.",
-  "logoUrl": "/logos/smile-identity.svg",
-  "description": "Biometric KYC — selfie liveness, document verification and AML screening. Identity verification platform for African markets.",
+  "tagline": "Biometric KYC â€” selfie liveness, document verification and AML screening.",
+  "logoUrl": "/providers/smile-identity/logo.svg",
+  "description": "Biometric KYC â€” selfie liveness, document verification and AML screening. Identity verification platform for African markets.",
   "website": "https://smileidentity.com",
   "documentation": "https://docs.smileidentity.com",
   "developerPortal": "https://docs.smileidentity.com",

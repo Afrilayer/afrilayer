@@ -1,8 +1,8 @@
-{
+﻿{
   "slug": "flutterwave",
   "name": "Flutterwave",
   "tagline": "Unified payments API covering cards, mobile money, bank transfers and payouts across Africa.",
-  "logoUrl": "/logos/flutterwave.svg",
+  "logoUrl": "/providers/flutterwave/logo.svg",
   "description": "Flutterwave provides a unified payments API covering cards, mobile money, bank transfers and payouts across Africa. Accept payments, send payouts, and manage transactions from one integration.",
   "website": "https://flutterwave.com",
   "documentation": "https://developers.flutterwave.com",
