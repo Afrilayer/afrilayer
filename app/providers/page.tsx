@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getAllProviders } from "@/lib/providers/loader";
 import { Badge, ConfidenceIndicator } from "@/components/ui";
 import Link from "next/link";
@@ -32,9 +33,22 @@ export default async function ProvidersPage() {
             className="rounded-lg border border-border bg-surface p-6 transition-all hover-lift block focus:outline-none focus:ring-2 focus:ring-copper focus:ring-offset-2"
           >
             <div className="flex items-start justify-between">
-              <h2 className="text-xl font-semibold text-text">
-                {provider.name}
-              </h2>
+              <div className="flex items-center gap-3">
+                {provider.logoUrl && (
+                  <div className="w-10 h-10 rounded-lg overflow-hidden bg-surface border border-border">
+                    <Image
+                      src={provider.logoUrl}
+                      alt={`${provider.name} logo`}
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                )}
+                <h2 className="text-xl font-semibold text-text">
+                  {provider.name}
+                </h2>
+              </div>
               <Badge variant={provider.verified ? "success" : "default"} className="text-xs">
                 {provider.slug}
               </Badge>
@@ -42,6 +56,18 @@ export default async function ProvidersPage() {
             <p className="mt-2 text-sm text-muted">
               {provider.tagline || provider.description}
             </p>
+            
+            {/* Key People */}
+            {provider.keyPeople && provider.keyPeople.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {provider.keyPeople.slice(0, 2).map((person) => (
+                  <span key={person.name} className="text-[10px] text-muted-dim font-mono">
+                    {person.name} &middot; {person.role}
+                  </span>
+                ))}
+              </div>
+            )}
+            
             <div className="mt-4 flex items-center gap-3">
               <ConfidenceIndicator
                 lastVerified={provider.lastVerified}

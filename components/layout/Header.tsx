@@ -63,15 +63,15 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Search pill */}
-            <div className="flex items-center gap-2 pl-3 pr-4 py-2 rounded-full w-64 max-w-sm bg-surface">
-              <Search size={14} className="text-muted" />
-              <input
-                placeholder="Search APIs..."
-                className="bg-transparent outline-none text-xs w-full font-mono text-text placeholder:text-muted"
-                aria-label="Search APIs and providers"
-              />
-            </div>
+            {/* Search button - links to dedicated search page */}
+            <Link
+              href="/search"
+              className="flex items-center gap-2 pl-3 pr-4 py-2 rounded-full bg-surface border border-border text-xs font-mono text-muted hover:text-text transition-colors"
+              aria-label="Search APIs and providers"
+            >
+              <Search size={14} className="text-muted-dim" />
+              <span>Search</span>
+            </Link>
 
             <Link
               href="/contribute"

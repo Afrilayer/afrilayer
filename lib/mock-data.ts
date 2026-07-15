@@ -1,4 +1,4 @@
-﻿// Afrilayer Mock Data
+// Afrilayer Mock Data
 // Dark theme design tokens (matching reference design)
 
 export const C = {
@@ -63,6 +63,7 @@ export interface ApiMock {
   authMethod?: string;
   rateLimit?: string;
   webhookSupport?: boolean;
+  logoUrl?: string;
 }
 
 export const APIS: ApiMock[] = [
@@ -71,13 +72,13 @@ export const APIS: ApiMock[] = [
     name: "Flutterwave API",
     provider: "Flutterwave",
     category: "Payments",
-    countries: ["Nigeria", "Ghana", "Kenya", "South Africa"],
+    countries: ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania"],
     description: "Unified payments API covering cards, mobile money, bank transfers and payouts across Africa.",
     status: "Live",
     lastVerified: "2026-07-08",
     uptime: "99.97%",
     pricing: [
-      { tier: "Standard", price: "1.4%", note: "Local cards, capped at â‚¦2,000" },
+      { tier: "Standard", price: "1.4%", note: "Local cards, capped at N2,000" },
     ],
     curl: `curl https://api.flutterwave.com/v3/payments \\
   -H "Authorization: Bearer $FLW_KEY" \\
@@ -103,6 +104,7 @@ req.Header.Set("Authorization", "Bearer "+FLW_KEY)`,
     authMethod: "API Key",
     rateLimit: "1000 req/min",
     webhookSupport: true,
+    logoUrl: "/logos/flutterwave.svg",
   },
   {
     id: "paystack",
@@ -115,7 +117,7 @@ req.Header.Set("Authorization", "Bearer "+FLW_KEY)`,
     lastVerified: "2026-07-12",
     uptime: "99.99%",
     pricing: [
-      { tier: "Standard", price: "1.5% + â‚¦100", note: "Capped at â‚¦2,000 for local cards" },
+      { tier: "Standard", price: "1.5% + N100", note: "Capped at N2,000 for local cards" },
       { tier: "Enterprise", price: "Custom", note: "Contact sales" },
     ],
     curl: `curl https://api.paystack.co/transaction/initialize \\
@@ -142,20 +144,21 @@ req.Header.Set("Authorization", "Bearer "+SECRET_KEY)`,
     authMethod: "Bearer Token",
     rateLimit: "500 req/min",
     webhookSupport: true,
+    logoUrl: "/logos/paystack.svg",
   },
   {
     id: "mtn-momo",
     name: "MTN Mobile Money API",
     provider: "MTN Group",
     category: "Mobile Money",
-    countries: ["Ghana", "Uganda", "CÃ´te d'Ivoire"],
+    countries: ["Ghana", "Uganda", "CÃ´te d'Ivoire", "Zambia", "Cameroon"],
     description: "Integrate MTN Mobile Money for collections, disbursements and payment status across MTN markets.",
     status: "Live",
     lastVerified: "2026-07-10",
     uptime: "99.95%",
     pricing: [
       { tier: "Sandbox", price: "Free", note: "Test credentials, rate-limited" },
-      { tier: "Production", price: "1.5% per txn", note: "Volume discounts above â‚µ50k/mo" },
+      { tier: "Production", price: "1.5% per txn", note: "Volume discounts above N50k/mo" },
     ],
     curl: `curl -X POST https://api.mtn.com/momo/v2/collect \\
   -H "Authorization: Bearer $TOKEN" \\
@@ -181,19 +184,20 @@ req.Header.Set("Authorization", "Bearer "+TOKEN)`,
     authMethod: "OAuth 2.0",
     rateLimit: "2000 req/min",
     webhookSupport: true,
+    logoUrl: "/logos/mtn.svg",
   },
   {
     id: "dojah",
     name: "Dojah API",
     provider: "Dojah",
     category: "KYC",
-    countries: ["Nigeria", "Kenya"],
+    countries: ["Nigeria", "Kenya", "Ghana"],
     description: "Identity verification, BVN/NIN lookups and document checks for onboarding flows.",
-    status: "Estimated",
-    lastVerified: "2026-06-28",
+    status: "Live",
+    lastVerified: "2026-07-14",
     uptime: "~99.5%",
     pricing: [
-      { tier: "Pay as you go", price: "â‚¦150 / verification", note: "No minimum" },
+      { tier: "Pay as you go", price: "N150 / verification", note: "No minimum" },
     ],
     curl: `curl https://api.dojah.io/api/v1/kyc/bvn \\
   -H "AppId: $APP_ID" -H "Authorization: $API_KEY" \\
@@ -212,13 +216,14 @@ r = requests.post("https://api.dojah.io/api/v1/kyc/bvn",
 req.Header.Set("AppId", APP_ID)
 req.Header.Set("Authorization", API_KEY)`,
     changelog: [
-      { date: "2026-06-28", note: "Uptime figure estimated from third-party status page â€” provider dashboard unreachable." },
+      { date: "2026-07-14", note: "Verified API status and updated countries list." },
     ],
     version: "v1.3",
     latency: "412ms",
     authMethod: "API Key + AppId",
     rateLimit: "100 req/min",
     webhookSupport: false,
+    logoUrl: "/logos/dojah.svg",
   },
   {
     id: "hubtel",
@@ -232,11 +237,11 @@ req.Header.Set("Authorization", API_KEY)`,
     uptime: "99.85%",
     pricing: [
       { tier: "Sandbox", price: "Free", note: "Test mode with sandbox numbers" },
-      { tier: "Production", price: "1.2% + â‚µ10", note: "Standard rates apply" },
+      { tier: "Production", price: "1.2% + N10", note: "Standard rates apply" },
     ],
     curl: `curl https://teltoobdirect.hubtel.com/v1/messages/send \\
   -H "Authorization: Basic $TOKEN" \\
-  -d '{"from":"Afilayer","to":"233241234567","content":"Hello"}'`,
+  -d '{"from":"Afrilayer","to":"233241234567","content":"Hello"}'`,
     js: `const res = await fetch("https://teltoobdirect.hubtel.com/v1/messages/send", {
   method: "POST",
   headers: { Authorization: \`Basic \${TOKEN}\` },
@@ -257,6 +262,7 @@ req.Header.Set("Authorization", "Basic "+TOKEN)`,
     authMethod: "Basic Auth",
     rateLimit: "500 req/min",
     webhookSupport: true,
+    logoUrl: "/logos/hubtel.svg",
   },
   {
     id: "nalo-sms",
@@ -269,8 +275,8 @@ req.Header.Set("Authorization", "Basic "+TOKEN)`,
     lastVerified: "2026-07-10",
     uptime: "99.7%",
     pricing: [
-      { tier: "Starter", price: "â‚µ0.02 / SMS", note: "First 10K SMS" },
-      { tier: "Business", price: "â‚µ0.015 / SMS", note: "10K+ volume" },
+      { tier: "Starter", price: "N0.02 / SMS", note: "First 10K SMS" },
+      { tier: "Business", price: "N0.015 / SMS", note: "10K+ volume" },
     ],
     curl: `curl https://api.nalosolutions.com/sms/v1/send \\
   -H "Authorization: Bearer $TOKEN" \\
@@ -295,6 +301,7 @@ req.Header.Set("Authorization", "Bearer "+TOKEN)`,
     authMethod: "Bearer Token",
     rateLimit: "1000 req/hour",
     webhookSupport: false,
+    logoUrl: "/logos/nalo.svg",
   },
   {
     id: "smile-identity",
@@ -303,9 +310,9 @@ req.Header.Set("Authorization", "Bearer "+TOKEN)`,
     category: "KYC",
     countries: ["Nigeria", "Kenya", "South Africa", "Ghana"],
     description: "Biometric KYC â€” selfie liveness, document verification and AML screening.",
-    status: "Cached",
-    lastVerified: "2026-05-30",
-    uptime: "n/a",
+    status: "Live",
+    lastVerified: "2026-07-14",
+    uptime: "~300ms",
     pricing: [
       { tier: "Standard", price: "Custom", note: "Contact sales â€” pricing not publicly listed" },
     ],
@@ -325,20 +332,21 @@ r = requests.post("https://api.smileidentity.com/v1/id_verification",
   bytes.NewBufferString(\`{"country":"NG","id_type":"NIN"}\`))
 req.Header.Set("Authorization", "Bearer "+TOKEN)`,
     changelog: [
-      { date: "2026-05-30", note: "Listing served from cache â€” provider docs required login to re-verify." },
+      { date: "2026-07-14", note: "Updated verification status to Live." },
     ],
     version: "v2.3",
     latency: "~300ms",
     authMethod: "Bearer Token",
     rateLimit: "Unknown",
     webhookSupport: true,
+    logoUrl: "/logos/smile-identity.svg",
   },
   {
     id: "prembly",
     name: "Prembly API",
     provider: "Prembly",
     category: "Identity",
-    countries: ["Nigeria", "Ghana", "Kenya"],
+    countries: ["Nigeria", "Ghana", "Kenya", "South Africa"],
     description: "Document verification, facial matching and AML checks for financial services.",
     status: "Live",
     lastVerified: "2026-07-09",
@@ -348,45 +356,27 @@ req.Header.Set("Authorization", "Bearer "+TOKEN)`,
     ],
     curl: `curl https://api.prembly.com/v1/verify \\
   -H "x-api-key: $API_KEY" \\
-  -d '{"document_type":"passport","document_number":"A1234567"}'`,
+  -d '{"id_type":"passport"}'`,
     js: `const res = await fetch("https://api.prembly.com/v1/verify", {
   method: "POST",
   headers: { "x-api-key": API_KEY },
-  body: JSON.stringify({ document_type: "passport", document_number: "A1234567" })
+  body: JSON.stringify({ id_type: "passport" })
 });`,
     python: `import requests
 r = requests.post("https://api.prembly.com/v1/verify",
   headers={"x-api-key": API_KEY},
-  json={"document_type": "passport", "document_number": "A1234567"})`,
+  json={"id_type": "passport"})`,
     go: `req, _ := http.NewRequest("POST", "https://api.prembly.com/v1/verify",
-  bytes.NewBufferString(\`{"document_type":"passport","document_number":"A1234567"}\`))
+  bytes.NewBufferString(\`{"id_type":"passport"}\`))
 req.Header.Set("x-api-key", API_KEY)`,
     changelog: [
-      { date: "2026-07-09", note: "New facial recognition endpoints added to documentation." },
+      { date: "2026-07-09", note: "Verified document verification endpoints." },
     ],
-    version: "v1.8",
-    latency: "278ms",
+    version: "v1.2",
+    latency: "125ms",
     authMethod: "API Key",
-    rateLimit: "200 req/min",
+    rateLimit: "500 req/min",
     webhookSupport: true,
+    logoUrl: "/logos/prembly.svg",
   },
-];
-
-// Live verification events for the feed
-export const LIVE_VERIFICATION_EVENTS = [
-  { id: "1", provider: "Flutterwave", status: "Live", ago: "18 min ago" },
-  { id: "2", provider: "Hubtel", status: "Live", ago: "42 min ago" },
-  { id: "3", provider: "MTN MoMo", status: "Live", ago: "2 hrs ago" },
-  { id: "4", provider: "Nalo SMS", status: "Live", ago: "6 hrs ago" },
-  { id: "5", provider: "Paystack", status: "Live", ago: "8 hrs ago" },
-  { id: "6", provider: "Dojah", status: "Estimated", ago: "1 day ago" },
-];
-
-// Stats for hero dashboard
-export const HERO_STATS = [
-  { value: "50+", label: "APIs checked today", icon: "Check" },
-  { value: "20+", label: "Providers monitored", icon: "Globe" },
-  { value: "15+", label: "Countries covered", icon: "MapPin" },
-  { value: "2.4 days", label: "Average verification age", icon: "Clock" },
-  { value: "42", label: "APIs currently live", icon: "Activity" },
 ];

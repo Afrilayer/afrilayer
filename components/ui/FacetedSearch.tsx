@@ -12,6 +12,8 @@ interface FacetedSearchProps {
   onCountryChange: (country: string) => void;
   categories?: string[];
   countries?: string[];
+  categoryCounts?: Record<string, number>;
+  countryCounts?: Record<string, number>;
 }
 
 export const FacetedSearch: React.FC<FacetedSearchProps> = ({
@@ -23,6 +25,8 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
   onCountryChange,
   categories = ["All"],
   countries = ["All"],
+  categoryCounts = {},
+  countryCounts = {},
 }) => {
   const selectCls = (active: boolean) =>
     `text-xs font-mono px-3 py-1.5 rounded-full transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-copper ${active ? "font-semibold" : ""}`;
@@ -49,21 +53,29 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
           Category
         </div>
         <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
-          {categories.map((c) => (
-            <button
-              key={c}
-              onClick={() => onCategoryChange(c)}
-              className={selectCls(category === c)}
-              style={{
-                background: category === c ? "var(--color-copper)" : "var(--color-surface)",
-                color: category === c ? "var(--color-bg)" : "var(--color-muted)",
-                border: `1px solid ${category === c ? "var(--color-copper)" : "var(--color-border)"}`,
-              }}
-              aria-pressed={category === c}
-            >
-              {c}
-            </button>
-          ))}
+          {categories.map((c) => {
+            const count = categoryCounts[c] || 0;
+            return (
+              <button
+                key={c}
+                onClick={() => onCategoryChange(c)}
+                className={selectCls(category === c)}
+                style={{
+                  background: category === c ? "var(--color-copper)" : "var(--color-surface)",
+                  color: category === c ? "var(--color-bg)" : "var(--color-muted)",
+                  border: `1px solid ${category === c ? "var(--color-copper)" : "var(--color-border)"}`,
+                }}
+                aria-pressed={category === c}
+              >
+                <span className="flex items-center gap-1">
+                  {c}
+                  <span className={`text-[8px] px-1 ${category === c ? "text-bg/70" : "text-muted-dim"}`}>
+                    ({count})
+                  </span>
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -73,21 +85,29 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
           Country
         </div>
         <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
-          {countries.map((c) => (
-            <button
-              key={c}
-              onClick={() => onCountryChange(c)}
-              className={selectCls(country === c)}
-              style={{
-                background: country === c ? "var(--color-copper)" : "var(--color-surface)",
-                color: country === c ? "var(--color-bg)" : "var(--color-muted)",
-                border: `1px solid ${country === c ? "var(--color-copper)" : "var(--color-border)"}`,
-              }}
-              aria-pressed={country === c}
-            >
-              {c}
-            </button>
-          ))}
+          {countries.map((c) => {
+            const count = countryCounts[c] || 0;
+            return (
+              <button
+                key={c}
+                onClick={() => onCountryChange(c)}
+                className={selectCls(country === c)}
+                style={{
+                  background: country === c ? "var(--color-copper)" : "var(--color-surface)",
+                  color: country === c ? "var(--color-bg)" : "var(--color-muted)",
+                  border: `1px solid ${country === c ? "var(--color-copper)" : "var(--color-border)"}`,
+                }}
+                aria-pressed={country === c}
+              >
+                <span className="flex items-center gap-1">
+                  {c}
+                  <span className={`text-[8px] px-1 ${country === c ? "text-bg/70" : "text-muted-dim"}`}>
+                    ({count})
+                  </span>
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

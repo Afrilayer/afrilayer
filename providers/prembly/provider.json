@@ -2,6 +2,7 @@
   "slug": "prembly",
   "name": "Prembly",
   "tagline": "Document verification, facial matching and AML checks for financial services.",
+  "logoUrl": "/logos/prembly.svg",
   "description": "Document verification, facial matching and AML checks for financial services. Identity verification platform tailored for African markets.",
   "website": "https://prembly.com",
   "documentation": "https://docs.prembly.com",
@@ -9,7 +10,7 @@
   "supportEmail": "support@prembly.com",
   "headquarters": "Nigeria",
   "categories": ["Identity"],
-  "countries": ["Nigeria", "Ghana", "Kenya"],
+  "countries": ["Nigeria", "Ghana", "Kenya", "South Africa"],
   "features": ["Document verification", "Facial matching", "AML checks", "Identity verification"],
   "pricingModel": "pay-as-you-go",
   "authentication": "API Key",
@@ -20,5 +21,8 @@
   "status": "Live",
   "verified": true,
   "lastVerified": "2026-07-09",
-  "lastUpdated": "2026-07-09"
+  "lastUpdated": "2026-07-09",
+  "keyPeople": [
+    { "name": "Samuel Amanor", "role": "Founder & CEO" }
+  ]
 }

@@ -3,7 +3,7 @@ export const revalidate = 3600;
 
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import { getApisByCountry } from '@/lib/stats';
+import { getAllApis } from '@/lib/data';
 import { ApiCard } from '@/components/ui';
 
 const COUNTRY_NAMES: Record<string, string> = {
@@ -15,7 +15,7 @@ const COUNTRY_NAMES: Record<string, string> = {
   'tz': 'Tanzania',
   'eg': 'Egypt',
   'ma': 'Morocco',
-  'ci': "Côte d'Ivoire",
+  'ci': "CÃ´te d'Ivoire",
   'sn': 'Senegal',
   'rw': 'Rwanda',
   'tn': 'Tunisia',
@@ -34,7 +34,8 @@ export async function generateStaticParams() {
 export default async function CountryPage({ params }: { params: Promise<{ code: string }> }) {
   const { code } = await params;
   const countryName = COUNTRY_NAMES[code.toLowerCase()];
-  const apis = await getApisByCountry(code);
+  const allApis = await getAllApis();
+  const apis = allApis.filter((api) => api.countries.includes(countryName));
 
   if (!countryName || apis.length === 0) {
     return (
@@ -49,8 +50,7 @@ export default async function CountryPage({ params }: { params: Promise<{ code: 
       {/* Back Link */}
       <Link
         href="/countries"
-        className="inline-flex items-center gap-1.5 text-xs font-mono mb-8"
-        style={{ color: "#5D6058" }}
+        className="inline-flex items-center gap-1.5 text-xs font-mono mb-8 text-muted-dim hover:text-text transition-colors"
       >
         <ArrowLeft size={13} /> back to countries
       </Link>
@@ -72,7 +72,7 @@ export default async function CountryPage({ params }: { params: Promise<{ code: 
             href={`/apis/${api.id}`}
             className="block"
           >
-            <ApiCard api={api} />
+            <ApiCard api={api} showCountryLinks={false} showCategoryLink={true} />
           </Link>
         ))}
       </div>

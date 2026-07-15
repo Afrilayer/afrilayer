@@ -1,18 +1,19 @@
 import Link from 'next/link';
+import { getAllApis } from '@/lib/data';
 
 const countries = [
-  { name: 'Nigeria', code: 'NG', flag: '🇳🇬', apiCount: 45 },
-  { name: 'South Africa', code: 'ZA', flag: '🇿🇦', apiCount: 38 },
-  { name: 'Ghana', code: 'GH', flag: '🇬🇭', apiCount: 28 },
-  { name: 'Kenya', code: 'KE', flag: '🇰🇪', apiCount: 24 },
-  { name: 'Uganda', code: 'UG', flag: '🇺🇬', apiCount: 19 },
-  { name: 'Tanzania', code: 'TZ', flag: '🇹🇿', apiCount: 15 },
-  { name: 'Egypt', code: 'EG', flag: '🇪🇬', apiCount: 18 },
-  { name: 'Morocco', code: 'MA', flag: '🇲🇦', apiCount: 12 },
-  { name: 'Côte d\'Ivoire', code: 'CI', flag: '🇨🇮', apiCount: 10 },
-  { name: 'Senegal', code: 'SN', flag: '🇸🇳', apiCount: 8 },
-  { name: 'Rwanda', code: 'RW', flag: '🇷🇼', apiCount: 7 },
-  { name: 'Tunisia', code: 'TN', flag: '🇹🇳', apiCount: 6 },
+  { name: 'Nigeria', code: 'NG', flag: '🇳🇬' },
+  { name: 'South Africa', code: 'ZA', flag: '🇿🇦' },
+  { name: 'Ghana', code: 'GH', flag: '🇬🇭' },
+  { name: 'Kenya', code: 'KE', flag: '🇰🇪' },
+  { name: 'Uganda', code: 'UG', flag: '🇺🇬' },
+  { name: 'Tanzania', code: 'TZ', flag: '🇹🇿' },
+  { name: 'Egypt', code: 'EG', flag: '🇪🇬' },
+  { name: 'Morocco', code: 'MA', flag: '🇲🇦' },
+  { name: 'CÃ´te d\'Ivoire', code: 'CI', flag: '🇨🇮' },
+  { name: 'Senegal', code: 'SN', flag: '🇸🇳' },
+  { name: 'Rwanda', code: 'RW', flag: '🇷🇼' },
+  { name: 'Tunisia', code: 'TN', flag: '🇹🇳' },
 ];
 
 const countryCodeMap: Record<string, string> = {
@@ -24,47 +25,56 @@ const countryCodeMap: Record<string, string> = {
   'Tanzania': 'tz',
   'Egypt': 'eg',
   'Morocco': 'ma',
-  'Côte d\'Ivoire': 'ci',
+  'CÃ´te d\'Ivoire': 'ci',
   'Senegal': 'sn',
   'Rwanda': 'rw',
   'Tunisia': 'tn',
 };
 
-export default function CountriesPage() {
+// Country to region mapping
+const countryToRegion: Record<string, string> = {
+  'Nigeria': 'west',
+  'Ghana': 'west',
+  'Senegal': 'west',
+  "CÃ´te d'Ivoire": 'west',
+  'Kenya': 'east',
+  'Uganda': 'east',
+  'Tanzania': 'east',
+  'Rwanda': 'east',
+  'Egypt': 'north',
+  'Morocco': 'north',
+  'Tunisia': 'north',
+  'South Africa': 'south',
+};
+
+export default async function CountriesPage() {
+  const apis = await getAllApis();
+  
+  // Calculate real API counts per country
+  const countryCounts = countries.map((country) => ({
+    ...country,
+    apiCount: apis.filter((api) => api.countries.includes(country.name)).length,
+  }));
+
+  // Group by region
   const regions = {
-    west: [
-      { name: 'Nigeria', code: 'NG' },
-      { name: 'Ghana', code: 'GH' },
-      { name: 'Senegal', code: 'SN' },
-      { name: 'Côte d\'Ivoire', code: 'CI' },
-    ],
-    east: [
-      { name: 'Kenya', code: 'KE' },
-      { name: 'Uganda', code: 'UG' },
-      { name: 'Tanzania', code: 'TZ' },
-      { name: 'Rwanda', code: 'RW' },
-    ],
-    north: [
-      { name: 'Egypt', code: 'EG' },
-      { name: 'Morocco', code: 'MA' },
-      { name: 'Tunisia', code: 'TN' },
-    ],
-    south: [
-      { name: 'South Africa', code: 'ZA' },
-    ],
+    west: countryCounts.filter((c) => countryToRegion[c.name] === 'west'),
+    east: countryCounts.filter((c) => countryToRegion[c.name] === 'east'),
+    north: countryCounts.filter((c) => countryToRegion[c.name] === 'north'),
+    south: countryCounts.filter((c) => countryToRegion[c.name] === 'south'),
   };
 
   return (
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-16">
-      <h1 className="text-3xl font-semibold text-text">
+      <h1 className="text-3xl font-bold tracking-tight text-text">
         API coverage by country
       </h1>
       <p className="mt-2 text-muted max-w-2xl">
-        Discover verified APIs operating in 15+ African markets.
+        Discover verified APIs operating in African markets.
       </p>
 
       <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 stagger-children">
-        {countries.map((country) => (
+        {countryCounts.map((country) => (
           <Link
             key={country.code}
             href={`/countries/${country.code.toLowerCase()}`}
@@ -86,7 +96,7 @@ export default function CountriesPage() {
         <h2 className="text-xl font-semibold text-text">
           By Region
         </h2>
-        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <h3 className="text-lg font-medium text-muted">
               West Africa
@@ -98,7 +108,7 @@ export default function CountriesPage() {
                     href={`/countries/${country.code.toLowerCase()}`}
                     className="text-sm text-copper hover:text-amber transition-colors"
                   >
-                    {country.name}
+                    {country.name} ({country.apiCount})
                   </Link>
                 </li>
               ))}
@@ -115,7 +125,7 @@ export default function CountriesPage() {
                     href={`/countries/${country.code.toLowerCase()}`}
                     className="text-sm text-copper hover:text-amber transition-colors"
                   >
-                    {country.name}
+                    {country.name} ({country.apiCount})
                   </Link>
                 </li>
               ))}
@@ -132,7 +142,7 @@ export default function CountriesPage() {
                     href={`/countries/${country.code.toLowerCase()}`}
                     className="text-sm text-copper hover:text-amber transition-colors"
                   >
-                    {country.name}
+                    {country.name} ({country.apiCount})
                   </Link>
                 </li>
               ))}
@@ -149,7 +159,7 @@ export default function CountriesPage() {
                     href={`/countries/${country.code.toLowerCase()}`}
                     className="text-sm text-copper hover:text-amber transition-colors"
                   >
-                    {country.name}
+                    {country.name} ({country.apiCount})
                   </Link>
                 </li>
               ))}

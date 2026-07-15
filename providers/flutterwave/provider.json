@@ -2,6 +2,7 @@
   "slug": "flutterwave",
   "name": "Flutterwave",
   "tagline": "Unified payments API covering cards, mobile money, bank transfers and payouts across Africa.",
+  "logoUrl": "/logos/flutterwave.svg",
   "description": "Flutterwave provides a unified payments API covering cards, mobile money, bank transfers and payouts across Africa. Accept payments, send payouts, and manage transactions from one integration.",
   "website": "https://flutterwave.com",
   "documentation": "https://developers.flutterwave.com",
@@ -9,16 +10,20 @@
   "supportEmail": "support@flutterwave.com",
   "headquarters": "Nigeria",
   "categories": ["Payments"],
-  "countries": ["Nigeria", "Ghana", "Kenya", "South Africa"],
+  "countries": ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania"],
   "features": ["Card payments", "Mobile money", "Bank transfers", "Payouts", "Multi-currency support"],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
   "sandboxAvailable": true,
   "productionReady": true,
-  "sdkLanguages": ["JavaScript", "Python", "Go", "PHP", "Java"],
+  "sdkLanguages": ["JavaScript", "Python", "Go", "PHP", "Java", "Ruby"],
   "status": "Live",
   "verified": true,
   "lastVerified": "2026-07-08",
-  "lastUpdated": "2026-07-08"
+  "lastUpdated": "2026-07-08",
+  "keyPeople": [
+    { "name": "Olugbenga Agboola", "role": "Co-founder & CEO" },
+    { "name": "Ike Eze", "role": "Co-founder" }
+  ]
 }

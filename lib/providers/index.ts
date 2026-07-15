@@ -6,4 +6,4 @@ export {
   loadProviderApiData,
   loadProviderReadme 
 } from './loader';
-export type { ProviderJson, ProviderApiData } from './loader';
+export type { ProviderJson, ProviderApiData, KeyPerson } from './loader';

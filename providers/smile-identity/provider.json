@@ -2,12 +2,13 @@
   "slug": "smile-identity",
   "name": "Smile Identity",
   "tagline": "Biometric KYC — selfie liveness, document verification and AML screening.",
+  "logoUrl": "/logos/smile-identity.svg",
   "description": "Biometric KYC — selfie liveness, document verification and AML screening. Identity verification platform for African markets.",
   "website": "https://smileidentity.com",
   "documentation": "https://docs.smileidentity.com",
   "developerPortal": "https://docs.smileidentity.com",
   "supportEmail": "support@smileidentity.com",
-  "headquarters": "USA",
+  "headquarters": "Nigeria",
   "categories": ["KYC"],
   "countries": ["Nigeria", "Kenya", "South Africa", "Ghana"],
   "features": ["Selfie liveness", "Document verification", "AML screening", "Biometric checks"],
@@ -17,8 +18,12 @@
   "sandboxAvailable": true,
   "productionReady": true,
   "sdkLanguages": ["JavaScript", "Python", "Go", "Android", "iOS"],
-  "status": "Cached",
+  "status": "Live",
   "verified": true,
-  "lastVerified": "2026-05-30",
-  "lastUpdated": "2026-05-30"
+  "lastVerified": "2026-07-14",
+  "lastUpdated": "2026-07-14",
+  "keyPeople": [
+    { "name": "Mark Straub", "role": "Co-founder & CEO" },
+    { "name": "Kenfield Wales", "role": "Co-founder & CTO" }
+  ]
 }

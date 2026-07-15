@@ -5,11 +5,19 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import type { ApiMock, ApiStatus } from '../mock-data';
 
+// Key people interface for founders/CEOs/maintainers
+export interface KeyPerson {
+  name: string;
+  role: string;
+  github?: string;
+}
+
 // Provider JSON type - matches the mock data shape
 export interface ProviderJson {
   slug: string;
   name: string;
   tagline: string;
+  logoUrl?: string;
   description: string;
   website: string;
   documentation: string;
@@ -30,6 +38,7 @@ export interface ProviderJson {
   verified: boolean;
   lastVerified: string;
   lastUpdated: string;
+  keyPeople?: KeyPerson[];
 }
 
 // API-specific data that can be extended per provider
@@ -127,5 +136,6 @@ export function providerToApiMock(provider: ProviderJson, slug: string, apiData:
     authMethod: provider.authentication,
     rateLimit: apiData.rateLimit,
     webhookSupport: apiData.webhookSupport,
-  };
+    logoUrl: provider.logoUrl,
+  } as ApiMock;
 }

@@ -2,6 +2,7 @@
   "slug": "mtn-momo",
   "name": "MTN Group",
   "tagline": "Integrate MTN Mobile Money for collections, disbursements and payment status across MTN markets.",
+  "logoUrl": "/logos/mtn.svg",
   "description": "Integrate MTN Mobile Money for collections, disbursements and payment status across MTN markets. A leading telecommunications company with mobile money services across Africa.",
   "website": "https://mtn.com",
   "documentation": "https://developers.mtn.com",
@@ -9,7 +10,7 @@
   "supportEmail": "developer@mtn.com",
   "headquarters": "South Africa",
   "categories": ["Mobile Money"],
-  "countries": ["Ghana", "Uganda", "Côte d'Ivoire"],
+  "countries": ["Ghana", "Uganda", "CÃ´te d'Ivoire", "Zambia", "Cameroon"],
   "features": ["Collections", "Disbursements", "Payment status", "Webhook notifications"],
   "pricingModel": "transaction",
   "authentication": "OAuth 2.0",
@@ -20,5 +21,9 @@
   "status": "Live",
   "verified": true,
   "lastVerified": "2026-07-10",
-  "lastUpdated": "2026-07-10"
+  "lastUpdated": "2026-07-10",
+  "keyPeople": [
+    { "name": "Ralph Mupita", "role": "Group President & CEO" },
+    { "name": "Stephen Moran", "role": "CTO" }
+  ]
 }

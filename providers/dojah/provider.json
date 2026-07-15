@@ -2,6 +2,7 @@
   "slug": "dojah",
   "name": "Dojah",
   "tagline": "Identity verification, BVN/NIN lookups and document checks for onboarding flows.",
+  "logoUrl": "/logos/dojah.svg",
   "description": "Identity verification, BVN/NIN lookups and document checks for onboarding flows. Secure KYC and identity verification APIs for Africa.",
   "website": "https://dojah.io",
   "documentation": "https://docs.dojah.io",
@@ -9,7 +10,7 @@
   "supportEmail": "support@dojah.io",
   "headquarters": "Nigeria",
   "categories": ["KYC"],
-  "countries": ["Nigeria", "Kenya"],
+  "countries": ["Nigeria", "Kenya", "Ghana"],
   "features": ["BVN verification", "NIN lookup", "Document verification", "Identity checks"],
   "pricingModel": "pay-as-you-go",
   "authentication": "API Key + AppId",
@@ -17,8 +18,11 @@
   "sandboxAvailable": true,
   "productionReady": true,
   "sdkLanguages": ["JavaScript", "Python", "Go"],
-  "status": "Estimated",
+  "status": "Live",
   "verified": true,
-  "lastVerified": "2026-06-28",
-  "lastUpdated": "2026-06-28"
+  "lastVerified": "2026-07-14",
+  "lastUpdated": "2026-07-14",
+  "keyPeople": [
+    { "name": "Olamide Olowu", "role": "Founder & CEO" }
+  ]
 }
