@@ -36,10 +36,7 @@ export const VerificationStrip: React.FC<VerificationStripProps> = ({
 
   return (
     <div
-      className="w-full px-3 py-2 flex items-center justify-between text-[10px] font-mono border-t border-b bg-surface"
-      style={{
-        borderColor: "var(--color-border)",
-      }}
+      className="w-full px-3 py-2 flex items-center justify-between text-[10px] font-mono border-t border-b border-border bg-surface"
     >
       <div className="flex items-center gap-1.5 text-status-verified">
         <Check size={10} strokeWidth={2.5} />

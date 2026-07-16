@@ -88,10 +88,7 @@ export default function ChangelogPage() {
             )}
             {displayUpdates.map((update) => (
               <div key={update.id} className="relative pl-12">
-                <div className="absolute left-2 top-2 h-4 w-4 rounded-full border-2" style={{ 
-                  backgroundColor: "var(--color-primary)",
-                  borderColor: "var(--color-primary)"
-                }} />
+                <div className="absolute left-2 top-2 h-4 w-4 rounded-full border-2 bg-primary border-primary" />
                 <div>
                   <time className="text-sm text-text-muted">
                     {new Date(update.date).toLocaleDateString('en-US', {
@@ -133,27 +130,24 @@ export default function ChangelogPage() {
             Page {currentPage} of {totalPages} · {allUpdates.length} total changes
           </div>
           <div className="flex items-center gap-2">
-                    <span
+                    <button
                 onClick={() => goToPage(currentPage - 1)}
-                className="flex items-center gap-1 px-3 py-1.5 text-xs font-mono rounded-lg border border-border bg-surface text-text-muted hover:text-text hover:bg-surface-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
-                style={{ 
-                  pointerEvents: currentPage === 1 ? 'none' : 'auto'
-                }}
+                disabled={currentPage === 1}
+                className="flex items-center gap-1 px-3 py-1.5 text-xs font-mono rounded-lg border border-border bg-surface text-text-muted hover:text-text hover:bg-surface-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                aria-label="Previous page"
               >
                 <ChevronLeft size={14} />
                 Previous
-              </span>
-              <span
+              </button>
+              <button
                 onClick={() => goToPage(currentPage + 1)}
-                className="flex items-center gap-1 px-3 py-1.5 text-xs font-mono rounded-lg border border-border bg-surface text-text-muted hover:text-text hover:bg-surface-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
-                style={{ 
-                  pointerEvents: currentPage === totalPages ? 'none' : 'auto',
-                  opacity: currentPage === totalPages ? 0.5 : 1
-                }}
+                disabled={currentPage === totalPages}
+                className="flex items-center gap-1 px-3 py-1.5 text-xs font-mono rounded-lg border border-border bg-surface text-text-muted hover:text-text hover:bg-surface-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                aria-label="Next page"
               >
                 Next
                 <ChevronRight size={14} />
-              </span>
+              </button>
           </div>
         </div>
       )}

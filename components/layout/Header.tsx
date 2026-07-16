@@ -33,7 +33,7 @@ export function Header() {
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="5" cy="15" r="2.5" fill="var(--color-text-muted)" />
                 <circle cx="15" cy="15" r="2.5" fill="var(--color-text-muted)" />
-                <circle cx="10" cy="9" r="3" fill="var(--color-surface-dark, #1E1E1C)" />
+                <circle cx="10" cy="9" r="3" fill="var(--color-surface-dark)" />
                 <circle cx="10" cy="9" r="1.2" fill="var(--color-status-verified)" />
               </svg>
               <span className="font-outfit font-semibold tracking-tight text-sm text-text">
@@ -47,11 +47,8 @@ export function Header() {
                   href={item.href}
                   className={cn(
                     "text-xs font-mono transition-colors",
-                    pathname === item.href && "font-semibold text-primary"
+                    pathname === item.href ? "text-primary font-semibold" : "text-text-muted"
                   )}
-                  style={{
-                    color: pathname === item.href ? "var(--color-primary)" : "var(--color-text-muted)",
-                  }}
                 >
                   {item.name}
                 </Link>

@@ -48,13 +48,10 @@ export const CountryFlag: React.FC<CountryFlagProps> = ({ code, size = 'sm', cla
     // Elegant fallback - show the country code with styling
     return (
       <span
-        className={`inline-flex items-center justify-center rounded font-mono text-[10px] ${sizeClasses[size]} ${className}`}
+        className={`inline-flex items-center justify-center rounded font-mono text-[10px] bg-surface text-text-muted border border-border ${sizeClasses[size]} ${className}`}
         style={{
-          background: "var(--color-surface)",
-          color: "var(--color-text-muted)",
           minWidth: '1.5em',
           minHeight: '1.5em',
-          border: "1px solid var(--color-border)",
         }}
         title={code}
       >

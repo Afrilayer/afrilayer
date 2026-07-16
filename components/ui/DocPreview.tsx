@@ -33,7 +33,7 @@ export const DocPreview: React.FC<DocPreviewProps> = ({ curl, js, python, go }) 
               onClick={() => setTab(t)}
               className="px-3 py-1.5 text-xs font-mono rounded-t transition-colors"
               style={{
-                background: tab === t ? "var(--color-surface-dark, #1E1E1E)" : "transparent",
+                background: tab === t ? "var(--color-surface-dark)" : "transparent",
                 color: tab === t ? "var(--color-text)" : "var(--color-text-muted)",
                 borderBottom: tab === t ? "2px solid var(--color-primary)" : "2px solid transparent",
               }}
@@ -54,9 +54,9 @@ export const DocPreview: React.FC<DocPreviewProps> = ({ curl, js, python, go }) 
       <pre
         className="p-4 rounded-lg overflow-x-auto text-xs leading-relaxed font-mono"
         style={{
-          background: "#1E1E1E",
+          background: "var(--color-surface-dark)",
           border: "1px solid var(--color-border)",
-          color: "#D4AF37",
+          color: "var(--color-primary)",
         }}
       >
         {codeMap[tab]}

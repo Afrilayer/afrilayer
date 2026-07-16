@@ -10,7 +10,7 @@ interface ChangelogTimelineProps {
 export const ChangelogTimeline: React.FC<ChangelogTimelineProps> = ({ changelog }) => {
   return (
     <div className="mt-10">
-      <h2 className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#5D6058" }}>
+      <h2 className="text-xs font-mono uppercase tracking-widest mb-3 text-text-muted-dim">
         Changelog
       </h2>
       <div className="flex flex-col">
@@ -18,12 +18,12 @@ export const ChangelogTimeline: React.FC<ChangelogTimelineProps> = ({ changelog 
           <div
             key={i}
             className="flex gap-4 py-3"
-            style={{ borderTop: i > 0 ? "1px solid #262A25" : "none" }}
+            style={{ borderTop: i > 0 ? "1px solid var(--color-border)" : "none" }}
           >
-            <span className="text-[10px] font-mono shrink-0 pt-0.5" style={{ color: "#5D6058" }}>
+            <span className="text-[10px] font-mono shrink-0 pt-0.5 text-text-muted-dim">
               {entry.date}
             </span>
-            <span className="text-sm" style={{ color: "#93968D" }}>
+            <span className="text-sm text-text-muted">
               {entry.note}
             </span>
           </div>

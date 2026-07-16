@@ -25,12 +25,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
           <a
             key={c}
             href={`/countries/${code.toLowerCase()}`}
-            className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors"
-            style={{
-              background: "var(--color-surface)",
-              color: "var(--color-text-muted)",
-              border: "1px solid var(--color-border)",
-            }}
+            className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors bg-surface text-text-muted border border-border"
             onClick={(e) => e.stopPropagation()}
           >
             <span className="flex items-center gap-1">
@@ -44,12 +39,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
     return api.countries.slice(0, 3).map((c) => (
       <span
         key={c}
-        className="text-[10px] font-mono px-2 py-0.5 rounded"
-        style={{
-          background: "var(--color-surface)",
-          color: "var(--color-text-muted)",
-          border: "1px solid var(--color-border)",
-        }}
+        className="text-[10px] font-mono px-2 py-0.5 rounded bg-surface text-text-muted border border-border"
       >
         {c}
       </span>
@@ -59,10 +49,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
   return (
     <motion.button
       onClick={onClick}
-      className="text-left rounded-xl p-5 flex flex-col gap-3 transition-colors w-full bg-surface"
-      style={{
-        boxShadow: "var(--shadow-sm)",
-      }}
+      className="text-left rounded-xl p-5 flex flex-col gap-3 transition-colors w-full bg-surface shadow-sm"
       whileHover={{
         background: "var(--color-surface-hover)",
       }}
@@ -73,7 +60,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-3">
           {api.logoUrl && (
-            <div className="w-8 h-8 rounded-md overflow-hidden bg-surface" style={{ border: "1px solid var(--color-border)" }}>
+            <div className="w-8 h-8 rounded-md overflow-hidden bg-surface border border-border">
               <Image
                 src={api.logoUrl}
                 alt={`${api.provider} logo`}
@@ -104,12 +91,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
         {showCategoryLink && (
           <a
             href={`/categories/${CATEGORY_TO_SLUG[api.category] || api.category.toLowerCase()}`}
-            className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors"
-            style={{
-              background: "var(--color-surface)",
-              color: "var(--color-text-muted)",
-              border: "1px solid var(--color-border)",
-            }}
+            className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors bg-surface text-text-muted border border-border"
             onClick={(e) => e.stopPropagation()}
           >
             {api.category}
@@ -117,9 +99,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
         )}
       </div>
 
-      <div className="flex items-center justify-between pt-2 mt-1" style={{ 
-        borderTop: "1px solid var(--color-border)" 
-      }}>
+      <div className="flex items-center justify-between pt-2 mt-1 border-t border-border">
         <span className="text-[10px] font-mono text-text-muted">
           last checked {api.lastVerified}
         </span>

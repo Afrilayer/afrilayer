@@ -57,12 +57,7 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
               <button
                 key={c}
                 onClick={() => onCategoryChange(c)}
-                className={selectCls(category === c)}
-                style={{
-                  background: category === c ? "var(--color-primary)" : "var(--color-surface)",
-                  color: category === c ? "var(--color-bg)" : "var(--color-text-muted)",
-                  border: `1px solid ${category === c ? "var(--color-primary)" : "var(--color-border)"}`,
-                }}
+                className={`${selectCls(category === c)} ${category === c ? "bg-primary text-bg border-primary" : "bg-surface text-text-muted border-border"}`}
                 aria-pressed={category === c}
               >
                 <span className="flex items-center gap-1">
@@ -89,12 +84,7 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
               <button
                 key={c}
                 onClick={() => onCountryChange(c)}
-                className={selectCls(country === c)}
-                style={{
-                  background: country === c ? "var(--color-primary)" : "var(--color-surface)",
-                  color: country === c ? "var(--color-bg)" : "var(--color-text-muted)",
-                  border: `1px solid ${country === c ? "var(--color-primary)" : "var(--color-border)"}`,
-                }}
+                className={`${selectCls(country === c)} ${country === c ? "bg-primary text-bg border-primary" : "bg-surface text-text-muted border-border"}`}
                 aria-pressed={country === c}
               >
                 <span className="flex items-center gap-1">

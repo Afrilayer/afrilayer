@@ -40,10 +40,7 @@ export const HeroDashboard: React.FC<HeroDashboardProps> = ({ stats = defaultSta
         return (
           <div
             key={stat.label}
-            className="p-4 rounded-xl flex flex-col items-center justify-center text-center bg-surface border border-border"
-            style={{
-              boxShadow: "var(--shadow-sm)",
-            }}
+            className="p-4 rounded-xl flex flex-col items-center justify-center text-center bg-surface border border-border shadow-sm"
           >
             <div className="flex items-center gap-2 mb-1">
               {Icon && <Icon size={14} className="text-primary" />}

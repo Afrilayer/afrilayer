@@ -14,11 +14,10 @@ export const Stamp: React.FC<StampProps> = ({ label, sublabel, size = "sm" }) =>
 
   return (
     <div
-      className={`${dims} rounded-full flex flex-col items-center justify-center shrink-0 select-none`}
+      className={`${dims} rounded-full flex flex-col items-center justify-center shrink-0 select-none text-primary`}
       style={{
         border: "2px dashed var(--color-primary)",
         transform: "rotate(-9deg)",
-        color: "var(--color-primary)",
       }}
     >
       <span className={`${textSize} font-mono tracking-[0.2em] font-bold`}>{label}</span>
