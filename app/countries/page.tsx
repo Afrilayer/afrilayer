@@ -1,57 +1,23 @@
 import Link from 'next/link';
 import { getAllProvidersData } from '@/lib/data';
-
-const countries = [
-  { name: 'Nigeria', code: 'NG', flag: '🇳🇬' },
-  { name: 'South Africa', code: 'ZA', flag: '🇿🇦' },
-  { name: 'Ghana', code: 'GH', flag: '🇬🇭' },
-  { name: 'Kenya', code: 'KE', flag: '🇰🇪' },
-  { name: 'Uganda', code: 'UG', flag: '🇺🇬' },
-  { name: 'Tanzania', code: 'TZ', flag: '🇹🇿' },
-  { name: 'Egypt', code: 'EG', flag: '🇪🇬' },
-  { name: 'Morocco', code: 'MA', flag: '🇲🇦' },
-  { name: "Côte d'Ivoire", code: 'CI', flag: '🇨🇮' },
-  { name: 'Senegal', code: 'SN', flag: '🇸🇳' },
-  { name: 'Rwanda', code: 'RW', flag: '🇷🇼' },
-  { name: 'Tunisia', code: 'TN', flag: '🇹🇳' },
-  { name: 'Cameroon', code: 'CM', flag: '🇨🇲' },
-  { name: 'Zambia', code: 'ZM', flag: '🇿🇲' },
-];
-
-// Country to region mapping
-const countryToRegion: Record<string, string> = {
-  'Nigeria': 'west',
-  'Ghana': 'west',
-  'Senegal': 'west',
-  "Côte d'Ivoire": 'west',
-  'Kenya': 'east',
-  'Uganda': 'east',
-  'Tanzania': 'east',
-  'Rwanda': 'east',
-  'Egypt': 'north',
-  'Morocco': 'north',
-  'Tunisia': 'north',
-  'South Africa': 'south',
-  'Cameroon': 'central',
-  'Zambia': 'east',
-};
+import { COUNTRIES } from '@/lib/countries';
 
 export default async function CountriesPage() {
   const providers = await getAllProvidersData();
   
-  // Calculate real API counts per country
-  const countryCounts = countries.map((country) => ({
+  // Calculate real API counts per country using dynamic data
+  const countryCounts = Object.values(COUNTRIES).map((country) => ({
     ...country,
     apiCount: providers.filter((p) => p.countries.includes(country.name)).length,
   }));
 
   // Group by region
   const regions = {
-    west: countryCounts.filter((c) => countryToRegion[c.name] === 'west'),
-    east: countryCounts.filter((c) => countryToRegion[c.name] === 'east'),
-    north: countryCounts.filter((c) => countryToRegion[c.name] === 'north'),
-    south: countryCounts.filter((c) => countryToRegion[c.name] === 'south'),
-    central: countryCounts.filter((c) => countryToRegion[c.name] === 'central'),
+    west: countryCounts.filter((c) => c.region === 'west'),
+    east: countryCounts.filter((c) => c.region === 'east'),
+    north: countryCounts.filter((c) => c.region === 'north'),
+    south: countryCounts.filter((c) => c.region === 'south'),
+    central: countryCounts.filter((c) => c.region === 'central'),
   };
 
   return (

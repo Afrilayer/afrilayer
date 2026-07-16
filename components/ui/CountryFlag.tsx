@@ -1,33 +1,7 @@
 "use client";
 
 import * as React from "react";
-
-// ISO country code to flag emoji mapping
-const COUNTRY_FLAGS: Record<string, string> = {
-  NG: '🇳🇬',
-  ZA: '🇿🇦',
-  GH: '🇬🇭',
-  KE: '🇰🇪',
-  UG: '🇺🇬',
-  TZ: '🇹🇿',
-  EG: '🇪🇬',
-  MA: '🇲🇦',
-  CI: '🇨🇮',
-  SN: '🇸🇳',
-  RW: '🇷🇼',
-  TN: '🇹🇳',
-  ZM: '🇿🇲',
-  MW: '🇲🇼',
-  ZW: '🇿🇼',
-  BF: '🇧🇫',
-  ML: '🇲🇱',
-  NE: '🇳🇪',
-  GN: '🇬🇳',
-  GM: '🇬🇲',
-  SL: '🇸🇱',
-  LR: '🇱🇷',
-  // Add more as needed
-};
+import { COUNTRIES } from "@/lib/countries";
 
 interface CountryFlagProps {
   code: string;
@@ -36,7 +10,9 @@ interface CountryFlagProps {
 }
 
 export const CountryFlag: React.FC<CountryFlagProps> = ({ code, size = 'sm', className = '' }) => {
-  const flag = COUNTRY_FLAGS[code.toUpperCase()];
+  // Use centralized COUNTRIES data for flag lookup
+  const country = COUNTRIES[code.toUpperCase()];
+  const flag = country?.flag;
 
   const sizeClasses = {
     sm: 'text-sm',
@@ -71,5 +47,6 @@ export default CountryFlag;
 
 // Helper function to get flag for a country code
 export function getCountryFlag(code: string): string {
-  return COUNTRY_FLAGS[code.toUpperCase()] || code.toUpperCase();
+  const country = COUNTRIES[code.toUpperCase()];
+  return country?.flag || code.toUpperCase();
 }

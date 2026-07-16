@@ -4,9 +4,10 @@ export const revalidate = 3600; // Revalidate every hour
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getProviderBySlug, getAllProvidersData } from "@/lib/data";
-import { StatusPill, Stamp, DocPreview, ChangelogTimeline, QuickFacts, ProviderLogo } from "@/components/ui";
+import { StatusPill, Stamp, DocPreview, ChangelogTimeline, QuickFacts, ProviderLogo, SimilarApisTable } from "@/components/ui";
 import { CountryFlag } from "@/components/ui/CountryFlag";
-import { COUNTRY_TO_CODE } from "@/lib/constants";
+import { COUNTRY_TO_CODE, CATEGORY_TO_SLUG } from "@/lib/constants";
+import { calculateSimilarProviders, providerToApiMock } from "@/lib/providers/similarity";
 import type { Metadata } from "next";
 
 // Generate static params for all providers
@@ -44,15 +45,14 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
     );
   }
 
-  // Get similar providers from same category and countries
+  // Get all providers for similarity calculation
   const allProviders = await getAllProvidersData();
-  const similar = allProviders
-    .filter((p) => 
-      p.slug !== provider.slug 
-      && p.categories.some(c => provider.categories.includes(c))
-      && p.countries.some(c => provider.countries.includes(c))
-    )
-    .slice(0, 2);
+  
+  // Use enhanced similarity algorithm to get 4-6 similar providers
+  const similarProviders = calculateSimilarProviders(provider, allProviders, 6);
+  
+  // Convert to ApiMock format for SimilarApisTable
+  const similarApis = similarProviders.map(providerToApiMock);
 
   const api = provider.apiData;
 
@@ -146,6 +146,27 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
         })}
       </div>
 
+      {/* Category Tags with Links */}
+      <div className="flex flex-wrap gap-1.5 mt-2">
+        {provider.categories.map((category) => {
+          const slug = CATEGORY_TO_SLUG[category] || category.toLowerCase().replace(/\s+/g, '-');
+          return (
+            <Link
+              key={category}
+              href={`/categories/${slug}`}
+              className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors"
+              style={{
+                background: "var(--color-surface)",
+                color: "var(--color-muted)",
+                border: "1px solid var(--color-border)",
+              }}
+            >
+              {category}
+            </Link>
+          );
+        })}
+      </div>
+
       {/* Verification Strip */}
       <div className="mt-8">
         <div
@@ -166,6 +187,9 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
           <span className="text-muted-dim">Latency: {api?.latency || 'N/A'}</span>
         </div>
       </div>
+
+      {/* Similar APIs */}
+      <SimilarApisTable apis={similarApis} />
 
       {/* Main Content Grid */}
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">

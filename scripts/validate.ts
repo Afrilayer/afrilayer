@@ -96,8 +96,8 @@ async function validateProviders(): Promise<ValidationReport> {
       continue;
     }
 
-    // Validate against schema
-    const valid = validate(providerJson);
+    // Validate against schema - explicitly cast to boolean
+    const valid = Boolean(validate(providerJson));
     if (!valid && validate.errors) {
       errors.push(...validate.errors.map((e: any) => `${e.instancePath} ${e.message}`));
     }

@@ -6,6 +6,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import type { Provider, ProviderApiData } from '../types';
 import { STATUS_VALUES } from '../constants';
+import { calculateSimilarProviders } from './similarity';
 
 // Resolve base directory for file operations
 const __filename = fileURLToPath(import.meta.url);
@@ -135,34 +136,10 @@ export async function getAllProviders(): Promise<Provider[]> {
     }
   }
 
-  // Compute related providers with enhanced similarity
-  // Similarity based on: categories (highest weight), countries, authentication, features
+  // Compute related providers using the enhanced similarity algorithm
   for (const provider of results) {
-    const similarityScores = results
-      .filter(p => p.slug !== provider.slug)
-      .map(p => {
-        let score = 0;
-        // Category overlap (highest weight)
-        const categoryOverlap = p.categories.filter(c => provider.categories.includes(c)).length;
-        score += categoryOverlap * 3;
-        // Country overlap
-        const countryOverlap = p.countries.filter(c => provider.countries.includes(c)).length;
-        score += countryOverlap * 2;
-        // Authentication match
-        if (p.authentication === provider.authentication && p.authentication) {
-          score += 1;
-        }
-        // Feature overlap
-        const featureOverlap = p.features.filter(f => provider.features.includes(f)).length;
-        score += featureOverlap * 0.5;
-        return { slug: p.slug, score };
-      })
-      .sort((a, b) => b.score - a.score);
-    
-    provider.relatedProviders = similarityScores
-      .filter(s => s.score > 0)
-      .map(s => s.slug)
-      .slice(0, 3);
+    const similarProviders = calculateSimilarProviders(provider, results, 6);
+    provider.relatedProviders = similarProviders.map(p => p.slug).slice(0, 6);
   }
 
   return results;
