@@ -6,9 +6,10 @@ import { ArrowLeft } from 'lucide-react';
 import { getAllProvidersData } from '@/lib/data';
 import { ApiCard } from '@/components/ui';
 import { CODE_TO_COUNTRY } from '@/lib/constants';
+import type { Provider, ApiMock } from '@/lib/types';
 
 // Convert Provider to ApiMock format for ApiCard compatibility
-function providerToApiMock(provider: { slug: string; name: string; categories: string[]; countries: string[]; description: string; status: string; lastVerified: string }) {
+function providerToApiMock(provider: Provider): ApiMock {
   return {
     id: provider.slug,
     name: `${provider.name} API`,
@@ -18,6 +19,19 @@ function providerToApiMock(provider: { slug: string; name: string; categories: s
     description: provider.description,
     status: provider.status,
     lastVerified: provider.lastVerified,
+    uptime: provider.apiData?.uptime || '99.9%',
+    pricing: provider.apiData?.pricing || [],
+    curl: provider.apiData?.curl || '',
+    js: provider.apiData?.js || '',
+    python: provider.apiData?.python || '',
+    go: provider.apiData?.go || '',
+    changelog: provider.apiData?.changelog || [],
+    version: provider.apiData?.version,
+    latency: provider.apiData?.latency,
+    authMethod: provider.authentication,
+    rateLimit: provider.apiData?.rateLimit,
+    webhookSupport: provider.apiData?.webhookSupport,
+    logoUrl: provider.logoUrl || undefined,
   };
 }
 

@@ -1,0 +1,28 @@
+{
+  "slug": "interswitch",
+  "name": "Interswitch",
+  "tagline": "Nigeria's leading payment and commerce platform API.",
+  "description": "Interswitch provides APIs for payment processing, merchant services, and financial infrastructure across Nigeria and West Africa.",
+  "website": "https://interswitchgroup.com",
+  "documentation": "https://developer.interswitchgroup.com",
+  "developerPortal": "https://developer.interswitchgroup.com",
+  "supportEmail": "developers@interswitchgroup.com",
+  "headquarters": "Nigeria",
+  "categories": ["Payments", "Banking"],
+  "countries": ["Nigeria"],
+  "features": ["Card payments", "Bank transfers", "QR payments", "Merchant services"],
+  "pricingModel": "transaction",
+  "authentication": "OAuth 2.0",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Java", "PHP", ".NET", "Python"],
+  "openapiSpec": "https://developer.interswitchgroup.com/docs/openapi",
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Mitchell Elegbe", "role": "Group CEO" }
+  ]
+}

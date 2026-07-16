@@ -1,0 +1,28 @@
+{
+  "slug": "safaricom",
+  "name": "Safaricom",
+  "tagline": "Kenya's leading telecom and mobile services API.",
+  "description": "Safaricom provides APIs for M-Pesa, SMS, voice, data, and other telecom services in Kenya.",
+  "website": "https://safaricom.co.ke",
+  "documentation": "https://developer.safaricom.co.ke",
+  "developerPortal": "https://developer.safaricom.co.ke",
+  "supportEmail": "apiseek@safaricom.co.ke",
+  "headquarters": "Kenya",
+  "categories": ["Telecom", "Mobile Money"],
+  "countries": ["Kenya"],
+  "features": ["M-Pesa payments", "SMS messaging", "Voice calls", "Data bundles", "USSD"],
+  "pricingModel": "transaction",
+  "authentication": "OAuth 2.0",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java", "PHP"],
+  "openapiSpec": "https://developer.safaricom.co.ke/docs/apis",
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Peter Ndegwa", "role": "CEO" }
+  ]
+}

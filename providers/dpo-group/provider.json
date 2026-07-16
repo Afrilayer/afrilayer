@@ -1,0 +1,27 @@
+{
+  "slug": "dpo-group",
+  "name": "DPO Group",
+  "tagline": "Pan-African payment gateway and merchant services.",
+  "description": "DPO Group provides payment gateway services across 18 African countries, enabling businesses to accept payments via card, mobile money, and bank transfer.",
+  "website": "https://dpogroup.com",
+  "documentation": "https://dpogroup.com/developers",
+  "developerPortal": "https://dpogroup.com",
+  "supportEmail": "support@dpogroup.com",
+  "headquarters": "South Africa",
+  "categories": ["Payments"],
+  "countries": ["South Africa", "Nigeria", "Kenya", "Ghana", "Zambia", "Tanzania", "Uganda", "Rwanda", "Malawi"],
+  "features": ["Card payments", "Mobile money", "Bank transfers", "Multi-currency support", "Fraud protection"],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["PHP", "Java", "C#", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Nigel Jansen", "role": "Managing Director" }
+  ]
+}

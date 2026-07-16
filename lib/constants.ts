@@ -36,6 +36,7 @@ export const CATEGORY_TO_SLUG: Record<string, string> = {
   'Government': 'government',
   'Geolocation': 'geolocation',
   'Financial Infrastructure': 'financial-infrastructure',
+  'Telecom': 'telecom',
 };
 
 // Reverse mapping

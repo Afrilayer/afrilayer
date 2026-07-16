@@ -1,0 +1,27 @@
+{
+  "slug": "peach-payments",
+  "name": "Peach Payments",
+  "tagline": "Payment gateway for Southern Africa.",
+  "description": "Peach Payments provides secure payment gateway solutions for businesses across Southern Africa, supporting card payments, EFT, and alternative payment methods.",
+  "website": "https://peachpayments.com",
+  "documentation": "https://docs.peachpayments.com",
+  "developerPortal": "https://peachpayments.com",
+  "supportEmail": "support@peachpayments.com",
+  "headquarters": "South Africa",
+  "categories": ["Payments"],
+  "countries": ["South Africa", "Zambia", "Malawi", "Zimbabwe"],
+  "features": ["Card payments", "EFT payments", "Recurring billing", "Fraud management"],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "PHP", "Java", ".NET"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Andreas Thiele", "role": "CEO" }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "nigeria-gov",
+  "name": "Nigeria Government APIs",
+  "tagline": "Official Nigerian government APIs for developers.",
+  "description": "Collection of official Nigerian government APIs including National Identity Management Commission (NIMC), Federal Inland Revenue Service (FIRS), and other public services.",
+  "website": "https://gov.ng",
+  "documentation": "https://developer.gov.ng",
+  "developerPortal": "https://developer.gov.ng",
+  "supportEmail": "support@developer.gov.ng",
+  "headquarters": "Nigeria",
+  "categories": ["Government"],
+  "countries": ["Nigeria"],
+  "features": ["NIN verification", "BVN lookup", "Tax APIs", "Immigration services"],
+  "pricingModel": "free",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Federal Ministry of Communications", "role": "Digital Services" }
+  ]
+}

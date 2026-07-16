@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, CreditCard, Globe, MessageSquare, Banknote, Fingerprint, Truck, Building, Bitcoin, Map, Bot, AtSign } from 'lucide-react';
+import { Phone, CreditCard, Globe, MessageSquare, Banknote, Fingerprint, Truck, Building, Bitcoin, Map, Bot, AtSign, Radio } from 'lucide-react';
 import { getAllProvidersData } from '@/lib/data';
 
 const categoryIcons: Record<string, typeof CreditCard> = {
@@ -16,6 +16,9 @@ const categoryIcons: Record<string, typeof CreditCard> = {
   'Maps': Map,
   'AI': Bot,
   'Messaging': MessageSquare,
+  'Telecom': Radio,
+  'Geolocation': Map,
+  'Financial Infrastructure': Banknote,
 };
 
 export default async function CategoriesPage() {
@@ -32,10 +35,9 @@ export default async function CategoriesPage() {
     { slug: 'banking', name: 'Banking' },
     { slug: 'logistics', name: 'Logistics' },
     { slug: 'government', name: 'Government' },
-    { slug: 'crypto', name: 'Crypto' },
-    { slug: 'maps', name: 'Maps' },
-    { slug: 'ai', name: 'AI' },
-    { slug: 'messaging', name: 'Messaging' },
+    { slug: 'telecom', name: 'Telecom' },
+    { slug: 'geolocation', name: 'Geolocation' },
+    { slug: 'financial-infrastructure', name: 'Financial Infrastructure' },
   ].map((cat) => ({
     ...cat,
     count: providers.filter((p) => p.categories.includes(cat.name)).length,

@@ -1,0 +1,27 @@
+{
+  "slug": "pula",
+  "name": "Pula",
+  "tagline": "Agricultural insurance and climate risk APIs for Africa.",
+  "description": "Pula provides insurance products and climate risk data APIs for farmers across Africa, enabling index-based insurance and agricultural finance solutions.",
+  "website": "https://pula.io",
+  "documentation": "https://docs.pula.io",
+  "developerPortal": "https://pula.io",
+  "supportEmail": "info@pula.io",
+  "headquarters": "Kenya",
+  "categories": ["Financial Infrastructure"],
+  "countries": ["Kenya", "Tanzania", "Uganda", "Malawi", "Zambia", "Nigeria", "Ghana"],
+  "features": ["Index insurance", "Weather data", "Claims processing", "Farmer enrollment"],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Thomas Njeru", "role": "Co-founder & CEO" }
+  ]
+}

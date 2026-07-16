@@ -1,0 +1,27 @@
+{
+  "slug": "watupay",
+  "name": "WatuPay",
+  "tagline": "Mobile money and payment solutions for East Africa.",
+  "description": "WatuPay provides API solutions for mobile money payments, bill payments, and financial services across East African markets.",
+  "website": "https://watupay.com",
+  "documentation": "https://developers.watupay.com",
+  "developerPortal": "https://watupay.com",
+  "supportEmail": "support@watupay.com",
+  "headquarters": "Kenya",
+  "categories": ["Payments", "Mobile Money"],
+  "countries": ["Kenya", "Tanzania", "Uganda"],
+  "features": ["Mobile money payments", "Bill payments", "Airtime top-up", "Bank transfers"],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "PHP"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Michael Mwangi", "role": "Co-founder" }
+  ]
+}
