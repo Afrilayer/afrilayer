@@ -2,6 +2,12 @@
 
 import type { ProviderStatus } from './constants';
 
+// Verification status for providers
+export type VerificationStatus = 'verified' | 'pending' | 'unavailable';
+
+// Confidence level for provider data
+export type ConfidenceLevel = 'verified' | 'needs-review' | 'stale' | 'community';
+
 // Key person for founder/maintainer attribution
 export interface KeyPerson {
   name: string;

@@ -36,10 +36,9 @@ This index enables:
                       └── getAllProviders()
                             │
                             ▼
-lib/data.ts            lib/data.ts
-(getitAllApis) ◄──── Provider Loader abstraction
-     │
-     ▼
+lib/data.ts            getAllProviderData()
+      │
+      ▼
 UI Components ──► Routes (apis/[slug], search, categories, countries)
 ```
 
