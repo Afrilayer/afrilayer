@@ -111,4 +111,7 @@ export interface RegistryEntry {
   categories: string[];
   countries: string[];
   lastVerified: string;
+  features: string[];
+  description: string;
+  logoUrl?: string;
 }

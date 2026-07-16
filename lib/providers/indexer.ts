@@ -3,9 +3,7 @@
 
 import { promises as fs } from 'fs';
 import path from 'path';
-import type { RegistryEntry } from '../types';
 import { getAllProviders } from './loader';
-import { COUNTRIES, CATEGORIES } from '../constants';
 
 export interface Registry {
   generatedAt: string;
@@ -17,7 +15,17 @@ export interface Registry {
   };
   countries: string[];
   categories: { slug: string; name: string; count: number }[];
-  index: RegistryEntry[];
+  index: {
+    slug: string;
+    name: string;
+    status: string;
+    categories: string[];
+    countries: string[];
+    lastVerified: string;
+    features: string[];
+    description: string;
+    logoUrl?: string;
+  }[];
 }
 
 // Generate registry JSON for build-time
@@ -55,6 +63,9 @@ export async function generateRegistry(): Promise<void> {
       categories: p.categories,
       countries: p.countries,
       lastVerified: p.lastVerified,
+      features: p.features,
+      description: p.description,
+      logoUrl: p.logoUrl,
     })),
   };
 
@@ -67,6 +78,6 @@ export async function generateRegistry(): Promise<void> {
   
   // Write registry
   await fs.writeFile(outputPath, JSON.stringify(registry, null, 2), 'utf-8');
-  
+
   console.log(`[Afrilayer] Generated registry.json with ${providers.length} providers`);
 }

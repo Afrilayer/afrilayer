@@ -2,14 +2,7 @@
 
 import { getAllProvidersData } from './data';
 import { CODE_TO_COUNTRY, SLUG_TO_CATEGORY } from './constants';
-
-export interface HomepageStats {
-  totalApis: number;
-  totalProviders: number;
-  totalCountries: number;
-  liveApis: number;
-  averageVerificationAge: string;
-}
+import type { HomepageStats } from './types';
 
 export async function getHomepageStats(): Promise<HomepageStats> {
   const providers = await getAllProvidersData();

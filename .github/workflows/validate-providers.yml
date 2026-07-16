@@ -1,0 +1,55 @@
+name: Validate Providers
+
+on:
+  pull_request:
+    paths:
+      - 'providers/**'
+  push:
+    branches: [main]
+    paths:
+      - 'providers/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install validation dependencies
+        run: npm install -g ajv-cli
+      
+      - name: Validate JSON schemas
+        run: |
+          for dir in providers/*/; do
+            if [ -f "${dir}provider.json" ]; then
+              ajv validate -s validation/provider.schema.json -d "${dir}provider.json" || exit 1
+            fi
+          done
+      
+      - name: Check required files
+        run: |
+          for dir in providers/*/; do
+            if [ -f "${dir}provider.json" ]; then
+              if [ ! -f "${dir}README.md" ]; then
+                echo "::error file=${dir}::README.md missing"
+                exit 1
+              fi
+            fi
+          done
+      
+      - name: Check unique slugs
+        run: |
+          jq -r '.slug' providers/*/provider.json | sort | uniq -d | while read slug; do
+            if [ -n "$slug" ]; then
+              echo "::error::Duplicate slug found: $slug"
+              exit 1
+            fi
+          done || exit 0
+      
+      - name: Build verification
+        run: npm run type-check

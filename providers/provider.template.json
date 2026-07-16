@@ -1,0 +1,42 @@
+{
+  "slug": "",
+  "name": "",
+  "tagline": "",
+  "description": "",
+  "website": "",
+  "documentation": "",
+  "developerPortal": "",
+  "supportEmail": "",
+  "headquarters": "",
+  "categories": [
+    "Payments",
+    "Mobile Money",
+    "Banking",
+    "KYC",
+    "Identity",
+    "Messaging",
+    "SMS",
+    "Airtime",
+    "Logistics",
+    "Government",
+    "Geolocation",
+    "Telecom",
+    "Financial Infrastructure"
+  ],
+  "countries": [],
+  "features": [],
+  "pricingModel": "transaction",
+  "authentication": "",
+  "apiStyle": "REST",
+  "sdkLanguages": [],
+  "openapiSpec": "",
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "",
+  "lastUpdated": "",
+  "keyPeople": [
+    { "name": "", "role": "" }
+  ]
+}

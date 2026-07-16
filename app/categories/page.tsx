@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, CreditCard, Globe, MessageSquare, Banknote, Fingerprint, Truck, Building, Bitcoin, Map, Bot, AtSign, Radio } from 'lucide-react';
+import { CreditCard, Phone, MessageSquare, Banknote, Fingerprint, Truck, Building, Bitcoin, Map, Bot, AtSign, Radio } from 'lucide-react';
 import { getAllProvidersData } from '@/lib/data';
 
 const categoryIcons: Record<string, typeof CreditCard> = {
