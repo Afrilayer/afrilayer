@@ -180,10 +180,10 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
         <div className="lg:col-span-2 space-y-10">
           {/* Documentation Preview */}
           <DocPreview
-            curl={api?.curl}
-            js={api?.js}
-            python={api?.python}
-            go={api?.go}
+            curl={api?.curl ?? ""}
+            js={api?.js ?? ""}
+            python={api?.python ?? ""}
+            go={api?.go ?? ""}
           />
 
           {/* Pricing */}
