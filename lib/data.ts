@@ -1,7 +1,7 @@
 // Data Layer - Filesystem-based provider data
 // This module provides a clean abstraction for loading provider data from /providers
 
-import { getAllProviders, loadProviderJson, loadProviderApiData, getProviderSlugs, normalizeProvider } from './providers';
+import { getAllProviders, loadProviderJson, loadProviderApiData, getProviderSlugs, loadProviderReadme, normalizeProvider } from './providers';
 import type { Provider, ProviderApiData } from './types';
 
 // Get all providers (server-side for static generation)
