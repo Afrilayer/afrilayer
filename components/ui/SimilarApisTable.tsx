@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ApiCard } from "./ApiCard";
 import { EmptyState } from "./EmptyState";
-import type { ApiMock } from "@/lib/mock-data";
+import type { ApiMock } from "@/lib/types";
 
 interface SimilarApisTableProps {
   apis: ApiMock[];

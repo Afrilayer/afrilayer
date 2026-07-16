@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllApis } from '@/lib/data';
+import { getAllProvidersData } from '@/lib/data';
 
 const countries = [
   { name: 'Nigeria', code: 'NG', flag: '🇳🇬' },
@@ -10,33 +10,20 @@ const countries = [
   { name: 'Tanzania', code: 'TZ', flag: '🇹🇿' },
   { name: 'Egypt', code: 'EG', flag: '🇪🇬' },
   { name: 'Morocco', code: 'MA', flag: '🇲🇦' },
-  { name: 'CÃ´te d\'Ivoire', code: 'CI', flag: '🇨🇮' },
+  { name: "Côte d'Ivoire", code: 'CI', flag: '🇨🇮' },
   { name: 'Senegal', code: 'SN', flag: '🇸🇳' },
   { name: 'Rwanda', code: 'RW', flag: '🇷🇼' },
   { name: 'Tunisia', code: 'TN', flag: '🇹🇳' },
+  { name: 'Cameroon', code: 'CM', flag: '🇨🇲' },
+  { name: 'Zambia', code: 'ZM', flag: '🇿🇲' },
 ];
-
-const countryCodeMap: Record<string, string> = {
-  'Nigeria': 'ng',
-  'South Africa': 'za',
-  'Ghana': 'gh',
-  'Kenya': 'ke',
-  'Uganda': 'ug',
-  'Tanzania': 'tz',
-  'Egypt': 'eg',
-  'Morocco': 'ma',
-  'CÃ´te d\'Ivoire': 'ci',
-  'Senegal': 'sn',
-  'Rwanda': 'rw',
-  'Tunisia': 'tn',
-};
 
 // Country to region mapping
 const countryToRegion: Record<string, string> = {
   'Nigeria': 'west',
   'Ghana': 'west',
   'Senegal': 'west',
-  "CÃ´te d'Ivoire": 'west',
+  "Côte d'Ivoire": 'west',
   'Kenya': 'east',
   'Uganda': 'east',
   'Tanzania': 'east',
@@ -45,15 +32,17 @@ const countryToRegion: Record<string, string> = {
   'Morocco': 'north',
   'Tunisia': 'north',
   'South Africa': 'south',
+  'Cameroon': 'central',
+  'Zambia': 'east',
 };
 
 export default async function CountriesPage() {
-  const apis = await getAllApis();
+  const providers = await getAllProvidersData();
   
   // Calculate real API counts per country
   const countryCounts = countries.map((country) => ({
     ...country,
-    apiCount: apis.filter((api) => api.countries.includes(country.name)).length,
+    apiCount: providers.filter((p) => p.countries.includes(country.name)).length,
   }));
 
   // Group by region
@@ -62,6 +51,7 @@ export default async function CountriesPage() {
     east: countryCounts.filter((c) => countryToRegion[c.name] === 'east'),
     north: countryCounts.filter((c) => countryToRegion[c.name] === 'north'),
     south: countryCounts.filter((c) => countryToRegion[c.name] === 'south'),
+    central: countryCounts.filter((c) => countryToRegion[c.name] === 'central'),
   };
 
   return (

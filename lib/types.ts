@@ -68,6 +68,32 @@ export interface Provider {
   relatedProviders: string[];
 }
 
+// ApiMock - legacy type for backward compatibility with UI components
+// Used by ApiCard, ApiGrid, SimilarApisTable
+export interface ApiMock {
+  id: string;
+  name: string;
+  provider: string;
+  category: string;
+  countries: string[];
+  description: string;
+  status: ProviderStatus;
+  lastVerified: string;
+  uptime?: string;
+  pricing?: PricingTier[];
+  curl?: string;
+  js?: string;
+  python?: string;
+  go?: string;
+  changelog?: ChangelogEntry[];
+  version?: string;
+  latency?: string;
+  authMethod?: string;
+  rateLimit?: string;
+  webhookSupport?: boolean;
+  logoUrl?: string;
+}
+
 // Homepage stats - derived from registry
 export interface HomepageStats {
   totalApis: number;

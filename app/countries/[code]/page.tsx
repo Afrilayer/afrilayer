@@ -3,39 +3,38 @@ export const revalidate = 3600;
 
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import { getAllApis } from '@/lib/data';
+import { getAllProvidersData } from '@/lib/data';
 import { ApiCard } from '@/components/ui';
+import { CODE_TO_COUNTRY } from '@/lib/constants';
 
-const COUNTRY_NAMES: Record<string, string> = {
-  'ng': 'Nigeria',
-  'za': 'South Africa',
-  'gh': 'Ghana',
-  'ke': 'Kenya',
-  'ug': 'Uganda',
-  'tz': 'Tanzania',
-  'eg': 'Egypt',
-  'ma': 'Morocco',
-  'ci': "CÃ´te d'Ivoire",
-  'sn': 'Senegal',
-  'rw': 'Rwanda',
-  'tn': 'Tunisia',
-};
-
-const COUNTRY_FLAGS: Record<string, string> = {
-  'NG': '🇳🇬', 'ZA': '🇿🇦', 'GH': '🇬🇭', 'KE': '🇰🇪',
-  'UG': '🇺🇬', 'TZ': '🇹🇿', 'EG': '🇪🇬', 'MA': '🇲🇦',
-  'CI': '🇨🇮', 'SN': '🇸🇳', 'RW': '🇷🇼', 'TN': '🇹🇳',
-};
+// Convert Provider to ApiMock format for ApiCard compatibility
+function providerToApiMock(provider: { slug: string; name: string; categories: string[]; countries: string[]; description: string; status: string; lastVerified: string }) {
+  return {
+    id: provider.slug,
+    name: `${provider.name} API`,
+    provider: provider.name,
+    category: provider.categories[0],
+    countries: provider.countries,
+    description: provider.description,
+    status: provider.status,
+    lastVerified: provider.lastVerified,
+  };
+}
 
 export async function generateStaticParams() {
-  return Object.keys(COUNTRY_NAMES).map((code) => ({ code }));
+  const providers = await getAllProvidersData();
+  const codes = [...new Set(providers.flatMap(p => p.countries.map(c => CODE_TO_COUNTRY[c])))].filter(Boolean) as string[];
+  return codes.map((code) => ({ code }));
 }
 
 export default async function CountryPage({ params }: { params: Promise<{ code: string }> }) {
   const { code } = await params;
-  const countryName = COUNTRY_NAMES[code.toLowerCase()];
-  const allApis = await getAllApis();
-  const apis = allApis.filter((api) => api.countries.includes(countryName));
+  const providers = await getAllProvidersData();
+  const apis = providers
+    .filter((p) => p.countries.some(c => c.toLowerCase() === code.toLowerCase()))
+    .map(providerToApiMock);
+
+  const countryName = CODE_TO_COUNTRY[code.toUpperCase()];
 
   if (!countryName || apis.length === 0) {
     return (
@@ -44,6 +43,13 @@ export default async function CountryPage({ params }: { params: Promise<{ code: 
       </div>
     );
   }
+
+  const COUNTRY_FLAGS: Record<string, string> = {
+    'NG': '🇳🇬', 'ZA': '🇿🇦', 'GH': '🇬🇭', 'KE': '🇰🇪',
+    'UG': '🇺🇬', 'TZ': '🇹🇿', 'EG': '🇪🇬', 'MA': '🇲🇦',
+    'CI': '🇨🇮', 'SN': '🇸🇳', 'RW': '🇷🇼', 'TN': '🇹🇳',
+    'CM': '🇨🇲',
+  };
 
   return (
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-16">

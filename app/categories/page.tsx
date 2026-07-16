@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { Phone, CreditCard, Globe, MessageSquare, Banknote, Fingerprint, Truck, Building, Bitcoin, Map, Bot } from 'lucide-react';
-import { getAllApis } from '@/lib/data';
+import { Phone, CreditCard, Globe, MessageSquare, Banknote, Fingerprint, Truck, Building, Bitcoin, Map, Bot, AtSign } from 'lucide-react';
+import { getAllProvidersData } from '@/lib/data';
 
 const categoryIcons: Record<string, typeof CreditCard> = {
   'Mobile Money': Phone,
   'Payments': CreditCard,
   'KYC': Fingerprint,
-  'Identity': Globe,
+  'Identity': AtSign,
   'SMS': MessageSquare,
   'Airtime': Banknote,
   'Banking': Banknote,
@@ -15,10 +15,11 @@ const categoryIcons: Record<string, typeof CreditCard> = {
   'Crypto': Bitcoin,
   'Maps': Map,
   'AI': Bot,
+  'Messaging': MessageSquare,
 };
 
 export default async function CategoriesPage() {
-  const apis = await getAllApis();
+  const providers = await getAllProvidersData();
   
   // Calculate real counts for each category
   const categoriesWithCounts = [
@@ -34,9 +35,10 @@ export default async function CategoriesPage() {
     { slug: 'crypto', name: 'Crypto' },
     { slug: 'maps', name: 'Maps' },
     { slug: 'ai', name: 'AI' },
+    { slug: 'messaging', name: 'Messaging' },
   ].map((cat) => ({
     ...cat,
-    count: apis.filter((api) => api.category === cat.name).length,
+    count: providers.filter((p) => p.categories.includes(cat.name)).length,
     icon: categoryIcons[cat.name] || CreditCard,
   }));
 

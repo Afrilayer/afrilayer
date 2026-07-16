@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FacetedSearch, ApiCard } from "@/components/ui";
-import type { ApiMock } from "@/lib/mock-data";
+import type { ApiMock } from "@/lib/types";
 
 interface ApiGridProps {
   apis: ApiMock[];

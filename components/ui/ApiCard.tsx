@@ -6,39 +6,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import StatusPill from "./StatusPill";
 import { CountryFlag } from "./CountryFlag";
-import type { ApiMock } from "@/lib/mock-data";
-
-// Country name to ISO code mapping
-const COUNTRY_TO_CODE: Record<string, string> = {
-  'Nigeria': 'NG',
-  'South Africa': 'ZA',
-  'Ghana': 'GH',
-  'Kenya': 'KE',
-  'Uganda': 'UG',
-  'Tanzania': 'TZ',
-  'Egypt': 'EG',
-  'Morocco': 'MA',
-  "CÃ´te d'Ivoire": 'CI',
-  'Senegal': 'SN',
-  'Rwanda': 'RW',
-  'Tunisia': 'TN',
-};
-
-// Category slug mapping
-const CATEGORY_TO_SLUG: Record<string, string> = {
-  'Mobile Money': 'mobile-money',
-  'Payments': 'payments',
-  'KYC': 'kyc',
-  'Identity': 'identity',
-  'SMS': 'sms',
-  'Airtime': 'airtime',
-  'Banking': 'banking',
-  'Logistics': 'logistics',
-  'Government': 'government',
-  'Crypto': 'crypto',
-  'Maps': 'maps',
-  'AI': 'ai',
-};
+import type { ApiMock } from "@/lib/types";
+import { CATEGORY_TO_SLUG, COUNTRY_TO_CODE } from "@/lib/constants";
 
 interface ApiCardProps {
   api: ApiMock & { logoUrl?: string };
