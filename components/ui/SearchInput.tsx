@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import * as React from 'react';
 import { Search, X } from 'lucide-react';
@@ -44,7 +44,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
 
     return (
       <div className={cn('relative w-full', containerClassName)}>
-        <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal/50" />
+        <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
         <input
           ref={ref}
           type="search"
@@ -52,9 +52,10 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
           onChange={handleChange}
           onKeyDown={handleKeyDown}
           className={cn(
-            'flex h-10 w-full rounded-lg border border-sand-100 bg-white pl-9 pr-10 py-2 text-sm shadow-subtle transition-all placeholder:text-charcoal/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-baobab-600 disabled:cursor-not-allowed disabled:opacity-50',
+            'flex h-10 w-full rounded-xl border border-border bg-surface pl-9 pr-10 py-2 text-sm shadow-sm transition-all placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50',
             className
           )}
+          placeholder={props.placeholder || "Search APIs, providers, categories..."}
           {...props}
         />
         {/* Clear button */}
@@ -62,7 +63,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
           <button
             type="button"
             onClick={handleClear}
-            className="absolute right-3 top-1/2 -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-full text-charcoal/50 hover:bg-sand-100"
+            className="absolute right-3 top-1/2 -translate-y-1/2 flex h-5 w-5 items-center justify-center rounded-full text-text-muted hover:bg-surface-hover"
             aria-label="Clear search"
           >
             <X className="h-3.5 w-3.5" />
@@ -70,11 +71,11 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
         )}
         {/* Keyboard shortcut hint */}
         {showShortcutHint && !value && (
-          <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 hidden items-center gap-1 text-xs text-charcoal/50 sm:flex">
-            <kbd className="rounded border border-sand-100 bg-sand-50 px-1 font-sans">
+          <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 hidden items-center gap-1 text-xs text-text-muted sm:flex">
+            <kbd className="rounded border border-border bg-surface px-1.5 font-mono">
               ⌘
             </kbd>
-            <kbd className="rounded border border-sand-100 bg-sand-50 px-1 font-sans">
+            <kbd className="rounded border border-border bg-surface px-1.5 font-mono">
               K
             </kbd>
           </div>

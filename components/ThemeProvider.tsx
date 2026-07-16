@@ -58,14 +58,14 @@ interface ThemeToggleProps {
 export function ThemeToggle({ className }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
-  
+
   React.useEffect(() => setMounted(true), []);
 
   return (
     <button
       onClick={toggleTheme}
       className={cn(
-        "flex h-8 w-8 items-center justify-center rounded-lg text-muted hover:text-text transition-colors",
+        "flex h-8 w-8 items-center justify-center rounded-lg text-text-muted hover:text-text transition-colors",
         className
       )}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}

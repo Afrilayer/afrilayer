@@ -21,7 +21,7 @@ const COUNTRY_FLAGS: Record<string, string> = {
   ZW: '🇿🇼',
   BF: '🇧🇫',
   ML: '🇲🇱',
-  NE: '🇳🇮',
+  NE: '🇳🇪',
   GN: '🇬🇳',
   GM: '🇬🇲',
   SL: '🇸🇱',
@@ -37,7 +37,7 @@ interface CountryFlagProps {
 
 export const CountryFlag: React.FC<CountryFlagProps> = ({ code, size = 'sm', className = '' }) => {
   const flag = COUNTRY_FLAGS[code.toUpperCase()];
-  
+
   const sizeClasses = {
     sm: 'text-sm',
     md: 'text-xl',
@@ -47,13 +47,14 @@ export const CountryFlag: React.FC<CountryFlagProps> = ({ code, size = 'sm', cla
   if (!flag) {
     // Elegant fallback - show the country code with styling
     return (
-      <span 
-        className={`inline-flex items-center justify-center rounded ${sizeClasses[size]} ${className}`}
-        style={{ 
-          background: "#14171A", 
-          color: "#93968D",
+      <span
+        className={`inline-flex items-center justify-center rounded font-mono text-[10px] ${sizeClasses[size]} ${className}`}
+        style={{
+          background: "var(--color-surface)",
+          color: "var(--color-text-muted)",
           minWidth: '1.5em',
-          minHeight: '1.5em'
+          minHeight: '1.5em',
+          border: "1px solid var(--color-border)",
         }}
         title={code}
       >

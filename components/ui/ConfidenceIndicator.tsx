@@ -16,25 +16,25 @@ const levelConfig: Record<
   verified: {
     label: 'Verified',
     className:
-      'bg-success/10 text-success border-success/20',
+      'bg-status-verified/10 text-status-verified border-status-verified/20',
     Icon: ShieldCheck,
   },
   'needs-review': {
     label: 'Needs Review',
     className:
-      'bg-warning/10 text-warning border-warning/20',
+      'bg-status-estimated/10 text-status-estimated border-status-estimated/20',
     Icon: AlertCircle,
   },
   stale: {
     label: 'Stale Data',
     className:
-      'bg-sand-100 text-charcoal/70 border-sand-200',
+      'bg-surface text-text-muted border-border',
     Icon: Clock,
   },
   community: {
     label: 'Provider Managed',
     className:
-      'bg-baobab-100 text-baobab-700 border-baobab-200',
+      'bg-primary/10 text-primary border-primary/20',
     Icon: Users,
   },
 };

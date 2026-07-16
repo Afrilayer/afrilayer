@@ -8,10 +8,10 @@ interface StatusPillProps {
 }
 
 const STATUS_CONFIG: Record<string, { color: string; Icon: React.ElementType; label: string }> = {
-  Live: { color: "#5FA97C", Icon: Check, label: "Live" },
-  Estimated: { color: "#D9B44E", Icon: Clock, label: "Estimated" },
-  Cached: { color: "#8A8D85", Icon: Clock, label: "Cached" },
-  Unavailable: { color: "#C05A45", Icon: XCircle, label: "Unavailable" },
+  Live: { color: "var(--color-status-verified)", Icon: Check, label: "Live" },
+  Estimated: { color: "var(--color-status-estimated)", Icon: Clock, label: "Estimated" },
+  Cached: { color: "var(--color-text-muted)", Icon: Clock, label: "Cached" },
+  Unavailable: { color: "var(--color-status-unavailable)", Icon: XCircle, label: "Unavailable" },
 };
 
 export const StatusPill: React.FC<StatusPillProps> = ({ status }) => {
@@ -22,11 +22,13 @@ export const StatusPill: React.FC<StatusPillProps> = ({ status }) => {
 
   return (
     <span
-      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-mono text-[10px] tracking-wide uppercase"
+      className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-mono text-[10px] tracking-wide uppercase"
       style={{
         color,
-        borderColor: `${color}55`,
-        backgroundColor: `${color}14`,
+        borderColor: color.replace(")", ", 0.3)"),
+        backgroundColor: color.replace(")", ", 0.08)"),
+        borderWidth: "1px",
+        borderStyle: "solid",
       }}
     >
       <Icon size={10} strokeWidth={2.5} />

@@ -1,104 +1,134 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:wght@400;500&display=swap");
 @import "tailwindcss";
 
+/* ===========================================
+   Design Tokens - 60-30-10 Rule
+   For Professional Developer Platform
+=========================================== */
+
+/* Font definitions - brand fonts */
 @theme inline {
-  /* Font definitions - brand fonts */
   --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
   --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
-
-  /* Brand Colors - Light Theme */
-  --color-dark: #141413;
-  --color-light: #FAF9F5;
-  --color-mid-gray: #B0AEA5;
-  --color-light-gray: #E8E6DC;
-
-  /* Accent Colors */
-  --color-primary: #D97757;
-  --color-secondary: #6A9BCC;
-  --color-tertiary: #788C5D;
-
-  /* Status Colors */
-  --color-verified: #3F7D4A;
-  --color-estimated: #A9761E;
-  --color-cached: #A9761E;
-  --color-unavailable: #C05A45;
-
-  /* Semantic tokens - Light */
-  --color-bg: var(--color-light);
-  --color-surface: #FFFFFF;
-  --color-surface-hover: #F5F4F0;
-  --color-border: var(--color-light-gray);
-  --color-text: var(--color-dark);
-  --color-muted: var(--color-mid-gray);
-  --color-muted-dim: #A5A197;
-
-  /* Semantic tokens - Dark overrides (below) */
-  --color-bg-dark: var(--color-dark);
-  --color-surface-dark-bg: #1E1E1C;
-  --color-surface-dark-hover: #2A2A27;
-  --color-border-dark: #2E2D2A;
-  --color-text-dark: var(--color-light);
-  --color-muted-dark: var(--color-mid-gray);
-  --color-muted-dim-dark: #9A968D;
 }
+
+/* ===========================================
+   60% - Primary Background
+=========================================== */
+:root {
+  --color-bg: #FAFAF8;
+  --color-bg-dark: #141413;
+}
+
+/* ===========================================
+   30% - Structure & Typography
+=========================================== */
+:root {
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F9F9F8;
+  --color-surface-dark: #1E1E1C;
+  --color-surface-dark-hover: #2A2A27;
+  
+  --color-text: #121212;
+  --color-text-dim: #4B5563;
+  --color-text-muted: #6B7280;
+  --color-text-muted-dim: #A5A197;
+  
+  --color-border: #E5E7EB;
+  --color-border-dark: #2E2D2A;
+}
+
+/* ===========================================
+   10% - Accent Colors
+=========================================== */
+:root {
+  --color-primary: #D4AF37;
+  --color-primary-hover: #E6A11D;
+  --color-primary-light: #FEF9F0;
+}
+
+/* Status colors for verification badges */
+:root {
+  --color-status-verified: #3F7D4A;
+  --color-status-estimated: #A9761E;
+  --color-status-cached: #A9761E;
+  --color-status-unavailable: #C05A45;
+}
+
+/* Aliases for backward compatibility */
+:root {
+  --color-success: var(--color-status-verified);
+  --color-warning: var(--color-status-estimated);
+  --color-error: var(--color-status-unavailable);
+}
+
+/* ===========================================
+   Shadows - Subtle elevation
+=========================================== */
+:root {
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 10px 28px rgba(20, 20, 19, 0.07);
+}
+
+/* ===========================================
+   Theme Definitions
+=========================================== */
 
 /* Light theme (default) */
 html,
 html[data-theme="light"] {
-  --color-bg: var(--color-light);
+  --color-bg: #FAFAF8;
   --color-surface: #FFFFFF;
-  --color-surface-hover: #F5F4F0;
-  --color-border: var(--color-light-gray);
-  --color-text: var(--color-dark);
-  --color-muted: var(--color-mid-gray);
-  --color-muted-dim: #A5A197;
-  --color-primary: #D97757;
-  --color-secondary: #6A9BCC;
-  --color-tertiary: #788C5D;
-  --color-verified: #3F7D4A;
-  --color-estimated: #A9761E;
-  --color-cached: #A9761E;
-  --color-unavailable: #C05A45;
+  --color-surface-hover: #F9F9F8;
+  --color-border: #E5E7EB;
+  --color-text: #121212;
+  --color-text-muted: #6B7280;
+  --color-text-muted-dim: #A5A197;
+  --color-primary: #D4AF37;
 }
 
 /* Dark theme overrides */
 html[data-theme="dark"] {
-  --color-bg: var(--color-dark);
-  --color-surface: var(--color-surface-dark-bg);
+  --color-bg: var(--color-bg-dark);
+  --color-surface: var(--color-surface-dark);
   --color-surface-hover: var(--color-surface-dark-hover);
   --color-border: var(--color-border-dark);
   --color-text: var(--color-light);
-  --color-muted: var(--color-mid-gray);
-  --color-muted-dim: var(--color-muted-dim-dark);
-  --color-primary: #D97757;
-  --color-secondary: #6A9BCC;
-  --color-tertiary: #788C5D;
+  --color-text-muted: #B0AEA5;
+  --color-text-muted-dim: #9A968D;
+  --color-primary: #D4AF37;
 }
 
-/* Smooth transitions */
+/* ===========================================
+   Base Styles
+=========================================== */
 html {
   transition: color 0.2s ease, background-color 0.2s ease;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Smooth scroll behavior */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Selection styling */
+/* ===========================================
+   Selection Styling
+=========================================== */
 ::selection {
-  background-color: #D9775733;
+  background-color: #D4AF3733;
   color: var(--color-text);
 }
 
-/* Custom scrollbar */
+/* ===========================================
+   Custom Scrollbar
+=========================================== */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -109,37 +139,42 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #B0AEA533;
+  background-color: #D4AF3733;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #B0AEA566;
+  background-color: #D4AF3766;
 }
 
-/* Focus rings - accessibility */
+/* ===========================================
+   Focus Rings - Accessibility
+=========================================== */
 .focus-ring,
 .focus-visible:focus {
   outline: none;
   box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-primary);
 }
 
-/* Typography - Poppins for headings, Lora for body */
+/* ===========================================
+   Typography Scale
+=========================================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  color: var(--color-text);
 }
 
-/* Hero title - 82px desktop, fluid mobile */
+/* Hero title - fluid responsive */
 h1.hero {
-  font-size: clamp(2.5rem, 8vw, 5.125rem); /* 40px to 82px */
+  font-size: clamp(2.5rem, 8vw, 5.125rem);
   font-weight: 700;
   letter-spacing: -0.03em;
 }
 
-/* Regular heading scales */
+/* Heading scales */
 h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.5rem; }
@@ -147,13 +182,28 @@ h4 { font-size: 1.25rem; }
 h5 { font-size: 1.125rem; }
 h6 { font-size: 1rem; }
 
-/* Body typography */
+/* Body typography - improved readability */
 p, li, a {
   font-family: var(--font-serif);
-  line-height: 1.6;
+  line-height: 1.625;
+  color: var(--color-text);
 }
 
-/* Container */
+/* Link styling */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+/* ===========================================
+   Container
+=========================================== */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -163,20 +213,12 @@ p, li, a {
   padding-right: 1rem;
 }
 
-/* Animation utilities */
-@keyframes pulse-subtle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
+/* ===========================================
+   Animation Utilities
+=========================================== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
 }
 
 .animate-fade-in {
@@ -196,17 +238,19 @@ p, li, a {
 .stagger-children > *:nth-child(5) { animation-delay: 200ms; }
 .stagger-children > *:nth-child(6) { animation-delay: 250ms; }
 
-/* Shadows */
+/* ===========================================
+   Utility Classes for Shadows
+=========================================== */
 .shadow-subtle {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .shadow-subtle-lg {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .shadow-card {
-  box-shadow: 0 10px 28px rgba(20, 20, 19, 0.07);
+  box-shadow: var(--shadow-card);
 }
 
 /* Hover lift effect */
@@ -216,15 +260,12 @@ p, li, a {
 
 .hover-lift:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
-/* Circuit trace background pattern - subtle infrastructure feel */
-.bg-circuit {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M10 20h20v-5H10zm0 10h40v-5H10zm0 10h30v-5H10zm0 10h50v-5H10zm0 10h25v-5H10zm0 10h35v-5H10zM70 20v5h20v-5H70zm10 10v5h25v-5h-25zm-5 10v5h20v-5H75zm-10 10v5h15v-5H65zm5 10v5h25v-5h-25zm-15 10v5h20v-5H70z' fill='none' stroke='%23D97757' stroke-opacity='0.03' stroke-width='0.5'%3E%3C/path%3E%3C/svg%3E");
-}
-
-/* Prevent horizontal overflow */
+/* ===========================================
+   Mobile Responsiveness
+=========================================== */
 @media (max-width: 640px) {
   .overflow-x-hidden {
     overflow-x: hidden;

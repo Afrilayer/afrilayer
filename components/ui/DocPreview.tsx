@@ -31,11 +31,11 @@ export const DocPreview: React.FC<DocPreviewProps> = ({ curl, js, python, go }) 
             <button
               key={t}
               onClick={() => setTab(t)}
-              className="px-3 py-1.5 text-xs font-mono rounded-t"
+              className="px-3 py-1.5 text-xs font-mono rounded-t transition-colors"
               style={{
-                background: tab === t ? "#14171A" : "transparent",
-                color: tab === t ? "#F2EFE9" : "#5D6058",
-                borderBottom: tab === t ? "2px solid #C9722A" : "2px solid transparent",
+                background: tab === t ? "var(--color-surface-dark, #1E1E1E)" : "transparent",
+                color: tab === t ? "var(--color-text)" : "var(--color-text-muted)",
+                borderBottom: tab === t ? "2px solid var(--color-primary)" : "2px solid transparent",
               }}
             >
               {t === "curl" ? "cURL" : t === "js" ? "JavaScript" : t === "python" ? "Python" : "Go"}
@@ -44,8 +44,8 @@ export const DocPreview: React.FC<DocPreviewProps> = ({ curl, js, python, go }) 
         </div>
         <button
           onClick={handleCopy}
-          className="flex items-center gap-1.5 text-[10px] font-mono px-2 py-1"
-          style={{ color: copied ? "#5FA97C" : "#5D6058" }}
+          className="flex items-center gap-1.5 text-[10px] font-mono px-2 py-1 transition-colors"
+          style={{ color: copied ? "var(--color-status-verified)" : "var(--color-text-muted)" }}
         >
           <Copy size={11} /> {copied ? "copied" : "copy"}
         </button>
@@ -54,9 +54,9 @@ export const DocPreview: React.FC<DocPreviewProps> = ({ curl, js, python, go }) 
       <pre
         className="p-4 rounded-lg overflow-x-auto text-xs leading-relaxed font-mono"
         style={{
-          background: "#14171A",
-          border: "1px solid #262A25",
-          color: "#E0A34E",
+          background: "#1E1E1E",
+          border: "1px solid var(--color-border)",
+          color: "#D4AF37",
         }}
       >
         {codeMap[tab]}

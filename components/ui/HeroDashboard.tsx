@@ -40,19 +40,18 @@ export const HeroDashboard: React.FC<HeroDashboardProps> = ({ stats = defaultSta
         return (
           <div
             key={stat.label}
-            className="p-4 rounded-lg flex flex-col items-center justify-center text-center"
+            className="p-4 rounded-xl flex flex-col items-center justify-center text-center bg-surface border border-border"
             style={{
-              background: "#14171A",
-              border: "1px solid #262A25",
+              boxShadow: "var(--shadow-sm)",
             }}
           >
             <div className="flex items-center gap-2 mb-1">
-              {Icon && <Icon size={14} style={{ color: "#C9722A" }} />}
-              <span className="text-2xl font-semibold font-mono" style={{ color: "#F2EFE9" }}>
+              {Icon && <Icon size={14} className="text-primary" />}
+              <span className="text-2xl font-semibold font-mono text-text">
                 {stat.value}
               </span>
             </div>
-            <span className="text-[10px] font-mono uppercase tracking-wider" style={{ color: "#5D6058" }}>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-text-muted">
               {stat.label}
             </span>
           </div>

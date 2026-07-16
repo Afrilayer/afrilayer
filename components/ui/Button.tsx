@@ -5,23 +5,21 @@ import { cn } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
         default:
-          'bg-copper text-white hover:bg-amber shadow-subtle',
-        gold:
-          'bg-amber text-white hover:bg-copper shadow-subtle',
+          'bg-primary text-bg hover:bg-primary-hover',
         destructive:
-          'bg-unavailable text-white hover:bg-unavailable/90 shadow-subtle',
+          'bg-status-unavailable text-white hover:opacity-90',
         outline:
           'border border-border bg-surface hover:bg-surface-hover',
         secondary:
-          'bg-surface text-muted hover:bg-surface-hover',
+          'bg-surface text-text-muted hover:bg-surface-hover',
         ghost:
           'hover:bg-surface-hover hover:text-text',
-        link: 'text-copper underline-offset-4 hover:underline',
+        link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
         default: 'h-10 px-4 py-2',

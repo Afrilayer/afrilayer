@@ -20,7 +20,7 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
   const [query, setQuery] = React.useState("");
   const [sortBy, setSortBy] = React.useState<SortOption>("lastUpdated");
   const [currentPage, setCurrentPage] = React.useState(1);
-  
+
   const ITEMS_PER_PAGE = 12;
 
   // Calculate category counters
@@ -63,7 +63,7 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
       switch (sortBy) {
         case "lastUpdated":
           // Sort by lastVerified (used as proxy for updated)
-          return (a as any).lastVerified && (b as any).lastVerified 
+          return (a as any).lastVerified && (b as any).lastVerified
             ? (b as any).lastVerified.localeCompare((a as any).lastVerified)
             : 0;
         case "lastVerified":
@@ -111,20 +111,20 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
       {/* Sort and Count Bar */}
       <section className="px-6 md:px-10 max-w-5xl mx-auto mb-4 flex items-center justify-between flex-wrap gap-4">
         <div className="flex items-center gap-3">
-          <span className="text-xs font-mono text-muted-dim">
+          <span className="text-xs font-mono text-text-muted">
             Sort by:
           </span>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
-            className="text-xs font-mono bg-surface border border-border rounded px-2 py-1 text-text focus:outline-none focus:ring-2 focus:ring-copper"
+            className="text-xs font-mono bg-surface border border-border rounded-lg px-2.5 py-1 text-text focus:outline-none focus:ring-2 focus:ring-primary"
           >
             <option value="lastUpdated">Last Updated</option>
             <option value="lastVerified">Last Verified</option>
             <option value="name">Name A-Z</option>
           </select>
         </div>
-        <span className="text-xs font-mono text-muted-dim">
+        <span className="text-xs font-mono text-text-muted">
           {filtered.length} API{filtered.length !== 1 ? "s" : ""} found
         </span>
       </section>
@@ -132,11 +132,11 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
       {/* API Grid */}
       <section className="px-6 md:px-10 max-w-5xl mx-auto pb-20">
         {filtered.length === 0 ? (
-          <div className="text-center py-16 rounded-lg border border-dashed border-border">
-            <p className="text-sm text-muted">
+          <div className="text-center py-16 rounded-xl border border-dashed border-border bg-surface">
+            <p className="text-sm text-text-muted">
               No APIs match these filters yet.
             </p>
-            <p className="text-xs mt-1 font-mono text-muted-dim">
+            <p className="text-xs mt-1 font-mono text-text-muted-dim">
               Try a different category or country.
             </p>
           </div>
@@ -156,7 +156,7 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Link href={`/apis/${api.id}`} className="block focus:outline-none focus:ring-2 focus:ring-copper focus:ring-offset-2 rounded-lg">
+                  <Link href={`/apis/${api.id}`} className="block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-xl">
                     <ApiCard api={api} showCountryLinks={true} showCategoryLink={true} />
                   </Link>
                 </motion.div>
@@ -171,20 +171,20 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
             <button
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
-              className="px-3 py-1 text-xs font-mono rounded border border-border bg-surface text-text disabled:opacity-50 hover:bg-surface-hover transition-colors"
+              className="px-3 py-1.5 text-xs font-mono rounded-lg border border-border bg-surface text-text-muted disabled:opacity-50 hover:text-text hover:bg-surface-hover transition-colors"
             >
               Previous
             </button>
-            
+
             <div className="flex items-center gap-1">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                 <button
                   key={page}
                   onClick={() => setCurrentPage(page)}
-                  className={`w-8 h-8 text-xs font-mono rounded border transition-colors ${
+                  className={`w-8 h-8 text-xs font-mono rounded-lg border transition-colors ${
                     page === currentPage
-                      ? "bg-copper text-bg border-copper"
-                      : "bg-surface text-text border-border hover:bg-surface-hover"
+                      ? "bg-primary text-bg border-primary"
+                      : "bg-surface text-text-muted border-border hover:text-text hover:bg-surface-hover"
                   }`}
                 >
                   {page}
@@ -195,7 +195,7 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
             <button
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
-              className="px-3 py-1 text-xs font-mono rounded border border-border bg-surface text-text disabled:opacity-50 hover:bg-surface-hover transition-colors"
+              className="px-3 py-1.5 text-xs font-mono rounded-lg border border-border bg-surface text-text-muted disabled:opacity-50 hover:text-text hover:bg-surface-hover transition-colors"
             >
               Next
             </button>

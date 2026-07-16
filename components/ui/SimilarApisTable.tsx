@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ApiCard } from "./ApiCard";
 import { EmptyState } from "./EmptyState";
@@ -11,7 +13,7 @@ export const SimilarApisTable = ({ apis }: SimilarApisTableProps) => {
   if (apis.length === 0) {
     return (
       <div className="mt-10">
-        <h2 className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#5D6058" }}>
+        <h2 className="text-xs font-mono uppercase tracking-widest mb-3 text-text-muted">
           Similar APIs
         </h2>
         <EmptyState
@@ -24,7 +26,7 @@ export const SimilarApisTable = ({ apis }: SimilarApisTableProps) => {
 
   return (
     <div className="mt-10">
-      <h2 className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#5D6058" }}>
+      <h2 className="text-xs font-mono uppercase tracking-widest mb-3 text-text-muted">
         Similar APIs
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Book, Globe, TestTube, HelpCircle, Code, ExternalLink, Clock } from "lucide-react";
+import { Book, Globe, TestTube, HelpCircle, Clock, ExternalLink } from "lucide-react";
 
 interface QuickFactsProps {
   countries: string[];
@@ -30,29 +30,29 @@ export const QuickFacts: React.FC<QuickFactsProps> = ({
   ].filter(Boolean) as { label: string; href: string; icon: React.ElementType }[];
 
   return (
-    <div className="rounded-lg" style={{ background: "#14171A", border: "1px solid #262A25" }}>
-      <div className="p-4">
-        <h3 className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#5D6058" }}>
+    <div className="rounded-xl bg-surface border border-border">
+      <div className="p-5">
+        <h3 className="text-xs font-mono uppercase tracking-widest mb-3 text-text-muted">
           Quick Facts
         </h3>
 
         <dl className="space-y-3">
           {/* Countries */}
           <div>
-            <dt className="text-[10px] font-mono" style={{ color: "#5D6058" }}>
+            <dt className="text-[10px] font-mono text-text-muted">
               Countries
             </dt>
-            <dd className="text-sm mt-0.5" style={{ color: "#93968D" }}>
+            <dd className="text-sm mt-0.5 text-text">
               {countries.join(", ")}
             </dd>
           </div>
 
           {/* Categories */}
           <div>
-            <dt className="text-[10px] font-mono" style={{ color: "#5D6058" }}>
+            <dt className="text-[10px] font-mono text-text-muted">
               Categories
             </dt>
-            <dd className="text-sm mt-0.5" style={{ color: "#93968D" }}>
+            <dd className="text-sm mt-0.5 text-text">
               {categories.join(", ")}
             </dd>
           </div>
@@ -60,10 +60,10 @@ export const QuickFacts: React.FC<QuickFactsProps> = ({
           {/* Last Crawl */}
           {lastCrawl && (
             <div>
-              <dt className="text-[10px] font-mono" style={{ color: "#5D6058" }}>
+              <dt className="text-[10px] font-mono text-text-muted">
                 Last Crawl
               </dt>
-              <dd className="text-sm mt-0.5 flex items-center gap-1.5" style={{ color: "#93968D" }}>
+              <dd className="text-sm mt-0.5 flex items-center gap-1.5 text-text-muted">
                 <Clock size={10} />
                 {lastCrawl}
               </dd>
@@ -74,8 +74,8 @@ export const QuickFacts: React.FC<QuickFactsProps> = ({
 
       {/* Links */}
       {links.length > 0 && (
-        <div className="border-t" style={{ borderTop: "1px solid #262A25" }}>
-          <div className="p-4 space-y-2">
+        <div className="border-t border-border">
+          <div className="p-5 space-y-2">
             {links.map((link) => {
               const Icon = link.icon;
               return (
@@ -84,10 +84,7 @@ export const QuickFacts: React.FC<QuickFactsProps> = ({
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-xs font-mono transition-colors"
-                  style={{ color: "#93968D" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#E0A34E")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "#93968D")}
+                  className="flex items-center gap-2 text-xs font-mono text-text-muted hover:text-primary transition-colors"
                 >
                   <Icon size={12} />
                   <span>{link.label}</span>

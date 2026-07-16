@@ -29,18 +29,18 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
       <div
         ref={ref}
         className={cn(
-          'flex flex-col items-center justify-center rounded-lg border border-border bg-surface p-12 text-center',
+          'flex flex-col items-center justify-center rounded-xl border border-border bg-surface p-12 text-center',
           className
         )}
       >
-        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full" style={{ background: "#262A25" }}>
-          <Icon className="h-8 w-8" style={{ color: "#5D6058" }} />
+        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full" style={{ background: "var(--color-surface-dark, #1E1E1C)" }}>
+          <Icon className="h-8 w-8 text-text-muted" />
         </div>
         <h3 className="mb-2 text-lg font-semibold text-text">
           {title}
         </h3>
         {description && (
-          <p className="mb-6 max-w-md text-sm text-muted">
+          <p className="mb-6 max-w-md text-sm text-text-muted">
             {description}
           </p>
         )}
@@ -49,14 +49,14 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
             {action.href ? (
               <a
                 href={action.href}
-                className="inline-flex items-center justify-center rounded-lg bg-copper px-4 py-2 text-sm font-medium text-bg hover:bg-amber focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 transition-colors"
+                className="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-medium text-bg hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
               >
                 {action.label}
               </a>
             ) : (
               <button
                 onClick={action.onClick}
-                className="inline-flex items-center justify-center rounded-lg bg-copper px-4 py-2 text-sm font-medium text-bg hover:bg-amber focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 transition-colors"
+                className="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-medium text-bg hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
               >
                 {action.label}
               </button>

@@ -51,15 +51,15 @@ export default async function Home() {
         <div className="flex items-start justify-between gap-8 flex-wrap">
           <div className="max-w-xl">
             <div className="flex items-center gap-2 mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-verified" />
-              <span className="text-xs font-mono tracking-widest uppercase text-muted-dim">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span className="text-xs font-mono tracking-widest uppercase text-text-muted">
                 {stats.liveApis}+ verified APIs
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-text">
               The verification layer for African digital infrastructure.
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-muted">
+            <p className="mt-5 text-base leading-relaxed text-text-muted">
               Discover production-ready APIs powering Africa — payments, mobile money, KYC, SMS, and banking.
               Each listing is continuously monitored, verification-dated, and rated for operational confidence.
             </p>

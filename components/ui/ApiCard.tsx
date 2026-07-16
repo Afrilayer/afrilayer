@@ -28,7 +28,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
             className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors"
             style={{
               background: "var(--color-surface)",
-              color: "var(--color-muted)",
+              color: "var(--color-text-muted)",
               border: "1px solid var(--color-border)",
             }}
             onClick={(e) => e.stopPropagation()}
@@ -47,7 +47,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
         className="text-[10px] font-mono px-2 py-0.5 rounded"
         style={{
           background: "var(--color-surface)",
-          color: "var(--color-muted)",
+          color: "var(--color-text-muted)",
           border: "1px solid var(--color-border)",
         }}
       >
@@ -59,7 +59,10 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
   return (
     <motion.button
       onClick={onClick}
-      className="text-left rounded-[18px] p-5 flex flex-col gap-3 transition-colors w-full bg-surface shadow-card"
+      className="text-left rounded-xl p-5 flex flex-col gap-3 transition-colors w-full bg-surface"
+      style={{
+        boxShadow: "var(--shadow-sm)",
+      }}
       whileHover={{
         background: "var(--color-surface-hover)",
       }}
@@ -70,7 +73,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-3">
           {api.logoUrl && (
-            <div className="w-8 h-8 rounded-md overflow-hidden bg-surface border border-border">
+            <div className="w-8 h-8 rounded-md overflow-hidden bg-surface" style={{ border: "1px solid var(--color-border)" }}>
               <Image
                 src={api.logoUrl}
                 alt={`${api.provider} logo`}
@@ -84,7 +87,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
             <h3 className="font-semibold text-base leading-snug text-text">
               {api.name}
             </h3>
-            <p className="text-xs mt-0.5 font-mono text-muted">
+            <p className="text-xs mt-0.5 font-mono text-text-muted">
               {api.provider}
             </p>
           </div>
@@ -92,7 +95,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
         <StatusPill status={api.status} />
       </div>
 
-      <p className="text-sm leading-relaxed text-muted">
+      <p className="text-sm leading-relaxed text-text-muted">
         {api.description}
       </p>
 
@@ -104,7 +107,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
             className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors"
             style={{
               background: "var(--color-surface)",
-              color: "var(--color-muted)",
+              color: "var(--color-text-muted)",
               border: "1px solid var(--color-border)",
             }}
             onClick={(e) => e.stopPropagation()}
@@ -115,12 +118,12 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
       </div>
 
       <div className="flex items-center justify-between pt-2 mt-1" style={{ 
-        borderTop: "0.5px solid var(--color-border)" 
+        borderTop: "1px solid var(--color-border)" 
       }}>
-        <span className="text-[10px] font-mono text-muted">
+        <span className="text-[10px] font-mono text-text-muted">
           last checked {api.lastVerified}
         </span>
-        <ChevronRight size={14} className="text-clay" />
+        <ChevronRight size={14} className="text-primary" />
       </div>
     </motion.button>
   );

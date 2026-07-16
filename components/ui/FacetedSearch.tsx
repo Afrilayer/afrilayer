@@ -29,27 +29,25 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
   countryCounts = {},
 }) => {
   const selectCls = (active: boolean) =>
-    `text-xs font-mono px-3 py-1.5 rounded-full transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-copper ${active ? "font-semibold" : ""}`;
+    `text-xs font-mono px-3 py-1.5 rounded-full transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary ${active ? "font-semibold" : ""}`;
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-4">
       {/* Search Input */}
-      <div
-        className="flex items-center gap-2 px-4 py-3 rounded-lg w-full bg-surface border border-border"
-      >
-        <Search size={15} className="text-muted-dim" />
+      <div className="flex items-center gap-2 px-4 py-3 rounded-xl w-full bg-surface border border-border">
+        <Search size={15} className="text-text-muted" />
         <input
           value={query}
           onChange={(e) => onQueryChange(e.target.value)}
           placeholder="Search APIs, providers, categories…"
-          className="bg-transparent outline-none text-sm w-full font-mono text-text placeholder:text-muted-dim"
+          className="bg-transparent outline-none text-sm w-full font-mono text-text placeholder:text-text-muted"
           aria-label="Search APIs and providers"
         />
       </div>
 
       {/* Category Filters - horizontally scrollable on mobile */}
       <div>
-        <div className="text-[10px] font-mono uppercase tracking-widest mb-2 text-muted-dim">
+        <div className="text-[10px] font-mono uppercase tracking-widest mb-2 text-text-muted">
           Category
         </div>
         <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
@@ -61,15 +59,15 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
                 onClick={() => onCategoryChange(c)}
                 className={selectCls(category === c)}
                 style={{
-                  background: category === c ? "var(--color-copper)" : "var(--color-surface)",
-                  color: category === c ? "var(--color-bg)" : "var(--color-muted)",
-                  border: `1px solid ${category === c ? "var(--color-copper)" : "var(--color-border)"}`,
+                  background: category === c ? "var(--color-primary)" : "var(--color-surface)",
+                  color: category === c ? "var(--color-bg)" : "var(--color-text-muted)",
+                  border: `1px solid ${category === c ? "var(--color-primary)" : "var(--color-border)"}`,
                 }}
                 aria-pressed={category === c}
               >
                 <span className="flex items-center gap-1">
                   {c}
-                  <span className={`text-[8px] px-1 ${category === c ? "text-bg/70" : "text-muted-dim"}`}>
+                  <span className={`text-[8px] px-1 ${category === c ? "text-bg/70" : "text-text-muted-dim"}`}>
                     ({count})
                   </span>
                 </span>
@@ -81,7 +79,7 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
 
       {/* Country Filters - horizontally scrollable on mobile */}
       <div>
-        <div className="text-[10px] font-mono uppercase tracking-widest mb-2 text-muted-dim">
+        <div className="text-[10px] font-mono uppercase tracking-widest mb-2 text-text-muted">
           Country
         </div>
         <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
@@ -93,15 +91,15 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
                 onClick={() => onCountryChange(c)}
                 className={selectCls(country === c)}
                 style={{
-                  background: country === c ? "var(--color-copper)" : "var(--color-surface)",
-                  color: country === c ? "var(--color-bg)" : "var(--color-muted)",
-                  border: `1px solid ${country === c ? "var(--color-copper)" : "var(--color-border)"}`,
+                  background: country === c ? "var(--color-primary)" : "var(--color-surface)",
+                  color: country === c ? "var(--color-bg)" : "var(--color-text-muted)",
+                  border: `1px solid ${country === c ? "var(--color-primary)" : "var(--color-border)"}`,
                 }}
                 aria-pressed={country === c}
               >
                 <span className="flex items-center gap-1">
                   {c}
-                  <span className={`text-[8px] px-1 ${country === c ? "text-bg/70" : "text-muted-dim"}`}>
+                  <span className={`text-[8px] px-1 ${country === c ? "text-bg/70" : "text-text-muted-dim"}`}>
                     ({count})
                   </span>
                 </span>

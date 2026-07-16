@@ -19,13 +19,13 @@ export const VerificationStrip: React.FC<VerificationStripProps> = ({
   const getConfidenceIcon = () => {
     switch (confidence) {
       case "Live":
-        return <Check size={10} strokeWidth={2.5} style={{ color: "#5FA97C" }} />;
+        return <Check size={10} strokeWidth={2.5} className="text-status-verified" />;
       case "Estimated":
-        return <Clock size={10} strokeWidth={2.5} style={{ color: "#D9B44E" }} />;
+        return <Clock size={10} strokeWidth={2.5} className="text-status-estimated" />;
       case "Cached":
-        return <Clock size={10} strokeWidth={2.5} style={{ color: "#8A8D85" }} />;
+        return <Clock size={10} strokeWidth={2.5} className="text-text-muted" />;
       default:
-        return <AlertCircle size={10} strokeWidth={2.5} style={{ color: "#C05A45" }} />;
+        return <AlertCircle size={10} strokeWidth={2.5} className="text-status-unavailable" />;
     }
   };
 
@@ -36,24 +36,22 @@ export const VerificationStrip: React.FC<VerificationStripProps> = ({
 
   return (
     <div
-      className="w-full px-3 py-2 flex items-center justify-between text-[10px] font-mono"
+      className="w-full px-3 py-2 flex items-center justify-between text-[10px] font-mono border-t border-b bg-surface"
       style={{
-        borderTop: "1px solid #262A25",
-        borderBottom: "1px solid #262A25",
-        background: "#14171A",
+        borderColor: "var(--color-border)",
       }}
     >
-      <div className="flex items-center gap-1.5" style={{ color: "#5FA97C" }}>
+      <div className="flex items-center gap-1.5 text-status-verified">
         <Check size={10} strokeWidth={2.5} />
         <span>VERIFIED TODAY</span>
       </div>
-      
-      <div className="flex items-center gap-1.5" style={{ color: "#93968D" }}>
+
+      <div className="flex items-center gap-1.5 text-text-muted">
         {getConfidenceIcon()}
         <span>Confidence: {getConfidenceLabel()}</span>
       </div>
-      
-      <span style={{ color: "#5D6058" }}>Last Checked: {liveCheckedAgo}</span>
+
+      <span className="text-text-muted-dim">Last Checked: {liveCheckedAgo}</span>
     </div>
   );
 };
