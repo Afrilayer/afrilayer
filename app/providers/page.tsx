@@ -1,82 +1,37 @@
-import Image from "next/image";
-import { getAllProviders } from "@/lib/providers/loader";
-import { Badge, ConfidenceIndicator } from "@/components/ui";
 import Link from "next/link";
+import { getAllProvidersData } from "@/lib/data";
 
 export const revalidate = 3600;
 
+// Redirect to homepage - provider listing is now handled by ApiGrid on homepage
 export default async function ProvidersPage() {
-  const providers = await getAllProviders();
+  const providers = await getAllProvidersData();
   
-  // Group by provider (unique providers)
-  const uniqueProviders = providers.reduce((acc, p) => {
-    if (!acc.find(a => a.provider.name === p.provider.name)) {
-      acc.push(p);
-    }
-    return acc;
-  }, [] as typeof providers);
-
+  // This page now redirects to homepage
   return (
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-16">
-      <h1 className="text-3xl font-bold tracking-tight text-text">
+      <h1 className="text-3xl font-bold tracking-tight text-text mb-4">
         API Providers
       </h1>
-      <p className="mt-2 text-muted max-w-2xl">
-        Explore companies building APIs for the African market.
+      <p className="text-muted mb-6">
+        Provider listings are now displayed on the homepage.
       </p>
-
-      <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 stagger-children">
-        {uniqueProviders.map(({ provider }) => (
-          <Link
-            key={provider.slug}
-            href={`/apis/${provider.slug}`}
-            className="rounded-lg border border-border bg-surface p-6 transition-all hover-lift block focus:outline-none focus:ring-2 focus:ring-copper focus:ring-offset-2"
-          >
-            <div className="flex items-start justify-between">
-              <div className="flex items-center gap-3">
-                {provider.logoUrl && (
-                  <div className="w-10 h-10 rounded-lg overflow-hidden bg-surface border border-border">
-                    <Image
-                      src={provider.logoUrl}
-                      alt={`${provider.name} logo`}
-                      width={40}
-                      height={40}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                )}
-                <h2 className="text-xl font-semibold text-text">
-                  {provider.name}
-                </h2>
-              </div>
-              <Badge variant={provider.verified ? "success" : "default"} className="text-xs">
-                {provider.slug}
-              </Badge>
-            </div>
-            <p className="mt-2 text-sm text-muted">
-              {provider.tagline || provider.description}
-            </p>
-            
-            {/* Key People */}
-            {provider.keyPeople && provider.keyPeople.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-2">
-                {provider.keyPeople.slice(0, 2).map((person) => (
-                  <span key={person.name} className="text-[10px] text-muted-dim font-mono">
-                    {person.name} &middot; {person.role}
-                  </span>
-                ))}
-              </div>
-            )}
-            
-            <div className="mt-4 flex items-center gap-3">
-              <ConfidenceIndicator
-                lastVerified={provider.lastVerified}
-                verificationStatus={provider.verified ? "verified" : "pending"}
-                providerClaimed={false}
-              />
-            </div>
-          </Link>
-        ))}
+      <Link href="/" className="inline-flex items-center gap-2 text-copper hover:underline">
+        Return to homepage →
+      </Link>
+      
+      {/* Debug: list providers for verification */}
+      <div className="mt-8">
+        <h2 className="text-sm font-semibold text-text mb-3">Available Providers ({providers.length})</h2>
+        <ul className="grid grid-cols-2 gap-2 text-sm text-muted">
+          {providers.map(p => (
+            <li key={p.slug}>
+              <Link href={`/apis/${p.slug}`} className="hover:text-copper">
+                {p.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

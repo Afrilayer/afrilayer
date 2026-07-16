@@ -4,6 +4,7 @@ export {
   getProviderSlugs, 
   loadProviderJson, 
   loadProviderApiData,
-  loadProviderReadme 
+  loadProviderReadme,
+  normalizeProvider
 } from './loader';
-export type { ProviderJson, ProviderApiData, KeyPerson } from './loader';
+export type { Provider, ProviderApiData } from '../types';

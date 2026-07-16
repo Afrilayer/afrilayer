@@ -1,0 +1,27 @@
+{
+  "slug": "yoco",
+  "name": "Yoco",
+  "tagline": "Card payments for South African businesses.",
+  "description": "Yoco provides payment solutions for South African businesses, including card readers, online payments, and POS systems with developer APIs.",
+  "website": "https://yoco.com",
+  "documentation": "https://developer.yoco.com",
+  "developerPortal": "https://developer.yoco.com",
+  "supportEmail": "support@yoco.com",
+  "headquarters": "South Africa",
+  "categories": ["Payments"],
+  "countries": ["South Africa"],
+  "features": ["Card payments", "Online payments", "POS integration", "QR payments"],
+  "pricingModel": "transaction",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java", "Go", "Ruby"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Brad Reeve", "role": "Head of Product" }
+  ]
+}

@@ -15,8 +15,6 @@
     "@fontsource/manrope": "^5.2.8",
     "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-slot": "^1.0.2",
-    "@supabase/ssr": "^0.5.2",
-    "@supabase/supabase-js": "^2.43.0",
     "@vercel/analytics": "^2.0.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",

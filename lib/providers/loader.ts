@@ -3,17 +3,11 @@
 
 import { promises as fs } from 'fs';
 import path from 'path';
-import type { ApiMock, ApiStatus } from '../mock-data';
+import type { Provider, ProviderApiData } from '../types';
+import { STATUS_VALUES } from '../constants';
 
-// Key people interface for founders/CEOs/maintainers
-export interface KeyPerson {
-  name: string;
-  role: string;
-  github?: string;
-}
-
-// Provider JSON type - matches the mock data shape
-export interface ProviderJson {
+// Raw provider.json shape
+interface RawProvider {
   slug: string;
   name: string;
   tagline: string;
@@ -27,27 +21,18 @@ export interface ProviderJson {
   categories: string[];
   countries: string[];
   features: string[];
-  pricingModel: string;
+  pricingModel?: string;
   authentication: string;
   apiStyle?: string;
   sandboxAvailable: boolean;
   productionReady: boolean;
-  sdkLanguages: string[];
+  sdkLanguages?: string[];
   openapiSpec?: string;
-  status: ApiStatus;
+  status: string;
   verified: boolean;
   lastVerified: string;
   lastUpdated: string;
-  keyPeople?: KeyPerson[];
-}
-
-// API-specific data that can be extended per provider
-export interface ProviderApiData extends Partial<ApiMock> {
-  // Code samples can be loaded from separate files
-  curl?: string;
-  js?: string;
-  python?: string;
-  go?: string;
+  keyPeople?: { name: string; role: string; github?: string }[];
 }
 
 // Get all provider directories
@@ -65,11 +50,11 @@ export async function getProviderSlugs(): Promise<string[]> {
 }
 
 // Load a single provider's JSON
-export async function loadProviderJson(slug: string): Promise<ProviderJson | null> {
+export async function loadProviderJson(slug: string): Promise<RawProvider | null> {
   const providersPath = path.join(process.cwd(), 'providers', slug, 'provider.json');
   try {
     const content = await fs.readFile(providersPath, 'utf-8');
-    return JSON.parse(content) as ProviderJson;
+    return JSON.parse(content) as RawProvider;
   } catch {
     return null;
   }
@@ -82,7 +67,7 @@ export async function loadProviderApiData(slug: string): Promise<ProviderApiData
     const content = await fs.readFile(providersPath, 'utf-8');
     return JSON.parse(content) as ProviderApiData;
   } catch {
-    return {};
+    return { pricing: [], changelog: [] };
   }
 }
 
@@ -96,46 +81,66 @@ export async function loadProviderReadme(slug: string): Promise<string> {
   }
 }
 
+// Normalize raw provider to unified Provider object
+export function normalizeProvider(raw: RawProvider, apiData: ProviderApiData = { pricing: [], changelog: [] }): Provider {
+  return {
+    slug: raw.slug,
+    name: raw.name,
+    tagline: raw.tagline,
+    logoUrl: raw.logoUrl || `/providers/${raw.slug}/logo.svg`,
+    description: raw.description,
+    website: raw.website,
+    documentation: raw.documentation,
+    developerPortal: raw.developerPortal,
+    supportEmail: raw.supportEmail,
+    headquarters: raw.headquarters,
+    categories: raw.categories,
+    countries: raw.countries,
+    features: raw.features || [],
+    pricingModel: raw.pricingModel || 'Contact',
+    authentication: raw.authentication,
+    apiStyle: raw.apiStyle,
+    sdkLanguages: raw.sdkLanguages || [],
+    openapiSpec: raw.openapiSpec,
+    sandboxAvailable: raw.sandboxAvailable,
+    productionReady: raw.productionReady,
+    status: STATUS_VALUES.includes(raw.status) 
+      ? (raw.status as typeof STATUS_VALUES[number]) 
+      : 'Live',
+    verified: raw.verified,
+    lastVerified: raw.lastVerified,
+    lastUpdated: raw.lastUpdated,
+    keyPeople: raw.keyPeople || [],
+    apiData,
+    relatedProviders: [], // Computed later
+  };
+}
+
 // Load all providers (for SSR/build time)
-export async function getAllProviders(): Promise<Array<{ slug: string; provider: ProviderJson; api: ApiMock }>> {
+export async function getAllProviders(): Promise<Provider[]> {
   const slugs = await getProviderSlugs();
-  const results: Array<{ slug: string; provider: ProviderJson; api: ApiMock }> = [];
+  const results: Provider[] = [];
 
   for (const slug of slugs) {
-    const provider = await loadProviderJson(slug);
-    if (provider) {
+    const rawProvider = await loadProviderJson(slug);
+    if (rawProvider) {
       const apiData = await loadProviderApiData(slug);
-      const api = providerToApiMock(provider, slug, apiData);
-      results.push({ slug, provider, api });
+      results.push(normalizeProvider(rawProvider, apiData));
     }
+  }
+
+  // Compute related providers
+  for (const provider of results) {
+    provider.relatedProviders = results
+      .filter(p => p.slug !== provider.slug 
+        && p.categories.some(c => provider.categories.includes(c))
+        && p.countries.some(c => provider.countries.includes(c)))
+      .map(p => p.slug)
+      .slice(0, 3);
   }
 
   return results;
 }
 
-// Convert provider JSON to ApiMock format
-export function providerToApiMock(provider: ProviderJson, slug: string, apiData: ProviderApiData = {}): ApiMock {
-  return {
-    id: slug,
-    name: apiData.name || `${provider.name} API`,
-    provider: provider.name,
-    category: provider.categories[0] || 'Other',
-    countries: provider.countries,
-    description: apiData.description || provider.description,
-    status: provider.status,
-    lastVerified: provider.lastVerified,
-    uptime: apiData.uptime || '99.9%',
-    pricing: apiData.pricing || [{ tier: 'Standard', price: 'Contact', note: 'Contact sales for pricing' }],
-    curl: apiData.curl || '',
-    js: apiData.js || '',
-    python: apiData.python || '',
-    go: apiData.go || '',
-    changelog: apiData.changelog || [],
-    version: apiData.version,
-    latency: apiData.latency,
-    authMethod: provider.authentication,
-    rateLimit: apiData.rateLimit,
-    webhookSupport: apiData.webhookSupport,
-    logoUrl: provider.logoUrl,
-  } as ApiMock;
-}
+// Export types
+export type { Provider, ProviderApiData };

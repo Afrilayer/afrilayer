@@ -1,0 +1,26 @@
+{
+  "slug": "twiga",
+  "name": "Twiga Foods",
+  "tagline": "Food logistics and supply chain API.",
+  "description": "Twiga Foods provides APIs for businesses to integrate with agricultural supply chain and food logistics across East Africa.",
+  "website": "https://twiga.com",
+  "documentation": "https://docs.twiga.com",
+  "supportEmail": "info@twiga.com",
+  "headquarters": "Kenya",
+  "categories": ["Logistics"],
+  "countries": ["Kenya"],
+  "features": ["Supply chain integration", "Order management", "Inventory tracking", "Delivery scheduling"],
+  "pricingModel": "contact",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Grant Brooke", "role": "Co-founder" }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://afrilayer.com/validation/provider.schema.json",
+  "title": "Afrilayer Provider",
+  "description": "Schema for African API provider metadata",
+  "type": "object",
+  "required": ["slug", "name", "description", "website", "documentation", "categories", "countries", "status", "lastVerified"],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique URL-safe identifier"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Provider display name"
+    },
+    "tagline": {
+      "type": "string",
+      "description": "Short description"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Full provider description"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website URL"
+    },
+    "documentation": {
+      "type": "string",
+      "format": "uri",
+      "description": "Developer documentation URL"
+    },
+    "developerPortal": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional separate developer portal"
+    },
+    "supportEmail": {
+      "type": "string",
+      "format": "email",
+      "description": "Support email address"
+    },
+    "headquarters": {
+      "type": "string",
+      "description": "Company headquarters location"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["Payments", "Mobile Money", "KYC", "Identity", "SMS", "Airtime", "Banking", "Logistics", "Government", "Geolocation", "Financial Infrastructure"]
+      },
+      "minItems": 1,
+      "description": "Provider categories"
+    },
+    "countries": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "Côte d'Ivoire", "Egypt", "Morocco", "Senegal", "Zambia", "Cameroon"]
+      },
+      "minItems": 1,
+      "description": "Countries where provider operates"
+    },
+    "features": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of provider features"
+    },
+    "pricingModel": {
+      "type": "string",
+      "description": "Pricing model description"
+    },
+    "authentication": {
+      "type": "string",
+      "description": "Authentication method"
+    },
+    "apiStyle": {
+      "type": "string",
+      "description": "API style (REST, GraphQL, etc.)"
+    },
+    "sdkLanguages": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Supported SDK languages"
+    },
+    "openapiSpec": {
+      "type": "string",
+      "description": "Path to OpenAPI spec file"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["Live", "Estimated", "Cached", "Unavailable"],
+      "description": "API operational status"
+    },
+    "verified": {
+      "type": "boolean",
+      "description": "Whether provider data has been verified"
+    },
+    "sandboxAvailable": {
+      "type": "boolean",
+      "description": "Whether sandbox/testing environment exists"
+    },
+    "productionReady": {
+      "type": "boolean",
+      "description": "Whether production ready for integration"
+    },
+    "lastVerified": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO date when provider was last verified"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO date when provider data was last updated"
+    },
+    "keyPeople": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "github": { "type": "string", "format": "uri" }
+        }
+      },
+      "description": "Key people (founders, maintainers)"
+    }
+  },
+  "additionalProperties": false
+}

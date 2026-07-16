@@ -1,0 +1,27 @@
+{
+  "slug": "okhi",
+  "name": "OkHi",
+  "tagline": "Digital addressing and location API for Africa.",
+  "description": "OkHi provides digital addressing and location APIs for African businesses, solving the challenge of physical addresses through precise geolocation and address verification.",
+  "website": "https://okhi.com",
+  "documentation": "https://docs.okhi.com",
+  "developerPortal": "https://okhi.com",
+  "supportEmail": "support@okhi.com",
+  "headquarters": "Kenya",
+  "categories": ["Geolocation"],
+  "countries": ["Kenya", "Nigeria"],
+  "features": ["Digital addresses", "Location verification", "Address autocomplete", "GPS coordinates"],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "iOS", "Android"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Timothy Mwirabumbiro", "role": "Co-founder & CEO" }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "ozow",
+  "name": "Ozow",
+  "tagline": "Instant EFT payments for South Africa.",
+  "description": "Ozow enables instant EFT payments for South African businesses, providing a simple API for real-time bank transfers without cards.",
+  "website": "https://ozow.com",
+  "documentation": "https://developers.ozow.com",
+  "developerPortal": "https://developers.ozow.com",
+  "supportEmail": "support@ozow.com",
+  "headquarters": "South Africa",
+  "categories": ["Payments"],
+  "countries": ["South Africa"],
+  "features": ["Instant EFT", "QR payments", "Recurring payments", "Refunds"],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java", "PHP", ".NET", "iOS", "Android"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Thomas Pays", "role": "CEO" }
+  ]
+}

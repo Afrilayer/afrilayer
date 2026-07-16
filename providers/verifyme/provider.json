@@ -1,0 +1,27 @@
+{
+  "slug": "verifyme",
+  "name": "VerifyMe",
+  "tagline": "Nigeria's leading identity verification API.",
+  "description": "VerifyMe provides identity verification APIs for Nigerian businesses, enabling BVN, NIN, and document verification through simple REST endpoints.",
+  "website": "https://verifyme.ng",
+  "documentation": "https://docs.verifyme.ng",
+  "developerPortal": "https://verifyme.ng",
+  "supportEmail": "support@verifyme.ng",
+  "headquarters": "Nigeria",
+  "categories": ["Identity", "KYC"],
+  "countries": ["Nigeria"],
+  "features": ["BVN verification", "NIN verification", "Document verification", "Address verification"],
+  "pricingModel": "pay-as-you-go",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java", "Go", "PHP"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Iyinoluwa Aboyeji", "role": "Co-founder" }
+  ]
+}

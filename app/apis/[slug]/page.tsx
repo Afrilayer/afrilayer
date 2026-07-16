@@ -4,87 +4,58 @@ export const revalidate = 3600; // Revalidate every hour
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
-import { getApiBySlug, getAllApiSlugs, getAllApis, loadProviderJson } from "@/lib/data";
-import { StatusPill, Stamp, DocPreview, ChangelogTimeline, SimilarApisTable, QuickFacts } from "@/components/ui";
+import { getProviderBySlug, getAllProvidersData } from "@/lib/data";
+import { StatusPill, Stamp, DocPreview, ChangelogTimeline, QuickFacts } from "@/components/ui";
 import { CountryFlag } from "@/components/ui/CountryFlag";
+import { COUNTRY_TO_CODE } from "@/lib/constants";
 import type { Metadata } from "next";
-
-// Country name to ISO code mapping
-const COUNTRY_TO_CODE: Record<string, string> = {
-  'Nigeria': 'NG',
-  'South Africa': 'ZA',
-  'Ghana': 'GH',
-  'Kenya': 'KE',
-  'Uganda': 'UG',
-  'Tanzania': 'TZ',
-  'Egypt': 'EG',
-  'Morocco': 'MA',
-  "CÃ´te d'Ivoire": 'CI',
-  'Senegal': 'SN',
-  'Rwanda': 'RW',
-  'Tunisia': 'TN',
-  'Zambia': 'ZM',
-  'Cameroon': 'CM',
-};
-
-// Category slug mapping
-const CATEGORY_TO_SLUG: Record<string, string> = {
-  'Mobile Money': 'mobile-money',
-  'Payments': 'payments',
-  'KYC': 'kyc',
-  'Identity': 'identity',
-  'SMS': 'sms',
-  'Airtime': 'airtime',
-  'Banking': 'banking',
-  'Logistics': 'logistics',
-  'Government': 'government',
-  'Crypto': 'crypto',
-  'Maps': 'maps',
-  'AI': 'ai',
-};
 
 // Generate static params for all providers
 export async function generateStaticParams() {
-  const slugs = await getAllApiSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const providers = await getAllProvidersData();
+  return providers.map((provider) => ({ slug: provider.slug }));
 }
 
 // Generate metadata for each page
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const api = await getApiBySlug(slug);
+  const provider = await getProviderBySlug(slug);
   
-  if (!api) {
+  if (!provider) {
     return {
-      title: 'API Not Found',
+      title: 'Provider Not Found',
     };
   }
   
   return {
-    title: api.name,
-    description: api.description,
+    title: `${provider.name} API`,
+    description: provider.description,
   };
 }
 
 export default async function ApiPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const api = await getApiBySlug(slug);
-  const provider = await loadProviderJson(slug);
+  const provider = await getProviderBySlug(slug);
 
-  if (!api) {
+  if (!provider) {
     return (
       <div className="max-w-5xl mx-auto px-6 md:px-10 py-20">
-        <p className="text-text">API not found</p>
+        <p className="text-text">Provider not found</p>
       </div>
     );
   }
 
-  // Get similar APIs from the same category
-  const allApis = await getAllApis();
-  const similar = allApis.filter((a) => a.category === api.category && a.id !== api.id).slice(0, 2);
+  // Get similar providers from same category and countries
+  const allProviders = await getAllProvidersData();
+  const similar = allProviders
+    .filter((p) => 
+      p.slug !== provider.slug 
+      && p.categories.some(c => provider.categories.includes(c))
+      && p.countries.some(c => provider.countries.includes(c))
+    )
+    .slice(0, 2);
 
-  // Use provider data for QuickFacts
-  const providerData = provider || {};
+  const api = provider.apiData;
 
   return (
     <div className="px-6 md:px-10 py-10 max-w-4xl mx-auto">
@@ -100,38 +71,38 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
       <div className="flex items-start justify-between gap-6 flex-wrap">
         <div>
           <div className="flex items-center gap-3 mb-3">
-            <StatusPill status={api.status} />
+            <StatusPill status={provider.status} />
             <span className="text-[10px] font-mono text-muted-dim">
-              uptime {api.uptime}
+              uptime {api?.uptime || 'N/A'}
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-text">
-            {api.name}
+            {provider.name} API
           </h1>
           <p className="text-sm mt-1 font-mono text-muted">
-            {api.provider} &middot; {api.category}
+            {provider.name} &middot; {provider.categories[0]}
           </p>
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted">
-            {api.description}
+            {provider.description}
           </p>
         </div>
-        <Stamp label={api.status} sublabel={api.lastVerified} />
+        <Stamp label={provider.status} sublabel={provider.lastVerified} />
       </div>
 
       {/* Logo and Key People Row */}
       <div className="flex items-center gap-6 mt-5 flex-wrap">
-        {provider?.logoUrl && (
+        {provider.logoUrl && (
           <div className="w-12 h-12 rounded-lg overflow-hidden bg-surface border border-border">
             <Image
               src={provider.logoUrl}
-              alt={`${api.provider} logo`}
+              alt={`${provider.name} logo`}
               width={40}
               height={40}
               className="w-full h-full object-contain"
             />
           </div>
         )}
-        {provider?.keyPeople && provider.keyPeople.length > 0 && (
+        {provider.keyPeople && provider.keyPeople.length > 0 && (
           <div className="flex flex-col gap-2">
             <span className="text-[10px] font-mono uppercase tracking-widest text-muted-dim">
               Key People
@@ -160,7 +131,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
 
       {/* Country Tags with Links */}
       <div className="flex flex-wrap gap-1.5 mt-5">
-        {api.countries.map((c) => {
+        {provider.countries.map((c) => {
           const code = COUNTRY_TO_CODE[c] || c;
           return (
             <Link
@@ -197,9 +168,9 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
             <span>VERIFIED TODAY</span>
           </div>
           <div className="flex items-center gap-1.5 text-muted">
-            <span>Operational confidence: {api.status}</span>
+            <span>Operational confidence: {provider.status}</span>
           </div>
-          <span className="text-muted-dim">Latency: {api.latency}</span>
+          <span className="text-muted-dim">Latency: {api?.latency || 'N/A'}</span>
         </div>
       </div>
 
@@ -209,38 +180,40 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
         <div className="lg:col-span-2 space-y-10">
           {/* Documentation Preview */}
           <DocPreview
-            curl={api.curl}
-            js={api.js}
-            python={api.python}
-            go={api.go}
+            curl={api?.curl}
+            js={api?.js}
+            python={api?.python}
+            go={api?.go}
           />
 
           {/* Pricing */}
-          <div>
-            <h2 className="text-xs font-mono uppercase tracking-widest mb-3 text-muted-dim">
-              Pricing tiers
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {api.pricing.map((p) => (
-                <div
-                  key={p.tier}
-                  className="p-4 rounded-lg bg-surface border border-border"
-                >
-                  <div className="flex items-baseline justify-between">
-                    <span className="text-sm font-semibold text-text">
-                      {p.tier}
-                    </span>
-                    <span className="text-sm font-mono text-copper">
-                      {p.price}
-                    </span>
+          {api?.pricing && api.pricing.length > 0 && (
+            <div>
+              <h2 className="text-xs font-mono uppercase tracking-widest mb-3 text-muted-dim">
+                Pricing tiers
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {api.pricing.map((p) => (
+                  <div
+                    key={p.tier}
+                    className="p-4 rounded-lg bg-surface border border-border"
+                  >
+                    <div className="flex items-baseline justify-between">
+                      <span className="text-sm font-semibold text-text">
+                        {p.tier}
+                      </span>
+                      <span className="text-sm font-mono text-copper">
+                        {p.price}
+                      </span>
+                    </div>
+                    <p className="text-xs mt-1.5 text-muted">
+                      {p.note}
+                    </p>
                   </div>
-                  <p className="text-xs mt-1.5 text-muted">
-                    {p.note}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Info Grid */}
           <div className="grid grid-cols-2 gap-4">
@@ -249,7 +222,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
                 Auth Method
               </h3>
               <p className="text-sm font-mono mt-1 text-text">
-                {api.authMethod}
+                {provider.authentication}
               </p>
             </div>
             <div>
@@ -257,15 +230,15 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
                 Rate Limit
               </h3>
               <p className="text-sm font-mono mt-1 text-text">
-                {api.rateLimit}
+                {api?.rateLimit || 'N/A'}
               </p>
             </div>
             <div>
               <h3 className="text-[10px] font-mono uppercase tracking-widest text-muted-dim">
                 Webhooks
               </h3>
-              <p className={`text-sm font-mono mt-1 ${api.webhookSupport ? "text-verified" : "text-unavailable"}`}>
-                {api.webhookSupport ? "Supported" : "Not Supported"}
+              <p className={`text-sm font-mono mt-1 ${api?.webhookSupport ? "text-verified" : "text-unavailable"}`}>
+                {api?.webhookSupport ? "Supported" : "Not Supported"}
               </p>
             </div>
             <div>
@@ -273,31 +246,28 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
                 Version
               </h3>
               <p className="text-sm font-mono mt-1 text-text">
-                {api.version}
+                {api?.version || 'N/A'}
               </p>
             </div>
           </div>
 
           {/* Changelog */}
-          <ChangelogTimeline changelog={api.changelog} />
+          <ChangelogTimeline changelog={api?.changelog || []} />
         </div>
 
         {/* Right Sidebar - Quick Facts */}
         <div className="lg:sticky lg:top-24 lg:self-start">
           <QuickFacts
-            countries={api.countries}
-            categories={[api.category]}
-            documentationUrl={provider?.documentation || `https://developers.${api.id.replace(/-/g, "")}.com`}
-            officialWebsite={provider?.website || `https://${api.id.replace(/-/g, "")}.com`}
-            supportUrl={provider?.supportEmail ? `mailto:${provider.supportEmail}` : undefined}
-            sandboxUrl={provider?.sandboxAvailable ? `https://sandbox.${api.id.replace(/-/g, "")}.com` : undefined}
-            lastCrawl={provider?.lastVerified || "Recently"}
+            countries={provider.countries}
+            categories={provider.categories}
+            documentationUrl={provider.documentation}
+            officialWebsite={provider.website}
+            supportUrl={provider.supportEmail ? `mailto:${provider.supportEmail}` : undefined}
+            sandboxUrl={provider.sandboxAvailable ? `https://sandbox.${provider.slug.replace(/-/g, "")}.com` : undefined}
+            lastCrawl={provider.lastVerified}
           />
         </div>
       </div>
-
-      {/* Similar APIs */}
-      <SimilarApisTable apis={similar} />
     </div>
   );
 }

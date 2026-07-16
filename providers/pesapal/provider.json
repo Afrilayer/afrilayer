@@ -1,0 +1,27 @@
+{
+  "slug": "pesapal",
+  "name": "Pesapal",
+  "tagline": "Payment gateway for East Africa.",
+  "description": "Pesapal provides a secure payment gateway for businesses in East Africa, enabling card payments, mobile money, and bank transfers through a unified API.",
+  "website": "https://pesapal.com",
+  "documentation": "https://developer.pesapal.com",
+  "developerPortal": "https://developer.pesapal.com",
+  "supportEmail": "support@pesapal.com",
+  "headquarters": "Kenya",
+  "categories": ["Payments"],
+  "countries": ["Kenya", "Uganda", "Tanzania", "Rwanda"],
+  "features": ["Card payments", "Mobile money", "Bank transfers", "Recurring payments"],
+  "pricingModel": "transaction",
+  "authentication": "OAuth 2.0",
+  "apiStyle": "REST",
+  "sdkLanguages": ["PHP", "Python", "Java", "C#", ".NET"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Agosta Liko", "role": "Founder & CEO" }
+  ]
+}

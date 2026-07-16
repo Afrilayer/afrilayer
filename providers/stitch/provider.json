@@ -1,0 +1,28 @@
+{
+  "slug": "stitch",
+  "name": "Stitch",
+  "tagline": "Open finance infrastructure for Africa.",
+  "description": "Stitch provides open finance infrastructure enabling businesses to access financial data and initiate payments across African markets through a single API.",
+  "website": "https://stitch.money",
+  "documentation": "https://docs.stitch.money",
+  "developerPortal": "https://stitch.money",
+  "supportEmail": "support@stitch.money",
+  "headquarters": "South Africa",
+  "categories": ["Banking", "Payments"],
+  "countries": ["South Africa", "Nigeria", "Kenya", "Ghana"],
+  "features": ["Open banking", "Account verification", "Payments", "Statement data", "Income insights"],
+  "pricingModel": "transaction",
+  "authentication": "OAuth 2.0",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "TypeScript", "Python", "Java", "Go"],
+  "openapiSpec": "https://docs.stitch.money/openapi.json",
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Moyo Itu", "role": "Co-founder & CTO" }
+  ]
+}

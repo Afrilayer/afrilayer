@@ -1,23 +1,46 @@
 export const revalidate = 3600; // Revalidate every hour
 
-import Link from "next/link";
-import { getAllApis } from "@/lib/data";
+import { getAllProvidersData } from "@/lib/data";
 import { getHomepageStats, getRecentVerifications } from "@/lib/stats";
 import { Stamp, FacetedSearch, ApiCard, HeroDashboard, LiveVerificationFeed } from "@/components/ui";
 import { ApiGrid } from "@/components/ui/ApiGrid";
 
-// Homepage now loads APIs from filesystem at build time
+// Homepage loads providers from filesystem at build time
 export default async function Home() {
-  // Load all APIs from filesystem
-  const apis = await getAllApis();
+  const providers = await getAllProvidersData();
   
-  // Get unique categories and countries from loaded APIs
-  const categories = ["All", ...new Set(apis.map(api => api.category))].filter(Boolean);
-  const countries = ["All", ...new Set(apis.flatMap(api => api.countries))].filter(Boolean);
-  
+  // Get unique categories and countries from loaded providers
+  const categories = ["All", ...new Set(providers.flatMap(p => p.categories))].filter(Boolean) as string[];
+  const countries = ["All", ...new Set(providers.flatMap(p => p.countries))].filter(Boolean) as string[];
+
+  // Convert to API format for ApiGrid compatibility
+  const apis = providers.map(p => ({
+    id: p.slug,
+    name: `${p.name} API`,
+    provider: p.name,
+    category: p.categories[0],
+    countries: p.countries,
+    description: p.description,
+    status: p.status,
+    lastVerified: p.lastVerified,
+    uptime: p.apiData?.uptime || '99.9%',
+    pricing: p.apiData?.pricing || [],
+    curl: p.apiData?.curl || '',
+    js: p.apiData?.js || '',
+    python: p.apiData?.python || '',
+    go: p.apiData?.go || '',
+    changelog: p.apiData?.changelog || [],
+    version: p.apiData?.version,
+    latency: p.apiData?.latency,
+    authMethod: p.authentication,
+    rateLimit: p.apiData?.rateLimit,
+    webhookSupport: p.apiData?.webhookSupport,
+    logoUrl: p.logoUrl,
+  }));
+
   // Get live stats
   const stats = await getHomepageStats();
-  
+
   // Get recent verifications
   const recentVerifications = await getRecentVerifications(5);
 

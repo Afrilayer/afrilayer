@@ -1,0 +1,28 @@
+{
+  "slug": "mono",
+  "name": "Mono",
+  "tagline": "Open banking for African businesses.",
+  "description": "Mono provides open banking infrastructure that enables African businesses to access customer financial data and initiate payments through secure APIs.",
+  "website": "https://mono.co",
+  "documentation": "https://docs.mono.co",
+  "developerPortal": "https://mono.co",
+  "supportEmail": "help@mono.co",
+  "headquarters": "Nigeria",
+  "categories": ["Banking", "Payments"],
+  "countries": ["Nigeria", "Kenya", "Ghana", "South Africa"],
+  "features": ["Account linking", "Transaction data", "Income insights", "Payments initiation"],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java", "Go", "Ruby"],
+  "openapiSpec": "https://docs.mono.co/openapi.json",
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Abdulhamid Hassan", "role": "Co-founder & CEO" }
+  ]
+}

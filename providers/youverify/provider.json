@@ -1,0 +1,28 @@
+{
+  "slug": "youverify",
+  "name": "Youverify",
+  "tagline": "Identity and compliance verification for Africa.",
+  "description": "Youverify provides KYC and compliance verification APIs for African businesses, supporting identity verification, document validation, and background checks.",
+  "website": "https://youverify.ai",
+  "documentation": "https://docs.youverify.ai",
+  "developerPortal": "https://youverify.ai",
+  "supportEmail": "support@youverify.ai",
+  "headquarters": "Nigeria",
+  "categories": ["Identity", "KYC"],
+  "countries": ["Nigeria", "Kenya", "Ghana", "South Africa"],
+  "features": ["BVN verification", "NIN verification", "Passport verification", "Driver's license", "AML screening", "Background checks"],
+  "pricingModel": "pay-as-you-go",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java", "Go", "PHP", "Ruby"],
+  "openapiSpec": "https://docs.youverify.ai/openapi.json",
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Samuel Afolabi", "role": "Co-founder & CEO" }
+  ]
+}

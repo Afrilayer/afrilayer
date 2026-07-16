@@ -1,0 +1,27 @@
+{
+  "slug": "africas-talking",
+  "name": "Africa's Talking",
+  "tagline": "Communications API for Africa.",
+  "description": "Africa's Talking provides APIs for SMS, voice, airtime, payments, and more across African telecom networks. A unified platform for building communication solutions.",
+  "website": "https://africastalking.com",
+  "documentation": "https://developers.africastalking.com",
+  "developerPortal": "https://developers.africastalking.com",
+  "supportEmail": "info@africastalking.com",
+  "headquarters": "Kenya",
+  "categories": ["Messaging", "Airtime", "Payments"],
+  "countries": ["Nigeria", "Kenya", "Ghana", "Uganda", "Tanzania", "South Africa", "Zambia", "Malawi", "Ethiopia", "Rwanda", "Sierra Leone", "Mozambique"],
+  "features": ["SMS messaging", "Voice calls", "Airtime", "Mobile money", "USSD", "Payments"],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java", "PHP", ".NET", "Ruby", "Go", "Kotlin", "Swift"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Esther Ngumbi", "role": "VP Product" }
+  ]
+}
