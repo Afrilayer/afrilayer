@@ -3,9 +3,9 @@
 import * as React from "react";
 import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import StatusPill from "./StatusPill";
 import { CountryFlag } from "./CountryFlag";
+import { ProviderLogo } from "./ProviderLogo";
 import type { ApiMock } from "@/lib/types";
 import { CATEGORY_TO_SLUG, COUNTRY_TO_CODE } from "@/lib/constants";
 
@@ -16,7 +16,21 @@ interface ApiCardProps {
   showCategoryLink?: boolean;
 }
 
+// Minimal provider type for ProviderLogo
+interface MinimalProvider {
+  slug: string;
+  name: string;
+  website?: string | null;
+}
+
 export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks = false, showCategoryLink = false }) => {
+  // Create minimal provider object for logo resolution
+  const logoProvider: MinimalProvider = {
+    slug: api.id,
+    name: api.provider,
+    website: undefined,
+  };
+
   const renderCountryTags = () => {
     if (showCountryLinks) {
       return api.countries.slice(0, 3).map((c) => {
@@ -59,17 +73,11 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
     >
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-3">
-          {api.logoUrl && (
-            <div className="w-8 h-8 rounded-md overflow-hidden bg-surface border border-border">
-              <Image
-                src={api.logoUrl}
-                alt={`${api.provider} logo`}
-                width={32}
-                height={32}
-                className="w-full h-full object-contain"
-              />
-            </div>
-          )}
+          <ProviderLogo
+            provider={logoProvider as any}
+            size={32}
+            className="w-8 h-8 rounded-md"
+          />
           <div>
             <h3 className="font-semibold text-base leading-snug text-text">
               {api.name}

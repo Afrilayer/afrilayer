@@ -82,12 +82,13 @@ export async function loadProviderReadme(slug: string): Promise<string> {
 }
 
 // Normalize raw provider to unified Provider object
+// Note: logoUrl resolution happens via resolveProviderLogo for consistent fallback chain
 export function normalizeProvider(raw: RawProvider, apiData: ProviderApiData = { pricing: [], changelog: [] }): Provider {
   return {
     slug: raw.slug,
     name: raw.name,
     tagline: raw.tagline,
-    logoUrl: raw.logoUrl || `/providers/${raw.slug}/logo.svg`,
+    logoUrl: raw.logoUrl || `/api/logos/${raw.slug}`,
     description: raw.description,
     website: raw.website,
     documentation: raw.documentation,

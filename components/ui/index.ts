@@ -47,6 +47,8 @@ export { FacetedSearch } from './FacetedSearch';
 
 export { ApiCard } from './ApiCard';
 
+export { ProviderLogo } from './ProviderLogo';
+
 export { VerificationStrip } from './VerificationStrip';
 
 export { LiveVerificationFeed } from './LiveVerificationFeed';

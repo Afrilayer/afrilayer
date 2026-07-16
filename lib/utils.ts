@@ -78,9 +78,9 @@ export function getConfidenceClasses(level: ConfidenceLevel): string {
     case 'needs-review':
       return 'bg-warning/10 text-warning';
     case 'stale':
-      return 'bg-sand-100 text-charcoal/60';
+      return 'bg-surface-hover text-text-muted';
     case 'community':
-      return 'bg-baobab-100 text-baobab-700';
+      return 'bg-primary/10 text-primary-hover';
   }
 }
 
