@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import type { ChangelogEntry } from "@/lib/mock-data";
+import type { ChangelogEntry } from "@/lib/types";
 
 interface ChangelogTimelineProps {
   changelog: ChangelogEntry[];

@@ -1,7 +1,13 @@
 import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { ShieldCheck, AlertCircle, Clock, Users } from 'lucide-react';
-import type { ConfidenceLevel, ConfidenceIndicatorProps } from '@/lib/types';
+import type { ConfidenceLevel, VerificationStatus } from '@/lib/types';
+
+interface ConfidenceIndicatorProps {
+  lastVerified: string | null;
+  verificationStatus: VerificationStatus;
+  providerClaimed?: boolean;
+}
 
 const levelConfig: Record<
   ConfidenceLevel,
@@ -48,7 +54,6 @@ function deriveLevel({
     return 'verified';
   }
   if (verificationStatus === 'pending') return 'needs-review';
-  if (verificationStatus === 'unverified') return 'community';
   return 'community';
 }
 

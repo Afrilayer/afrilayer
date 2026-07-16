@@ -3,7 +3,7 @@
  * Types for the provider logo resolution system
  */
 
-import type { AfriProvider } from "../types";
+import type { Provider } from "../types";
 
 /**
  * Logo source type
@@ -42,7 +42,7 @@ export interface ProviderLogoOptions {
 /**
  * Resolver function type
  */
-export type LogoResolverFn = (provider: AfriProvider) => Promise<string | null>;
+export type LogoResolverFn = (provider: Provider) => Promise<string | null>;
 
 /**
  * Provider with extended info for logo resolution

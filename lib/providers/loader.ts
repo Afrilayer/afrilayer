@@ -104,7 +104,7 @@ export function normalizeProvider(raw: RawProvider, apiData: ProviderApiData = {
     openapiSpec: raw.openapiSpec,
     sandboxAvailable: raw.sandboxAvailable,
     productionReady: raw.productionReady,
-    status: STATUS_VALUES.includes(raw.status) 
+    status: STATUS_VALUES.includes(raw.status as any) 
       ? (raw.status as typeof STATUS_VALUES[number]) 
       : 'Live',
     verified: raw.verified,

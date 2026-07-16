@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Check, Globe, MapPin, Clock, Activity } from "lucide-react";
-import type { HomepageStats } from "@/lib/stats";
+import type { HomepageStats } from "@/lib/types";
 
 interface HeroDashboardProps {
   stats?: HomepageStats;
