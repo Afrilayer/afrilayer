@@ -1,0 +1,27 @@
+{
+  "slug": "chenosis",
+  "name": "Chenosis",
+  "tagline": "MTN's API marketplace for African developers.",
+  "description": "Chenosis is MTN Group's API marketplace providing access to telecommunications, fintech, and enterprise APIs across African markets. Enables developers to integrate with MTN services.",
+  "website": "https://chenosis.com",
+  "documentation": "https://docs.chenosis.com",
+  "developerPortal": "https://developer.chenosis.com",
+  "supportEmail": "support@chenosis.com",
+  "headquarters": "South Africa",
+  "categories": ["Developer Tools", "Telecom", "Payments"],
+  "countries": ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "Côte d'Ivoire", "Cameroon"],
+  "features": ["Messaging APIs", "Voice APIs", "Payment APIs", "Airtime APIs", "USSD APIs"],
+  "pricingModel": "transaction",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    { "name": "Charles Molapisi", "role": "CTO, MTN Group" }
+  ]
+}

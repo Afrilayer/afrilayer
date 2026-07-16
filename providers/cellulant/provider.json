@@ -1,0 +1,27 @@
+{
+  "slug": "cellulant",
+  "name": "Cellulant",
+  "tagline": "Pan-African payments and merchant services platform.",
+  "description": "Cellulant is a leading African payments company providing merchant acquiring, payment aggregation, and value-added services across 12 African countries. Their API enables businesses to accept payments across multiple channels.",
+  "website": "https://cellulant.io",
+  "documentation": "https://docs.cellulant.io",
+  "developerPortal": "https://docs.cellulant.io",
+  "supportEmail": "support@cellulant.io",
+  "headquarters": "Kenya",
+  "categories": ["Payments", "Mobile Money"],
+  "countries": ["Kenya", "Nigeria", "Ghana", "Tanzania", "Uganda", "Zambia", "South Africa", "Côte d'Ivoire", "Senegal", "Morocco", "Egypt", "Cameroon"],
+  "features": ["Card payments", "Mobile money", "Bank transfers", "Merchant services", "Multi-country payouts"],
+  "pricingModel": "custom",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java", "PHP"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "George-Miltiadis Karagiannidis", "role": "Group CEO" }
+  ]
+}

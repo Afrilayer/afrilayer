@@ -1,0 +1,46 @@
+{
+  "slug": "pargo",
+  "name": "Pargo",
+  "tagline": "Smart logistics and delivery solutions for South Africa.",
+  "logoUrl": "/providers/pargo/logo.svg",
+  "description": "Pargo provides a smart logistics and delivery API that enables businesses to offer click-and-collect and home delivery services through a network of pickup points across South Africa.",
+  "website": "https://pargo.co.za",
+  "documentation": "https://pargo.co.za/developers",
+  "developerPortal": "https://pargo.co.za/developers",
+  "supportEmail": "support@pargo.co.za",
+  "headquarters": "South Africa",
+  "categories": [
+    "Logistics"
+  ],
+  "countries": [
+    "South Africa"
+  ],
+  "features": [
+    "Pickup point network",
+    "Click & collect",
+    "Home delivery",
+    "Package tracking",
+    "Real-time rates",
+    "Returns management"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "PHP"
+  ],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    {
+      "name": "Peter Williams",
+      "role": "Co-founder & CEO"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "credable",
+  "name": "Credable",
+  "tagline": "Embedded finance infrastructure for Africa.",
+  "description": "Credable provides embedded finance infrastructure that enables businesses to offer financial services including payments, savings, and credit to their customers.",
+  "website": "https://credable.io",
+  "documentation": "https://docs.credable.io",
+  "developerPortal": "https://docs.credable.io",
+  "supportEmail": "support@credable.io",
+  "headquarters": "Kenya",
+  "categories": ["Financial Infrastructure", "Banking"],
+  "countries": ["Kenya", "Nigeria"],
+  "features": ["Embedded payments", "Savings", "Credit", "Digital wallets"],
+  "pricingModel": "custom",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    { "name": "Ropert Mumo", "role": "Co-founder & CEO" }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "crop2cash",
+  "name": "Crop2Cash",
+  "tagline": "Agricultural supply chain and finance platform.",
+  "logoUrl": "/providers/crop2cash/logo.svg",
+  "description": "Crop2Cash provides agricultural finance and supply chain APIs that connect farmers to financial services, input suppliers, and markets across Nigeria.",
+  "website": "https://crop2cash.com",
+  "documentation": "https://docs.crop2cash.com",
+  "developerPortal": "https://crop2cash.com/developers",
+  "supportEmail": "support@crop2cash.com",
+  "headquarters": "Nigeria",
+  "categories": [
+    "Agriculture"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "Farm finance",
+    "Input procurement",
+    "Market access",
+    "Farm data collection",
+    "Yield tracking",
+    "Insurance linkage"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    {
+      "name": "Michael Ogheneworo",
+      "role": "Co-founder & CEO"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "blusalt",
+  "name": "Blusalt",
+  "tagline": "Digital identity and verification solutions for Africa.",
+  "description": "Blusalt provides digital identity and verification APIs for businesses to authenticate users and verify identities across African markets.",
+  "website": "https://blusalt.net",
+  "documentation": "https://docs.blusalt.net",
+  "developerPortal": "https://docs.blusalt.net",
+  "supportEmail": "support@blusalt.net",
+  "headquarters": "Nigeria",
+  "categories": ["Identity", "KYC"],
+  "countries": ["Nigeria"],
+  "features": ["Identity verification", "Document verification", "Biometric checks", "AML screening"],
+  "pricingModel": "custom",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    { "name": "Benjamin Oke", "role": "Co-founder & CEO" }
+  ]
+}

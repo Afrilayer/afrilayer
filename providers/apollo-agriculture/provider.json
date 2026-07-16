@@ -1,0 +1,45 @@
+{
+  "slug": "apollo-agriculture",
+  "name": "Apollo Agriculture",
+  "tagline": "Digital farming solutions and agricultural finance.",
+  "logoUrl": "/providers/apollo-agriculture/logo.svg",
+  "description": "Apollo Agriculture provides digital farming tools and agricultural finance APIs that help farmers increase productivity and access financial services through data-driven insights.",
+  "website": "https://apolloagriculture.com",
+  "documentation": "https://docs.apolloagriculture.com",
+  "developerPortal": "https://apolloagriculture.com/developers",
+  "supportEmail": "info@apolloagriculture.com",
+  "headquarters": "Kenya",
+  "categories": [
+    "Agriculture"
+  ],
+  "countries": [
+    "Kenya"
+  ],
+  "features": [
+    "Farm mapping",
+    "Yield prediction",
+    "Input financing",
+    "Satellite imagery",
+    "Weather data",
+    "Agronomic advice"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    {
+      "name": "Benjamin Njaria",
+      "role": "Co-founder & CEO"
+    }
+  ]
+}

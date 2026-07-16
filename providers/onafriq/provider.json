@@ -1,0 +1,27 @@
+{
+  "slug": "onafriq",
+  "name": "Onafriq",
+  "tagline": "Cross-border payments network formerly known as MFS Africa.",
+  "description": "Onafriq (formerly MFS Africa) operates a cross-border payments network connecting over 500 million mobile money users across Africa. Their API enables remittances, business payments, and financial inclusion solutions.",
+  "website": "https://onafriq.com",
+  "documentation": "https://docs.onafriq.com",
+  "developerPortal": "https://docs.onafriq.com",
+  "supportEmail": "support@onafriq.com",
+  "headquarters": "South Africa",
+  "categories": ["Payments", "Mobile Money", "Financial Infrastructure"],
+  "countries": ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "Côte d'Ivoire", "Senegal", "Cameroon", "Rwanda", "Zambia"],
+  "features": ["Cross-border payments", "Mobile money rails", "Remittances", "Bulk payouts", "Real-time settlement"],
+  "pricingModel": "custom",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Dare Okoudjou", "role": "Founder & CEO" }
+  ]
+}

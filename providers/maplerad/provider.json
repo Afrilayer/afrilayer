@@ -1,0 +1,27 @@
+{
+  "slug": "maplerad",
+  "name": "Maplerad",
+  "tagline": "Payment orchestration and virtual account infrastructure.",
+  "description": "Maplerad provides payment orchestration APIs and virtual account infrastructure for businesses to accept payments and automate payouts across Africa.",
+  "website": "https://maplerad.com",
+  "documentation": "https://docs.maplerad.com",
+  "developerPortal": "https://docs.maplerad.com",
+  "supportEmail": "support@maplerad.com",
+  "headquarters": "Nigeria",
+  "categories": ["Payments", "Banking"],
+  "countries": ["Nigeria"],
+  "features": ["Virtual accounts", "Payment orchestration", "Payouts", "Collections"],
+  "pricingModel": "transaction",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Ifedapo Olarewaju", "role": "Co-founder & CEO" }
+  ]
+}

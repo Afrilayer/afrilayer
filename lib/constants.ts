@@ -8,14 +8,22 @@ export const COUNTRY_TO_CODE: Record<string, string> = {
   'Kenya': 'KE',
   'Uganda': 'UG',
   'Tanzania': 'TZ',
+  'Côte d\'Ivoire': 'CI',
   'Egypt': 'EG',
   'Morocco': 'MA',
-  "Côte d'Ivoire": 'CI',
   'Senegal': 'SN',
   'Rwanda': 'RW',
   'Tunisia': 'TN',
   'Zambia': 'ZM',
   'Cameroon': 'CM',
+  'Ethiopia': 'ET',
+  'Zimbabwe': 'ZW',
+  'Botswana': 'BW',
+  'Angola': 'AO',
+  'Mozambique': 'MZ',
+  'United Arab Emirates': 'AE',
+  'Mali': 'ML',
+  'Burkina Faso': 'BF',
 };
 
 // Reverse mapping
@@ -36,7 +44,18 @@ export const CATEGORY_TO_SLUG: Record<string, string> = {
   'Government': 'government',
   'Geolocation': 'geolocation',
   'Financial Infrastructure': 'financial-infrastructure',
+  'Messaging': 'messaging',
+  'Insurance': 'insurance',
+  'Agriculture': 'agriculture',
+  'Mobility': 'mobility',
+  'Health': 'health',
+  'Crypto': 'crypto',
   'Telecom': 'telecom',
+  'Developer Tools': 'developer-tools',
+  'Open Banking': 'open-banking',
+  'Voice': 'voice',
+  'USSD': 'ussd',
+  'Maps': 'maps',
 };
 
 // Reverse mapping

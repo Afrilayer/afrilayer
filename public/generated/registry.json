@@ -1,0 +1,1433 @@
+{
+  "generatedAt": "2026-07-16T15:05:17.563Z",
+  "counts": {
+    "providers": 56,
+    "countries": 20,
+    "categories": 20,
+    "apis": 56
+  },
+  "countries": [
+    "Nigeria",
+    "Kenya",
+    "Ghana",
+    "Uganda",
+    "Tanzania",
+    "South Africa",
+    "Zambia",
+    "Malawi",
+    "Ethiopia",
+    "Rwanda",
+    "Sierra Leone",
+    "Mozambique",
+    "Côte d'Ivoire",
+    "Senegal",
+    "Morocco",
+    "Egypt",
+    "Cameroon",
+    "Mali",
+    "Burkina Faso",
+    "Zimbabwe"
+  ],
+  "categories": [
+    {
+      "slug": "messaging",
+      "name": "Messaging",
+      "count": 7
+    },
+    {
+      "slug": "airtime",
+      "name": "Airtime",
+      "count": 2
+    },
+    {
+      "slug": "payments",
+      "name": "Payments",
+      "count": 25
+    },
+    {
+      "slug": "banking",
+      "name": "Banking",
+      "count": 11
+    },
+    {
+      "slug": "agriculture",
+      "name": "Agriculture",
+      "count": 2
+    },
+    {
+      "slug": "sms",
+      "name": "SMS",
+      "count": 5
+    },
+    {
+      "slug": "identity",
+      "name": "Identity",
+      "count": 3
+    },
+    {
+      "slug": "kyc",
+      "name": "KYC",
+      "count": 4
+    },
+    {
+      "slug": "mobile-money",
+      "name": "Mobile Money",
+      "count": 6
+    },
+    {
+      "slug": "developer-tools",
+      "name": "Developer Tools",
+      "count": 1
+    },
+    {
+      "slug": "telecom",
+      "name": "Telecom",
+      "count": 2
+    },
+    {
+      "slug": "financial-infrastructure",
+      "name": "Financial Infrastructure",
+      "count": 7
+    },
+    {
+      "slug": "insurance",
+      "name": "Insurance",
+      "count": 2
+    },
+    {
+      "slug": "logistics",
+      "name": "Logistics",
+      "count": 4
+    },
+    {
+      "slug": "government",
+      "name": "Government",
+      "count": 1
+    },
+    {
+      "slug": "geolocation",
+      "name": "Geolocation",
+      "count": 1
+    },
+    {
+      "slug": "open-banking",
+      "name": "Open Banking",
+      "count": 1
+    },
+    {
+      "slug": "mobility",
+      "name": "Mobility",
+      "count": 2
+    },
+    {
+      "slug": "health",
+      "name": "Health",
+      "count": 1
+    },
+    {
+      "slug": "crypto",
+      "name": "Crypto",
+      "count": 2
+    }
+  ],
+  "index": [
+    {
+      "slug": "africas-talking",
+      "name": "Africa's Talking",
+      "status": "Live",
+      "categories": [
+        "Messaging",
+        "Airtime",
+        "Payments"
+      ],
+      "countries": [
+        "Nigeria",
+        "Kenya",
+        "Ghana",
+        "Uganda",
+        "Tanzania",
+        "South Africa",
+        "Zambia",
+        "Malawi",
+        "Ethiopia",
+        "Rwanda",
+        "Sierra Leone",
+        "Mozambique"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "SMS messaging",
+        "Voice calls",
+        "Airtime",
+        "Mobile money",
+        "USSD",
+        "Payments"
+      ],
+      "description": "Africa's Talking provides APIs for SMS, voice, airtime, payments, and more across African telecom networks. A unified platform for building communication solutions.",
+      "logoUrl": "/api/logos/africas-talking"
+    },
+    {
+      "slug": "anchor",
+      "name": "Anchor",
+      "status": "Live",
+      "categories": [
+        "Banking",
+        "Payments"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Virtual accounts",
+        "Savings wallets",
+        "Payments",
+        "KYC automation",
+        "Card issuance"
+      ],
+      "description": "Anchor provides a Banking-as-a-Service API that enables businesses to build and embed financial products for their customers, including accounts, payments, and savings.",
+      "logoUrl": "/api/logos/anchor"
+    },
+    {
+      "slug": "apollo-agriculture",
+      "name": "Apollo Agriculture",
+      "status": "Live",
+      "categories": [
+        "Agriculture"
+      ],
+      "countries": [
+        "Kenya"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Farm mapping",
+        "Yield prediction",
+        "Input financing",
+        "Satellite imagery",
+        "Weather data",
+        "Agronomic advice"
+      ],
+      "description": "Apollo Agriculture provides digital farming tools and agricultural finance APIs that help farmers increase productivity and access financial services through data-driven insights.",
+      "logoUrl": "/providers/apollo-agriculture/logo.svg"
+    },
+    {
+      "slug": "arkesel",
+      "name": "Arkesel",
+      "status": "Live",
+      "categories": [
+        "SMS",
+        "Messaging"
+      ],
+      "countries": [
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "SMS messaging",
+        "Voice calls",
+        "USSD",
+        "Two-way SMS",
+        "Bulk SMS"
+      ],
+      "description": "Arkesel provides SMS, voice, and communication APIs for businesses to reach customers across Ghana and West Africa.",
+      "logoUrl": "/api/logos/arkesel"
+    },
+    {
+      "slug": "blusalt",
+      "name": "Blusalt",
+      "status": "Live",
+      "categories": [
+        "Identity",
+        "KYC"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Identity verification",
+        "Document verification",
+        "Biometric checks",
+        "AML screening"
+      ],
+      "description": "Blusalt provides digital identity and verification APIs for businesses to authenticate users and verify identities across African markets.",
+      "logoUrl": "/api/logos/blusalt"
+    },
+    {
+      "slug": "buypower",
+      "name": "BuyPower",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Electricity payment",
+        "Utility bills",
+        "Bill verification",
+        "Automated top-up"
+      ],
+      "description": "BuyPower provides an API for purchasing electricity units and paying utility bills in Nigeria. Enables seamless bill payments for businesses and consumers.",
+      "logoUrl": "/providers/buypower/logo.svg"
+    },
+    {
+      "slug": "cellulant",
+      "name": "Cellulant",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Mobile Money"
+      ],
+      "countries": [
+        "Kenya",
+        "Nigeria",
+        "Ghana",
+        "Tanzania",
+        "Uganda",
+        "Zambia",
+        "South Africa",
+        "Côte d'Ivoire",
+        "Senegal",
+        "Morocco",
+        "Egypt",
+        "Cameroon"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Card payments",
+        "Mobile money",
+        "Bank transfers",
+        "Merchant services",
+        "Multi-country payouts"
+      ],
+      "description": "Cellulant is a leading African payments company providing merchant acquiring, payment aggregation, and value-added services across 12 African countries. Their API enables businesses to accept payments across multiple channels.",
+      "logoUrl": "/api/logos/cellulant"
+    },
+    {
+      "slug": "chatdesk",
+      "name": "Chatdesk",
+      "status": "Live",
+      "categories": [
+        "Messaging",
+        "SMS"
+      ],
+      "countries": [
+        "Nigeria",
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "WhatsApp messaging",
+        "SMS",
+        "Social media integration",
+        "Live chat"
+      ],
+      "description": "Chatdesk provides customer messaging and communication APIs for businesses to engage with customers via multiple channels including WhatsApp, SMS, and social media.",
+      "logoUrl": "/api/logos/chatdesk"
+    },
+    {
+      "slug": "chenosis",
+      "name": "Chenosis",
+      "status": "Live",
+      "categories": [
+        "Developer Tools",
+        "Telecom",
+        "Payments"
+      ],
+      "countries": [
+        "Nigeria",
+        "Ghana",
+        "Kenya",
+        "South Africa",
+        "Uganda",
+        "Tanzania",
+        "Côte d'Ivoire",
+        "Cameroon"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Messaging APIs",
+        "Voice APIs",
+        "Payment APIs",
+        "Airtime APIs",
+        "USSD APIs"
+      ],
+      "description": "Chenosis is MTN Group's API marketplace providing access to telecommunications, fintech, and enterprise APIs across African markets. Enables developers to integrate with MTN services.",
+      "logoUrl": "/api/logos/chenosis"
+    },
+    {
+      "slug": "cinetpay",
+      "name": "CinetPay",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "Côte d'Ivoire",
+        "Senegal",
+        "Cameroon",
+        "Mali",
+        "Burkina Faso"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Mobile money",
+        "Card payments",
+        "Airtime",
+        "Payouts",
+        "International transfers"
+      ],
+      "description": "CinetPay is a payment gateway offering mobile money, card payments, and airtime services across Francophone Africa including Côte d'Ivoire, Senegal, Mali, and Burkina Faso.",
+      "logoUrl": "/api/logos/cinetpay"
+    },
+    {
+      "slug": "credable",
+      "name": "Credable",
+      "status": "Live",
+      "categories": [
+        "Financial Infrastructure",
+        "Banking"
+      ],
+      "countries": [
+        "Kenya",
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Embedded payments",
+        "Savings",
+        "Credit",
+        "Digital wallets"
+      ],
+      "description": "Credable provides embedded finance infrastructure that enables businesses to offer financial services including payments, savings, and credit to their customers.",
+      "logoUrl": "/api/logos/credable"
+    },
+    {
+      "slug": "crop2cash",
+      "name": "Crop2Cash",
+      "status": "Live",
+      "categories": [
+        "Agriculture"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Farm finance",
+        "Input procurement",
+        "Market access",
+        "Farm data collection",
+        "Yield tracking",
+        "Insurance linkage"
+      ],
+      "description": "Crop2Cash provides agricultural finance and supply chain APIs that connect farmers to financial services, input suppliers, and markets across Nigeria.",
+      "logoUrl": "/providers/crop2cash/logo.svg"
+    },
+    {
+      "slug": "dpo-group",
+      "name": "DPO Group",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "South Africa",
+        "Nigeria",
+        "Kenya",
+        "Ghana",
+        "Zambia",
+        "Tanzania",
+        "Uganda",
+        "Rwanda",
+        "Malawi"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Card payments",
+        "Mobile money",
+        "Bank transfers",
+        "Multi-currency support",
+        "Fraud protection"
+      ],
+      "description": "DPO Group provides payment gateway services across 18 African countries, enabling businesses to accept payments via card, mobile money, and bank transfer.",
+      "logoUrl": "/api/logos/dpo-group"
+    },
+    {
+      "slug": "dusupay",
+      "name": "DusuPay",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "Nigeria",
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Card payments",
+        "Mobile money",
+        "Bank transfers",
+        "Payouts",
+        "Bill payments"
+      ],
+      "description": "DusuPay is a payment gateway enabling businesses to accept payments through multiple channels including cards, mobile money, and bank transfers in Nigeria and Ghana.",
+      "logoUrl": "/providers/dusupay/logo.svg"
+    },
+    {
+      "slug": "eversend",
+      "name": "Eversend",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Banking"
+      ],
+      "countries": [
+        "Uganda",
+        "Kenya",
+        "Nigeria",
+        "Ghana",
+        "Tanzania"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Multi-currency wallets",
+        "Virtual cards",
+        "Remittances",
+        "Payouts",
+        "Business accounts"
+      ],
+      "description": "Eversend provides multi-currency wallets, virtual cards, and payment APIs for businesses and individuals across Africa. Their API supports remittances and business payouts.",
+      "logoUrl": "/api/logos/eversend"
+    },
+    {
+      "slug": "fido",
+      "name": "Fido",
+      "status": "Live",
+      "categories": [
+        "Financial Infrastructure",
+        "KYC"
+      ],
+      "countries": [
+        "Ghana",
+        "Nigeria",
+        "Kenya"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Credit scoring",
+        "Digital lending",
+        "Income verification",
+        "Identity verification"
+      ],
+      "description": "Fido provides credit scoring and lending infrastructure APIs that help financial institutions assess creditworthiness and provide digital lending solutions.",
+      "logoUrl": "/api/logos/fido"
+    },
+    {
+      "slug": "fincra",
+      "name": "Fincra",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Banking"
+      ],
+      "countries": [
+        "Nigeria",
+        "Kenya",
+        "Ghana",
+        "South Africa"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Card payments",
+        "Bank transfers",
+        "Virtual accounts",
+        "Payouts",
+        "FX exchange"
+      ],
+      "description": "Fincra provides payment infrastructure and APIs for businesses to accept payments, send payouts, and manage financial operations across Africa through a single integration.",
+      "logoUrl": "/api/logos/fincra"
+    },
+    {
+      "slug": "flex-finance",
+      "name": "Flex Finance",
+      "status": "Live",
+      "categories": [
+        "Financial Infrastructure",
+        "Banking"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Digital lending",
+        "Credit scoring",
+        "Loan management",
+        "Financial data"
+      ],
+      "description": "Flex Finance provides digital lending and financial services APIs that enable businesses to offer credit products and manage financial operations.",
+      "logoUrl": "/api/logos/flex-finance"
+    },
+    {
+      "slug": "insurpass",
+      "name": "Insurpass",
+      "status": "Live",
+      "categories": [
+        "Insurance"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Policy issuance",
+        "Claims management",
+        "Underwriting",
+        "Digital onboarding",
+        "Insurance comparison",
+        "Premium calculation"
+      ],
+      "description": "Insurpass provides insurance technology APIs for Nigerian businesses, offering digital insurance solutions, policy management, and claims automation.",
+      "logoUrl": "/providers/insurpass/logo.svg"
+    },
+    {
+      "slug": "interswitch",
+      "name": "Interswitch",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Banking"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Card payments",
+        "Bank transfers",
+        "QR payments",
+        "Merchant services"
+      ],
+      "description": "Interswitch provides APIs for payment processing, merchant services, and financial infrastructure across Nigeria and West Africa.",
+      "logoUrl": "/api/logos/interswitch"
+    },
+    {
+      "slug": "kora",
+      "name": "Kora",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Banking"
+      ],
+      "countries": [
+        "Nigeria",
+        "Ghana",
+        "Kenya"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Card payments",
+        "Bank transfers",
+        "Mobile money",
+        "Virtual accounts",
+        "Payouts"
+      ],
+      "description": "Kora (formerly Korapay) provides payment infrastructure that enables businesses to accept payments, send payouts, and manage financial operations across Africa through a single integration.",
+      "logoUrl": "/api/logos/kora"
+    },
+    {
+      "slug": "kwik",
+      "name": "Kwik",
+      "status": "Live",
+      "categories": [
+        "Logistics"
+      ],
+      "countries": [
+        "Nigeria",
+        "Kenya"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Delivery tracking",
+        "Route optimization",
+        "Real-time updates",
+        "Fleet management"
+      ],
+      "description": "Kwik provides logistics and delivery APIs that enable businesses to integrate delivery services across Nigeria and Kenya.",
+      "logoUrl": "/api/logos/kwik"
+    },
+    {
+      "slug": "lami",
+      "name": "Lami",
+      "status": "Live",
+      "categories": [
+        "Insurance"
+      ],
+      "countries": [
+        "Kenya",
+        "Nigeria",
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Microinsurance",
+        "Policy management",
+        "Claims processing",
+        "Digital underwriting",
+        "Risk assessment",
+        "Embedded insurance"
+      ],
+      "description": "Lami provides a digital insurance infrastructure API that enables businesses to embed insurance products into their offerings across Africa, focusing on microinsurance and scalable coverage.",
+      "logoUrl": "/providers/lami/logo.svg"
+    },
+    {
+      "slug": "maplerad",
+      "name": "Maplerad",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Banking"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Virtual accounts",
+        "Payment orchestration",
+        "Payouts",
+        "Collections"
+      ],
+      "description": "Maplerad provides payment orchestration APIs and virtual account infrastructure for businesses to accept payments and automate payouts across Africa.",
+      "logoUrl": "/api/logos/maplerad"
+    },
+    {
+      "slug": "mnotify",
+      "name": "mNotify",
+      "status": "Live",
+      "categories": [
+        "SMS",
+        "Messaging"
+      ],
+      "countries": [
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "SMS messaging",
+        "Bulk SMS",
+        "Two-way SMS",
+        "Delivery reports"
+      ],
+      "description": "mNotify provides SMS messaging and communication APIs for businesses to reach customers in Ghana.",
+      "logoUrl": "/api/logos/mnotify"
+    },
+    {
+      "slug": "mono",
+      "name": "Mono",
+      "status": "Live",
+      "categories": [
+        "Banking",
+        "Payments"
+      ],
+      "countries": [
+        "Nigeria",
+        "Kenya",
+        "Ghana",
+        "South Africa"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Account linking",
+        "Transaction data",
+        "Income insights",
+        "Payments initiation"
+      ],
+      "description": "Mono provides open banking infrastructure that enables African businesses to access customer financial data and initiate payments through secure APIs.",
+      "logoUrl": "/api/logos/mono"
+    },
+    {
+      "slug": "nigeria-gov",
+      "name": "Nigeria Government APIs",
+      "status": "Live",
+      "categories": [
+        "Government"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "NIN verification",
+        "BVN lookup",
+        "Tax APIs",
+        "Immigration services"
+      ],
+      "description": "Collection of official Nigerian government APIs including National Identity Management Commission (NIMC), Federal Inland Revenue Service (FIRS), and other public services.",
+      "logoUrl": "/api/logos/nigeria-gov"
+    },
+    {
+      "slug": "nimbasms",
+      "name": "NimbaSMS",
+      "status": "Live",
+      "categories": [
+        "SMS",
+        "Messaging"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "SMS messaging",
+        "Bulk SMS",
+        "Two-way SMS",
+        "Delivery reports"
+      ],
+      "description": "NimbaSMS provides SMS messaging APIs for businesses to reach customers in Nigeria.",
+      "logoUrl": "/api/logos/nimbasms"
+    },
+    {
+      "slug": "nomba",
+      "name": "Nomba",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Banking"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "POS payments",
+        "Business accounts",
+        "Payment collection",
+        "Transfers",
+        "Bill payments",
+        "Virtual cards"
+      ],
+      "description": "Nomba provides business banking, payment collection, and financial infrastructure for businesses in Nigeria and beyond. Offers POS terminals, business accounts, and payment APIs for seamless transactions.",
+      "logoUrl": "/providers/nomba/logo.svg"
+    },
+    {
+      "slug": "okhi",
+      "name": "OkHi",
+      "status": "Live",
+      "categories": [
+        "Geolocation"
+      ],
+      "countries": [
+        "Kenya",
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Digital addresses",
+        "Location verification",
+        "Address autocomplete",
+        "GPS coordinates"
+      ],
+      "description": "OkHi provides digital addressing and location APIs for African businesses, solving the challenge of physical addresses through precise geolocation and address verification.",
+      "logoUrl": "/api/logos/okhi"
+    },
+    {
+      "slug": "okra",
+      "name": "Okra",
+      "status": "Live",
+      "categories": [
+        "Open Banking",
+        "Financial Infrastructure"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Bank linking",
+        "Account verification",
+        "Transaction data",
+        "Income data",
+        "Real-time callbacks"
+      ],
+      "description": "Okra provides Open Banking infrastructure that connects African financial institutions with third-party applications. Their API enables secure access to bank accounts, transactions, and income data across Nigeria and beyond.",
+      "logoUrl": "/api/logos/okra"
+    },
+    {
+      "slug": "onafriq",
+      "name": "Onafriq",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Mobile Money",
+        "Financial Infrastructure"
+      ],
+      "countries": [
+        "Nigeria",
+        "Ghana",
+        "Kenya",
+        "South Africa",
+        "Uganda",
+        "Tanzania",
+        "Côte d'Ivoire",
+        "Senegal",
+        "Cameroon",
+        "Rwanda",
+        "Zambia"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Cross-border payments",
+        "Mobile money rails",
+        "Remittances",
+        "Bulk payouts",
+        "Real-time settlement"
+      ],
+      "description": "Onafriq (formerly MFS Africa) operates a cross-border payments network connecting over 500 million mobile money users across Africa. Their API enables remittances, business payments, and financial inclusion solutions.",
+      "logoUrl": "/api/logos/onafriq"
+    },
+    {
+      "slug": "ozow",
+      "name": "Ozow",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "South Africa"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Instant EFT",
+        "QR payments",
+        "Recurring payments",
+        "Refunds"
+      ],
+      "description": "Ozow enables instant EFT payments for South African businesses, providing a simple API for real-time bank transfers without cards.",
+      "logoUrl": "/api/logos/ozow"
+    },
+    {
+      "slug": "pargo",
+      "name": "Pargo",
+      "status": "Live",
+      "categories": [
+        "Logistics"
+      ],
+      "countries": [
+        "South Africa"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Pickup point network",
+        "Click & collect",
+        "Home delivery",
+        "Package tracking",
+        "Real-time rates",
+        "Returns management"
+      ],
+      "description": "Pargo provides a smart logistics and delivery API that enables businesses to offer click-and-collect and home delivery services through a network of pickup points across South Africa.",
+      "logoUrl": "/providers/pargo/logo.svg"
+    },
+    {
+      "slug": "pawapay",
+      "name": "Pawapay",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Mobile Money"
+      ],
+      "countries": [
+        "Kenya",
+        "Tanzania",
+        "Uganda",
+        "Zambia",
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Mobile money collection",
+        "Bulk payouts",
+        "Instant payouts",
+        "Multi-wallet support"
+      ],
+      "description": "Pawapay provides an API for businesses to collect and send mobile money payments across multiple African markets through a single integration.",
+      "logoUrl": "/api/logos/pawapay"
+    },
+    {
+      "slug": "peach-payments",
+      "name": "Peach Payments",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "South Africa",
+        "Zambia",
+        "Malawi",
+        "Zimbabwe"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Card payments",
+        "EFT payments",
+        "Recurring billing",
+        "Fraud management"
+      ],
+      "description": "Peach Payments provides secure payment gateway solutions for businesses across Southern Africa, supporting card payments, EFT, and alternative payment methods.",
+      "logoUrl": "/api/logos/peach-payments"
+    },
+    {
+      "slug": "pesapal",
+      "name": "Pesapal",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "Kenya",
+        "Uganda",
+        "Tanzania",
+        "Rwanda"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Card payments",
+        "Mobile money",
+        "Bank transfers",
+        "Recurring payments"
+      ],
+      "description": "Pesapal provides a secure payment gateway for businesses in East Africa, enabling card payments, mobile money, and bank transfers through a unified API.",
+      "logoUrl": "/api/logos/pesapal"
+    },
+    {
+      "slug": "pula",
+      "name": "Pula",
+      "status": "Live",
+      "categories": [
+        "Financial Infrastructure"
+      ],
+      "countries": [
+        "Kenya",
+        "Tanzania",
+        "Uganda",
+        "Malawi",
+        "Zambia",
+        "Nigeria",
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Index insurance",
+        "Weather data",
+        "Claims processing",
+        "Farmer enrollment"
+      ],
+      "description": "Pula provides insurance products and climate risk data APIs for farmers across Africa, enabling index-based insurance and agricultural finance solutions.",
+      "logoUrl": "/api/logos/pula"
+    },
+    {
+      "slug": "safaricom",
+      "name": "Safaricom",
+      "status": "Live",
+      "categories": [
+        "Telecom",
+        "Mobile Money"
+      ],
+      "countries": [
+        "Kenya"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "M-Pesa payments",
+        "SMS messaging",
+        "Voice calls",
+        "Data bundles",
+        "USSD"
+      ],
+      "description": "Safaricom provides APIs for M-Pesa, SMS, voice, data, and other telecom services in Kenya.",
+      "logoUrl": "/api/logos/safaricom"
+    },
+    {
+      "slug": "sendy",
+      "name": "Sendy",
+      "status": "Live",
+      "categories": [
+        "Logistics"
+      ],
+      "countries": [
+        "Kenya",
+        "Uganda",
+        "Tanzania"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Package tracking",
+        "Delivery scheduling",
+        "Real-time pricing",
+        "Multiple transporters"
+      ],
+      "description": "Sendy provides an API for businesses to streamline their logistics and delivery operations across East Africa, connecting to a network of transporters.",
+      "logoUrl": "/api/logos/sendy"
+    },
+    {
+      "slug": "shuttlers",
+      "name": "Shuttlers",
+      "status": "Live",
+      "categories": [
+        "Mobility"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Ride scheduling",
+        "Route optimization",
+        "Employee transport",
+        "Real-time tracking",
+        "Corporate accounts",
+        "Payment integration"
+      ],
+      "description": "Shuttlers provides a corporate mobility API that enables businesses to offer shared transportation services to employees across Nigeria, reducing commute costs and improving employee benefits.",
+      "logoUrl": "/providers/shuttlers/logo.svg"
+    },
+    {
+      "slug": "stitch",
+      "name": "Stitch",
+      "status": "Live",
+      "categories": [
+        "Banking",
+        "Payments"
+      ],
+      "countries": [
+        "South Africa",
+        "Nigeria",
+        "Kenya",
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Open banking",
+        "Account verification",
+        "Payments",
+        "Statement data",
+        "Income insights"
+      ],
+      "description": "Stitch provides open finance infrastructure enabling businesses to access financial data and initiate payments across African markets through a single API.",
+      "logoUrl": "/api/logos/stitch"
+    },
+    {
+      "slug": "tambua-health",
+      "name": "Tambua Health",
+      "status": "Live",
+      "categories": [
+        "Health"
+      ],
+      "countries": [
+        "Kenya"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Patient records",
+        "Appointment scheduling",
+        "Insurance verification",
+        "Healthcare data"
+      ],
+      "description": "Tambua Health provides healthcare data APIs that enable digital health solutions including patient records, appointment scheduling, and insurance verification.",
+      "logoUrl": "/api/logos/tambua-health"
+    },
+    {
+      "slug": "termii",
+      "name": "Termii",
+      "status": "Live",
+      "categories": [
+        "SMS",
+        "Messaging"
+      ],
+      "countries": [
+        "Nigeria",
+        "Ghana",
+        "Kenya"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "SMS messaging",
+        "Email",
+        "Voice",
+        "OTP",
+        "Two-way messaging"
+      ],
+      "description": "Termii provides SMS, email, and communication APIs for businesses to engage with customers across Nigeria, Ghana, and Kenya.",
+      "logoUrl": "/api/logos/termii"
+    },
+    {
+      "slug": "traction",
+      "name": "Traction",
+      "status": "Live",
+      "categories": [
+        "Financial Infrastructure",
+        "Payments"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Payments",
+        "Lending",
+        "Financial management",
+        "KYC",
+        "Collections"
+      ],
+      "description": "Traction provides financial infrastructure APIs that enable businesses to embed financial services including payments, lending, and financial management.",
+      "logoUrl": "/api/logos/traction"
+    },
+    {
+      "slug": "treepz",
+      "name": "Treepz",
+      "status": "Live",
+      "categories": [
+        "Mobility"
+      ],
+      "countries": [
+        "Nigeria",
+        "Ghana",
+        "Kenya"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Ride booking",
+        "Fleet management",
+        "Corporate transport",
+        "Real-time tracking",
+        "Driver onboarding",
+        "Payment processing"
+      ],
+      "description": "Treepz (formerly Treepz Mobility) provides APIs for corporate transportation, ride-hailing, and fleet management across African markets.",
+      "logoUrl": "/providers/treepz/logo.svg"
+    },
+    {
+      "slug": "twiga",
+      "name": "Twiga Foods",
+      "status": "Live",
+      "categories": [
+        "Logistics"
+      ],
+      "countries": [
+        "Kenya"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Supply chain integration",
+        "Order management",
+        "Inventory tracking",
+        "Delivery scheduling"
+      ],
+      "description": "Twiga Foods provides APIs for businesses to integrate with agricultural supply chain and food logistics across East Africa.",
+      "logoUrl": "/api/logos/twiga"
+    },
+    {
+      "slug": "valr",
+      "name": "VALR",
+      "status": "Live",
+      "categories": [
+        "Crypto"
+      ],
+      "countries": [
+        "South Africa"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Cryptocurrency trading",
+        "Digital asset custody",
+        "API trading",
+        "Market data",
+        "Instant swaps"
+      ],
+      "description": "VALR is a cryptocurrency exchange and trading platform offering digital asset trading, custody, and API services to individuals and institutions in South Africa and across Africa.",
+      "logoUrl": "/providers/valr/logo.svg"
+    },
+    {
+      "slug": "verifyme",
+      "name": "VerifyMe",
+      "status": "Live",
+      "categories": [
+        "Identity",
+        "KYC"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "BVN verification",
+        "NIN verification",
+        "Document verification",
+        "Address verification"
+      ],
+      "description": "VerifyMe provides identity verification APIs for Nigerian businesses, enabling BVN, NIN, and document verification through simple REST endpoints.",
+      "logoUrl": "/api/logos/verifyme"
+    },
+    {
+      "slug": "vodafone-cash",
+      "name": "Vodafone Cash",
+      "status": "Live",
+      "categories": [
+        "Mobile Money"
+      ],
+      "countries": [
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Mobile money collection",
+        "Disbursements",
+        "Balance inquiry",
+        "Transaction history"
+      ],
+      "description": "Vodafone Cash provides APIs for merchants to integrate mobile money payment collections, disbursements, and balance inquiries for Ghanaian customers.",
+      "logoUrl": "/api/logos/vodafone-cash"
+    },
+    {
+      "slug": "watupay",
+      "name": "WatuPay",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Mobile Money"
+      ],
+      "countries": [
+        "Kenya",
+        "Tanzania",
+        "Uganda"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Mobile money payments",
+        "Bill payments",
+        "Airtime top-up",
+        "Bank transfers"
+      ],
+      "description": "WatuPay provides API solutions for mobile money payments, bill payments, and financial services across East African markets.",
+      "logoUrl": "/api/logos/watupay"
+    },
+    {
+      "slug": "xend-finance",
+      "name": "Xend Finance",
+      "status": "Live",
+      "categories": [
+        "Crypto"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "DeFi yield farming",
+        "Stablecoins",
+        "Credit union integration",
+        "Cooperative savings",
+        "Cryptocurrency wallets"
+      ],
+      "description": "Xend Finance is a decentralized finance (DeFi) platform that provides yield farming and cryptocurrency services to credit unions and cooperatives in Nigeria and across Africa.",
+      "logoUrl": "/providers/xend-finance/logo.svg"
+    },
+    {
+      "slug": "yoco",
+      "name": "Yoco",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "South Africa"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Card payments",
+        "Online payments",
+        "POS integration",
+        "QR payments"
+      ],
+      "description": "Yoco provides payment solutions for South African businesses, including card readers, online payments, and POS systems with developer APIs.",
+      "logoUrl": "/api/logos/yoco"
+    },
+    {
+      "slug": "youverify",
+      "name": "Youverify",
+      "status": "Live",
+      "categories": [
+        "Identity",
+        "KYC"
+      ],
+      "countries": [
+        "Nigeria",
+        "Kenya",
+        "Ghana",
+        "South Africa"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "BVN verification",
+        "NIN verification",
+        "Passport verification",
+        "Driver's license",
+        "AML screening",
+        "Background checks"
+      ],
+      "description": "Youverify provides KYC and compliance verification APIs for African businesses, supporting identity verification, document validation, and background checks.",
+      "logoUrl": "/api/logos/youverify"
+    },
+    {
+      "slug": "zenzera",
+      "name": "Zenzera",
+      "status": "Live",
+      "categories": [
+        "Messaging",
+        "Airtime"
+      ],
+      "countries": [
+        "South Africa",
+        "Nigeria",
+        "Kenya",
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Bulk SMS",
+        "Voice messaging",
+        "Airtime top-up",
+        "USSD gateway"
+      ],
+      "description": "Zenzera provides value-added services and telecom APIs for African markets, including SMS, voice, airtime, and mobile money integrations.",
+      "logoUrl": "/api/logos/zenzera"
+    },
+    {
+      "slug": "zone",
+      "name": "Zone",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "Nigeria",
+        "Kenya"
+      ],
+      "lastVerified": "2026-07-22",
+      "features": [
+        "Card payments",
+        "Bank transfers",
+        "Mobile money",
+        "Payouts",
+        "Virtual accounts"
+      ],
+      "description": "Zone provides payment infrastructure and API services enabling businesses to accept payments, make transfers, and manage financial operations in Nigeria and Kenya.",
+      "logoUrl": "/providers/zone/logo.svg"
+    }
+  ]
+}

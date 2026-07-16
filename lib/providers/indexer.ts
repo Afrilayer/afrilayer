@@ -3,7 +3,11 @@
 
 import { promises as fs } from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { getAllProviders } from './loader';
+
+const __filename = fileURLToPath(import.meta.url);
+const baseDir = path.resolve(path.dirname(__filename), '../..');
 
 export interface Registry {
   generatedAt: string;
@@ -70,7 +74,7 @@ export async function generateRegistry(): Promise<void> {
   };
 
   // Write to public/generated
-  const outputDir = path.join(process.cwd(), 'public', 'generated');
+  const outputDir = path.join(baseDir, 'public', 'generated');
   const outputPath = path.join(outputDir, 'registry.json');
   
   // Ensure directory exists

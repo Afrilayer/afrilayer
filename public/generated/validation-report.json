@@ -1,0 +1,1123 @@
+{
+  "timestamp": "2026-07-16T15:08:22.983Z",
+  "providersChecked": 64,
+  "validProviders": 52,
+  "errors": [
+    {
+      "slug": "africas-talking",
+      "valid": false,
+      "errors": [
+        "undefined should be equal to one of the allowed values",
+        "undefined should be equal to one of the allowed values"
+      ],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://africastalking.com",
+        "https://developers.africastalking.com",
+        "https://developers.africastalking.com"
+      ],
+      "brokenUrls": [
+        "https://africastalking.com"
+      ]
+    },
+    {
+      "slug": "anchor",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://anchor.money",
+        "https://docs.anchor.money",
+        "https://docs.anchor.money"
+      ],
+      "brokenUrls": [
+        "https://anchor.money",
+        "https://docs.anchor.money",
+        "https://docs.anchor.money"
+      ]
+    },
+    {
+      "slug": "apollo-agriculture",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://apolloagriculture.com",
+        "https://docs.apolloagriculture.com",
+        "https://apolloagriculture.com/developers"
+      ],
+      "brokenUrls": [
+        "https://docs.apolloagriculture.com",
+        "https://apolloagriculture.com/developers"
+      ]
+    },
+    {
+      "slug": "arkesel",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://arkesel.com",
+        "https://docs.arkesel.com",
+        "https://docs.arkesel.com"
+      ],
+      "brokenUrls": [
+        "https://docs.arkesel.com",
+        "https://docs.arkesel.com"
+      ]
+    },
+    {
+      "slug": "blusalt",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://blusalt.net",
+        "https://docs.blusalt.net",
+        "https://docs.blusalt.net"
+      ],
+      "brokenUrls": [
+        "https://docs.blusalt.net",
+        "https://docs.blusalt.net"
+      ]
+    },
+    {
+      "slug": "buypower",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://buypower.com.ng",
+        "https://api.buypower.com.ng/docs",
+        "https://api.buypower.com.ng"
+      ],
+      "brokenUrls": [
+        "https://buypower.com.ng",
+        "https://api.buypower.com.ng/docs",
+        "https://api.buypower.com.ng"
+      ]
+    },
+    {
+      "slug": "cellulant",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://cellulant.io",
+        "https://docs.cellulant.io",
+        "https://docs.cellulant.io"
+      ],
+      "brokenUrls": [
+        "https://cellulant.io",
+        "https://docs.cellulant.io",
+        "https://docs.cellulant.io"
+      ]
+    },
+    {
+      "slug": "chatdesk",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://chatdesk.ai",
+        "https://docs.chatdesk.ai",
+        "https://docs.chatdesk.ai"
+      ],
+      "brokenUrls": [
+        "https://chatdesk.ai",
+        "https://docs.chatdesk.ai",
+        "https://docs.chatdesk.ai"
+      ]
+    },
+    {
+      "slug": "chenosis",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://chenosis.com",
+        "https://docs.chenosis.com",
+        "https://developer.chenosis.com"
+      ],
+      "brokenUrls": [
+        "https://chenosis.com",
+        "https://docs.chenosis.com",
+        "https://developer.chenosis.com"
+      ]
+    },
+    {
+      "slug": "cinetpay",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://cinetpay.com",
+        "https://docs.cinetpay.com",
+        "https://docs.cinetpay.com"
+      ],
+      "brokenUrls": [
+        "https://cinetpay.com",
+        "https://docs.cinetpay.com",
+        "https://docs.cinetpay.com"
+      ]
+    },
+    {
+      "slug": "credable",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://credable.io",
+        "https://docs.credable.io",
+        "https://docs.credable.io"
+      ],
+      "brokenUrls": [
+        "https://docs.credable.io",
+        "https://docs.credable.io"
+      ]
+    },
+    {
+      "slug": "crop2cash",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://crop2cash.com",
+        "https://docs.crop2cash.com",
+        "https://crop2cash.com/developers"
+      ],
+      "brokenUrls": [
+        "https://crop2cash.com",
+        "https://docs.crop2cash.com",
+        "https://crop2cash.com/developers"
+      ]
+    },
+    {
+      "slug": "dojah",
+      "valid": false,
+      "errors": [
+        "provider.json missing"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [],
+      "brokenUrls": []
+    },
+    {
+      "slug": "dpo-group",
+      "valid": false,
+      "errors": [
+        "undefined should be equal to one of the allowed values"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://dpogroup.com",
+        "https://dpogroup.com/developers",
+        "https://dpogroup.com"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "dusupay",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://dusupay.com",
+        "https://dusupay.com/docs",
+        "https://dusupay.com/docs"
+      ],
+      "brokenUrls": [
+        "https://dusupay.com/docs",
+        "https://dusupay.com/docs"
+      ]
+    },
+    {
+      "slug": "eversend",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://eversend.com",
+        "https://docs.eversend.com",
+        "https://docs.eversend.com"
+      ],
+      "brokenUrls": [
+        "https://eversend.com",
+        "https://docs.eversend.com",
+        "https://docs.eversend.com"
+      ]
+    },
+    {
+      "slug": "fido",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://fidocredit.com",
+        "https://docs.fidocredit.com",
+        "https://docs.fidocredit.com"
+      ],
+      "brokenUrls": [
+        "https://docs.fidocredit.com",
+        "https://docs.fidocredit.com"
+      ]
+    },
+    {
+      "slug": "fincra",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://fincra.com",
+        "https://docs.fincra.com",
+        "https://docs.fincra.com"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "flex-finance",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://flexfinance.ng",
+        "https://docs.flexfinance.ng",
+        "https://docs.flexfinance.ng"
+      ],
+      "brokenUrls": [
+        "https://flexfinance.ng",
+        "https://docs.flexfinance.ng",
+        "https://docs.flexfinance.ng"
+      ]
+    },
+    {
+      "slug": "flutterwave",
+      "valid": false,
+      "errors": [
+        "provider.json missing"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [],
+      "brokenUrls": []
+    },
+    {
+      "slug": "hubtel",
+      "valid": false,
+      "errors": [
+        "provider.json missing"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [],
+      "brokenUrls": []
+    },
+    {
+      "slug": "insurpass",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://insurpass.com",
+        "https://docs.insurpass.com",
+        "https://insurpass.com/developers"
+      ],
+      "brokenUrls": [
+        "https://docs.insurpass.com"
+      ]
+    },
+    {
+      "slug": "interswitch",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://interswitchgroup.com",
+        "https://developer.interswitchgroup.com",
+        "https://developer.interswitchgroup.com"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "kora",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://kora.com",
+        "https://docs.kora.com",
+        "https://docs.kora.com"
+      ],
+      "brokenUrls": [
+        "https://docs.kora.com",
+        "https://docs.kora.com"
+      ]
+    },
+    {
+      "slug": "kwik",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://kwik.delivery",
+        "https://docs.kwik.delivery",
+        "https://docs.kwik.delivery"
+      ],
+      "brokenUrls": [
+        "https://docs.kwik.delivery",
+        "https://docs.kwik.delivery"
+      ]
+    },
+    {
+      "slug": "lami",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://lami.africa",
+        "https://docs.lami.africa",
+        "https://developer.lami.africa"
+      ],
+      "brokenUrls": [
+        "https://lami.africa",
+        "https://docs.lami.africa",
+        "https://developer.lami.africa"
+      ]
+    },
+    {
+      "slug": "maplerad",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://maplerad.com",
+        "https://docs.maplerad.com",
+        "https://docs.maplerad.com"
+      ],
+      "brokenUrls": [
+        "https://docs.maplerad.com",
+        "https://docs.maplerad.com"
+      ]
+    },
+    {
+      "slug": "mnotify",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://mnotify.com.gh",
+        "https://docs.mnotify.com.gh",
+        "https://docs.mnotify.com.gh"
+      ],
+      "brokenUrls": [
+        "https://mnotify.com.gh",
+        "https://docs.mnotify.com.gh",
+        "https://docs.mnotify.com.gh"
+      ]
+    },
+    {
+      "slug": "mono",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://mono.co",
+        "https://docs.mono.co",
+        "https://mono.co"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "mtn-momo",
+      "valid": false,
+      "errors": [
+        "provider.json missing"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [],
+      "brokenUrls": []
+    },
+    {
+      "slug": "nalo-sms",
+      "valid": false,
+      "errors": [
+        "provider.json missing"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [],
+      "brokenUrls": []
+    },
+    {
+      "slug": "nigeria-gov",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://gov.ng",
+        "https://developer.gov.ng",
+        "https://developer.gov.ng"
+      ],
+      "brokenUrls": [
+        "https://gov.ng",
+        "https://developer.gov.ng",
+        "https://developer.gov.ng"
+      ]
+    },
+    {
+      "slug": "nimbasms",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://nimbasms.com",
+        "https://docs.nimbasms.com",
+        "https://docs.nimbasms.com"
+      ],
+      "brokenUrls": [
+        "https://docs.nimbasms.com",
+        "https://docs.nimbasms.com"
+      ]
+    },
+    {
+      "slug": "nomba",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://nomba.com",
+        "https://nomba.com/developers",
+        "https://nomba.com/developers"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "okhi",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://okhi.com",
+        "https://docs.okhi.com",
+        "https://okhi.com"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "okra",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://okra.com",
+        "https://docs.okra.com",
+        "https://docs.okra.com"
+      ],
+      "brokenUrls": [
+        "https://docs.okra.com",
+        "https://docs.okra.com"
+      ]
+    },
+    {
+      "slug": "onafriq",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://onafriq.com",
+        "https://docs.onafriq.com",
+        "https://docs.onafriq.com"
+      ],
+      "brokenUrls": [
+        "https://docs.onafriq.com",
+        "https://docs.onafriq.com"
+      ]
+    },
+    {
+      "slug": "ozow",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://ozow.com",
+        "https://developers.ozow.com",
+        "https://developers.ozow.com"
+      ],
+      "brokenUrls": [
+        "https://developers.ozow.com",
+        "https://developers.ozow.com"
+      ]
+    },
+    {
+      "slug": "pargo",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://pargo.co.za",
+        "https://pargo.co.za/developers",
+        "https://pargo.co.za/developers"
+      ],
+      "brokenUrls": [
+        "https://pargo.co.za/developers",
+        "https://pargo.co.za/developers"
+      ]
+    },
+    {
+      "slug": "pawapay",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://pawapay.com",
+        "https://docs.pawapay.com",
+        "https://docs.pawapay.com"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "paystack",
+      "valid": false,
+      "errors": [
+        "provider.json missing"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [],
+      "brokenUrls": []
+    },
+    {
+      "slug": "peach-payments",
+      "valid": false,
+      "errors": [
+        "undefined should be equal to one of the allowed values"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://peachpayments.com",
+        "https://docs.peachpayments.com",
+        "https://peachpayments.com"
+      ],
+      "brokenUrls": [
+        "https://docs.peachpayments.com"
+      ]
+    },
+    {
+      "slug": "pesapal",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://pesapal.com",
+        "https://developer.pesapal.com",
+        "https://developer.pesapal.com"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "prembly",
+      "valid": false,
+      "errors": [
+        "provider.json missing"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [],
+      "brokenUrls": []
+    },
+    {
+      "slug": "pula",
+      "valid": false,
+      "errors": [
+        "undefined should be equal to one of the allowed values"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://pula.io",
+        "https://docs.pula.io",
+        "https://pula.io"
+      ],
+      "brokenUrls": [
+        "https://docs.pula.io"
+      ]
+    },
+    {
+      "slug": "safaricom",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://safaricom.co.ke",
+        "https://developer.safaricom.co.ke",
+        "https://developer.safaricom.co.ke"
+      ],
+      "brokenUrls": [
+        "https://safaricom.co.ke"
+      ]
+    },
+    {
+      "slug": "sendy",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://sendy.co.ke",
+        "https://docs.sendy.co.ke",
+        "https://sendy.co.ke"
+      ],
+      "brokenUrls": [
+        "https://sendy.co.ke",
+        "https://docs.sendy.co.ke",
+        "https://sendy.co.ke"
+      ]
+    },
+    {
+      "slug": "shuttlers",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://shuttlers.ng",
+        "https://shuttlers.ng/api-docs",
+        "https://shuttlers.ng/developers"
+      ],
+      "brokenUrls": [
+        "https://shuttlers.ng/developers"
+      ]
+    },
+    {
+      "slug": "smile-identity",
+      "valid": false,
+      "errors": [
+        "provider.json missing"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [],
+      "brokenUrls": []
+    },
+    {
+      "slug": "stitch",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://stitch.money",
+        "https://docs.stitch.money",
+        "https://stitch.money"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "tambua-health",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://tambua.health",
+        "https://docs.tambua.health",
+        "https://docs.tambua.health"
+      ],
+      "brokenUrls": [
+        "https://docs.tambua.health",
+        "https://docs.tambua.health"
+      ]
+    },
+    {
+      "slug": "termii",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://termii.com",
+        "https://developers.termii.com",
+        "https://developers.termii.com"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "traction",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://traction.co",
+        "https://docs.traction.co",
+        "https://docs.traction.co"
+      ],
+      "brokenUrls": [
+        "https://docs.traction.co",
+        "https://docs.traction.co"
+      ]
+    },
+    {
+      "slug": "treepz",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://treepz.com",
+        "https://treepz.com/developers",
+        "https://treepz.com/developers"
+      ],
+      "brokenUrls": [
+        "https://treepz.com/developers",
+        "https://treepz.com/developers"
+      ]
+    },
+    {
+      "slug": "twiga",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://twiga.com",
+        "https://docs.twiga.com"
+      ],
+      "brokenUrls": [
+        "https://twiga.com",
+        "https://docs.twiga.com"
+      ]
+    },
+    {
+      "slug": "valr",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://www.valr.com",
+        "https://docs.valr.com",
+        "https://docs.valr.com"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "verifyme",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://verifyme.ng",
+        "https://docs.verifyme.ng",
+        "https://verifyme.ng"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "vodafone-cash",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://vodafone.com.gh",
+        "https://developer.vodafone.com.gh"
+      ],
+      "brokenUrls": [
+        "https://vodafone.com.gh",
+        "https://developer.vodafone.com.gh"
+      ]
+    },
+    {
+      "slug": "watupay",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://watupay.com",
+        "https://developers.watupay.com",
+        "https://watupay.com"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "xend-finance",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://xend.finance",
+        "https://docs.xend.finance",
+        "https://docs.xend.finance"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "yoco",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://yoco.com",
+        "https://developer.yoco.com",
+        "https://developer.yoco.com"
+      ],
+      "brokenUrls": []
+    },
+    {
+      "slug": "youverify",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://youverify.ai",
+        "https://docs.youverify.ai",
+        "https://youverify.ai"
+      ],
+      "brokenUrls": [
+        "https://youverify.ai",
+        "https://docs.youverify.ai",
+        "https://youverify.ai"
+      ]
+    },
+    {
+      "slug": "zenzera",
+      "valid": true,
+      "errors": [],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [
+        "https://zenzera.com",
+        "https://docs.zenzera.com"
+      ],
+      "brokenUrls": [
+        "https://zenzera.com",
+        "https://docs.zenzera.com"
+      ]
+    },
+    {
+      "slug": "zone",
+      "valid": true,
+      "errors": [],
+      "hasReadme": true,
+      "hasLogo": false,
+      "validUrls": [
+        "https://zone.co",
+        "https://docs.zone.co",
+        "https://docs.zone.co"
+      ],
+      "brokenUrls": [
+        "https://zone.co",
+        "https://docs.zone.co",
+        "https://docs.zone.co"
+      ]
+    }
+  ],
+  "summary": {
+    "missingLogos": [
+      "africas-talking",
+      "anchor",
+      "apollo-agriculture",
+      "arkesel",
+      "blusalt",
+      "buypower",
+      "cellulant",
+      "chatdesk",
+      "chenosis",
+      "cinetpay",
+      "credable",
+      "crop2cash",
+      "dpo-group",
+      "dusupay",
+      "eversend",
+      "fido",
+      "fincra",
+      "flex-finance",
+      "insurpass",
+      "interswitch",
+      "kora",
+      "kwik",
+      "lami",
+      "maplerad",
+      "mnotify",
+      "mono",
+      "nigeria-gov",
+      "nimbasms",
+      "nomba",
+      "okhi",
+      "okra",
+      "onafriq",
+      "ozow",
+      "pargo",
+      "pawapay",
+      "peach-payments",
+      "pesapal",
+      "pula",
+      "safaricom",
+      "sendy",
+      "shuttlers",
+      "stitch",
+      "tambua-health",
+      "termii",
+      "traction",
+      "treepz",
+      "twiga",
+      "valr",
+      "verifyme",
+      "vodafone-cash",
+      "watupay",
+      "xend-finance",
+      "yoco",
+      "youverify",
+      "zenzera",
+      "zone"
+    ],
+    "missingReadmes": [
+      "anchor",
+      "arkesel",
+      "blusalt",
+      "chatdesk",
+      "chenosis",
+      "credable",
+      "dpo-group",
+      "eversend",
+      "fido",
+      "fincra",
+      "flex-finance",
+      "kora",
+      "kwik",
+      "maplerad",
+      "mnotify",
+      "nigeria-gov",
+      "nimbasms",
+      "onafriq",
+      "ozow",
+      "pawapay",
+      "peach-payments",
+      "pula",
+      "safaricom",
+      "tambua-health",
+      "termii",
+      "traction",
+      "twiga",
+      "vodafone-cash",
+      "youverify",
+      "zenzera"
+    ],
+    "brokenLinks": [
+      "https://africastalking.com",
+      "https://anchor.money",
+      "https://docs.anchor.money",
+      "https://docs.apolloagriculture.com",
+      "https://apolloagriculture.com/developers",
+      "https://docs.arkesel.com",
+      "https://docs.blusalt.net",
+      "https://buypower.com.ng",
+      "https://api.buypower.com.ng/docs",
+      "https://api.buypower.com.ng",
+      "https://cellulant.io",
+      "https://docs.cellulant.io",
+      "https://chatdesk.ai",
+      "https://docs.chatdesk.ai",
+      "https://chenosis.com",
+      "https://docs.chenosis.com",
+      "https://developer.chenosis.com",
+      "https://cinetpay.com",
+      "https://docs.cinetpay.com",
+      "https://docs.credable.io",
+      "https://crop2cash.com",
+      "https://docs.crop2cash.com",
+      "https://crop2cash.com/developers",
+      "https://dusupay.com/docs",
+      "https://eversend.com",
+      "https://docs.eversend.com",
+      "https://docs.fidocredit.com",
+      "https://flexfinance.ng",
+      "https://docs.flexfinance.ng",
+      "https://docs.insurpass.com",
+      "https://docs.kora.com",
+      "https://docs.kwik.delivery",
+      "https://lami.africa",
+      "https://docs.lami.africa",
+      "https://developer.lami.africa",
+      "https://docs.maplerad.com",
+      "https://mnotify.com.gh",
+      "https://docs.mnotify.com.gh",
+      "https://gov.ng",
+      "https://developer.gov.ng",
+      "https://docs.nimbasms.com",
+      "https://docs.okra.com",
+      "https://docs.onafriq.com",
+      "https://developers.ozow.com",
+      "https://pargo.co.za/developers",
+      "https://docs.peachpayments.com",
+      "https://docs.pula.io",
+      "https://safaricom.co.ke",
+      "https://sendy.co.ke",
+      "https://docs.sendy.co.ke",
+      "https://shuttlers.ng/developers",
+      "https://docs.tambua.health",
+      "https://docs.traction.co",
+      "https://treepz.com/developers",
+      "https://twiga.com",
+      "https://docs.twiga.com",
+      "https://vodafone.com.gh",
+      "https://developer.vodafone.com.gh",
+      "https://youverify.ai",
+      "https://docs.youverify.ai",
+      "https://zenzera.com",
+      "https://docs.zenzera.com",
+      "https://zone.co",
+      "https://docs.zone.co"
+    ],
+    "validationErrors": [
+      "undefined should be equal to one of the allowed values",
+      "provider.json missing"
+    ]
+  }
+}

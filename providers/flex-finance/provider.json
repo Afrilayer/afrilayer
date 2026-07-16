@@ -1,0 +1,27 @@
+{
+  "slug": "flex-finance",
+  "name": "Flex Finance",
+  "tagline": "Digital lending and financial services platform.",
+  "description": "Flex Finance provides digital lending and financial services APIs that enable businesses to offer credit products and manage financial operations.",
+  "website": "https://flexfinance.ng",
+  "documentation": "https://docs.flexfinance.ng",
+  "developerPortal": "https://docs.flexfinance.ng",
+  "supportEmail": "support@flexfinance.ng",
+  "headquarters": "Nigeria",
+  "categories": ["Financial Infrastructure", "Banking"],
+  "countries": ["Nigeria"],
+  "features": ["Digital lending", "Credit scoring", "Loan management", "Financial data"],
+  "pricingModel": "custom",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    { "name": "Chijioke Okonkwo", "role": "Co-founder & CEO" }
+  ]
+}

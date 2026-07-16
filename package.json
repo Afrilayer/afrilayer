@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write .",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "generate": "ts-node scripts/index.ts",
+    "validate": "ts-node scripts/validate.ts"
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^5.2.8",
@@ -33,10 +35,12 @@
     "@types/node": "^20.12.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "ajv": "^8.12.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "15.1.0",
     "prettier": "^3.2.0",
     "tailwindcss": "^4.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.0"
   }
 }

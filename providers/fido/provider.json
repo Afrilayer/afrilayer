@@ -1,0 +1,27 @@
+{
+  "slug": "fido",
+  "name": "Fido",
+  "tagline": "Credit scoring and lending infrastructure for Africa.",
+  "description": "Fido provides credit scoring and lending infrastructure APIs that help financial institutions assess creditworthiness and provide digital lending solutions.",
+  "website": "https://fidocredit.com",
+  "documentation": "https://docs.fidocredit.com",
+  "developerPortal": "https://docs.fidocredit.com",
+  "supportEmail": "support@fidocredit.com",
+  "headquarters": "Ghana",
+  "categories": ["Financial Infrastructure", "KYC"],
+  "countries": ["Ghana", "Nigeria", "Kenya"],
+  "features": ["Credit scoring", "Digital lending", "Income verification", "Identity verification"],
+  "pricingModel": "custom",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    { "name": "Mark Akoto-Moore", "role": "Co-founder & CEO" }
+  ]
+}

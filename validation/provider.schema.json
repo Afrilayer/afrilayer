@@ -20,6 +20,10 @@
       "type": "string",
       "description": "Short description"
     },
+    "logoUrl": {
+      "type": "string",
+      "description": "Optional URL to provider logo"
+    },
     "description": {
       "type": "string",
       "minLength": 10,
@@ -53,7 +57,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["Payments", "Mobile Money", "KYC", "Identity", "SMS", "Airtime", "Banking", "Logistics", "Government", "Geolocation", "Financial Infrastructure"]
+        "enum": ["Payments", "Mobile Money", "KYC", "Identity", "SMS", "Airtime", "Banking", "Logistics", "Government", "Geolocation", "Financial Infrastructure", "Messaging", "Insurance", "Agriculture", "Mobility", "Health", "Crypto", "Telecom", "Developer Tools", "Open Banking", "Voice", "USSD", "Maps"]
       },
       "minItems": 1,
       "description": "Provider categories"
@@ -62,7 +66,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "Côte d'Ivoire", "Egypt", "Morocco", "Senegal", "Zambia", "Cameroon"]
+        "enum": ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "Côte d'Ivoire", "Egypt", "Morocco", "Senegal", "Zambia", "Cameroon", "Rwanda", "Tunisia", "Ethiopia", "Zimbabwe", "Botswana", "Angola", "Mozambique", "United Arab Emirates", "Mali", "Burkina Faso"]
       },
       "minItems": 1,
       "description": "Countries where provider operates"
@@ -133,5 +137,5 @@
       "description": "Key people (founders, maintainers)"
     }
   },
-  "additionalProperties": false
+  "additionalProperties": true
 }

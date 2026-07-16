@@ -1,0 +1,361 @@
+{
+  "timestamp": "2026-07-16T15:05:17.657Z",
+  "counts": {
+    "providers": 56,
+    "countries": 20,
+    "categories": 20,
+    "screenshots": 0,
+    "sdks": 13,
+    "verifiedProviders": 36
+  },
+  "countries": [
+    "Nigeria",
+    "Kenya",
+    "Ghana",
+    "Uganda",
+    "Tanzania",
+    "South Africa",
+    "Zambia",
+    "Malawi",
+    "Ethiopia",
+    "Rwanda",
+    "Sierra Leone",
+    "Mozambique",
+    "Côte d'Ivoire",
+    "Senegal",
+    "Morocco",
+    "Egypt",
+    "Cameroon",
+    "Mali",
+    "Burkina Faso",
+    "Zimbabwe"
+  ],
+  "categories": [
+    {
+      "slug": "messaging",
+      "name": "Messaging",
+      "count": 7
+    },
+    {
+      "slug": "airtime",
+      "name": "Airtime",
+      "count": 2
+    },
+    {
+      "slug": "payments",
+      "name": "Payments",
+      "count": 25
+    },
+    {
+      "slug": "banking",
+      "name": "Banking",
+      "count": 11
+    },
+    {
+      "slug": "agriculture",
+      "name": "Agriculture",
+      "count": 2
+    },
+    {
+      "slug": "sms",
+      "name": "SMS",
+      "count": 5
+    },
+    {
+      "slug": "identity",
+      "name": "Identity",
+      "count": 3
+    },
+    {
+      "slug": "kyc",
+      "name": "KYC",
+      "count": 4
+    },
+    {
+      "slug": "mobile-money",
+      "name": "Mobile Money",
+      "count": 6
+    },
+    {
+      "slug": "developer-tools",
+      "name": "Developer Tools",
+      "count": 1
+    },
+    {
+      "slug": "telecom",
+      "name": "Telecom",
+      "count": 2
+    },
+    {
+      "slug": "financial-infrastructure",
+      "name": "Financial Infrastructure",
+      "count": 7
+    },
+    {
+      "slug": "insurance",
+      "name": "Insurance",
+      "count": 2
+    },
+    {
+      "slug": "logistics",
+      "name": "Logistics",
+      "count": 4
+    },
+    {
+      "slug": "government",
+      "name": "Government",
+      "count": 1
+    },
+    {
+      "slug": "geolocation",
+      "name": "Geolocation",
+      "count": 1
+    },
+    {
+      "slug": "open-banking",
+      "name": "Open Banking",
+      "count": 1
+    },
+    {
+      "slug": "mobility",
+      "name": "Mobility",
+      "count": 2
+    },
+    {
+      "slug": "health",
+      "name": "Health",
+      "count": 1
+    },
+    {
+      "slug": "crypto",
+      "name": "Crypto",
+      "count": 2
+    }
+  ],
+  "screenshots": [
+    {
+      "provider": "africas-talking",
+      "count": 0
+    },
+    {
+      "provider": "anchor",
+      "count": 0
+    },
+    {
+      "provider": "apollo-agriculture",
+      "count": 0
+    },
+    {
+      "provider": "arkesel",
+      "count": 0
+    },
+    {
+      "provider": "blusalt",
+      "count": 0
+    },
+    {
+      "provider": "buypower",
+      "count": 0
+    },
+    {
+      "provider": "cellulant",
+      "count": 0
+    },
+    {
+      "provider": "chatdesk",
+      "count": 0
+    },
+    {
+      "provider": "chenosis",
+      "count": 0
+    },
+    {
+      "provider": "cinetpay",
+      "count": 0
+    },
+    {
+      "provider": "credable",
+      "count": 0
+    },
+    {
+      "provider": "crop2cash",
+      "count": 0
+    },
+    {
+      "provider": "dpo-group",
+      "count": 0
+    },
+    {
+      "provider": "dusupay",
+      "count": 0
+    },
+    {
+      "provider": "eversend",
+      "count": 0
+    },
+    {
+      "provider": "fido",
+      "count": 0
+    },
+    {
+      "provider": "fincra",
+      "count": 0
+    },
+    {
+      "provider": "flex-finance",
+      "count": 0
+    },
+    {
+      "provider": "insurpass",
+      "count": 0
+    },
+    {
+      "provider": "interswitch",
+      "count": 0
+    },
+    {
+      "provider": "kora",
+      "count": 0
+    },
+    {
+      "provider": "kwik",
+      "count": 0
+    },
+    {
+      "provider": "lami",
+      "count": 0
+    },
+    {
+      "provider": "maplerad",
+      "count": 0
+    },
+    {
+      "provider": "mnotify",
+      "count": 0
+    },
+    {
+      "provider": "mono",
+      "count": 0
+    },
+    {
+      "provider": "nigeria-gov",
+      "count": 0
+    },
+    {
+      "provider": "nimbasms",
+      "count": 0
+    },
+    {
+      "provider": "nomba",
+      "count": 0
+    },
+    {
+      "provider": "okhi",
+      "count": 0
+    },
+    {
+      "provider": "okra",
+      "count": 0
+    },
+    {
+      "provider": "onafriq",
+      "count": 0
+    },
+    {
+      "provider": "ozow",
+      "count": 0
+    },
+    {
+      "provider": "pargo",
+      "count": 0
+    },
+    {
+      "provider": "pawapay",
+      "count": 0
+    },
+    {
+      "provider": "peach-payments",
+      "count": 0
+    },
+    {
+      "provider": "pesapal",
+      "count": 0
+    },
+    {
+      "provider": "pula",
+      "count": 0
+    },
+    {
+      "provider": "safaricom",
+      "count": 0
+    },
+    {
+      "provider": "sendy",
+      "count": 0
+    },
+    {
+      "provider": "shuttlers",
+      "count": 0
+    },
+    {
+      "provider": "stitch",
+      "count": 0
+    },
+    {
+      "provider": "tambua-health",
+      "count": 0
+    },
+    {
+      "provider": "termii",
+      "count": 0
+    },
+    {
+      "provider": "traction",
+      "count": 0
+    },
+    {
+      "provider": "treepz",
+      "count": 0
+    },
+    {
+      "provider": "twiga",
+      "count": 0
+    },
+    {
+      "provider": "valr",
+      "count": 0
+    },
+    {
+      "provider": "verifyme",
+      "count": 0
+    },
+    {
+      "provider": "vodafone-cash",
+      "count": 0
+    },
+    {
+      "provider": "watupay",
+      "count": 0
+    },
+    {
+      "provider": "xend-finance",
+      "count": 0
+    },
+    {
+      "provider": "yoco",
+      "count": 0
+    },
+    {
+      "provider": "youverify",
+      "count": 0
+    },
+    {
+      "provider": "zenzera",
+      "count": 0
+    },
+    {
+      "provider": "zone",
+      "count": 0
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "buypower",
+  "name": "BuyPower",
+  "tagline": "Utility bill payment API for Nigeria.",
+  "logoUrl": "/providers/buypower/logo.svg",
+  "description": "BuyPower provides an API for purchasing electricity units and paying utility bills in Nigeria. Enables seamless bill payments for businesses and consumers.",
+  "website": "https://buypower.com.ng",
+  "documentation": "https://api.buypower.com.ng/docs",
+  "developerPortal": "https://api.buypower.com.ng",
+  "supportEmail": "support@buypower.com.ng",
+  "headquarters": "Nigeria",
+  "categories": [
+    "Payments"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "Electricity payment",
+    "Utility bills",
+    "Bill verification",
+    "Automated top-up"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "sdkLanguages": [
+    "JavaScript"
+  ],
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": []
+}

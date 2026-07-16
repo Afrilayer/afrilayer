@@ -1,0 +1,27 @@
+{
+  "slug": "tambua-health",
+  "name": "Tambua Health",
+  "tagline": "Healthcare APIs for African healthcare providers.",
+  "description": "Tambua Health provides healthcare data APIs that enable digital health solutions including patient records, appointment scheduling, and insurance verification.",
+  "website": "https://tambua.health",
+  "documentation": "https://docs.tambua.health",
+  "developerPortal": "https://docs.tambua.health",
+  "supportEmail": "support@tambua.health",
+  "headquarters": "Kenya",
+  "categories": ["Health"],
+  "countries": ["Kenya"],
+  "features": ["Patient records", "Appointment scheduling", "Insurance verification", "Healthcare data"],
+  "pricingModel": "custom",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    { "name": "Dr. Timothy Oriedo", "role": "Founder & CEO" }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "shuttlers",
+  "name": "Shuttlers",
+  "tagline": "Corporate transport and mobility solutions for Nigeria.",
+  "logoUrl": "/providers/shuttlers/logo.svg",
+  "description": "Shuttlers provides a corporate mobility API that enables businesses to offer shared transportation services to employees across Nigeria, reducing commute costs and improving employee benefits.",
+  "website": "https://shuttlers.ng",
+  "documentation": "https://shuttlers.ng/api-docs",
+  "developerPortal": "https://shuttlers.ng/developers",
+  "supportEmail": "support@shuttlers.ng",
+  "headquarters": "Nigeria",
+  "categories": [
+    "Mobility"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "Ride scheduling",
+    "Route optimization",
+    "Employee transport",
+    "Real-time tracking",
+    "Corporate accounts",
+    "Payment integration"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    {
+      "name": "Damilola Olusakin",
+      "role": "Co-founder & CEO"
+    }
+  ]
+}

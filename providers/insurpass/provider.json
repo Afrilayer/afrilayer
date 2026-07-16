@@ -1,0 +1,46 @@
+{
+  "slug": "insurpass",
+  "name": "Insurpass",
+  "tagline": "Insurance technology platform for Nigeria.",
+  "logoUrl": "/providers/insurpass/logo.svg",
+  "description": "Insurpass provides insurance technology APIs for Nigerian businesses, offering digital insurance solutions, policy management, and claims automation.",
+  "website": "https://insurpass.com",
+  "documentation": "https://docs.insurpass.com",
+  "developerPortal": "https://insurpass.com/developers",
+  "supportEmail": "support@insurpass.com",
+  "headquarters": "Nigeria",
+  "categories": [
+    "Insurance"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "Policy issuance",
+    "Claims management",
+    "Underwriting",
+    "Digital onboarding",
+    "Insurance comparison",
+    "Premium calculation"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "PHP"
+  ],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    {
+      "name": "Chinedu Okoro",
+      "role": "Founder & CEO"
+    }
+  ]
+}

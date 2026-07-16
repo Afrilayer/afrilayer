@@ -1,0 +1,27 @@
+{
+  "slug": "pawapay",
+  "name": "Pawapay",
+  "tagline": "Mobile money collection and payout API across Africa.",
+  "description": "Pawapay provides an API for businesses to collect and send mobile money payments across multiple African markets through a single integration.",
+  "website": "https://pawapay.com",
+  "documentation": "https://docs.pawapay.com",
+  "developerPortal": "https://docs.pawapay.com",
+  "supportEmail": "support@pawapay.com",
+  "headquarters": "United Kingdom",
+  "categories": ["Payments", "Mobile Money"],
+  "countries": ["Kenya", "Tanzania", "Uganda", "Zambia", "Ghana"],
+  "features": ["Mobile money collection", "Bulk payouts", "Instant payouts", "Multi-wallet support"],
+  "pricingModel": "transaction",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Ahmed Shafat", "role": "Co-founder & CEO" }
+  ]
+}

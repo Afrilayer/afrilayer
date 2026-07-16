@@ -1,0 +1,50 @@
+{
+  "slug": "valr",
+  "name": "VALR",
+  "tagline": "Cryptocurrency exchange and trading platform in Africa.",
+  "logoUrl": "/providers/valr/logo.svg",
+  "description": "VALR is a cryptocurrency exchange and trading platform offering digital asset trading, custody, and API services to individuals and institutions in South Africa and across Africa.",
+  "website": "https://www.valr.com",
+  "documentation": "https://docs.valr.com",
+  "developerPortal": "https://docs.valr.com",
+  "supportEmail": "support@valr.com",
+  "headquarters": "South Africa",
+  "categories": [
+    "Crypto"
+  ],
+  "countries": [
+    "South Africa"
+  ],
+  "features": [
+    "Cryptocurrency trading",
+    "Digital asset custody",
+    "API trading",
+    "Market data",
+    "Instant swaps"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Go",
+    "PHP"
+  ],
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    {
+      "name": "Farzam Ehsani",
+      "role": "Co-founder & CEO"
+    },
+    {
+      "name": "Chris Light",
+      "role": "Co-founder"
+    }
+  ]
+}

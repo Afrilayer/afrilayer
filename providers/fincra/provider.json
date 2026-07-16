@@ -1,0 +1,27 @@
+{
+  "slug": "fincra",
+  "name": "Fincra",
+  "tagline": "Payment infrastructure for businesses across Africa.",
+  "description": "Fincra provides payment infrastructure and APIs for businesses to accept payments, send payouts, and manage financial operations across Africa through a single integration.",
+  "website": "https://fincra.com",
+  "documentation": "https://docs.fincra.com",
+  "developerPortal": "https://docs.fincra.com",
+  "supportEmail": "support@fincra.com",
+  "headquarters": "Nigeria",
+  "categories": ["Payments", "Banking"],
+  "countries": ["Nigeria", "Kenya", "Ghana", "South Africa"],
+  "features": ["Card payments", "Bank transfers", "Virtual accounts", "Payouts", "FX exchange"],
+  "pricingModel": "transaction",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Java", "Go"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Wemmy Oduor", "role": "Co-founder & CEO" }
+  ]
+}

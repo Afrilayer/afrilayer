@@ -1,0 +1,27 @@
+{
+  "slug": "anchor",
+  "name": "Anchor",
+  "tagline": "Banking-as-a-Service API for African businesses.",
+  "description": "Anchor provides a Banking-as-a-Service API that enables businesses to build and embed financial products for their customers, including accounts, payments, and savings.",
+  "website": "https://anchor.money",
+  "documentation": "https://docs.anchor.money",
+  "developerPortal": "https://docs.anchor.money",
+  "supportEmail": "support@anchor.money",
+  "headquarters": "Nigeria",
+  "categories": ["Banking", "Payments"],
+  "countries": ["Nigeria"],
+  "features": ["Virtual accounts", "Savings wallets", "Payments", "KYC automation", "Card issuance"],
+  "pricingModel": "custom",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Tunji Andrews", "role": "Co-founder & CEO" }
+  ]
+}

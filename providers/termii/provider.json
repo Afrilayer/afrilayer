@@ -1,0 +1,27 @@
+{
+  "slug": "termii",
+  "name": "Termii",
+  "tagline": "Communication APIs for African businesses.",
+  "description": "Termii provides SMS, email, and communication APIs for businesses to engage with customers across Nigeria, Ghana, and Kenya.",
+  "website": "https://termii.com",
+  "documentation": "https://developers.termii.com",
+  "developerPortal": "https://developers.termii.com",
+  "supportEmail": "support@termii.com",
+  "headquarters": "Nigeria",
+  "categories": ["SMS", "Messaging"],
+  "countries": ["Nigeria", "Ghana", "Kenya"],
+  "features": ["SMS messaging", "Email", "Voice", "OTP", "Two-way messaging"],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "PHP", "Go"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    { "name": "David Olawore", "role": "Co-founder & CEO" }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "traction",
+  "name": "Traction",
+  "tagline": "Financial infrastructure for African businesses.",
+  "description": "Traction provides financial infrastructure APIs that enable businesses to embed financial services including payments, lending, and financial management.",
+  "website": "https://traction.co",
+  "documentation": "https://docs.traction.co",
+  "developerPortal": "https://docs.traction.co",
+  "supportEmail": "support@traction.co",
+  "headquarters": "Nigeria",
+  "categories": ["Financial Infrastructure", "Payments"],
+  "countries": ["Nigeria"],
+  "features": ["Payments", "Lending", "Financial management", "KYC", "Collections"],
+  "pricingModel": "custom",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    { "name": "Adegboyega Fabuluje", "role": "Co-founder & CEO" }
+  ]
+}

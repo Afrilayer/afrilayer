@@ -1,0 +1,51 @@
+{
+  "slug": "nomba",
+  "name": "Nomba",
+  "tagline": "Business banking and payments infrastructure for African businesses.",
+  "logoUrl": "/providers/nomba/logo.svg",
+  "description": "Nomba provides business banking, payment collection, and financial infrastructure for businesses in Nigeria and beyond. Offers POS terminals, business accounts, and payment APIs for seamless transactions.",
+  "website": "https://nomba.com",
+  "documentation": "https://nomba.com/developers",
+  "developerPortal": "https://nomba.com/developers",
+  "supportEmail": "support@nomba.com",
+  "headquarters": "Nigeria",
+  "categories": [
+    "Payments",
+    "Banking"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "POS payments",
+    "Business accounts",
+    "Payment collection",
+    "Transfers",
+    "Bill payments",
+    "Virtual cards"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "PHP"
+  ],
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    {
+      "name": "Mustafa Chohan",
+      "role": "CEO"
+    },
+    {
+      "name": "Ibrahim Chohan",
+      "role": "Co-founder"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "kwik",
+  "name": "Kwik",
+  "tagline": "Logistics and delivery API for Africa.",
+  "description": "Kwik provides logistics and delivery APIs that enable businesses to integrate delivery services across Nigeria and Kenya.",
+  "website": "https://kwik.delivery",
+  "documentation": "https://docs.kwik.delivery",
+  "developerPortal": "https://docs.kwik.delivery",
+  "supportEmail": "support@kwik.delivery",
+  "headquarters": "Nigeria",
+  "categories": ["Logistics"],
+  "countries": ["Nigeria", "Kenya"],
+  "features": ["Delivery tracking", "Route optimization", "Real-time updates", "Fleet management"],
+  "pricingModel": "custom",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    { "name": "Nnamdi Okeke", "role": "Co-founder & CEO" }
+  ]
+}

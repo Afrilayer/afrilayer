@@ -1,0 +1,27 @@
+{
+  "slug": "okra",
+  "name": "Okra",
+  "tagline": "Open Finance infrastructure for African banks and fintechs.",
+  "description": "Okra provides Open Banking infrastructure that connects African financial institutions with third-party applications. Their API enables secure access to bank accounts, transactions, and income data across Nigeria and beyond.",
+  "website": "https://okra.com",
+  "documentation": "https://docs.okra.com",
+  "developerPortal": "https://docs.okra.com",
+  "supportEmail": "support@okra.com",
+  "headquarters": "Nigeria",
+  "categories": ["Open Banking", "Financial Infrastructure"],
+  "countries": ["Nigeria"],
+  "features": ["Bank linking", "Account verification", "Transaction data", "Income data", "Real-time callbacks"],
+  "pricingModel": "custom",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "Go", "Java", "PHP"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Seyi Abolaji", "role": "Co-founder & CEO" }
+  ]
+}

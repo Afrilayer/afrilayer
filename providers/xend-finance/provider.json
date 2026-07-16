@@ -1,0 +1,48 @@
+{
+  "slug": "xend-finance",
+  "name": "Xend Finance",
+  "tagline": "DeFi platform for African credit unions and cooperatives.",
+  "logoUrl": "/providers/xend-finance/logo.svg",
+  "description": "Xend Finance is a decentralized finance (DeFi) platform that provides yield farming and cryptocurrency services to credit unions and cooperatives in Nigeria and across Africa.",
+  "website": "https://xend.finance",
+  "documentation": "https://docs.xend.finance",
+  "developerPortal": "https://docs.xend.finance",
+  "supportEmail": "support@xend.finance",
+  "headquarters": "Nigeria",
+  "categories": [
+    "Crypto"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "DeFi yield farming",
+    "Stablecoins",
+    "Credit union integration",
+    "Cooperative savings",
+    "Cryptocurrency wallets"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    {
+      "name": "Chibuike Anyanwu",
+      "role": "Co-founder & CEO"
+    },
+    {
+      "name": "Ariella Ola",
+      "role": "Co-founder & CTO"
+    }
+  ]
+}

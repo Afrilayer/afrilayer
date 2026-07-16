@@ -1,0 +1,48 @@
+{
+  "slug": "treepz",
+  "name": "Treepz",
+  "tagline": "Mobility and transportation platform for Africa.",
+  "logoUrl": "/providers/treepz/logo.svg",
+  "description": "Treepz (formerly Treepz Mobility) provides APIs for corporate transportation, ride-hailing, and fleet management across African markets.",
+  "website": "https://treepz.com",
+  "documentation": "https://treepz.com/developers",
+  "developerPortal": "https://treepz.com/developers",
+  "supportEmail": "support@treepz.com",
+  "headquarters": "Nigeria",
+  "categories": [
+    "Mobility"
+  ],
+  "countries": [
+    "Nigeria",
+    "Ghana",
+    "Kenya"
+  ],
+  "features": [
+    "Ride booking",
+    "Fleet management",
+    "Corporate transport",
+    "Real-time tracking",
+    "Driver onboarding",
+    "Payment processing"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java"
+  ],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    {
+      "name": "Onyinye Uche",
+      "role": "Co-founder & CEO"
+    }
+  ]
+}

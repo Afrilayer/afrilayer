@@ -2,10 +2,9 @@ export const dynamic = 'force-static';
 export const revalidate = 3600; // Revalidate every hour
 
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { getProviderBySlug, getAllProvidersData } from "@/lib/data";
-import { StatusPill, Stamp, DocPreview, ChangelogTimeline, QuickFacts } from "@/components/ui";
+import { StatusPill, Stamp, DocPreview, ChangelogTimeline, QuickFacts, ProviderLogo } from "@/components/ui";
 import { CountryFlag } from "@/components/ui/CountryFlag";
 import { COUNTRY_TO_CODE } from "@/lib/constants";
 import type { Metadata } from "next";
@@ -91,17 +90,11 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
 
       {/* Logo and Key People Row */}
       <div className="flex items-center gap-6 mt-5 flex-wrap">
-        {provider.logoUrl && (
-          <div className="w-12 h-12 rounded-lg overflow-hidden bg-surface border border-border">
-            <Image
-              src={provider.logoUrl}
-              alt={`${provider.name} logo`}
-              width={40}
-              height={40}
-              className="w-full h-full object-contain"
-            />
-          </div>
-        )}
+        <ProviderLogo
+          provider={provider}
+          size={40}
+          className="w-12 h-12 rounded-lg"
+        />
         {provider.keyPeople && provider.keyPeople.length > 0 && (
           <div className="flex flex-col gap-2">
             <span className="text-[10px] font-mono uppercase tracking-widest text-muted-dim">
@@ -194,23 +187,23 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {api.pricing.map((p) => (
-                  <div
-                    key={p.tier}
-                    className="p-4 rounded-lg bg-surface border border-border"
-                  >
-                    <div className="flex items-baseline justify-between">
-                      <span className="text-sm font-semibold text-text">
-                        {p.tier}
-                      </span>
-                      <span className="text-sm font-mono text-copper">
-                        {p.price}
-                      </span>
+                    <div
+                      key={p.tier}
+                      className="p-4 rounded-lg bg-surface border border-border"
+                    >
+                      <div className="flex items-baseline justify-between">
+                        <span className="text-sm font-semibold text-text">
+                          {p.tier}
+                        </span>
+                        <span className="text-sm font-mono text-copper">
+                          {p.price}
+                        </span>
+                      </div>
+                      <p className="text-xs mt-1.5 text-muted">
+                        {p.note}
+                      </p>
                     </div>
-                    <p className="text-xs mt-1.5 text-muted">
-                      {p.note}
-                    </p>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           )}

@@ -1,0 +1,27 @@
+{
+  "slug": "cinetpay",
+  "name": "CinetPay",
+  "tagline": "Payment gateway for Francophone Africa.",
+  "description": "CinetPay is a payment gateway offering mobile money, card payments, and airtime services across Francophone Africa including Côte d'Ivoire, Senegal, Mali, and Burkina Faso.",
+  "website": "https://cinetpay.com",
+  "documentation": "https://docs.cinetpay.com",
+  "developerPortal": "https://docs.cinetpay.com",
+  "supportEmail": "support@cinetpay.com",
+  "headquarters": "Côte d'Ivoire",
+  "categories": ["Payments"],
+  "countries": ["Côte d'Ivoire", "Senegal", "Cameroon", "Mali", "Burkina Faso"],
+  "features": ["Mobile money", "Card payments", "Airtime", "Payouts", "International transfers"],
+  "pricingModel": "transaction",
+  "authentication": "API Key",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python", "PHP", "Java"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": false,
+  "lastVerified": "2026-07-22",
+  "lastUpdated": "2026-07-22",
+  "keyPeople": [
+    { "name": "Odeh Jacques", "role": "CEO" }
+  ]
+}

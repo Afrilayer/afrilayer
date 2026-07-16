@@ -1,0 +1,27 @@
+{
+  "slug": "eversend",
+  "name": "Eversend",
+  "tagline": "Multi-currency wallet and payment infrastructure for Africa.",
+  "description": "Eversend provides multi-currency wallets, virtual cards, and payment APIs for businesses and individuals across Africa. Their API supports remittances and business payouts.",
+  "website": "https://eversend.com",
+  "documentation": "https://docs.eversend.com",
+  "developerPortal": "https://docs.eversend.com",
+  "supportEmail": "support@eversend.com",
+  "headquarters": "Uganda",
+  "categories": ["Payments", "Banking"],
+  "countries": ["Uganda", "Kenya", "Nigeria", "Ghana", "Tanzania"],
+  "features": ["Multi-currency wallets", "Virtual cards", "Remittances", "Payouts", "Business accounts"],
+  "pricingModel": "transaction",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": ["JavaScript", "Python"],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    { "name": "Charles Mudahemuka", "role": "Co-founder & CEO" }
+  ]
+}

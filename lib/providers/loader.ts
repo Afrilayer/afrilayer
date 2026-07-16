@@ -3,8 +3,13 @@
 
 import { promises as fs } from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import type { Provider, ProviderApiData } from '../types';
 import { STATUS_VALUES } from '../constants';
+
+// Resolve base directory for file operations
+const __filename = fileURLToPath(import.meta.url);
+const baseDir = path.resolve(path.dirname(__filename), '../..');
 
 // Raw provider.json shape
 interface RawProvider {
@@ -37,7 +42,7 @@ interface RawProvider {
 
 // Get all provider directories
 export async function getProviderSlugs(): Promise<string[]> {
-  const providersPath = path.join(process.cwd(), 'providers');
+  const providersPath = path.join(baseDir, 'providers');
   try {
     const entries = await fs.readdir(providersPath, { withFileTypes: true });
     return entries
@@ -51,7 +56,7 @@ export async function getProviderSlugs(): Promise<string[]> {
 
 // Load a single provider's JSON
 export async function loadProviderJson(slug: string): Promise<RawProvider | null> {
-  const providersPath = path.join(process.cwd(), 'providers', slug, 'provider.json');
+  const providersPath = path.join(baseDir, 'providers', slug, 'provider.json');
   try {
     const content = await fs.readFile(providersPath, 'utf-8');
     return JSON.parse(content) as RawProvider;
@@ -62,7 +67,7 @@ export async function loadProviderJson(slug: string): Promise<RawProvider | null
 
 // Load API-specific data
 export async function loadProviderApiData(slug: string): Promise<ProviderApiData> {
-  const providersPath = path.join(process.cwd(), 'providers', slug, 'api.json');
+  const providersPath = path.join(baseDir, 'providers', slug, 'api.json');
   try {
     const content = await fs.readFile(providersPath, 'utf-8');
     return JSON.parse(content) as ProviderApiData;
@@ -73,7 +78,7 @@ export async function loadProviderApiData(slug: string): Promise<ProviderApiData
 
 // Load a single provider's README
 export async function loadProviderReadme(slug: string): Promise<string> {
-  const providersPath = path.join(process.cwd(), 'providers', slug, 'README.md');
+  const providersPath = path.join(baseDir, 'providers', slug, 'README.md');
   try {
     return await fs.readFile(providersPath, 'utf-8');
   } catch {
@@ -130,13 +135,33 @@ export async function getAllProviders(): Promise<Provider[]> {
     }
   }
 
-  // Compute related providers
+  // Compute related providers with enhanced similarity
+  // Similarity based on: categories (highest weight), countries, authentication, features
   for (const provider of results) {
-    provider.relatedProviders = results
-      .filter(p => p.slug !== provider.slug 
-        && p.categories.some(c => provider.categories.includes(c))
-        && p.countries.some(c => provider.countries.includes(c)))
-      .map(p => p.slug)
+    const similarityScores = results
+      .filter(p => p.slug !== provider.slug)
+      .map(p => {
+        let score = 0;
+        // Category overlap (highest weight)
+        const categoryOverlap = p.categories.filter(c => provider.categories.includes(c)).length;
+        score += categoryOverlap * 3;
+        // Country overlap
+        const countryOverlap = p.countries.filter(c => provider.countries.includes(c)).length;
+        score += countryOverlap * 2;
+        // Authentication match
+        if (p.authentication === provider.authentication && p.authentication) {
+          score += 1;
+        }
+        // Feature overlap
+        const featureOverlap = p.features.filter(f => provider.features.includes(f)).length;
+        score += featureOverlap * 0.5;
+        return { slug: p.slug, score };
+      })
+      .sort((a, b) => b.score - a.score);
+    
+    provider.relatedProviders = similarityScores
+      .filter(s => s.score > 0)
+      .map(s => s.slug)
       .slice(0, 3);
   }
 

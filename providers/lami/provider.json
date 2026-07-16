@@ -1,0 +1,49 @@
+{
+  "slug": "lami",
+  "name": "Lami",
+  "tagline": "Digital insurance platform for emerging markets.",
+  "logoUrl": "/providers/lami/logo.svg",
+  "description": "Lami provides a digital insurance infrastructure API that enables businesses to embed insurance products into their offerings across Africa, focusing on microinsurance and scalable coverage.",
+  "website": "https://lami.africa",
+  "documentation": "https://docs.lami.africa",
+  "developerPortal": "https://developer.lami.africa",
+  "supportEmail": "support@lami.africa",
+  "headquarters": "Kenya",
+  "categories": [
+    "Insurance"
+  ],
+  "countries": [
+    "Kenya",
+    "Nigeria",
+    "Ghana"
+  ],
+  "features": [
+    "Microinsurance",
+    "Policy management",
+    "Claims processing",
+    "Digital underwriting",
+    "Risk assessment",
+    "Embedded insurance"
+  ],
+  "pricingModel": "transaction",
+  "authentication": "Bearer Token",
+  "apiStyle": "REST",
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Go",
+    "PHP"
+  ],
+  "sandboxAvailable": true,
+  "productionReady": true,
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-16",
+  "lastUpdated": "2026-07-16",
+  "keyPeople": [
+    {
+      "name": "Nana Yaw Subhah-Odonkor",
+      "role": "Founder & CEO"
+    }
+  ]
+}
