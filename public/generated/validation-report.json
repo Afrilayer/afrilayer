@@ -1,15 +1,12 @@
 {
-  "timestamp": "2026-07-16T15:08:22.983Z",
-  "providersChecked": 64,
-  "validProviders": 52,
+  "timestamp": "2026-07-17T10:50:54.322Z",
+  "providersChecked": 65,
+  "validProviders": 56,
   "errors": [
     {
       "slug": "africas-talking",
-      "valid": false,
-      "errors": [
-        "undefined should be equal to one of the allowed values",
-        "undefined should be equal to one of the allowed values"
-      ],
+      "valid": true,
+      "errors": [],
       "hasReadme": true,
       "hasLogo": false,
       "validUrls": [
@@ -217,10 +214,8 @@
     },
     {
       "slug": "dpo-group",
-      "valid": false,
-      "errors": [
-        "undefined should be equal to one of the allowed values"
-      ],
+      "valid": true,
+      "errors": [],
       "hasReadme": false,
       "hasLogo": false,
       "validUrls": [
@@ -238,13 +233,10 @@
       "hasLogo": false,
       "validUrls": [
         "https://dusupay.com",
-        "https://dusupay.com/docs",
-        "https://dusupay.com/docs"
+        "https://developer.dusupay.com/",
+        "https://developer.dusupay.com/"
       ],
-      "brokenUrls": [
-        "https://dusupay.com/docs",
-        "https://dusupay.com/docs"
-      ]
+      "brokenUrls": []
     },
     {
       "slug": "eversend",
@@ -568,6 +560,17 @@
       ]
     },
     {
+      "slug": "opay",
+      "valid": false,
+      "errors": [
+        "provider.json missing"
+      ],
+      "hasReadme": false,
+      "hasLogo": false,
+      "validUrls": [],
+      "brokenUrls": []
+    },
+    {
       "slug": "ozow",
       "valid": true,
       "errors": [],
@@ -625,10 +628,8 @@
     },
     {
       "slug": "peach-payments",
-      "valid": false,
-      "errors": [
-        "undefined should be equal to one of the allowed values"
-      ],
+      "valid": true,
+      "errors": [],
       "hasReadme": false,
       "hasLogo": false,
       "validUrls": [
@@ -666,10 +667,8 @@
     },
     {
       "slug": "pula",
-      "valid": false,
-      "errors": [
-        "undefined should be equal to one of the allowed values"
-      ],
+      "valid": true,
+      "errors": [],
       "hasReadme": false,
       "hasLogo": false,
       "validUrls": [
@@ -1073,7 +1072,6 @@
       "https://crop2cash.com",
       "https://docs.crop2cash.com",
       "https://crop2cash.com/developers",
-      "https://dusupay.com/docs",
       "https://eversend.com",
       "https://docs.eversend.com",
       "https://docs.fidocredit.com",
@@ -1116,7 +1114,6 @@
       "https://docs.zone.co"
     ],
     "validationErrors": [
-      "undefined should be equal to one of the allowed values",
       "provider.json missing"
     ]
   }

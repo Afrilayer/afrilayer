@@ -2,6 +2,7 @@
   "slug": "africas-talking",
   "name": "Africa's Talking",
   "tagline": "Communications API for Africa.",
+  "logoUrl": "/providers/africas-talking/logo.svg",
   "description": "Africa's Talking provides APIs for SMS, voice, airtime, payments, and more across African telecom networks. A unified platform for building communication solutions.",
   "website": "https://africastalking.com",
   "documentation": "https://developers.africastalking.com",

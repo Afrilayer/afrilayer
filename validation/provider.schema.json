@@ -62,11 +62,11 @@
       "minItems": 1,
       "description": "Provider categories"
     },
-    "countries": {
+"countries": {
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "Côte d'Ivoire", "Egypt", "Morocco", "Senegal", "Zambia", "Cameroon", "Rwanda", "Tunisia", "Ethiopia", "Zimbabwe", "Botswana", "Angola", "Mozambique", "United Arab Emirates", "Mali", "Burkina Faso"]
+        "enum": ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "Côte d'Ivoire", "Egypt", "Morocco", "Senegal", "Zambia", "Cameroon", "Rwanda", "Tunisia", "Ethiopia", "Zimbabwe", "Botswana", "Angola", "Mozambique", "Mali", "Burkina Faso", "Malawi", "Sierra Leone"]
       },
       "minItems": 1,
       "description": "Countries where provider operates"

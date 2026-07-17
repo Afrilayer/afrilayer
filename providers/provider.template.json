@@ -2,27 +2,14 @@
   "slug": "",
   "name": "",
   "tagline": "",
+  "logoUrl": "/providers/{slug}/logo.svg",
   "description": "",
   "website": "",
   "documentation": "",
   "developerPortal": "",
   "supportEmail": "",
   "headquarters": "",
-  "categories": [
-    "Payments",
-    "Mobile Money",
-    "Banking",
-    "KYC",
-    "Identity",
-    "Messaging",
-    "SMS",
-    "Airtime",
-    "Logistics",
-    "Government",
-    "Geolocation",
-    "Telecom",
-    "Financial Infrastructure"
-  ],
+  "categories": [],
   "countries": [],
   "features": [],
   "pricingModel": "transaction",
@@ -34,9 +21,7 @@
   "productionReady": true,
   "status": "Live",
   "verified": true,
-  "lastVerified": "",
-  "lastUpdated": "",
-  "keyPeople": [
-    { "name": "", "role": "" }
-  ]
+  "lastVerified": "2026-01-01",
+  "lastUpdated": "2026-01-01",
+  "keyPeople": []
 }

@@ -32,6 +32,7 @@ Every provider must have a `provider.json` file with the following fields:
   "slug": "provider-name",              // Required: kebab-case identifier
   "name": "Provider Name",              // Required: Display name
   "tagline": "Short tagline",           // Required: Short description
+  "logoUrl": "/providers/provider-name/logo.svg",  // Recommended: Logo path
   "description": "Full description",      // Required: Detailed description
   "website": "https://provider.com",      // Required: Provider website
   "documentation": "https://docs.provider.com", // Required: API docs URL

@@ -75,7 +75,7 @@
 ## Phase 3: Stabilize Features (To Do)
 
 - [ ] Search page SSR with build index
-- [ ] Image optimization (logo copying to public/)
+- [ ] Image optimization
 - [ ] Verify all category/country pages work
 - [ ] Ensure all features work reliably
 

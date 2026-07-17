@@ -2,8 +2,11 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { Search as SearchIcon } from 'lucide-react';
+import { Search as SearchIcon, TrendingUp } from 'lucide-react';
 import type { Provider } from '@/lib/types';
+
+// Trending providers - most searched/popular APIs
+const TRENDING_SLUGS = ['paystack', 'flutterwave', 'mtn-momo', 'hubtel', 'okra', 'mono', 'kora', 'valr', 'dojah', 'africas-talking'];
 
 export default function SearchPage() {
   const [query, setQuery] = React.useState('');
@@ -59,6 +62,11 @@ export default function SearchPage() {
           />
         </div>
       </div>
+
+      {/* Trending section - shown when no query */}
+      {!isLoading && !query && (
+        <TrendingSection providers={allProviders} />
+      )}
 
       {/* Results count */}
       {query && !isLoading && (
@@ -136,6 +144,34 @@ export default function SearchPage() {
           </Link>
         </div>
       )}
+    </div>
+  );
+}
+
+function TrendingSection({ providers }: { providers: Provider[] }) {
+  const trendingProviders = providers.filter(p => TRENDING_SLUGS.includes(p.slug));
+
+  if (trendingProviders.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="mb-8">
+      <div className="flex items-center gap-2 mb-4">
+        <TrendingUp size={16} className="text-clay" />
+        <h2 className="text-sm font-semibold text-text uppercase tracking-wider">Trending Searches</h2>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {trendingProviders.map(provider => (
+          <Link
+            key={provider.slug}
+            href={`/apis/${provider.slug}`}
+            className="px-3 py-1.5 text-xs font-mono rounded-md bg-surface border border-border text-muted hover:text-text hover:border-clay transition-colors"
+          >
+            {provider.name}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

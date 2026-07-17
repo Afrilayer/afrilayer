@@ -21,9 +21,10 @@ export const COUNTRY_TO_CODE: Record<string, string> = {
   'Botswana': 'BW',
   'Angola': 'AO',
   'Mozambique': 'MZ',
-  'United Arab Emirates': 'AE',
   'Mali': 'ML',
   'Burkina Faso': 'BF',
+  'Malawi': 'MW',
+  'Sierra Leone': 'SL',
 };
 
 // Reverse mapping

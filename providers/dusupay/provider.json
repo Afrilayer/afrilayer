@@ -5,10 +5,10 @@
   "logoUrl": "/providers/dusupay/logo.svg",
   "description": "DusuPay is a payment gateway enabling businesses to accept payments through multiple channels including cards, mobile money, and bank transfers in Nigeria and Ghana.",
   "website": "https://dusupay.com",
-  "documentation": "https://dusupay.com/docs",
-  "developerPortal": "https://dusupay.com/docs",
+  "documentation": "https://developer.dusupay.com/",
+  "developerPortal": "https://developer.dusupay.com/",
   "supportEmail": "support@dusupay.com",
-  "headquarters": "Nigeria",
+  "headquarters": "Kampala, Uganda",
   "categories": [
     "Payments"
   ],

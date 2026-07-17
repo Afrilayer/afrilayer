@@ -30,7 +30,8 @@ export const COUNTRIES: Record<string, CountryMetadata> = {
   BW: { code: 'BW', name: 'Botswana', flag: '🇧🇼', region: 'south' },
   AO: { code: 'AO', name: 'Angola', flag: '🇦🇴', region: 'central' },
   MZ: { code: 'MZ', name: 'Mozambique', flag: '🇲🇿', region: 'east' },
-  AE: { code: 'AE', name: 'United Arab Emirates', flag: '🇦🇪', region: 'north' },
+  MW: { code: 'MW', name: 'Malawi', flag: '🇲🇼', region: 'east' },
+  SL: { code: 'SL', name: 'Sierra Leone', flag: '🇸🇱', region: 'west' },
   ML: { code: 'ML', name: 'Mali', flag: '🇲🇱', region: 'west' },
   BF: { code: 'BF', name: 'Burkina Faso', flag: '🇧🇫', region: 'west' },
 };
