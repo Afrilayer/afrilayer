@@ -2,7 +2,7 @@
 // Pure functions for calculating related/similar providers
 
 import type { Provider } from '../types';
-import { CODE_TO_COUNTRY } from '../constants';
+import { CODE_TO_COUNTRY, COUNTRY_TO_CODE } from '../constants';
 
 // Get providers that operate in a specific country (code-insensitive)
 export function getProvidersByCountry(providers: Provider[], countryCode: string): Provider[] {
@@ -42,7 +42,7 @@ export function groupProvidersByCountry(providers: Provider[]): Record<string, P
   
   for (const provider of providers) {
     for (const countryName of provider.countries) {
-      const code = CODE_TO_COUNTRY[countryName];
+      const code = COUNTRY_TO_CODE[countryName];
       if (code && !grouped[code]) {
         grouped[code] = [];
       }

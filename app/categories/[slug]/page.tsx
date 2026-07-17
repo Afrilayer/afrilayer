@@ -9,11 +9,14 @@ import { SLUG_TO_CATEGORY, CATEGORY_TO_SLUG } from '@/lib/constants';
 import { providerToApiMock } from '@/lib/providers/similarity';
 import type { Metadata } from 'next';
 
-// List of all category slugs for static generation
-const CATEGORY_SLUGS = ['mobile-money', 'payments', 'kyc', 'identity', 'sms', 'airtime', 'banking', 'logistics', 'government', 'telecom', 'geolocation', 'financial-infrastructure'];
-
+// Generate static params for all categories with providers
 export async function generateStaticParams() {
-  return CATEGORY_SLUGS.map((slug) => ({ slug }));
+  const providers = await getAllProvidersData();
+  const categoryNames = [...new Set(providers.flatMap(p => p.categories))];
+  const slugs = categoryNames.map(name => 
+    CATEGORY_TO_SLUG[name] || name.toLowerCase().replace(/\s+/g, '-')
+  );
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -24,9 +27,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: 'Category Not Found' };
   }
   
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  
   return {
     title: `${categoryName} APIs`,
     description: `Discover verified ${categoryName} APIs operating in African markets.`,
+    alternates: {
+      canonical: `${baseUrl}/categories/${slug}`,
+    },
   };
 }
 

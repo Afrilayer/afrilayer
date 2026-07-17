@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { CreditCard, Phone, MessageSquare, Banknote, Fingerprint, Truck, Building, Bitcoin, Map, Bot, AtSign, Radio } from 'lucide-react';
 import { getAllProvidersData } from '@/lib/data';
+import { CATEGORY_TO_SLUG } from '@/lib/constants';
 
 const categoryIcons: Record<string, typeof CreditCard> = {
   'Mobile Money': Phone,
@@ -19,30 +20,28 @@ const categoryIcons: Record<string, typeof CreditCard> = {
   'Telecom': Radio,
   'Geolocation': Map,
   'Financial Infrastructure': Banknote,
+  'Insurance': Banknote,
+  'Agriculture': Map,
+  'Mobility': Truck,
+  'Health': Banknote,
+  'Developer Tools': Bot,
+  'Open Banking': Banknote,
+  'Voice': Phone,
+  'USSD': Phone,
 };
+
+// Generate category list dynamically from CATEGORY_TO_SLUG
+const ALL_CATEGORIES = Object.entries(CATEGORY_TO_SLUG).map(([name, slug]) => ({ name, slug }));
 
 export default async function CategoriesPage() {
   const providers = await getAllProvidersData();
   
-  // Calculate real counts for each category
-  const categoriesWithCounts = [
-    { slug: 'mobile-money', name: 'Mobile Money' },
-    { slug: 'payments', name: 'Payments' },
-    { slug: 'kyc', name: 'KYC' },
-    { slug: 'identity', name: 'Identity' },
-    { slug: 'sms', name: 'SMS' },
-    { slug: 'airtime', name: 'Airtime' },
-    { slug: 'banking', name: 'Banking' },
-    { slug: 'logistics', name: 'Logistics' },
-    { slug: 'government', name: 'Government' },
-    { slug: 'telecom', name: 'Telecom' },
-    { slug: 'geolocation', name: 'Geolocation' },
-    { slug: 'financial-infrastructure', name: 'Financial Infrastructure' },
-  ].map((cat) => ({
+  // Calculate real counts for each category (only those with providers)
+  const categoriesWithCounts = ALL_CATEGORIES.map((cat) => ({
     ...cat,
     count: providers.filter((p) => p.categories.includes(cat.name)).length,
     icon: categoryIcons[cat.name] || CreditCard,
-  }));
+  })).filter(cat => cat.count > 0); // Only show categories with providers
 
   return (
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-16">

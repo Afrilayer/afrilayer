@@ -10,10 +10,11 @@ Africa's API Infrastructure Platform — discover, compare, and evaluate trusted
 - **Multi-language Code Samples**: curl, JavaScript, Python, Go examples
 - **Pricing Transparency**: Clear pricing tiers for each API
 - **Country Coverage**: Filter by supported African countries with counters
+- **Category Pages**: Browse APIs by category (Payments, Mobile Money, KYC, etc.)
+- **Country Pages**: Browse APIs by country using ISO codes (ng, gh, ke, za, etc.)
+- **Similar APIs**: Discover related providers based on shared categories and features
+- **Report Issues**: Community-driven issue reporting via forms
 - **Search**: Full-text search across APIs and providers
-- **Sorting**: Sort by Last Updated, Last Verified, or Name
-- **Pagination**: 12 APIs per page on homepage
-- **Changelog**: Git-based changelog showing commit history
 
 ## Project Architecture
 

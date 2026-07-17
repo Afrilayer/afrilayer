@@ -133,6 +133,78 @@ export default function ContributePage() {
         </div>
       </section>
 
+      {/* Quick Report Form */}
+      <section className="mb-12">
+        <h2 className="text-xl font-semibold text-text mb-6">Quick Issue Report</h2>
+        
+        <form action="/api/report-issue" method="POST" className="space-y-4 max-w-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-mono text-muted-dim mb-2" htmlFor="provider">
+                Provider (Optional)
+              </label>
+              <input
+                type="text"
+                id="provider"
+                name="provider"
+                placeholder="e.g., paystack"
+                className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-copper"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-mono text-muted-dim mb-2" htmlFor="type">
+                Issue Type
+              </label>
+              <select
+                id="type"
+                name="type"
+                className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-copper"
+              >
+                <option value="general">General Feedback</option>
+                <option value="missing-api">Missing API</option>
+                <option value="wrong-info">Wrong Information</option>
+                <option value="broken-link">Broken Link</option>
+                <option value="missing-logo">Missing Logo</option>
+              </select>
+            </div>
+          </div>
+          
+          <div>
+            <label className="block text-xs font-mono text-muted-dim mb-2" htmlFor="description">
+              Description
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Describe the issue or suggestion..."
+              required
+              rows={3}
+              className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-copper placeholder:text-muted-dim"
+            />
+          </div>
+          
+          <div>
+            <label className="block text-xs font-mono text-muted-dim mb-2" htmlFor="links">
+              Supporting Links (Optional)
+            </label>
+            <input
+              type="url"
+              id="links"
+              name="links"
+              placeholder="https://..."
+              className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-copper placeholder:text-muted-dim"
+            />
+          </div>
+          
+          <button
+            type="submit"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono bg-copper text-white hover:bg-amber transition-colors"
+          >
+            Submit Report
+          </button>
+        </form>
+      </section>
+
       {/* CTA Buttons */}
       <section className="flex flex-wrap gap-4">
         <Link

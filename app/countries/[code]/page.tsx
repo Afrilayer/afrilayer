@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { getAllProvidersData } from '@/lib/data';
 import { ApiCard, EmptyState } from '@/components/ui';
-import { getCountry, CODE_TO_COUNTRY, COUNTRY_CODES } from '@/lib/countries';
+import { getCountry, COUNTRY_TO_CODE, CODE_TO_COUNTRY, COUNTRY_CODES } from '@/lib/countries';
 import { getProvidersByCountry, getCountryStatistics, providerToApiMock } from '@/lib/providers/similarity';
 import type { Metadata } from 'next';
 
@@ -13,9 +13,9 @@ import type { Metadata } from 'next';
 export async function generateStaticParams() {
   const providers = await getAllProvidersData();
   const codes = [...new Set(
-    providers.flatMap(p => p.countries.map(c => CODE_TO_COUNTRY[c] || c).filter(Boolean))
+    providers.flatMap(p => p.countries.map(c => COUNTRY_TO_CODE[c] || '').filter(Boolean))
   )];
-  return codes.map((code) => ({ code }));
+  return codes.map((code) => ({ code: code.toLowerCase() }));
 }
 
 // Generate metadata for each page
@@ -27,9 +27,14 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
     return { title: 'Country Not Found' };
   }
   
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  
   return {
     title: `${country.name} APIs`,
     description: `Discover verified APIs operating in ${country.name}.`,
+    alternates: {
+      canonical: `${baseUrl}/countries/${code}`,
+    },
   };
 }
 

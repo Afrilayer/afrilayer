@@ -27,9 +27,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
   
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  
   return {
     title: `${provider.name} API`,
     description: provider.description,
+    alternates: {
+      canonical: `${baseUrl}/apis/${slug}`,
+    },
   };
 }
 
@@ -283,6 +288,15 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
             sandboxUrl={provider.sandboxAvailable ? `https://sandbox.${provider.slug.replace(/-/g, "")}.com` : undefined}
             lastCrawl={provider.lastVerified}
           />
+          {/* Report Issue Button */}
+          <div className="mt-4">
+            <Link
+              href={`/contribute/report?provider=${provider.slug}&name=${encodeURIComponent(provider.name)}`}
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 px-3 py-1.5 h-8 border border-border bg-surface hover:bg-surface-hover text-muted"
+            >
+              Report Issue
+            </Link>
+          </div>
         </div>
       </div>
     </div>

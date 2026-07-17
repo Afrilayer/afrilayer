@@ -1,36 +1,17 @@
 // Centralized constants for Afrilayer
+// Re-exports country data from lib/countries.ts for single source of truth
 
-// ISO country codes
-export const COUNTRY_TO_CODE: Record<string, string> = {
-  'Nigeria': 'NG',
-  'South Africa': 'ZA',
-  'Ghana': 'GH',
-  'Kenya': 'KE',
-  'Uganda': 'UG',
-  'Tanzania': 'TZ',
-  'Côte d\'Ivoire': 'CI',
-  'Egypt': 'EG',
-  'Morocco': 'MA',
-  'Senegal': 'SN',
-  'Rwanda': 'RW',
-  'Tunisia': 'TN',
-  'Zambia': 'ZM',
-  'Cameroon': 'CM',
-  'Ethiopia': 'ET',
-  'Zimbabwe': 'ZW',
-  'Botswana': 'BW',
-  'Angola': 'AO',
-  'Mozambique': 'MZ',
-  'Mali': 'ML',
-  'Burkina Faso': 'BF',
-  'Malawi': 'MW',
-  'Sierra Leone': 'SL',
-};
-
-// Reverse mapping
-export const CODE_TO_COUNTRY: Record<string, string> = Object.fromEntries(
-  Object.entries(COUNTRY_TO_CODE).map(([k, v]) => [v, k])
-);
+export { 
+  COUNTRY_TO_CODE, 
+  CODE_TO_COUNTRY, 
+  COUNTRIES, 
+  COUNTRY_CODES,
+  COUNTRY_NAMES,
+  getCountry,
+  getCountryFlag,
+  getCountryName,
+  normalizeCountryCode
+} from './countries';
 
 // Category slugs
 export const CATEGORY_TO_SLUG: Record<string, string> = {
@@ -65,7 +46,6 @@ export const SLUG_TO_CATEGORY: Record<string, string> = Object.fromEntries(
 );
 
 // Canonical lists
-export const COUNTRIES = Object.values(COUNTRY_TO_CODE);
 export const CATEGORIES = Object.keys(CATEGORY_TO_SLUG);
 
 // Status values for providers
