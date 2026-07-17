@@ -3,6 +3,7 @@
   "name": "Termii",
   "tagline": "Communication APIs for African businesses.",
   "description": "Termii provides SMS, email, and communication APIs for businesses to engage with customers across Nigeria, Ghana, and Kenya.",
+  "logoUrl": "https://pbs.twimg.com/profile_images/2041416982604795904/4CgSgViS_400x400.png",
   "website": "https://termii.com",
   "documentation": "https://developers.termii.com",
   "developerPortal": "https://developers.termii.com",
@@ -18,7 +19,7 @@
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
-  "verified": false,
+  "verified": true,
   "lastVerified": "2026-07-22",
   "lastUpdated": "2026-07-22",
   "keyPeople": [

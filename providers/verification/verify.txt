@@ -6,3 +6,4 @@ mono: cv
 okra: pv
 blusalt: cv
 buypower: cv
+termii: cv
