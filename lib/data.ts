@@ -2,6 +2,7 @@
 // This module provides a clean abstraction for loading provider data from /providers
 
 import { getAllProviders, loadProviderJson, loadProviderApiData, getProviderSlugs, loadProviderReadme, normalizeProvider } from './providers';
+import { loadVerificationData, getVerificationInfo } from './providers/verification';
 import type { Provider, ProviderApiData } from './types';
 
 // Get all providers (server-side for static generation)
@@ -13,9 +14,10 @@ export async function getAllProvidersData(): Promise<Provider[]> {
 export async function getProviderBySlug(slug: string): Promise<Provider | null> {
   const rawProvider = await loadProviderJson(slug);
   if (!rawProvider) return null;
-  
+
   const apiData = await loadProviderApiData(slug);
-  return normalizeProvider(rawProvider, apiData);
+  const verificationMap = await loadVerificationData();
+  return normalizeProvider(rawProvider, apiData, verificationMap);
 }
 
 // Get all slugs for static generation

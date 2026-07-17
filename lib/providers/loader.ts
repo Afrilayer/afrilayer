@@ -5,6 +5,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import type { Provider, ProviderApiData } from '../types';
+import { loadVerificationData, getVerificationInfo } from './verification';
 import { STATUS_VALUES } from '../constants';
 import { calculateSimilarProviders } from './similarity';
 
@@ -89,7 +90,15 @@ export async function loadProviderReadme(slug: string): Promise<string> {
 
 // Normalize raw provider to unified Provider object
 // Note: logoUrl resolution happens via resolveProviderLogo for consistent fallback chain
-export function normalizeProvider(raw: RawProvider, apiData: ProviderApiData = { pricing: [], changelog: [] }): Provider {
+export function normalizeProvider(
+  raw: RawProvider,
+  apiData: ProviderApiData = { pricing: [], changelog: [] },
+  verificationMap?: Map<string, any>
+): Provider {
+  const verification = verificationMap
+    ? getVerificationInfo(raw.slug, verificationMap)
+    : undefined;
+
   return {
     slug: raw.slug,
     name: raw.name,
@@ -120,6 +129,7 @@ export function normalizeProvider(raw: RawProvider, apiData: ProviderApiData = {
     keyPeople: raw.keyPeople || [],
     apiData,
     relatedProviders: [], // Computed later
+    verification,
   };
 }
 
@@ -127,12 +137,13 @@ export function normalizeProvider(raw: RawProvider, apiData: ProviderApiData = {
 export async function getAllProviders(): Promise<Provider[]> {
   const slugs = await getProviderSlugs();
   const results: Provider[] = [];
+  const verificationMap = await loadVerificationData();
 
   for (const slug of slugs) {
     const rawProvider = await loadProviderJson(slug);
     if (rawProvider) {
       const apiData = await loadProviderApiData(slug);
-      results.push(normalizeProvider(rawProvider, apiData));
+      results.push(normalizeProvider(rawProvider, apiData, verificationMap));
     }
   }
 

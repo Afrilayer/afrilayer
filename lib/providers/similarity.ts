@@ -140,5 +140,6 @@ export function providerToApiMock(provider: Provider) {
     rateLimit: provider.apiData?.rateLimit,
     webhookSupport: provider.apiData?.webhookSupport,
     logoUrl: provider.logoUrl || undefined,
+    verification: provider.verification,
   };
 }

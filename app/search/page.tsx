@@ -3,6 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Search as SearchIcon, TrendingUp } from 'lucide-react';
+import { VerificationBadge } from '@/components/ui';
 import type { Provider } from '@/lib/types';
 
 // Trending providers - most searched/popular APIs
@@ -94,10 +95,13 @@ export default function SearchPage() {
               className="block rounded-lg border border-border bg-surface p-6 transition-all hover-lift"
             >
               <div className="flex items-start justify-between">
-                <div>
-                  <h2 className="text-xl font-semibold text-text hover:text-clay transition-colors">
-                    {result.name}
-                  </h2>
+                  <div>
+                    <h2 className="text-xl font-semibold text-text hover:text-clay transition-colors flex items-center gap-1.5">
+                      {result.name}
+                      {result.verification?.verified && (
+                        <VerificationBadge level={result.verification.level} size={18} />
+                      )}
+                    </h2>
                   <p className="mt-1 text-sm text-muted">
                     {result.categories[0]}
                   </p>

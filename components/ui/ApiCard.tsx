@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import StatusPill from "./StatusPill";
 import { CountryFlag } from "./CountryFlag";
 import { ProviderLogo } from "./ProviderLogo";
+import { VerificationBadge } from "./VerificationBadge";
 import type { ApiMock } from "@/lib/types";
 import { CATEGORY_TO_SLUG, COUNTRY_TO_CODE } from "@/lib/constants";
 
@@ -82,8 +83,11 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
             <h3 className="font-semibold text-base leading-snug text-text">
               {api.name}
             </h3>
-            <p className="text-xs mt-0.5 font-mono text-text-muted">
+            <p className="text-xs mt-0.5 font-mono text-text-muted flex items-center gap-1">
               {api.provider}
+              {api.verification?.verified && (
+                <VerificationBadge level={api.verification.level} size={12} />
+              )}
             </p>
           </div>
         </div>

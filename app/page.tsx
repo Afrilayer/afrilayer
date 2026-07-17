@@ -36,6 +36,7 @@ export default async function Home() {
     rateLimit: p.apiData?.rateLimit,
     webhookSupport: p.apiData?.webhookSupport,
     logoUrl: p.logoUrl,
+    verification: p.verification,
   }));
 
   // Get live stats

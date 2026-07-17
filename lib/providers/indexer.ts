@@ -29,6 +29,10 @@ export interface Registry {
     features: string[];
     description: string;
     logoUrl?: string;
+    verification?: {
+      verified: boolean;
+      level: string;
+    };
   }[];
 }
 
@@ -70,6 +74,7 @@ export async function generateRegistry(): Promise<void> {
       features: p.features,
       description: p.description,
       logoUrl: p.logoUrl,
+      verification: p.verification,
     })),
   };
 

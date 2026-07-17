@@ -4,7 +4,7 @@ export const revalidate = 3600; // Revalidate every hour
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getProviderBySlug, getAllProvidersData } from "@/lib/data";
-import { StatusPill, Stamp, DocPreview, ChangelogTimeline, QuickFacts, ProviderLogo, SimilarApisTable } from "@/components/ui";
+import { StatusPill, Stamp, DocPreview, ChangelogTimeline, QuickFacts, ProviderLogo, SimilarApisTable, VerificationBadge } from "@/components/ui";
 import { CountryFlag } from "@/components/ui/CountryFlag";
 import { COUNTRY_TO_CODE, CATEGORY_TO_SLUG } from "@/lib/constants";
 import { calculateSimilarProviders, providerToApiMock } from "@/lib/providers/similarity";
@@ -86,8 +86,11 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
               size={40}
               className="w-12 h-12 rounded-lg"
             />
-            <h1 className="text-3xl font-bold tracking-tight text-text">
+            <h1 className="text-3xl font-bold tracking-tight text-text flex items-center gap-2">
               {provider.name} API
+              {provider.verification?.verified && (
+                <VerificationBadge level={provider.verification.level} size={22} />
+              )}
             </h1>
           </div>
           <p className="text-sm mt-1 font-mono text-muted">

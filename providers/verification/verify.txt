@@ -1,0 +1,6 @@
+Afrilayer Provider Verification
+
+paystack: cv
+flutterwave: pv
+mono: cv
+okra: pv

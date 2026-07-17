@@ -65,5 +65,8 @@ export { QuickFacts } from './QuickFacts';
 
 export { ApiGrid } from './ApiGrid';
 
+export { VerificationBadge } from './VerificationBadge';
+export type { VerificationLevel } from '@/lib/types';
+
 export { CountryFlag } from './CountryFlag';
 export { getCountryFlag } from './CountryFlag';

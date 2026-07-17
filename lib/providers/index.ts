@@ -7,4 +7,5 @@ export {
   loadProviderReadme,
   normalizeProvider
 } from './loader';
-export type { Provider, ProviderApiData } from '../types';
+export { loadVerificationData, getVerificationInfo, getVerificationMessage } from './verification';
+export type { Provider, ProviderApiData, VerificationLevel, VerificationInfo } from '../types';

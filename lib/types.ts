@@ -2,6 +2,15 @@
 
 import type { ProviderStatus } from './constants';
 
+// Community/Provider verification level (from providers/verification/verify.txt)
+export type VerificationLevel = 'community' | 'provider';
+
+// Verification metadata merged at runtime
+export interface VerificationInfo {
+  verified: boolean;
+  level: VerificationLevel;
+}
+
 // Verification status for providers
 export type VerificationStatus = 'verified' | 'pending' | 'unavailable';
 
@@ -72,6 +81,7 @@ export interface Provider {
   keyPeople: KeyPerson[];
   apiData?: ProviderApiData;
   relatedProviders: string[];
+  verification?: VerificationInfo;
 }
 
 // ApiMock - legacy type for backward compatibility with UI components
@@ -98,6 +108,7 @@ export interface ApiMock {
   rateLimit?: string;
   webhookSupport?: boolean;
   logoUrl?: string;
+  verification?: VerificationInfo;
 }
 
 // Homepage stats - derived from registry
