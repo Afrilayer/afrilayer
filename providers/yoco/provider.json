@@ -8,13 +8,28 @@
   "developerPortal": "https://developer.yoco.com",
   "supportEmail": "support@yoco.com",
   "headquarters": "South Africa",
-  "categories": ["Payments"],
-  "countries": ["South Africa"],
-  "features": ["Card payments", "Online payments", "POS integration", "QR payments"],
+  "categories": [
+    "Payments"
+  ],
+  "countries": [
+    "South Africa"
+  ],
+  "features": [
+    "Card payments",
+    "Online payments",
+    "POS integration",
+    "QR payments"
+  ],
   "pricingModel": "transaction",
   "authentication": "Bearer Token",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Java", "Go", "Ruby"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java",
+    "Go",
+    "Ruby"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +37,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Brad Reeve", "role": "Head of Product" }
-  ]
+    {
+      "name": "Brad Reeve",
+      "role": "Head of Product"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/yoco.com"
 }

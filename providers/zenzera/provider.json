@@ -7,13 +7,31 @@
   "documentation": "https://docs.zenzera.com",
   "supportEmail": "support@zenzera.com",
   "headquarters": "South Africa",
-  "categories": ["Messaging", "Airtime"],
-  "countries": ["South Africa", "Nigeria", "Kenya", "Ghana"],
-  "features": ["Bulk SMS", "Voice messaging", "Airtime top-up", "USSD gateway"],
+  "categories": [
+    "Messaging",
+    "Airtime"
+  ],
+  "countries": [
+    "South Africa",
+    "Nigeria",
+    "Kenya",
+    "Ghana"
+  ],
+  "features": [
+    "Bulk SMS",
+    "Voice messaging",
+    "Airtime top-up",
+    "USSD gateway"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "PHP", "Java"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "PHP",
+    "Java"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -21,6 +39,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Tendai Mbofana", "role": "Founder" }
-  ]
+    {
+      "name": "Tendai Mbofana",
+      "role": "Founder"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/zenzera.com"
 }

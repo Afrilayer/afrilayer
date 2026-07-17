@@ -8,13 +8,29 @@
   "developerPortal": "https://developer.interswitchgroup.com",
   "supportEmail": "developers@interswitchgroup.com",
   "headquarters": "Nigeria",
-  "categories": ["Payments", "Banking"],
-  "countries": ["Nigeria"],
-  "features": ["Card payments", "Bank transfers", "QR payments", "Merchant services"],
+  "categories": [
+    "Payments",
+    "Banking"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "Card payments",
+    "Bank transfers",
+    "QR payments",
+    "Merchant services"
+  ],
   "pricingModel": "transaction",
   "authentication": "OAuth 2.0",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Java", "PHP", ".NET", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Java",
+    "PHP",
+    ".NET",
+    "Python"
+  ],
   "openapiSpec": "https://developer.interswitchgroup.com/docs/openapi",
   "sandboxAvailable": true,
   "productionReady": true,
@@ -23,6 +39,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Mitchell Elegbe", "role": "Group CEO" }
-  ]
+    {
+      "name": "Mitchell Elegbe",
+      "role": "Group CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/interswitchgroup.com"
 }

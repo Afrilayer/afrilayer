@@ -70,15 +70,15 @@ export const VerificationBadge: React.FC<VerificationBadgeProps> = ({
   className = "",
 }) => {
   const message = VERIFICATION_MESSAGES[level];
-  const colorClass = level === 'provider'
-    ? 'text-status-verified'  // Green
-    : 'text-text';             // Black/dark
+  const colorStyle = level === 'provider'
+    ? { color: '#2ECC71' }  // Green
+    : { color: '#1F1F1D' }; // Black/dark
 
   return (
     <span
-      className={`inline-flex items-center justify-center ${colorClass} ${className}`}
+      className={`inline-flex items-center justify-center ${className}`}
       title={message}
-      style={{ cursor: 'help' }}
+      style={{ cursor: 'help', ...colorStyle }}
       role="img"
       aria-label={message}
     >

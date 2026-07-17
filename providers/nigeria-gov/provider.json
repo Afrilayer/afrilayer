@@ -8,13 +8,26 @@
   "developerPortal": "https://developer.gov.ng",
   "supportEmail": "support@developer.gov.ng",
   "headquarters": "Nigeria",
-  "categories": ["Government"],
-  "countries": ["Nigeria"],
-  "features": ["NIN verification", "BVN lookup", "Tax APIs", "Immigration services"],
+  "categories": [
+    "Government"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "NIN verification",
+    "BVN lookup",
+    "Tax APIs",
+    "Immigration services"
+  ],
   "pricingModel": "free",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Java"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +35,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Federal Ministry of Communications", "role": "Digital Services" }
-  ]
+    {
+      "name": "Federal Ministry of Communications",
+      "role": "Digital Services"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/gov.ng"
 }

@@ -7,17 +7,32 @@
   "documentation": "https://developer.opay.com",
   "developerPortal": "https://developer.opay.com",
   "headquarters": "Nigeria",
-  "categories": ["Payments", "Mobile Money"],
-  "countries": ["Nigeria"],
-  "features": ["Money transfer", "Bill payments", "Airtime", "QR payments"],
+  "categories": [
+    "Payments",
+    "Mobile Money"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "Money transfer",
+    "Bill payments",
+    "Airtime",
+    "QR payments"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Java"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
   "verified": true,
   "lastVerified": "2026-07-16",
-  "lastUpdated": "2026-07-16"
+  "lastUpdated": "2026-07-16",
+  "logoUrl": "https://logo.clearbit.com/opay.com"
 }

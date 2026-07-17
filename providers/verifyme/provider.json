@@ -8,13 +8,29 @@
   "developerPortal": "https://verifyme.ng",
   "supportEmail": "support@verifyme.ng",
   "headquarters": "Nigeria",
-  "categories": ["Identity", "KYC"],
-  "countries": ["Nigeria"],
-  "features": ["BVN verification", "NIN verification", "Document verification", "Address verification"],
+  "categories": [
+    "Identity",
+    "KYC"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "BVN verification",
+    "NIN verification",
+    "Document verification",
+    "Address verification"
+  ],
   "pricingModel": "pay-as-you-go",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Java", "Go", "PHP"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java",
+    "Go",
+    "PHP"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +38,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Iyinoluwa Aboyeji", "role": "Co-founder" }
-  ]
+    {
+      "name": "Iyinoluwa Aboyeji",
+      "role": "Co-founder"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/verifyme.ng"
 }

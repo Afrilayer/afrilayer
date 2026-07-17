@@ -8,13 +8,27 @@
   "developerPortal": "https://docs.traction.co",
   "supportEmail": "support@traction.co",
   "headquarters": "Nigeria",
-  "categories": ["Financial Infrastructure", "Payments"],
-  "countries": ["Nigeria"],
-  "features": ["Payments", "Lending", "Financial management", "KYC", "Collections"],
+  "categories": [
+    "Financial Infrastructure",
+    "Payments"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "Payments",
+    "Lending",
+    "Financial management",
+    "KYC",
+    "Collections"
+  ],
   "pricingModel": "custom",
   "authentication": "Bearer Token",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +36,10 @@
   "lastVerified": "2026-07-22",
   "lastUpdated": "2026-07-22",
   "keyPeople": [
-    { "name": "Adegboyega Fabuluje", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Adegboyega Fabuluje",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/traction.co"
 }

@@ -8,13 +8,31 @@
   "developerPortal": "https://pula.io",
   "supportEmail": "info@pula.io",
   "headquarters": "Kenya",
-  "categories": ["Financial Infrastructure"],
-  "countries": ["Kenya", "Tanzania", "Uganda", "Malawi", "Zambia", "Nigeria", "Ghana"],
-  "features": ["Index insurance", "Weather data", "Claims processing", "Farmer enrollment"],
+  "categories": [
+    "Financial Infrastructure"
+  ],
+  "countries": [
+    "Kenya",
+    "Tanzania",
+    "Uganda",
+    "Malawi",
+    "Zambia",
+    "Nigeria",
+    "Ghana"
+  ],
+  "features": [
+    "Index insurance",
+    "Weather data",
+    "Claims processing",
+    "Farmer enrollment"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +40,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Thomas Njeru", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Thomas Njeru",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/pula.io"
 }

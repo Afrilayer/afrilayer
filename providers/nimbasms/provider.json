@@ -8,18 +8,32 @@
   "developerPortal": "https://docs.nimbasms.com",
   "supportEmail": "support@nimbasms.com",
   "headquarters": "Nigeria",
-  "categories": ["SMS", "Messaging"],
-  "countries": ["Nigeria"],
-  "features": ["SMS messaging", "Bulk SMS", "Two-way SMS", "Delivery reports"],
+  "categories": [
+    "SMS",
+    "Messaging"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "SMS messaging",
+    "Bulk SMS",
+    "Two-way SMS",
+    "Delivery reports"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
   "verified": false,
   "lastVerified": "2026-07-22",
   "lastUpdated": "2026-07-22",
-  "keyPeople": []
+  "keyPeople": [],
+  "logoUrl": "https://logo.clearbit.com/nimbasms.com"
 }

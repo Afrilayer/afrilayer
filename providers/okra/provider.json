@@ -8,13 +8,30 @@
   "developerPortal": "https://docs.okra.com",
   "supportEmail": "support@okra.com",
   "headquarters": "Nigeria",
-  "categories": ["Open Banking", "Financial Infrastructure"],
-  "countries": ["Nigeria"],
-  "features": ["Bank linking", "Account verification", "Transaction data", "Income data", "Real-time callbacks"],
+  "categories": [
+    "Open Banking",
+    "Financial Infrastructure"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "Bank linking",
+    "Account verification",
+    "Transaction data",
+    "Income data",
+    "Real-time callbacks"
+  ],
   "pricingModel": "custom",
   "authentication": "Bearer Token",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Go", "Java", "PHP"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Go",
+    "Java",
+    "PHP"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +39,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Seyi Abolaji", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Seyi Abolaji",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/okra.com"
 }

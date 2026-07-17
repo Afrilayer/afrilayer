@@ -8,13 +8,36 @@
   "developerPortal": "https://developer.chenosis.com",
   "supportEmail": "support@chenosis.com",
   "headquarters": "South Africa",
-  "categories": ["Developer Tools", "Telecom", "Payments"],
-  "countries": ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "Côte d'Ivoire", "Cameroon"],
-  "features": ["Messaging APIs", "Voice APIs", "Payment APIs", "Airtime APIs", "USSD APIs"],
+  "categories": [
+    "Developer Tools",
+    "Telecom",
+    "Payments"
+  ],
+  "countries": [
+    "Nigeria",
+    "Ghana",
+    "Kenya",
+    "South Africa",
+    "Uganda",
+    "Tanzania",
+    "Côte d'Ivoire",
+    "Cameroon"
+  ],
+  "features": [
+    "Messaging APIs",
+    "Voice APIs",
+    "Payment APIs",
+    "Airtime APIs",
+    "USSD APIs"
+  ],
   "pricingModel": "transaction",
   "authentication": "Bearer Token",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Java"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +45,10 @@
   "lastVerified": "2026-07-22",
   "lastUpdated": "2026-07-22",
   "keyPeople": [
-    { "name": "Charles Molapisi", "role": "CTO, MTN Group" }
-  ]
+    {
+      "name": "Charles Molapisi",
+      "role": "CTO, MTN Group"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/chenosis.com"
 }

@@ -8,13 +8,25 @@
   "developerPortal": "https://docs.tambua.health",
   "supportEmail": "support@tambua.health",
   "headquarters": "Kenya",
-  "categories": ["Health"],
-  "countries": ["Kenya"],
-  "features": ["Patient records", "Appointment scheduling", "Insurance verification", "Healthcare data"],
+  "categories": [
+    "Health"
+  ],
+  "countries": [
+    "Kenya"
+  ],
+  "features": [
+    "Patient records",
+    "Appointment scheduling",
+    "Insurance verification",
+    "Healthcare data"
+  ],
   "pricingModel": "custom",
   "authentication": "Bearer Token",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +34,10 @@
   "lastVerified": "2026-07-22",
   "lastUpdated": "2026-07-22",
   "keyPeople": [
-    { "name": "Dr. Timothy Oriedo", "role": "Founder & CEO" }
-  ]
+    {
+      "name": "Dr. Timothy Oriedo",
+      "role": "Founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/tambua.health"
 }

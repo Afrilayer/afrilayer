@@ -8,18 +8,33 @@
   "developerPortal": "https://docs.mnotify.com.gh",
   "supportEmail": "support@mnotify.com.gh",
   "headquarters": "Ghana",
-  "categories": ["SMS", "Messaging"],
-  "countries": ["Ghana"],
-  "features": ["SMS messaging", "Bulk SMS", "Two-way SMS", "Delivery reports"],
+  "categories": [
+    "SMS",
+    "Messaging"
+  ],
+  "countries": [
+    "Ghana"
+  ],
+  "features": [
+    "SMS messaging",
+    "Bulk SMS",
+    "Two-way SMS",
+    "Delivery reports"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "PHP"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "PHP"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
   "verified": false,
   "lastVerified": "2026-07-22",
   "lastUpdated": "2026-07-22",
-  "keyPeople": []
+  "keyPeople": [],
+  "logoUrl": "https://logo.clearbit.com/mnotify.com.gh"
 }

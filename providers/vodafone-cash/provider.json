@@ -7,13 +7,25 @@
   "documentation": "https://developer.vodafone.com.gh",
   "supportEmail": "care.gh@vodafone.com",
   "headquarters": "Ghana",
-  "categories": ["Mobile Money"],
-  "countries": ["Ghana"],
-  "features": ["Mobile money collection", "Disbursements", "Balance inquiry", "Transaction history"],
+  "categories": [
+    "Mobile Money"
+  ],
+  "countries": [
+    "Ghana"
+  ],
+  "features": [
+    "Mobile money collection",
+    "Disbursements",
+    "Balance inquiry",
+    "Transaction history"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
   "sandboxAvailable": false,
   "productionReady": true,
   "status": "Live",
@@ -21,6 +33,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Patricia Obo-Nai", "role": "CEO Vodafone Ghana" }
-  ]
+    {
+      "name": "Patricia Obo-Nai",
+      "role": "CEO Vodafone Ghana"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/vodafone.com.gh"
 }

@@ -8,13 +8,39 @@
   "developerPortal": "https://docs.onafriq.com",
   "supportEmail": "support@onafriq.com",
   "headquarters": "South Africa",
-  "categories": ["Payments", "Mobile Money", "Financial Infrastructure"],
-  "countries": ["Nigeria", "Ghana", "Kenya", "South Africa", "Uganda", "Tanzania", "Côte d'Ivoire", "Senegal", "Cameroon", "Rwanda", "Zambia"],
-  "features": ["Cross-border payments", "Mobile money rails", "Remittances", "Bulk payouts", "Real-time settlement"],
+  "categories": [
+    "Payments",
+    "Mobile Money",
+    "Financial Infrastructure"
+  ],
+  "countries": [
+    "Nigeria",
+    "Ghana",
+    "Kenya",
+    "South Africa",
+    "Uganda",
+    "Tanzania",
+    "Côte d'Ivoire",
+    "Senegal",
+    "Cameroon",
+    "Rwanda",
+    "Zambia"
+  ],
+  "features": [
+    "Cross-border payments",
+    "Mobile money rails",
+    "Remittances",
+    "Bulk payouts",
+    "Real-time settlement"
+  ],
   "pricingModel": "custom",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Java"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +48,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Dare Okoudjou", "role": "Founder & CEO" }
-  ]
+    {
+      "name": "Dare Okoudjou",
+      "role": "Founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/onafriq.com"
 }

@@ -8,13 +8,31 @@
   "developerPortal": "https://developer.pesapal.com",
   "supportEmail": "support@pesapal.com",
   "headquarters": "Kenya",
-  "categories": ["Payments"],
-  "countries": ["Kenya", "Uganda", "Tanzania", "Rwanda"],
-  "features": ["Card payments", "Mobile money", "Bank transfers", "Recurring payments"],
+  "categories": [
+    "Payments"
+  ],
+  "countries": [
+    "Kenya",
+    "Uganda",
+    "Tanzania",
+    "Rwanda"
+  ],
+  "features": [
+    "Card payments",
+    "Mobile money",
+    "Bank transfers",
+    "Recurring payments"
+  ],
   "pricingModel": "transaction",
   "authentication": "OAuth 2.0",
   "apiStyle": "REST",
-  "sdkLanguages": ["PHP", "Python", "Java", "C#", ".NET"],
+  "sdkLanguages": [
+    "PHP",
+    "Python",
+    "Java",
+    "C#",
+    ".NET"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +40,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Agosta Liko", "role": "Founder & CEO" }
-  ]
+    {
+      "name": "Agosta Liko",
+      "role": "Founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/pesapal.com"
 }

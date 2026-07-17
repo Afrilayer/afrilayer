@@ -8,13 +8,32 @@
   "developerPortal": "https://docs.cinetpay.com",
   "supportEmail": "support@cinetpay.com",
   "headquarters": "Côte d'Ivoire",
-  "categories": ["Payments"],
-  "countries": ["Côte d'Ivoire", "Senegal", "Cameroon", "Mali", "Burkina Faso"],
-  "features": ["Mobile money", "Card payments", "Airtime", "Payouts", "International transfers"],
+  "categories": [
+    "Payments"
+  ],
+  "countries": [
+    "Côte d'Ivoire",
+    "Senegal",
+    "Cameroon",
+    "Mali",
+    "Burkina Faso"
+  ],
+  "features": [
+    "Mobile money",
+    "Card payments",
+    "Airtime",
+    "Payouts",
+    "International transfers"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "PHP", "Java"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "PHP",
+    "Java"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +41,10 @@
   "lastVerified": "2026-07-22",
   "lastUpdated": "2026-07-22",
   "keyPeople": [
-    { "name": "Odeh Jacques", "role": "CEO" }
-  ]
+    {
+      "name": "Odeh Jacques",
+      "role": "CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/cinetpay.com"
 }

@@ -8,13 +8,28 @@
   "developerPortal": "https://okhi.com",
   "supportEmail": "support@okhi.com",
   "headquarters": "Kenya",
-  "categories": ["Geolocation"],
-  "countries": ["Kenya", "Nigeria"],
-  "features": ["Digital addresses", "Location verification", "Address autocomplete", "GPS coordinates"],
+  "categories": [
+    "Geolocation"
+  ],
+  "countries": [
+    "Kenya",
+    "Nigeria"
+  ],
+  "features": [
+    "Digital addresses",
+    "Location verification",
+    "Address autocomplete",
+    "GPS coordinates"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "iOS", "Android"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "iOS",
+    "Android"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +37,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Timothy Mwirabumbiro", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Timothy Mwirabumbiro",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/okhi.com"
 }

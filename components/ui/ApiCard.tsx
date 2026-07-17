@@ -22,6 +22,7 @@ interface MinimalProvider {
   slug: string;
   name: string;
   website?: string | null;
+  logoUrl?: string;
 }
 
 export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks = false, showCategoryLink = false }) => {
@@ -30,6 +31,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
     slug: api.id,
     name: api.provider,
     website: undefined,
+    logoUrl: api.logoUrl,
   };
 
   const renderCountryTags = () => {

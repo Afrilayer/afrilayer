@@ -8,13 +8,32 @@
   "developerPortal": "https://docs.fincra.com",
   "supportEmail": "support@fincra.com",
   "headquarters": "Nigeria",
-  "categories": ["Payments", "Banking"],
-  "countries": ["Nigeria", "Kenya", "Ghana", "South Africa"],
-  "features": ["Card payments", "Bank transfers", "Virtual accounts", "Payouts", "FX exchange"],
+  "categories": [
+    "Payments",
+    "Banking"
+  ],
+  "countries": [
+    "Nigeria",
+    "Kenya",
+    "Ghana",
+    "South Africa"
+  ],
+  "features": [
+    "Card payments",
+    "Bank transfers",
+    "Virtual accounts",
+    "Payouts",
+    "FX exchange"
+  ],
   "pricingModel": "transaction",
   "authentication": "Bearer Token",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Java", "Go"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java",
+    "Go"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +41,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Wemmy Oduor", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Wemmy Oduor",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/fincra.com"
 }

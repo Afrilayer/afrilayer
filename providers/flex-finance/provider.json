@@ -8,13 +8,26 @@
   "developerPortal": "https://docs.flexfinance.ng",
   "supportEmail": "support@flexfinance.ng",
   "headquarters": "Nigeria",
-  "categories": ["Financial Infrastructure", "Banking"],
-  "countries": ["Nigeria"],
-  "features": ["Digital lending", "Credit scoring", "Loan management", "Financial data"],
+  "categories": [
+    "Financial Infrastructure",
+    "Banking"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "Digital lending",
+    "Credit scoring",
+    "Loan management",
+    "Financial data"
+  ],
   "pricingModel": "custom",
   "authentication": "Bearer Token",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +35,10 @@
   "lastVerified": "2026-07-22",
   "lastUpdated": "2026-07-22",
   "keyPeople": [
-    { "name": "Chijioke Okonkwo", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Chijioke Okonkwo",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/flexfinance.ng"
 }

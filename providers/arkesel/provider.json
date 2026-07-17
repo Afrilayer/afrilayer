@@ -8,13 +8,28 @@
   "developerPortal": "https://developers.arkesel.com/",
   "supportEmail": "support@arkesel.com",
   "headquarters": "Ghana",
-  "categories": ["SMS", "Messaging"],
-  "countries": ["Ghana"],
-  "features": ["SMS messaging", "Voice calls", "USSD", "Two-way SMS", "Bulk SMS"],
+  "categories": [
+    "SMS",
+    "Messaging"
+  ],
+  "countries": [
+    "Ghana"
+  ],
+  "features": [
+    "SMS messaging",
+    "Voice calls",
+    "USSD",
+    "Two-way SMS",
+    "Bulk SMS"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "PHP"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "PHP"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +37,10 @@
   "lastVerified": "2026-07-17",
   "lastUpdated": "2026-07-22",
   "keyPeople": [
-    { "name": "Kofi Agyenim", "role": "Founder & CEO" }
-  ]
+    {
+      "name": "Kofi Agyenim",
+      "role": "Founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/arkesel.com"
 }

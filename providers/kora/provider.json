@@ -8,13 +8,31 @@
   "developerPortal": "https://docs.kora.com",
   "supportEmail": "support@kora.com",
   "headquarters": "Nigeria",
-  "categories": ["Payments", "Banking"],
-  "countries": ["Nigeria", "Ghana", "Kenya"],
-  "features": ["Card payments", "Bank transfers", "Mobile money", "Virtual accounts", "Payouts"],
+  "categories": [
+    "Payments",
+    "Banking"
+  ],
+  "countries": [
+    "Nigeria",
+    "Ghana",
+    "Kenya"
+  ],
+  "features": [
+    "Card payments",
+    "Bank transfers",
+    "Mobile money",
+    "Virtual accounts",
+    "Payouts"
+  ],
   "pricingModel": "transaction",
   "authentication": "Bearer Token",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Java", "Go"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java",
+    "Go"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +40,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Abdulhamid Hassan", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Abdulhamid Hassan",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/kora.com"
 }

@@ -8,13 +8,31 @@
   "developerPortal": "https://docs.eversend.com",
   "supportEmail": "support@eversend.com",
   "headquarters": "Uganda",
-  "categories": ["Payments", "Banking"],
-  "countries": ["Uganda", "Kenya", "Nigeria", "Ghana", "Tanzania"],
-  "features": ["Multi-currency wallets", "Virtual cards", "Remittances", "Payouts", "Business accounts"],
+  "categories": [
+    "Payments",
+    "Banking"
+  ],
+  "countries": [
+    "Uganda",
+    "Kenya",
+    "Nigeria",
+    "Ghana",
+    "Tanzania"
+  ],
+  "features": [
+    "Multi-currency wallets",
+    "Virtual cards",
+    "Remittances",
+    "Payouts",
+    "Business accounts"
+  ],
   "pricingModel": "transaction",
   "authentication": "Bearer Token",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +40,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Charles Mudahemuka", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Charles Mudahemuka",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/eversend.com"
 }

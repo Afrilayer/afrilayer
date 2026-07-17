@@ -8,13 +8,28 @@
   "developerPortal": "https://docs.fidocredit.com",
   "supportEmail": "support@fidocredit.com",
   "headquarters": "Ghana",
-  "categories": ["Financial Infrastructure", "KYC"],
-  "countries": ["Ghana", "Nigeria", "Kenya"],
-  "features": ["Credit scoring", "Digital lending", "Income verification", "Identity verification"],
+  "categories": [
+    "Financial Infrastructure",
+    "KYC"
+  ],
+  "countries": [
+    "Ghana",
+    "Nigeria",
+    "Kenya"
+  ],
+  "features": [
+    "Credit scoring",
+    "Digital lending",
+    "Income verification",
+    "Identity verification"
+  ],
   "pricingModel": "custom",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +37,10 @@
   "lastVerified": "2026-07-22",
   "lastUpdated": "2026-07-22",
   "keyPeople": [
-    { "name": "Mark Akoto-Moore", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Mark Akoto-Moore",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/fidocredit.com"
 }

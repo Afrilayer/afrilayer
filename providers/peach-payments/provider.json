@@ -8,13 +8,30 @@
   "developerPortal": "https://peachpayments.com",
   "supportEmail": "support@peachpayments.com",
   "headquarters": "South Africa",
-  "categories": ["Payments"],
-  "countries": ["South Africa", "Zambia", "Malawi", "Zimbabwe"],
-  "features": ["Card payments", "EFT payments", "Recurring billing", "Fraud management"],
+  "categories": [
+    "Payments"
+  ],
+  "countries": [
+    "South Africa",
+    "Zambia",
+    "Malawi",
+    "Zimbabwe"
+  ],
+  "features": [
+    "Card payments",
+    "EFT payments",
+    "Recurring billing",
+    "Fraud management"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "PHP", "Java", ".NET"],
+  "sdkLanguages": [
+    "JavaScript",
+    "PHP",
+    "Java",
+    ".NET"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +39,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Andreas Thiele", "role": "CEO" }
-  ]
+    {
+      "name": "Andreas Thiele",
+      "role": "CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/peachpayments.com"
 }

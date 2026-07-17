@@ -7,13 +7,25 @@
   "documentation": "https://docs.twiga.com",
   "supportEmail": "info@twiga.com",
   "headquarters": "Kenya",
-  "categories": ["Logistics"],
-  "countries": ["Kenya"],
-  "features": ["Supply chain integration", "Order management", "Inventory tracking", "Delivery scheduling"],
+  "categories": [
+    "Logistics"
+  ],
+  "countries": [
+    "Kenya"
+  ],
+  "features": [
+    "Supply chain integration",
+    "Order management",
+    "Inventory tracking",
+    "Delivery scheduling"
+  ],
   "pricingModel": "contact",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -21,6 +33,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Grant Brooke", "role": "Co-founder" }
-  ]
+    {
+      "name": "Grant Brooke",
+      "role": "Co-founder"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/twiga.com"
 }

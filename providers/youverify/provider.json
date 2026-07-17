@@ -8,13 +8,35 @@
   "developerPortal": "https://youverify.ai",
   "supportEmail": "support@youverify.ai",
   "headquarters": "Nigeria",
-  "categories": ["Identity", "KYC"],
-  "countries": ["Nigeria", "Kenya", "Ghana", "South Africa"],
-  "features": ["BVN verification", "NIN verification", "Passport verification", "Driver's license", "AML screening", "Background checks"],
+  "categories": [
+    "Identity",
+    "KYC"
+  ],
+  "countries": [
+    "Nigeria",
+    "Kenya",
+    "Ghana",
+    "South Africa"
+  ],
+  "features": [
+    "BVN verification",
+    "NIN verification",
+    "Passport verification",
+    "Driver's license",
+    "AML screening",
+    "Background checks"
+  ],
   "pricingModel": "pay-as-you-go",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Java", "Go", "PHP", "Ruby"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java",
+    "Go",
+    "PHP",
+    "Ruby"
+  ],
   "openapiSpec": "https://docs.youverify.ai/openapi.json",
   "sandboxAvailable": true,
   "productionReady": true,
@@ -23,6 +45,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Samuel Afolabi", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Samuel Afolabi",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/youverify.ai"
 }

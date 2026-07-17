@@ -8,13 +8,36 @@
   "developerPortal": "https://dpogroup.com",
   "supportEmail": "support@dpogroup.com",
   "headquarters": "South Africa",
-  "categories": ["Payments"],
-  "countries": ["South Africa", "Nigeria", "Kenya", "Ghana", "Zambia", "Tanzania", "Uganda", "Rwanda", "Malawi"],
-  "features": ["Card payments", "Mobile money", "Bank transfers", "Multi-currency support", "Fraud protection"],
+  "categories": [
+    "Payments"
+  ],
+  "countries": [
+    "South Africa",
+    "Nigeria",
+    "Kenya",
+    "Ghana",
+    "Zambia",
+    "Tanzania",
+    "Uganda",
+    "Rwanda",
+    "Malawi"
+  ],
+  "features": [
+    "Card payments",
+    "Mobile money",
+    "Bank transfers",
+    "Multi-currency support",
+    "Fraud protection"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["PHP", "Java", "C#", "Python"],
+  "sdkLanguages": [
+    "PHP",
+    "Java",
+    "C#",
+    "Python"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +45,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Nigel Jansen", "role": "Managing Director" }
-  ]
+    {
+      "name": "Nigel Jansen",
+      "role": "Managing Director"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/dpogroup.com"
 }

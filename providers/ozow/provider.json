@@ -8,13 +8,30 @@
   "developerPortal": "https://developers.ozow.com",
   "supportEmail": "support@ozow.com",
   "headquarters": "South Africa",
-  "categories": ["Payments"],
-  "countries": ["South Africa"],
-  "features": ["Instant EFT", "QR payments", "Recurring payments", "Refunds"],
+  "categories": [
+    "Payments"
+  ],
+  "countries": [
+    "South Africa"
+  ],
+  "features": [
+    "Instant EFT",
+    "QR payments",
+    "Recurring payments",
+    "Refunds"
+  ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python", "Java", "PHP", ".NET", "iOS", "Android"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python",
+    "Java",
+    "PHP",
+    ".NET",
+    "iOS",
+    "Android"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +39,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Thomas Pays", "role": "CEO" }
-  ]
+    {
+      "name": "Thomas Pays",
+      "role": "CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/ozow.com"
 }

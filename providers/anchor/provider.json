@@ -8,13 +8,27 @@
   "developerPortal": "https://docs.anchor.money",
   "supportEmail": "support@anchor.money",
   "headquarters": "Nigeria",
-  "categories": ["Banking", "Payments"],
-  "countries": ["Nigeria"],
-  "features": ["Virtual accounts", "Savings wallets", "Payments", "KYC automation", "Card issuance"],
+  "categories": [
+    "Banking",
+    "Payments"
+  ],
+  "countries": [
+    "Nigeria"
+  ],
+  "features": [
+    "Virtual accounts",
+    "Savings wallets",
+    "Payments",
+    "KYC automation",
+    "Card issuance"
+  ],
   "pricingModel": "custom",
   "authentication": "Bearer Token",
   "apiStyle": "REST",
-  "sdkLanguages": ["JavaScript", "Python"],
+  "sdkLanguages": [
+    "JavaScript",
+    "Python"
+  ],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -22,6 +36,10 @@
   "lastVerified": "2026-07-16",
   "lastUpdated": "2026-07-16",
   "keyPeople": [
-    { "name": "Tunji Andrews", "role": "Co-founder & CEO" }
-  ]
+    {
+      "name": "Tunji Andrews",
+      "role": "Co-founder & CEO"
+    }
+  ],
+  "logoUrl": "https://logo.clearbit.com/anchor.money"
 }
