@@ -4,8 +4,8 @@
   "tagline": "SMS and communication APIs for Ghana and beyond.",
   "description": "Arkesel provides SMS, voice, and communication APIs for businesses to reach customers across Ghana and West Africa.",
   "website": "https://arkesel.com",
-  "documentation": "https://docs.arkesel.com",
-  "developerPortal": "https://docs.arkesel.com",
+  "documentation": "https://developers.arkesel.com/",
+  "developerPortal": "https://developers.arkesel.com/",
   "supportEmail": "support@arkesel.com",
   "headquarters": "Ghana",
   "categories": ["SMS", "Messaging"],
@@ -18,8 +18,8 @@
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
-  "verified": false,
-  "lastVerified": "2026-07-22",
+  "verified": true,
+  "lastVerified": "2026-07-17",
   "lastUpdated": "2026-07-22",
   "keyPeople": [
     { "name": "Kofi Agyenim", "role": "Founder & CEO" }
