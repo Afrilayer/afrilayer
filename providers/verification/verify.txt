@@ -4,3 +4,4 @@ paystack: cv
 flutterwave: pv
 mono: cv
 okra: pv
+blusalt: cv
