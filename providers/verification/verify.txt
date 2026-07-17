@@ -8,3 +8,4 @@ blusalt: cv
 buypower: cv
 termii: cv
 kwik: cv
+africas-talking: pv
