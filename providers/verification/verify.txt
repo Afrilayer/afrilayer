@@ -5,4 +5,4 @@ flutterwave: pv
 mono: cv
 okra: pv
 blusalt: cv
-buypower: pv
+buypower: cv
