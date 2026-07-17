@@ -80,9 +80,16 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
               uptime {api?.uptime || 'N/A'}
             </span>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-text">
-            {provider.name} API
-          </h1>
+          <div className="flex items-center gap-4 mb-3">
+            <ProviderLogo
+              provider={provider}
+              size={40}
+              className="w-12 h-12 rounded-lg"
+            />
+            <h1 className="text-3xl font-bold tracking-tight text-text">
+              {provider.name} API
+            </h1>
+          </div>
           <p className="text-sm mt-1 font-mono text-muted">
             {provider.name} &middot; {provider.categories[0]}
           </p>
@@ -93,13 +100,8 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
         <Stamp label={provider.status} sublabel={provider.lastVerified} />
       </div>
 
-      {/* Logo and Key People Row */}
+      {/* Key People Row */}
       <div className="flex items-center gap-6 mt-5 flex-wrap">
-        <ProviderLogo
-          provider={provider}
-          size={40}
-          className="w-12 h-12 rounded-lg"
-        />
         {provider.keyPeople && provider.keyPeople.length > 0 && (
           <div className="flex flex-col gap-2">
             <span className="text-[10px] font-mono uppercase tracking-widest text-muted-dim">
@@ -193,9 +195,6 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
         </div>
       </div>
 
-      {/* Similar APIs */}
-      <SimilarApisTable apis={similarApis} />
-
       {/* Main Content Grid */}
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left - Documentation and Details */}
@@ -275,6 +274,9 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
 
           {/* Changelog */}
           <ChangelogTimeline changelog={api?.changelog || []} />
+          
+          {/* Similar APIs - inside left column, after changelog */}
+          <SimilarApisTable apis={similarApis} />
         </div>
 
         {/* Right Sidebar - Quick Facts */}

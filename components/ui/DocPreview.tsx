@@ -17,8 +17,10 @@ export const DocPreview: React.FC<DocPreviewProps> = ({ curl, js, python, go }) 
   const [copied, setCopied] = React.useState(false);
 
   const codeMap: Record<Tab, string> = { curl, js, python, go };
+  const hasCodeSamples = curl || js || python || go;
 
   const handleCopy = () => {
+    if (!hasCodeSamples) return;
     navigator.clipboard?.writeText(codeMap[tab]).catch(() => {});
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
@@ -30,6 +32,30 @@ export const DocPreview: React.FC<DocPreviewProps> = ({ curl, js, python, go }) 
         ? "bg-surface-dark text-text border-b-2 border-primary"
         : "text-text-muted hover:text-text border-b-2 border-transparent"
     }`;
+
+  // If no code samples exist, show a helpful empty state
+  if (!hasCodeSamples) {
+    return (
+      <div className="mt-10">
+        <h2 className="text-xs font-mono uppercase tracking-widest mb-3 text-text-muted">
+          Example Code
+        </h2>
+        <div className="p-4 rounded-lg border border-border bg-surface-dark">
+          <p className="text-sm text-text-muted">
+            No code samples available yet.{" "}
+            <a 
+              href="https://github.com/afrilayer/afrilayer/tree/main/providers" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              Contribute one via GitHub
+            </a>
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="mt-10">
