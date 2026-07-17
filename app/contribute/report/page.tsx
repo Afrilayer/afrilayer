@@ -16,7 +16,7 @@ const issueTypes: { value: IssueType; label: string }[] = [
   { value: "other", label: "Other issue" },
 ];
 
-export default function ReportIssuePage() {
+function ReportIssueContent() {
   const searchParams = useSearchParams();
   const providerParam = searchParams.get("provider") || "";
   const nameParam = searchParams.get("name") || "";
@@ -171,5 +171,13 @@ export default function ReportIssuePage() {
         </button>
       </form>
     </div>
+  );
+}
+
+export default function ReportIssuePage() {
+  return (
+    <React.Suspense fallback={<div>Loading...</div>}>
+      <ReportIssueContent />
+    </React.Suspense>
   );
 }
