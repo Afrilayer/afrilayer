@@ -69,7 +69,7 @@ export function Header() {
 
             <Link
               href="/contribute"
-              className="inline-flex items-center gap-1.5 pl-3 pr-4 py-1.5 rounded-full text-xs font-mono bg-primary text-bg hover:bg-primary-hover transition-colors"
+              className="inline-flex items-center gap-1.5 pl-3 pr-4 py-1.5 rounded-full text-xs font-mono bg-black text-white border border-border hover:bg-gray-800 transition-colors"
             >
               <Plus size={12} />
               Contribute
@@ -110,7 +110,7 @@ export function Header() {
                 ))}
                 <Link
                   href="/contribute"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono text-primary"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono bg-black text-white border border-border hover:bg-gray-800 transition-colors px-3 py-1.5 rounded-full"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Plus size={12} />

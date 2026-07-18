@@ -164,7 +164,7 @@ function ReportIssueContent() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono bg-copper text-white hover:bg-amber disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono bg-text text-bg hover:bg-text/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           <Send size={14} />
           {isSubmitting ? "Submitting..." : "Submit Report"}

@@ -198,7 +198,7 @@ export default function ContributePage() {
           
           <button
             type="submit"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono bg-copper text-white hover:bg-amber transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-mono bg-text text-bg hover:bg-text/90 transition-colors"
           >
             Submit Report
           </button>
