@@ -88,7 +88,7 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
             <p className="text-xs mt-0.5 font-mono text-text-muted flex items-center gap-1">
               {api.provider}
               {api.verification?.verified && (
-                <VerificationBadge level={api.verification.level} size={12} />
+                <VerificationBadge level={api.verification.level} size={10} />
               )}
             </p>
           </div>

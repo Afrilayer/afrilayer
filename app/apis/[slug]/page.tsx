@@ -89,7 +89,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
             <h1 className="text-3xl font-bold tracking-tight text-text flex items-center gap-2">
               {provider.name} API
               {provider.verification?.verified && (
-                <VerificationBadge level={provider.verification.level} size={22} />
+                <VerificationBadge level={provider.verification.level} size={16} />
               )}
             </h1>
           </div>

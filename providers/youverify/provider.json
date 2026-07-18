@@ -3,10 +3,10 @@
   "name": "Youverify",
   "tagline": "Identity and compliance verification for Africa.",
   "description": "Youverify provides KYC and compliance verification APIs for African businesses, supporting identity verification, document validation, and background checks.",
-  "website": "https://youverify.ai",
-  "documentation": "https://docs.youverify.ai",
-  "developerPortal": "https://youverify.ai",
-  "supportEmail": "support@youverify.ai",
+  "website": "https://youverify.co",
+  "documentation": "https://doc.youverify.co/",
+  "developerPortal": "https://youverify.co/en/developers",
+  "supportEmail": "support@youverify.co",
   "headquarters": "Nigeria",
   "categories": [
     "Identity",
@@ -37,7 +37,7 @@
     "PHP",
     "Ruby"
   ],
-  "openapiSpec": "https://docs.youverify.ai/openapi.json",
+  "openapiSpec": "https://doc.youverify.co/openapi.json",
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
@@ -50,5 +50,5 @@
       "role": "Co-founder & CEO"
     }
   ],
-  "logoUrl": "https://logo.clearbit.com/youverify.ai"
+  "logoUrl": "https://youverify.co/assets/logos/logo.svg"
 }

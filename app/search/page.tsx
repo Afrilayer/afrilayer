@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Search as SearchIcon, TrendingUp } from 'lucide-react';
-import { VerificationBadge } from '@/components/ui';
+import { VerificationBadge, ProviderLogo } from '@/components/ui';
 import type { Provider } from '@/lib/types';
 
 // Trending providers - most searched/popular APIs
@@ -97,10 +97,15 @@ export default function SearchPage() {
               <div className="flex items-start justify-between">
                   <div>
                     <h2 className="text-xl font-semibold text-text hover:text-clay transition-colors flex items-center gap-1.5">
-                      {result.name}
-                      {result.verification?.verified && (
-                        <VerificationBadge level={result.verification.level} size={18} />
-                      )}
+                      <span className="flex items-center gap-2">
+                        <ProviderLogo provider={result} size={22} className="w-6 h-6 rounded-sm" />
+                        <span className="flex items-center gap-1">
+                          {result.name}
+                          {result.verification?.verified && (
+                            <VerificationBadge level={result.verification.level} size={10} />
+                          )}
+                        </span>
+                      </span>
                     </h2>
                   <p className="mt-1 text-sm text-muted">
                     {result.categories[0]}
@@ -170,9 +175,13 @@ function TrendingSection({ providers }: { providers: Provider[] }) {
           <Link
             key={provider.slug}
             href={`/apis/${provider.slug}`}
-            className="px-3 py-1.5 text-xs font-mono rounded-md bg-surface border border-border text-muted hover:text-text hover:border-clay transition-colors"
+            className="px-3 py-1.5 text-xs font-mono rounded-md bg-surface border border-border text-muted hover:text-text hover:border-clay transition-colors inline-flex items-center gap-1.5"
           >
+            <ProviderLogo provider={provider} size={14} className="w-3.5 h-3.5 rounded-sm" />
             {provider.name}
+            {provider.verification?.verified && (
+              <VerificationBadge level={provider.verification.level} size={10} />
+            )}
           </Link>
         ))}
       </div>

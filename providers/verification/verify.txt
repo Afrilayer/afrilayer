@@ -3,6 +3,7 @@ Afrilayer Provider Verification
 paystack: cv
 flutterwave: pv
 mono: cv
+youverify: cv
 okra: pv
 termii: cv
 kwik: cv
