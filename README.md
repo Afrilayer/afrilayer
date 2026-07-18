@@ -7,7 +7,7 @@ Africa's API Infrastructure Platform — discover, compare, and evaluate trusted
 ## Features
 
 - **Provider Directory**: Discover African API providers with logos and verification badges
-- **Verification Badges**: Community Verified and Provider Verified indicators with sunburst checkmarks
+- **Verification Badges**: Community Verified and Provider Verified indicators with circular checkmark icons
 - **Key People**: Founders and CEOs information for each provider with GitHub links
 - **API Verification**: Confidence indicators with verification dates
 - **Multi-language Code Samples**: curl, JavaScript, Python, Go examples
