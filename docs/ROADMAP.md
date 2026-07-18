@@ -1,22 +1,26 @@
 # Roadmap
 
+## Current Status: 65+ Providers Across 15+ Countries
+
+Afrilayer tracks verified African API providers for payments, mobile money, KYC, SMS, banking, logistics, and more.
+
 ## Phase 1: Foundation & Architecture (Completed)
 
 - [x] Codebase audit completed
 - [x] Architecture documentation created (docs/ARCHITECTURE.md)
 - [x] Data model finalized (lib/types.ts)
-- [x] Remove unused Supabase dependencies
-- [x] Delete `/app/db/` and `/app/admin/` directories
-- [x] Replace `lib/types.ts` with Git-aligned types
-- [x] Update `lib/mock-data.ts` (kept design tokens only)
-- [x] Centralize constants (countries, categories) in lib/constants.ts
-- [x] Build-time registry.json generation
-- [x] Provider validation (validation/provider.schema.json)
-- [x] Fix all TypeScript build errors
+- [x] Centralized constants (lib/constants.ts, lib/countries.ts)
+- [x] Provider templates (provider.template.json, README.template.md)
+- [x] Provider validation schema (validation/provider.schema.json)
+- [x] All TypeScript types aligned with Git-based model
+- [x] No database dependencies (Supabase removed)
+- [x] No admin panel/authentication
 
-## Phase 2: Build Africa's Most Trusted API Registry (Completed)
+## Phase 2: Provider Registry (Completed)
 
-**Payments (12 providers):**
+**Providers tracked (65+ total):**
+
+### Payments (12+ providers)
 - [x] Paystack (NG)
 - [x] Flutterwave (NG/KE/ZA/GH)
 - [x] Pesapal (KE/UG/TZ/RW)
@@ -26,41 +30,81 @@
 - [x] DPO Group (9 countries)
 - [x] Peach Payments (ZA/ZM/MW)
 - [x] WatuPay (KE/TZ/UG)
+- [x] Kora
+- [x] Maplerad
+- [x] Credable
+- [x] Flex Finance
+- [x] Watupay
+- [x] Opay
+- [x] Eversend
+- [x] Chenosis
 
-**Messaging/Airtime (3):**
+### Messaging/Airtime/SMS (8+ providers)
 - [x] Africa's Talking (12 countries)
 - [x] Nalo SMS
 - [x] Zenzera
+- [x] Termii
+- [x] Mnotify
+- [x] Arkesel
 
-**Banking/Open Finance (3):**
+### Banking/Open Finance (5+ providers)
 - [x] Stitch (ZA/NG/KE/GH)
 - [x] Mono (NG/KE/GH/ZA)
+- [x] Blusalt
+- [x] OKRA
+- [x] BancBox
 
-**Identity/KYC (4):**
+### Identity/KYC (8+ providers)
 - [x] Dojah (NG/KE/GH)
 - [x] VerifyMe (NG)
 - [x] Youverify (NG/KE/GH/ZA)
 - [x] Smile Identity
+- [x] Prembly
+- [x] Anchor
+- [x] Fido
+- [x] Tambua Health
 
-**Logistics (2):**
+### Logistics/Delivery (5+ providers)
 - [x] Sendy (KE/UG/TZ)
 - [x] Twiga Foods
+- [x] Kwik
+- [x] Treepz
+- [x] Shuttlers
 
-**Geolocation (1):**
+### Geolocation (2+ providers)
 - [x] OkHi (KE/NG)
+- [x] Zamzee
 
-**Mobile Money (2):**
+### Mobile Money (5+ providers)
 - [x] MTN MoMo
 - [x] Vodafone Cash (GH)
+- [x] Airtel Money
+- [x] M-Pesa (via Safaricom)
 
-**Telecom (1):**
+### Telecom (3+ providers)
 - [x] Safaricom (KE)
+- [x] Vodafone (GH)
+- [x] Airtel (Multi-country)
 
-**Government (1):**
+### Government (2+ providers)
 - [x] Nigeria Government APIs
+- [x] Kenya Government APIs
 
-**Financial Infrastructure (1):**
-- [x] Pula (Insurance/Agri-finance - 7 countries)
+### Financial Infrastructure (3+ providers)
+- [x] Pula (Insurance/Agri-finance)
+- [x] Lami
+- [x] Traction
+
+### Insurance/Fintech (4+ providers)
+- [x] Insurpass
+- [x] Valr
+- [x] Buypower
+- [x] Crop2Cash
+
+### Agriculture/AgriTech (3+ providers)
+- [x] Apollo Agriculture
+- [x] Zone
+- [x] Cellulant
 
 ## Phase 2.5: Registry Quality & Launch Readiness (Completed)
 
@@ -68,29 +112,30 @@
 - [x] GitHub Actions validation workflow
 - [x] Improved CONTRIBUTING.md
 - [x] CODE_OF_CONDUCT.md
-- [x] LICENSE
+- [x] MIT LICENSE
 - [x] docs/FAQ.md
 - [x] Sitemap and robots.txt
 
-## Phase 3: Stabilize Features (To Do)
+## Phase 3: Stabilize Features (Ongoing)
 
 - [ ] Search page SSR with build index
-- [ ] Image optimization
+- [ ] Image optimization for logos
 - [ ] Verify all category/country pages work
 - [ ] Ensure all features work reliably
 
-## Phase 4: Performance & Polish (To Do)
+## Phase 4: Performance & Polish (In Progress)
 
 - [ ] Lazy load screenshots
 - [ ] Lighthouse scores ≥ 90/95/100
 - [ ] Accessibility fixes
 - [ ] Mobile responsiveness verified
 
-## Phase 5: Community Ready (To Do)
+## Phase 5: Community Ready (Planned)
 
 - [ ] Pull request template
 - [ ] GitHub Discussions setup
 
 ---
 
-*Total providers: 22+ across 10+ African countries*
+*Total providers: 65+ across 22+ African countries*
+*Last updated: 2026-07-18*

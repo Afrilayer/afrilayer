@@ -20,7 +20,7 @@
 4. **Do not redesign unless explicitly requested.**
    - Preserve Afrilayer branding and color scheme
    - Audit for consistency, but defer visual changes
-   - Use existing design tokens from `lib/mock-data.ts`
+   - Use existing design system from Tailwind CSS and component styles
 
 ## Provider Data Rules
 
@@ -71,4 +71,4 @@
 
 ---
 
-*Last updated: 2026-07-15*
+*Last updated: 2026-07-18*

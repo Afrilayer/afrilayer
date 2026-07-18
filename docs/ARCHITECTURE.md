@@ -39,6 +39,13 @@ This index enables:
 lib/data.ts            getAllProviderData()
       │
       ▼
+providers/verification/
+    verify.txt ───────────────► loadVerificationData()
+                                       │
+                                       ▼
+                               Verification badge injection
+                                       │
+                                       ▼
 UI Components ──► Routes (apis/[slug], search, categories, countries)
 ```
 
@@ -52,3 +59,12 @@ UI Components ──► Routes (apis/[slug], search, categories, countries)
 ## Provider Object Model
 
 All UI pages consume a unified `Provider` object from the provider loader, ensuring future storage migrations won't require UI rewrites.
+
+### Verification Layer
+
+Verification data is loaded separately in `lib/providers/verification.ts` and merged into provider objects at runtime:
+
+- `cv` = Community Verified
+- `pv` = Provider Verified
+
+This keeps provider data clean while adding trust signals.

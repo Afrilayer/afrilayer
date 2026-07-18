@@ -1,112 +1,100 @@
 # Codebase Audit
 
-Generated: 2026-07-15
+Generated: 2026-07-18
 
 ## Project Overview
 
 Afrilayer is a Next.js 15 static-site application functioning as a Git-based registry of African digital infrastructure providers.
 
-## Folder Structure Audit
+## Current Scale
+
+- **Providers:** 65+ directories in `/providers/`
+- **Categories:** 22+ categories defined in `lib/constants.ts`
+- **Countries:** 22+ countries defined in `lib/countries.ts`
+- **Verification entries:** 8 providers listed in `providers/verification/verify.txt`
+
+## Project Structure
 
 ```
 afrilayer/
 ├── app/
 │   ├── page.tsx                 # Homepage - OK
-│   ├── layout.tsx                # Root layout - OK
-│   ├── globals.css               # Global styles - OK
-│   ├── providers/page.tsx        # DUPLICATE - Merge into /apis
-│   ├── apis/[slug]/page.tsx      # API detail page - OK (some unused imports)
-│   ├── categories/[slug]/page.tsx # Category filter - OK
-│   ├── countries/[code]/page.tsx   # Country filter - OK
-│   ├── search/page.tsx           # Search page - OK
-│   ├── changelog/page.tsx        # Changelog page - OK
-│   ├── contribute/page.tsx       # Contribute page - OK
-│   ├── admin/                    # DEAD - Remove (against no-admin principle)
-│   └── api/search-data/          # Will be replaced by build index
+│   ├── layout.tsx               # Root layout - OK
+│   ├── globals.css              # Global styles - OK
+│   ├── apis/[slug]/page.tsx     # API detail page - OK
+│   ├── categories/[slug]/page.tsx # Category filter page - OK
+│   ├── categories/page.tsx        # Category listing - OK
+│   ├── countries/[code]/page.tsx   # Country filter page - OK
+│   ├── countries/page.tsx          # Country listing - OK
+│   ├── search/page.tsx             # Search page - OK
+│   ├── changelog/page.tsx          # Changelog page - OK
+│   ├── contribute/                 # Contribute pages - OK
+│   └── api/                        # API routes (logos, search-data, changelog-data)
 ├── components/
 │   ├── layout/
 │   │   ├── Header.tsx            # OK
 │   │   └── Footer.tsx            # OK
 │   └── ui/
-│       ├── Badge.tsx            # OK
-│       ├── Button.tsx           # OK
-│       ├── Card.tsx             # OK
+│       ├── Badge.tsx             # OK
+│       ├── Button.tsx            # OK
+│       ├── Card.tsx              # OK
 │       ├── ConfidenceIndicator.tsx # OK
-│       ├── CountryFlag.tsx        # OK
-│       ├── DocPreview.tsx         # OK
-│       ├── QuickFacts.tsx         # Needs inline hover handler cleanup
-│       ├── SimilarApisTable.tsx   # OK
-│       └── ... (other components)
+│       ├── CountryFlag.tsx         # OK
+│       ├── DocPreview.tsx          # OK
+│       ├── QuickFacts.tsx          # OK
+│       ├── SimilarApisTable.tsx    # OK
+│       ├── Stamp.tsx               # OK
+│       ├── HeroDashboard.tsx         # OK
+│       └── LiveVerificationFeed.tsx  # OK
 ├── lib/
 │   ├── providers/
 │   │   ├── loader.ts              # OK - Core loader
-│   │   └── index.ts               # OK - Barrel export
+│   │   ├── verification.ts          # OK - Verification handler
+│   │   ├── similarity.ts            # OK - Similar provider calculation
+│   │   └── index.ts                 # OK - Barrel export
 │   ├── data.ts                    # OK - Data layer abstraction
-│   ├── mock-data.ts               # DEAD - Contains hardcoded APIS[] array
-│   ├── stats.ts                   # OK
-│   ├── types.ts                   # DEAD - Database-style types, doesn't match Git model
-│   └── utils.ts                   # TBD - needs audit
+│   ├── types.ts                   # OK - Git-native types
+│   ├── constants.ts               # OK - Category/country constants
+│   ├── countries.ts               # OK - Country metadata
+│   ├── stats.ts                   # OK - Statistics calculation
+│   └── utils.ts                   # OK - Utility functions
 ├── providers/
-│   ├── paystack/provider.json     # OK
-│   ├── flutterwave/provider.json  # OK
-│   ├── hubtel/provider.json       # OK
-│   ├── mtn-momo/provider.json     # OK
-│   ├── nalo-sms/provider.json     # OK
-│   ├── dojah/provider.json        # OK
-│   ├── smile-identity/provider.json # OK
-│   └── prembly/provider.json      # OK
+│   ├── {provider-slug}/           # 65+ provider folders
+│   │   ├── provider.json          # Required
+│   │   ├── README.md              # Required
+│   │   ├── api.json (optional)    # 8 providers have this
+│   │   └── logo.svg (optional)    # 6 providers have this
+│   ├── verification/
+│   │   └── verify.txt               # Verification metadata
+│   ├── provider.template.json       # Template
+│   └── README.template.md           # Template
+├── scripts/
+│   └── validate.ts                  # Provider validation
+├── validation/
+│   └── provider.schema.json           # JSON schema
 └── public/
-    └── ...                        # OK
+    └── generated/                   # Auto-generated at build
 ```
 
-## Technical Debt
+## Technical Health
 
-### High Priority (Must Fix)
+### Dependencies
 
-| File | Issue | Recommendation |
-|------|-------|----------------|
-| `package.json` | `@supabase/ssr`, `@supabase/supabase-js` installed but unused | Remove dependencies |
-| `afrilayer/app/db/` | Database schemas that violate no-database principle | Delete directory |
-| `afrilayer/app/admin/` | Admin routes against architectural rules | Delete directory |
-| `lib/types.ts` | Database-style types (AfriProvider, AfriApi, etc.) | Replace with Git-aligned types |
-| `lib/mock-data.ts` | Hardcoded `APIS[]` array duplicates filesystem data | Delete |
-| `app/providers/page.tsx` | Duplicates `/apis` functionality | Remove or redirect |
+All dependencies are actively used:
+- Next.js 15 with React 18
+- Tailwind CSS for styling
+- TypeScript for type safety
+- No database dependencies
+- No admin/authentication libraries
 
-### Medium Priority (Should Fix)
+### Key Features
 
-| File | Issue | Recommendation |
-|------|-------|----------------|
-| `app/apis/[slug]/page.tsx` | Inline style hover handlers in QuickFacts | Replace with Tailwind |
-| Multiple files | Hardcoded `COUNTRY_TO_CODE`, `CATEGORY_TO_SLUG` maps | Centralize in `lib/constants.ts` |
-| `lib/logo/` | Exists but unused | Audit and remove if dead |
-| `app/api/search-data/route.ts` | Will be replaced by build index | Mark for deletion |
+- Static site generation with ISR (1 hour revalidation)
+- Provider data loaded from filesystem
+- Verification layer separate from provider data
+- Similar providers calculated by category overlap
+- Search functionality on search page
 
-### Low Priority (Nice to Have)
+---
 
-| File | Issue | Recommendation |
-|------|-------|----------------|
-| `components/ui/QuickFacts.tsx` | Inline onMouseEnter/Leave style manipulation | Replace with CSS |
-| `components/ui/LiveVerificationFeed.tsx` | Heavy client component | Evaluate |
-| `next.config.ts` | May need optimization rules | Review |
-
-## Dead Routes
-
-- `/admin/*` — Remove entirely
-- `/providers` — Merge into `/` or redirect
-
-## Unused Assets
-
-- `public/apple-touch-icon.png` — Used
-- `public/vercel.svg` — Likely unused
-- `public/globe.svg` — Used?
-- `public/window.svg` — Likely unused
-
-## Broken Imports
-
-- None detected during audit pass
-
-## Duplicate Logic
-
-- `COUNTRY_TO_CODE` mapping in `app/apis/[slug]/page.tsx` and `lib/stats.ts`
-- Category enum in `lib/mock-data.ts` and inline maps
-- `loadProviderJson` abstraction but also `getAllApis` with different data path
+*Next audit recommended: 2026-10-18*
