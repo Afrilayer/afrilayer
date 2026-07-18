@@ -14,8 +14,8 @@ const VERIFICATION_MESSAGES: Record<VerificationLevel, string> = {
   provider: 'Provider Verified — This provider has confirmed their information directly.',
 };
 
-// Starburst/sunburst badge with checkmark
-function StarburstBadge({ size, fillColor }: { size: number; fillColor: string }) {
+// Circle with 6 sunburst edges and checkmark
+function SunburstBadge({ size, fillColor }: { size: number; fillColor: string }) {
   return (
     <svg
       width={size}
@@ -25,9 +25,9 @@ function StarburstBadge({ size, fillColor }: { size: number; fillColor: string }
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      {/* Sunburst shape */}
+      {/* Circle with 6 sunburst edges */}
       <path
-        d="M12 2L13.8 7.2L18.8 4.2L16.6 9.4L22 8.2L18.2 12.6L23.4 12.4L19 15.8L22.6 19.8L17.8 18.2L19.4 24H13.8L12 18.8L10.2 24H4.6L6.2 18.2L1.4 19.8L5 15.8L0.6 12.4L5.8 12.6L2 8.2L7.4 9.4L5.2 4.2L10.2 7.2L12 2Z"
+        d="M22 12L19.5 15.5L17 20L12 22L7 20L4.5 15.5L2 12L4.5 8.5L7 4L12 2L17 4L19.5 8.5Z"
         fill={fillColor}
       />
       {/* White checkmark */}
@@ -58,7 +58,7 @@ export const VerificationBadge: React.FC<VerificationBadgeProps> = ({
       role="img"
       aria-label={message}
     >
-      <StarburstBadge size={size} fillColor={fillColor} />
+      <SunburstBadge size={size} fillColor={fillColor} />
     </span>
   );
 };
