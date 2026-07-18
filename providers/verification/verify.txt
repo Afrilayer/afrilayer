@@ -4,8 +4,6 @@ paystack: cv
 flutterwave: pv
 mono: cv
 okra: pv
-blusalt: cv
-buypower: cv
 termii: cv
 kwik: cv
 africas-talking: pv
