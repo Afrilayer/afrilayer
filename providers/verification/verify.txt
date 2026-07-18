@@ -1,10 +1,10 @@
 Afrilayer Provider Verification
 
 paystack: cv
-flutterwave: pv
+flutterwave: cv
 mono: cv
 youverify: cv
-okra: pv
+okra: cv
 termii: cv
 kwik: cv
-africas-talking: pv
+africas-talking: cv
