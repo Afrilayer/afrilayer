@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-16T15:05:17.563Z",
+  "generatedAt": "2026-07-18T06:01:40.681Z",
   "counts": {
-    "providers": 56,
-    "countries": 20,
+    "providers": 63,
+    "countries": 21,
     "categories": 20,
-    "apis": 56
+    "apis": 63
   },
   "countries": [
     "Nigeria",
@@ -26,13 +26,14 @@
     "Cameroon",
     "Mali",
     "Burkina Faso",
+    "CÃƒÂ´te d'Ivoire",
     "Zimbabwe"
   ],
   "categories": [
     {
       "slug": "messaging",
       "name": "Messaging",
-      "count": 7
+      "count": 6
     },
     {
       "slug": "airtime",
@@ -42,7 +43,7 @@
     {
       "slug": "payments",
       "name": "Payments",
-      "count": 25
+      "count": 27
     },
     {
       "slug": "banking",
@@ -57,22 +58,22 @@
     {
       "slug": "sms",
       "name": "SMS",
-      "count": 5
+      "count": 6
     },
     {
       "slug": "identity",
       "name": "Identity",
-      "count": 3
+      "count": 4
     },
     {
       "slug": "kyc",
       "name": "KYC",
-      "count": 4
+      "count": 6
     },
     {
       "slug": "mobile-money",
       "name": "Mobile Money",
-      "count": 6
+      "count": 9
     },
     {
       "slug": "developer-tools",
@@ -164,7 +165,11 @@
         "Payments"
       ],
       "description": "Africa's Talking provides APIs for SMS, voice, airtime, payments, and more across African telecom networks. A unified platform for building communication solutions.",
-      "logoUrl": "/api/logos/africas-talking"
+      "logoUrl": "https://res.cloudinary.com/postman/image/upload/t_team_logo/v1629974255/team/3fb08d3810fc2e0e9ae21e47af87fe296113ef038b4479bc7d11909aa425eeb1",
+      "verification": {
+        "verified": true,
+        "level": "provider"
+      }
     },
     {
       "slug": "anchor",
@@ -186,7 +191,7 @@
         "Card issuance"
       ],
       "description": "Anchor provides a Banking-as-a-Service API that enables businesses to build and embed financial products for their customers, including accounts, payments, and savings.",
-      "logoUrl": "/api/logos/anchor"
+      "logoUrl": "https://logo.clearbit.com/anchor.money"
     },
     {
       "slug": "apollo-agriculture",
@@ -221,7 +226,7 @@
       "countries": [
         "Ghana"
       ],
-      "lastVerified": "2026-07-22",
+      "lastVerified": "2026-07-17",
       "features": [
         "SMS messaging",
         "Voice calls",
@@ -230,7 +235,7 @@
         "Bulk SMS"
       ],
       "description": "Arkesel provides SMS, voice, and communication APIs for businesses to reach customers across Ghana and West Africa.",
-      "logoUrl": "/api/logos/arkesel"
+      "logoUrl": "https://logo.clearbit.com/arkesel.com"
     },
     {
       "slug": "blusalt",
@@ -251,27 +256,7 @@
         "AML screening"
       ],
       "description": "Blusalt provides digital identity and verification APIs for businesses to authenticate users and verify identities across African markets.",
-      "logoUrl": "/api/logos/blusalt"
-    },
-    {
-      "slug": "buypower",
-      "name": "BuyPower",
-      "status": "Live",
-      "categories": [
-        "Payments"
-      ],
-      "countries": [
-        "Nigeria"
-      ],
-      "lastVerified": "2026-07-22",
-      "features": [
-        "Electricity payment",
-        "Utility bills",
-        "Bill verification",
-        "Automated top-up"
-      ],
-      "description": "BuyPower provides an API for purchasing electricity units and paying utility bills in Nigeria. Enables seamless bill payments for businesses and consumers.",
-      "logoUrl": "/providers/buypower/logo.svg"
+      "logoUrl": "https://logo.clearbit.com/blusalt.net"
     },
     {
       "slug": "cellulant",
@@ -304,29 +289,7 @@
         "Multi-country payouts"
       ],
       "description": "Cellulant is a leading African payments company providing merchant acquiring, payment aggregation, and value-added services across 12 African countries. Their API enables businesses to accept payments across multiple channels.",
-      "logoUrl": "/api/logos/cellulant"
-    },
-    {
-      "slug": "chatdesk",
-      "name": "Chatdesk",
-      "status": "Live",
-      "categories": [
-        "Messaging",
-        "SMS"
-      ],
-      "countries": [
-        "Nigeria",
-        "Ghana"
-      ],
-      "lastVerified": "2026-07-22",
-      "features": [
-        "WhatsApp messaging",
-        "SMS",
-        "Social media integration",
-        "Live chat"
-      ],
-      "description": "Chatdesk provides customer messaging and communication APIs for businesses to engage with customers via multiple channels including WhatsApp, SMS, and social media.",
-      "logoUrl": "/api/logos/chatdesk"
+      "logoUrl": "https://logo.clearbit.com/cellulant.io"
     },
     {
       "slug": "chenosis",
@@ -356,7 +319,7 @@
         "USSD APIs"
       ],
       "description": "Chenosis is MTN Group's API marketplace providing access to telecommunications, fintech, and enterprise APIs across African markets. Enables developers to integrate with MTN services.",
-      "logoUrl": "/api/logos/chenosis"
+      "logoUrl": "https://logo.clearbit.com/chenosis.com"
     },
     {
       "slug": "cinetpay",
@@ -381,7 +344,7 @@
         "International transfers"
       ],
       "description": "CinetPay is a payment gateway offering mobile money, card payments, and airtime services across Francophone Africa including Côte d'Ivoire, Senegal, Mali, and Burkina Faso.",
-      "logoUrl": "/api/logos/cinetpay"
+      "logoUrl": "https://logo.clearbit.com/cinetpay.com"
     },
     {
       "slug": "credable",
@@ -403,7 +366,7 @@
         "Digital wallets"
       ],
       "description": "Credable provides embedded finance infrastructure that enables businesses to offer financial services including payments, savings, and credit to their customers.",
-      "logoUrl": "/api/logos/credable"
+      "logoUrl": "https://logo.clearbit.com/credable.io"
     },
     {
       "slug": "crop2cash",
@@ -426,6 +389,28 @@
       ],
       "description": "Crop2Cash provides agricultural finance and supply chain APIs that connect farmers to financial services, input suppliers, and markets across Nigeria.",
       "logoUrl": "/providers/crop2cash/logo.svg"
+    },
+    {
+      "slug": "dojah",
+      "name": "Dojah",
+      "status": "Live",
+      "categories": [
+        "KYC"
+      ],
+      "countries": [
+        "Nigeria",
+        "Kenya",
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-14",
+      "features": [
+        "BVN verification",
+        "NIN lookup",
+        "Document verification",
+        "Identity checks"
+      ],
+      "description": "Identity verification, BVN/NIN lookups and document checks for onboarding flows. Secure KYC and identity verification APIs for Africa.",
+      "logoUrl": "/providers/dojah/logo.svg"
     },
     {
       "slug": "dpo-group",
@@ -454,7 +439,7 @@
         "Fraud protection"
       ],
       "description": "DPO Group provides payment gateway services across 18 African countries, enabling businesses to accept payments via card, mobile money, and bank transfer.",
-      "logoUrl": "/api/logos/dpo-group"
+      "logoUrl": "https://logo.clearbit.com/dpogroup.com"
     },
     {
       "slug": "dusupay",
@@ -502,7 +487,7 @@
         "Business accounts"
       ],
       "description": "Eversend provides multi-currency wallets, virtual cards, and payment APIs for businesses and individuals across Africa. Their API supports remittances and business payouts.",
-      "logoUrl": "/api/logos/eversend"
+      "logoUrl": "https://logo.clearbit.com/eversend.com"
     },
     {
       "slug": "fido",
@@ -525,7 +510,7 @@
         "Identity verification"
       ],
       "description": "Fido provides credit scoring and lending infrastructure APIs that help financial institutions assess creditworthiness and provide digital lending solutions.",
-      "logoUrl": "/api/logos/fido"
+      "logoUrl": "https://logo.clearbit.com/fidocredit.com"
     },
     {
       "slug": "fincra",
@@ -550,7 +535,7 @@
         "FX exchange"
       ],
       "description": "Fincra provides payment infrastructure and APIs for businesses to accept payments, send payouts, and manage financial operations across Africa through a single integration.",
-      "logoUrl": "/api/logos/fincra"
+      "logoUrl": "https://logo.clearbit.com/fincra.com"
     },
     {
       "slug": "flex-finance",
@@ -571,7 +556,58 @@
         "Financial data"
       ],
       "description": "Flex Finance provides digital lending and financial services APIs that enable businesses to offer credit products and manage financial operations.",
-      "logoUrl": "/api/logos/flex-finance"
+      "logoUrl": "https://logo.clearbit.com/flexfinance.ng"
+    },
+    {
+      "slug": "flutterwave",
+      "name": "Flutterwave",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "Nigeria",
+        "Ghana",
+        "Kenya",
+        "South Africa",
+        "Uganda",
+        "Tanzania"
+      ],
+      "lastVerified": "2026-07-08",
+      "features": [
+        "Card payments",
+        "Mobile money",
+        "Bank transfers",
+        "Payouts",
+        "Multi-currency support"
+      ],
+      "description": "Flutterwave provides a unified payments API covering cards, mobile money, bank transfers and payouts across Africa. Accept payments, send payouts, and manage transactions from one integration.",
+      "logoUrl": "/providers/flutterwave/logo.svg",
+      "verification": {
+        "verified": true,
+        "level": "provider"
+      }
+    },
+    {
+      "slug": "hubtel",
+      "name": "Hubtel",
+      "status": "Live",
+      "categories": [
+        "Mobile Money",
+        "SMS"
+      ],
+      "countries": [
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-11",
+      "features": [
+        "Mobile money",
+        "SMS messaging",
+        "Collections",
+        "Payouts"
+      ],
+      "description": "Ghana-focused mobile money and SMS API for collections, payouts and messaging. Send and receive mobile money, send SMS to any Ghanaian number.",
+      "logoUrl": "/providers/hubtel/logo.svg"
     },
     {
       "slug": "insurpass",
@@ -614,7 +650,7 @@
         "Merchant services"
       ],
       "description": "Interswitch provides APIs for payment processing, merchant services, and financial infrastructure across Nigeria and West Africa.",
-      "logoUrl": "/api/logos/interswitch"
+      "logoUrl": "https://logo.clearbit.com/interswitchgroup.com"
     },
     {
       "slug": "kora",
@@ -638,7 +674,7 @@
         "Payouts"
       ],
       "description": "Kora (formerly Korapay) provides payment infrastructure that enables businesses to accept payments, send payouts, and manage financial operations across Africa through a single integration.",
-      "logoUrl": "/api/logos/kora"
+      "logoUrl": "https://logo.clearbit.com/kora.com"
     },
     {
       "slug": "kwik",
@@ -651,7 +687,7 @@
         "Nigeria",
         "Kenya"
       ],
-      "lastVerified": "2026-07-22",
+      "lastVerified": "2026-07-17",
       "features": [
         "Delivery tracking",
         "Route optimization",
@@ -659,7 +695,11 @@
         "Fleet management"
       ],
       "description": "Kwik provides logistics and delivery APIs that enable businesses to integrate delivery services across Nigeria and Kenya.",
-      "logoUrl": "/api/logos/kwik"
+      "logoUrl": "https://pbs.twimg.com/profile_images/1386117464870825992/0t9b_rGJ_400x400.jpg",
+      "verification": {
+        "verified": true,
+        "level": "community"
+      }
     },
     {
       "slug": "lami",
@@ -704,7 +744,7 @@
         "Collections"
       ],
       "description": "Maplerad provides payment orchestration APIs and virtual account infrastructure for businesses to accept payments and automate payouts across Africa.",
-      "logoUrl": "/api/logos/maplerad"
+      "logoUrl": "https://logo.clearbit.com/maplerad.com"
     },
     {
       "slug": "mnotify",
@@ -725,7 +765,7 @@
         "Delivery reports"
       ],
       "description": "mNotify provides SMS messaging and communication APIs for businesses to reach customers in Ghana.",
-      "logoUrl": "/api/logos/mnotify"
+      "logoUrl": "https://logo.clearbit.com/mnotify.com.gh"
     },
     {
       "slug": "mono",
@@ -749,7 +789,56 @@
         "Payments initiation"
       ],
       "description": "Mono provides open banking infrastructure that enables African businesses to access customer financial data and initiate payments through secure APIs.",
-      "logoUrl": "/api/logos/mono"
+      "logoUrl": "https://nigerialogos.com/logos/mono/mono.svg",
+      "verification": {
+        "verified": true,
+        "level": "community"
+      }
+    },
+    {
+      "slug": "mtn-momo",
+      "name": "MTN Group",
+      "status": "Live",
+      "categories": [
+        "Mobile Money"
+      ],
+      "countries": [
+        "Ghana",
+        "Uganda",
+        "CÃƒÂ´te d'Ivoire",
+        "Zambia",
+        "Cameroon"
+      ],
+      "lastVerified": "2026-07-10",
+      "features": [
+        "Collections",
+        "Disbursements",
+        "Payment status",
+        "Webhook notifications"
+      ],
+      "description": "Integrate MTN Mobile Money for collections, disbursements and payment status across MTN markets. A leading telecommunications company with mobile money services across Africa.",
+      "logoUrl": "/providers/mtn-momo/logo.svg"
+    },
+    {
+      "slug": "nalo-sms",
+      "name": "Nalo Solutions",
+      "status": "Live",
+      "categories": [
+        "SMS"
+      ],
+      "countries": [
+        "Ghana",
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-10",
+      "features": [
+        "Bulk SMS",
+        "Delivery reports",
+        "Messaging",
+        "Two-way SMS"
+      ],
+      "description": "Bulk SMS and messaging API with delivery reports across West Africa. Send SMS via API to Ghanaian and Nigerian phone numbers.",
+      "logoUrl": "/providers/nalo-sms/logo.svg"
     },
     {
       "slug": "nigeria-gov",
@@ -769,7 +858,7 @@
         "Immigration services"
       ],
       "description": "Collection of official Nigerian government APIs including National Identity Management Commission (NIMC), Federal Inland Revenue Service (FIRS), and other public services.",
-      "logoUrl": "/api/logos/nigeria-gov"
+      "logoUrl": "https://logo.clearbit.com/gov.ng"
     },
     {
       "slug": "nimbasms",
@@ -790,7 +879,7 @@
         "Delivery reports"
       ],
       "description": "NimbaSMS provides SMS messaging APIs for businesses to reach customers in Nigeria.",
-      "logoUrl": "/api/logos/nimbasms"
+      "logoUrl": "https://logo.clearbit.com/nimbasms.com"
     },
     {
       "slug": "nomba",
@@ -834,7 +923,7 @@
         "GPS coordinates"
       ],
       "description": "OkHi provides digital addressing and location APIs for African businesses, solving the challenge of physical addresses through precise geolocation and address verification.",
-      "logoUrl": "/api/logos/okhi"
+      "logoUrl": "https://logo.clearbit.com/okhi.com"
     },
     {
       "slug": "okra",
@@ -856,7 +945,11 @@
         "Real-time callbacks"
       ],
       "description": "Okra provides Open Banking infrastructure that connects African financial institutions with third-party applications. Their API enables secure access to bank accounts, transactions, and income data across Nigeria and beyond.",
-      "logoUrl": "/api/logos/okra"
+      "logoUrl": "https://logo.clearbit.com/okra.com",
+      "verification": {
+        "verified": true,
+        "level": "provider"
+      }
     },
     {
       "slug": "onafriq",
@@ -889,7 +982,28 @@
         "Real-time settlement"
       ],
       "description": "Onafriq (formerly MFS Africa) operates a cross-border payments network connecting over 500 million mobile money users across Africa. Their API enables remittances, business payments, and financial inclusion solutions.",
-      "logoUrl": "/api/logos/onafriq"
+      "logoUrl": "https://logo.clearbit.com/onafriq.com"
+    },
+    {
+      "slug": "opay",
+      "name": "OPay",
+      "status": "Live",
+      "categories": [
+        "Payments",
+        "Mobile Money"
+      ],
+      "countries": [
+        "Nigeria"
+      ],
+      "lastVerified": "2026-07-16",
+      "features": [
+        "Money transfer",
+        "Bill payments",
+        "Airtime",
+        "QR payments"
+      ],
+      "description": "OPay provides APIs for payments, transfers, bill payments and airtime services across Nigeria and expanding African markets.",
+      "logoUrl": "https://logo.clearbit.com/opay.com"
     },
     {
       "slug": "ozow",
@@ -909,7 +1023,7 @@
         "Refunds"
       ],
       "description": "Ozow enables instant EFT payments for South African businesses, providing a simple API for real-time bank transfers without cards.",
-      "logoUrl": "/api/logos/ozow"
+      "logoUrl": "https://logo.clearbit.com/ozow.com"
     },
     {
       "slug": "pargo",
@@ -956,7 +1070,34 @@
         "Multi-wallet support"
       ],
       "description": "Pawapay provides an API for businesses to collect and send mobile money payments across multiple African markets through a single integration.",
-      "logoUrl": "/api/logos/pawapay"
+      "logoUrl": "https://logo.clearbit.com/pawapay.com"
+    },
+    {
+      "slug": "paystack",
+      "name": "Paystack",
+      "status": "Live",
+      "categories": [
+        "Payments"
+      ],
+      "countries": [
+        "Nigeria",
+        "Ghana",
+        "South Africa"
+      ],
+      "lastVerified": "2026-07-12",
+      "features": [
+        "Card payments",
+        "Bank transfers",
+        "Mobile money",
+        "Recurring billing",
+        "Split payments"
+      ],
+      "description": "Accept card, bank transfer and mobile money payments from customers across Africa with Paystack's simple, secure payments infrastructure.",
+      "logoUrl": "https://res.cloudinary.com/postman/image/upload/t_user_profile_300/v1651667182/user/mtplq1dc0uulqdlztixu.png",
+      "verification": {
+        "verified": true,
+        "level": "community"
+      }
     },
     {
       "slug": "peach-payments",
@@ -979,7 +1120,7 @@
         "Fraud management"
       ],
       "description": "Peach Payments provides secure payment gateway solutions for businesses across Southern Africa, supporting card payments, EFT, and alternative payment methods.",
-      "logoUrl": "/api/logos/peach-payments"
+      "logoUrl": "https://logo.clearbit.com/peachpayments.com"
     },
     {
       "slug": "pesapal",
@@ -1002,7 +1143,30 @@
         "Recurring payments"
       ],
       "description": "Pesapal provides a secure payment gateway for businesses in East Africa, enabling card payments, mobile money, and bank transfers through a unified API.",
-      "logoUrl": "/api/logos/pesapal"
+      "logoUrl": "https://logo.clearbit.com/pesapal.com"
+    },
+    {
+      "slug": "prembly",
+      "name": "Prembly",
+      "status": "Live",
+      "categories": [
+        "Identity"
+      ],
+      "countries": [
+        "Nigeria",
+        "Ghana",
+        "Kenya",
+        "South Africa"
+      ],
+      "lastVerified": "2026-07-09",
+      "features": [
+        "Document verification",
+        "Facial matching",
+        "AML checks",
+        "Identity verification"
+      ],
+      "description": "Document verification, facial matching and AML checks for financial services. Identity verification platform tailored for African markets.",
+      "logoUrl": "/providers/prembly/logo.svg"
     },
     {
       "slug": "pula",
@@ -1028,7 +1192,7 @@
         "Farmer enrollment"
       ],
       "description": "Pula provides insurance products and climate risk data APIs for farmers across Africa, enabling index-based insurance and agricultural finance solutions.",
-      "logoUrl": "/api/logos/pula"
+      "logoUrl": "https://logo.clearbit.com/pula.io"
     },
     {
       "slug": "safaricom",
@@ -1050,7 +1214,7 @@
         "USSD"
       ],
       "description": "Safaricom provides APIs for M-Pesa, SMS, voice, data, and other telecom services in Kenya.",
-      "logoUrl": "/api/logos/safaricom"
+      "logoUrl": "https://logo.clearbit.com/safaricom.co.ke"
     },
     {
       "slug": "sendy",
@@ -1072,7 +1236,7 @@
         "Multiple transporters"
       ],
       "description": "Sendy provides an API for businesses to streamline their logistics and delivery operations across East Africa, connecting to a network of transporters.",
-      "logoUrl": "/api/logos/sendy"
+      "logoUrl": "https://logo.clearbit.com/sendy.co.ke"
     },
     {
       "slug": "shuttlers",
@@ -1097,6 +1261,29 @@
       "logoUrl": "/providers/shuttlers/logo.svg"
     },
     {
+      "slug": "smile-identity",
+      "name": "Smile Identity",
+      "status": "Live",
+      "categories": [
+        "KYC"
+      ],
+      "countries": [
+        "Nigeria",
+        "Kenya",
+        "South Africa",
+        "Ghana"
+      ],
+      "lastVerified": "2026-07-14",
+      "features": [
+        "Selfie liveness",
+        "Document verification",
+        "AML screening",
+        "Biometric checks"
+      ],
+      "description": "Biometric KYC â€” selfie liveness, document verification and AML screening. Identity verification platform for African markets.",
+      "logoUrl": "/providers/smile-identity/logo.svg"
+    },
+    {
       "slug": "stitch",
       "name": "Stitch",
       "status": "Live",
@@ -1119,7 +1306,7 @@
         "Income insights"
       ],
       "description": "Stitch provides open finance infrastructure enabling businesses to access financial data and initiate payments across African markets through a single API.",
-      "logoUrl": "/api/logos/stitch"
+      "logoUrl": "https://logo.clearbit.com/stitch.money"
     },
     {
       "slug": "tambua-health",
@@ -1139,7 +1326,7 @@
         "Healthcare data"
       ],
       "description": "Tambua Health provides healthcare data APIs that enable digital health solutions including patient records, appointment scheduling, and insurance verification.",
-      "logoUrl": "/api/logos/tambua-health"
+      "logoUrl": "https://logo.clearbit.com/tambua.health"
     },
     {
       "slug": "termii",
@@ -1163,7 +1350,11 @@
         "Two-way messaging"
       ],
       "description": "Termii provides SMS, email, and communication APIs for businesses to engage with customers across Nigeria, Ghana, and Kenya.",
-      "logoUrl": "/api/logos/termii"
+      "logoUrl": "https://pbs.twimg.com/profile_images/2041416982604795904/4CgSgViS_400x400.png",
+      "verification": {
+        "verified": true,
+        "level": "community"
+      }
     },
     {
       "slug": "traction",
@@ -1185,7 +1376,7 @@
         "Collections"
       ],
       "description": "Traction provides financial infrastructure APIs that enable businesses to embed financial services including payments, lending, and financial management.",
-      "logoUrl": "/api/logos/traction"
+      "logoUrl": "https://logo.clearbit.com/traction.co"
     },
     {
       "slug": "treepz",
@@ -1229,7 +1420,7 @@
         "Delivery scheduling"
       ],
       "description": "Twiga Foods provides APIs for businesses to integrate with agricultural supply chain and food logistics across East Africa.",
-      "logoUrl": "/api/logos/twiga"
+      "logoUrl": "https://logo.clearbit.com/twiga.com"
     },
     {
       "slug": "valr",
@@ -1271,7 +1462,7 @@
         "Address verification"
       ],
       "description": "VerifyMe provides identity verification APIs for Nigerian businesses, enabling BVN, NIN, and document verification through simple REST endpoints.",
-      "logoUrl": "/api/logos/verifyme"
+      "logoUrl": "https://logo.clearbit.com/verifyme.ng"
     },
     {
       "slug": "vodafone-cash",
@@ -1291,7 +1482,7 @@
         "Transaction history"
       ],
       "description": "Vodafone Cash provides APIs for merchants to integrate mobile money payment collections, disbursements, and balance inquiries for Ghanaian customers.",
-      "logoUrl": "/api/logos/vodafone-cash"
+      "logoUrl": "https://logo.clearbit.com/vodafone.com.gh"
     },
     {
       "slug": "watupay",
@@ -1314,7 +1505,7 @@
         "Bank transfers"
       ],
       "description": "WatuPay provides API solutions for mobile money payments, bill payments, and financial services across East African markets.",
-      "logoUrl": "/api/logos/watupay"
+      "logoUrl": "https://logo.clearbit.com/watupay.com"
     },
     {
       "slug": "xend-finance",
@@ -1355,7 +1546,7 @@
         "QR payments"
       ],
       "description": "Yoco provides payment solutions for South African businesses, including card readers, online payments, and POS systems with developer APIs.",
-      "logoUrl": "/api/logos/yoco"
+      "logoUrl": "https://logo.clearbit.com/yoco.com"
     },
     {
       "slug": "youverify",
@@ -1381,7 +1572,11 @@
         "Background checks"
       ],
       "description": "Youverify provides KYC and compliance verification APIs for African businesses, supporting identity verification, document validation, and background checks.",
-      "logoUrl": "/api/logos/youverify"
+      "logoUrl": "https://youverify.co/assets/logos/logo.svg",
+      "verification": {
+        "verified": true,
+        "level": "community"
+      }
     },
     {
       "slug": "zenzera",
@@ -1405,7 +1600,7 @@
         "USSD gateway"
       ],
       "description": "Zenzera provides value-added services and telecom APIs for African markets, including SMS, voice, airtime, and mobile money integrations.",
-      "logoUrl": "/api/logos/zenzera"
+      "logoUrl": "https://logo.clearbit.com/zenzera.com"
     },
     {
       "slug": "zone",
