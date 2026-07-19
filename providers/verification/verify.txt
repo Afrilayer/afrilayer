@@ -11,3 +11,5 @@ yoco: cv
 opay: cv
 youverify: cv
 valr: cv
+paystack: cv
+flutterwave: cv
