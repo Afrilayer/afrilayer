@@ -7,3 +7,4 @@ watupay: cv
 xend-finance: cv
 bachs: cv
 africas-talking: cv
+yoco: cv
