@@ -22,10 +22,10 @@ export default async function CountriesPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-16">
-      <h1 className="text-3xl font-bold tracking-tight text-text">
+      <h1 className="text-3xl font-bold tracking-tight text-text font-serif">
         API coverage by country
       </h1>
-      <p className="mt-2 text-muted max-w-2xl">
+      <p className="mt-2 text-text-muted max-w-2xl">
         Discover verified APIs operating in African markets.
       </p>
 
@@ -40,7 +40,7 @@ export default async function CountriesPage() {
             <span className="text-sm font-medium text-text">
               {country.name}
             </span>
-            <span className="text-xs text-muted">
+            <span className="text-xs text-text-muted">
               {country.apiCount} verified APIs
             </span>
           </Link>
@@ -49,12 +49,12 @@ export default async function CountriesPage() {
 
       {/* Regions */}
       <div className="mt-16">
-        <h2 className="text-xl font-semibold text-text">
+        <h2 className="text-xl font-semibold text-text font-serif">
           By Region
         </h2>
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="text-lg font-medium text-muted">
+            <h3 className="text-lg font-medium text-text-muted">
               West Africa
             </h3>
             <ul className="mt-2 space-y-1">
@@ -62,7 +62,7 @@ export default async function CountriesPage() {
                 <li key={country.code}>
                   <Link
                     href={`/countries/${country.code.toLowerCase()}`}
-                    className="text-sm text-copper hover:text-amber transition-colors"
+                    className="text-sm text-accent hover:text-accent-hover transition-colors"
                   >
                     {country.name} ({country.apiCount})
                   </Link>
@@ -71,7 +71,7 @@ export default async function CountriesPage() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-medium text-muted">
+            <h3 className="text-lg font-medium text-text-muted">
               East Africa
             </h3>
             <ul className="mt-2 space-y-1">
@@ -79,7 +79,7 @@ export default async function CountriesPage() {
                 <li key={country.code}>
                   <Link
                     href={`/countries/${country.code.toLowerCase()}`}
-                    className="text-sm text-copper hover:text-amber transition-colors"
+                    className="text-sm text-accent hover:text-accent-hover transition-colors"
                   >
                     {country.name} ({country.apiCount})
                   </Link>
@@ -88,7 +88,7 @@ export default async function CountriesPage() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-medium text-muted">
+            <h3 className="text-lg font-medium text-text-muted">
               North Africa
             </h3>
             <ul className="mt-2 space-y-1">
@@ -96,7 +96,7 @@ export default async function CountriesPage() {
                 <li key={country.code}>
                   <Link
                     href={`/countries/${country.code.toLowerCase()}`}
-                    className="text-sm text-copper hover:text-amber transition-colors"
+                    className="text-sm text-accent hover:text-accent-hover transition-colors"
                   >
                     {country.name} ({country.apiCount})
                   </Link>
@@ -105,7 +105,7 @@ export default async function CountriesPage() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-medium text-muted">
+            <h3 className="text-lg font-medium text-text-muted">
               Southern Africa
             </h3>
             <ul className="mt-2 space-y-1">
@@ -113,7 +113,7 @@ export default async function CountriesPage() {
                 <li key={country.code}>
                   <Link
                     href={`/countries/${country.code.toLowerCase()}`}
-                    className="text-sm text-copper hover:text-amber transition-colors"
+                    className="text-sm text-accent hover:text-accent-hover transition-colors"
                   >
                     {country.name} ({country.apiCount})
                   </Link>

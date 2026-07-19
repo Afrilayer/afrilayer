@@ -29,7 +29,7 @@ export const DocPreview: React.FC<DocPreviewProps> = ({ curl, js, python, go }) 
   const tabClass = (active: boolean) =>
     `px-3 py-1.5 text-xs font-mono rounded-t transition-colors ${
       active
-        ? "bg-surface-dark text-text border-b-2 border-primary"
+        ? "bg-surface-dark text-text border-b-2 border-accent"
         : "text-text-muted hover:text-text border-b-2 border-transparent"
     }`;
 
@@ -47,7 +47,7 @@ export const DocPreview: React.FC<DocPreviewProps> = ({ curl, js, python, go }) 
               href="https://github.com/afrilayer/afrilayer/tree/main/providers" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-accent hover:underline"
             >
               Contribute one via GitHub
             </a>
@@ -83,7 +83,7 @@ export const DocPreview: React.FC<DocPreviewProps> = ({ curl, js, python, go }) 
         </button>
       </div>
 
-      <pre className="p-4 rounded-lg overflow-x-auto text-xs leading-relaxed font-mono bg-surface-dark border border-border text-primary">
+      <pre className="p-4 rounded-lg overflow-x-auto text-xs leading-relaxed font-mono bg-surface-dark border border-border" style={{ color: "var(--color-code-text)" }}>
         {codeMap[tab]}
       </pre>
     </div>

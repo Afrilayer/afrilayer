@@ -52,7 +52,7 @@ const SearchInput = React.forwardRef<HTMLInputElement, SearchInputProps>(
           onChange={handleChange}
           onKeyDown={handleKeyDown}
           className={cn(
-            'flex h-10 w-full rounded-xl border border-border bg-surface pl-9 pr-10 py-2 text-sm shadow-sm transition-all placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50',
+            'flex h-10 w-full rounded-xl border border-border bg-surface pl-9 pr-10 py-2 text-sm shadow-sm transition-all placeholder:text-text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:cursor-not-allowed disabled:opacity-50',
             className
           )}
           placeholder={props.placeholder || "Search APIs, providers, categories..."}

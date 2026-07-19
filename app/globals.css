@@ -28,6 +28,9 @@
   --color-border: #E5E7EB;
   --color-border-dark: #2E2D2A;
 
+  /* Code block text color - light gray for dark background */
+  --color-code-text: #E5E5E0;
+
   /* 10% - Accent & status - UNIFIED ACCENT COLOR */
   /* Deep terracotta inspired by African earth tones - replaces gold, clay, copper */
   --color-accent: #C75B39;

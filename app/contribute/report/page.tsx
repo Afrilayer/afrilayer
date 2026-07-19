@@ -67,14 +67,14 @@ function ReportIssueContent() {
     return (
       <div className="max-w-2xl mx-auto px-6 md:px-10 py-16">
         <div className="p-8 rounded-lg border border-border bg-surface text-center">
-          <div className="w-12 h-12 rounded-full bg-verified/10 flex items-center justify-center mx-auto mb-4">
-            <Send size={24} className="text-verified" />
+          <div className="w-12 h-12 rounded-full bg-status-verified/10 flex items-center justify-center mx-auto mb-4">
+            <Send size={24} className="text-status-verified" />
           </div>
           <h1 className="text-2xl font-bold text-text mb-2">Issue Submitted</h1>
-          <p className="text-muted mb-6">
+          <p className="text-text-muted mb-6">
             Thank you for your contribution. Your report has been recorded and will be reviewed by the maintainers.
           </p>
-          <Link href="/" className="inline-flex items-center gap-2 text-sm font-mono text-copper hover:underline">
+          <Link href="/" className="inline-flex items-center gap-2 text-sm font-mono text-accent hover:underline">
             <ArrowLeft size={14} /> Back to Directory
           </Link>
         </div>
@@ -86,29 +86,29 @@ function ReportIssueContent() {
     <div className="max-w-2xl mx-auto px-6 md:px-10 py-16">
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-xs font-mono mb-6 text-muted-dim hover:text-text transition-colors"
+        className="inline-flex items-center gap-1.5 text-xs font-mono mb-6 text-text-muted-dim hover:text-text transition-colors"
       >
         <ArrowLeft size={13} /> back to directory
       </Link>
 
-      <h1 className="text-3xl font-bold tracking-tight text-text mb-2">Report an Issue</h1>
+      <h1 className="text-3xl font-bold tracking-tight text-text mb-2 font-serif">Report an Issue</h1>
 
       {nameParam && (
-        <p className="text-muted mb-6">
+        <p className="text-text-muted mb-6">
           Reporting issue for: <span className="font-semibold text-text">{nameParam}</span>
         </p>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-xs font-mono text-muted-dim mb-2" htmlFor="issue-type">
+          <label className="block text-xs font-mono text-text-muted-dim mb-2" htmlFor="issue-type">
             Issue Type
           </label>
           <select
             id="issue-type"
             value={issueType}
             onChange={(e) => setIssueType(e.target.value as IssueType)}
-            className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-copper"
+            className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-accent"
           >
             {issueTypes.map((type) => (
               <option key={type.value} value={type.value}>
@@ -119,7 +119,7 @@ function ReportIssueContent() {
         </div>
 
         <div>
-          <label className="block text-xs font-mono text-muted-dim mb-2" htmlFor="description">
+          <label className="block text-xs font-mono text-text-muted-dim mb-2" htmlFor="description">
             Description
           </label>
           <textarea
@@ -129,12 +129,12 @@ function ReportIssueContent() {
             placeholder="Describe the issue you're experiencing..."
             required
             rows={4}
-            className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-copper placeholder:text-muted-dim"
+            className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-text-muted-dim"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-mono text-muted-dim mb-2" htmlFor="suggestion">
+          <label className="block text-xs font-mono text-text-muted-dim mb-2" htmlFor="suggestion">
             Suggested Correction (Optional)
           </label>
           <textarea
@@ -143,12 +143,12 @@ function ReportIssueContent() {
             onChange={(e) => setSuggestion(e.target.value)}
             placeholder="What would you suggest to fix this issue?"
             rows={3}
-            className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-copper placeholder:text-muted-dim"
+            className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-text-muted-dim"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-mono text-muted-dim mb-2" htmlFor="links">
+          <label className="block text-xs font-mono text-text-muted-dim mb-2" htmlFor="links">
             Supporting Links (Optional)
           </label>
           <textarea
@@ -157,7 +157,7 @@ function ReportIssueContent() {
             onChange={(e) => setLinks(e.target.value)}
             placeholder="Add any relevant URLs, documentation, or references..."
             rows={2}
-            className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-copper placeholder:text-muted-dim"
+            className="w-full px-3 py-2 rounded-lg border border-border bg-surface text-text font-mono text-sm focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-text-muted-dim"
           />
         </div>
 
