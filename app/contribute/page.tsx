@@ -69,7 +69,7 @@ export default function ContributePage() {
         <div className="space-y-6">
           {[
             { num: 1, title: "Fork the repository", desc: "Click 'Fork' in the top-right corner on GitHub" },
-            { num: 2, title: "Clone and install", desc: "git clone https://github.com/YOUR-USERNAME/afrilayer.git && cd afrilayer && npm install" },
+            { num: 2, title: "Clone and install", desc: "git clone https://github.com/afrilayer/afrilayer.git && cd afrilayer && npm install" },
             { num: 3, title: "Copy templates", desc: "Use the provider template as a starting point for your new provider" },
             { num: 4, title: "Preview locally", desc: "npm run dev opens at localhost:3000" },
             { num: 5, title: "Validate and push", desc: "npm run validate && git commit -m 'Add provider' && git push" },
