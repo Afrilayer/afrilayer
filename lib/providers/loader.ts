@@ -60,9 +60,11 @@ export async function getProviderSlugs(): Promise<string[]> {
 export async function loadProviderJson(slug: string): Promise<RawProvider | null> {
   const providersPath = path.join(baseDir, 'providers', slug, 'provider.json');
   try {
-    const content = await fs.readFile(providersPath, 'utf-8');
+    const raw = await fs.readFile(providersPath, 'utf-8');
+    const content = raw.replace(/^\uFEFF/, '');
     return JSON.parse(content) as RawProvider;
-  } catch {
+  } catch (err) {
+    console.error(`[loadProviderJson] Failed to load/parse provider.json for "${slug}":`, err instanceof Error ? err.message : err);
     return null;
   }
 }
@@ -71,9 +73,13 @@ export async function loadProviderJson(slug: string): Promise<RawProvider | null
 export async function loadProviderApiData(slug: string): Promise<ProviderApiData> {
   const providersPath = path.join(baseDir, 'providers', slug, 'api.json');
   try {
-    const content = await fs.readFile(providersPath, 'utf-8');
+    const raw = await fs.readFile(providersPath, 'utf-8');
+    const content = raw.replace(/^\uFEFF/, '');
     return JSON.parse(content) as ProviderApiData;
-  } catch {
+  } catch (err) {
+    if (!(err instanceof Error && 'code' in err && (err as NodeJS.ErrnoException).code === 'ENOENT')) {
+      console.error(`[loadProviderApiData] Failed to parse api.json for "${slug}":`, err instanceof Error ? err.message : err);
+    }
     return { pricing: [], changelog: [] };
   }
 }

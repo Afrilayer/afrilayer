@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prebuild": "ts-node scripts/generate-changelog.ts",
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write .",

@@ -1,5 +1,5 @@
 export const dynamic = 'force-static';
-export const revalidate = 3600; // Revalidate every hour
+export const dynamicParams = false;
 
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: 'Provider Not Found',
     };
   }
-  
+
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  
+
   return {
     title: `${provider.name} API`,
     description: provider.description,
@@ -52,10 +52,10 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
 
   // Get all providers for similarity calculation
   const allProviders = await getAllProvidersData();
-  
+
   // Use enhanced similarity algorithm to get 4-6 similar providers
   const similarProviders = calculateSimilarProviders(provider, allProviders, 6);
-  
+
   // Convert to ApiMock format for SimilarApisTable
   const similarApis = similarProviders.map(providerToApiMock);
 

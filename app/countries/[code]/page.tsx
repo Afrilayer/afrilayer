@@ -1,5 +1,5 @@
 export const dynamic = 'force-static';
-export const revalidate = 3600;
+export const dynamicParams = false;
 
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
   if (!country) {
     return { title: 'Country Not Found' };
   }
-  
+
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  
+
   return {
     title: `${country.name} APIs`,
     description: `Discover verified APIs operating in ${country.name}.`,
@@ -41,13 +41,13 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
 export default async function CountryPage({ params }: { params: Promise<{ code: string }> }) {
   const { code } = await params;
   const providers = await getAllProvidersData();
-  
+
   // Use the utility to get providers by country code
   const countryProviders = getProvidersByCountry(providers, code);
-  
+
   // Get country metadata
   const country = getCountry(code);
-  
+
   if (!country || countryProviders.length === 0) {
     return (
       <div className="max-w-5xl mx-auto px-6 md:px-10 py-20">
@@ -63,10 +63,10 @@ export default async function CountryPage({ params }: { params: Promise<{ code: 
       </div>
     );
   }
-  
+
   // Get dynamic statistics
   const stats = getCountryStatistics(providers, code);
-  
+
   // Convert providers to ApiMock format for the card
   const apis = countryProviders.map(providerToApiMock);
 

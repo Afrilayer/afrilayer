@@ -45,7 +45,7 @@ export default function ChangelogPage() {
   const [currentPage, setCurrentPage] = React.useState(1);
 
   React.useEffect(() => {
-    fetch('/api/changelog-data')
+    fetch('/changelog-data.json')
       .then(res => res.json())
       .then(data => {
         setCommits(data.commits || []);

@@ -21,4 +21,3 @@ export async function GET() {
 }
 
 export const dynamic = 'force-static';
-export const revalidate = 3600;

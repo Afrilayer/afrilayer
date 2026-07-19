@@ -1,5 +1,3 @@
-export const revalidate = 3600; // Revalidate every hour
-
 import { getAllProvidersData } from "@/lib/data";
 import { getHomepageStats, getRecentVerifications } from "@/lib/stats";
 import { Stamp, FacetedSearch, ApiCard, HeroDashboard, LiveVerificationFeed } from "@/components/ui";

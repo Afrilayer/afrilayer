@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { getAllProvidersData } from "@/lib/data";
 
-export const revalidate = 3600;
-
 // Redirect to homepage - provider listing is now handled by ApiGrid on homepage
 export default async function ProvidersPage() {
   const providers = await getAllProvidersData();

@@ -1,0 +1,395 @@
+{
+  "generatedAt": "2026-07-19T15:29:43.792Z",
+  "commits": [
+    {
+      "hash": "a6e8b52",
+      "date": "2026-07-19 08:58:32 +0000",
+      "message": "docs(providers): expand OPay documentation and update VALR metadata",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "4152c19",
+      "date": "2026-07-19 08:07:31 +0000",
+      "message": "feat: add Yoco payment provider with comprehensive documentation",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "dd16b66",
+      "date": "2026-07-19 06:26:01 +0000",
+      "message": "feat: update WatuPay to Nigeria-focused gateway with expanded product catalog",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "707857c",
+      "date": "2026-07-19 03:14:20 +0000",
+      "message": "refactor(globals): align theme tokens and improve search error handling",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "ff53202",
+      "date": "2026-07-18 13:05:40 +0000",
+      "message": "refactor(ui): replace sunburst badges with circular checkmark icons",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "aa3546e",
+      "date": "2026-07-18 09:10:19 +0000",
+      "message": "docs: update code of conduct to v2.1 and enhance provider documentation",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "fc532a5",
+      "date": "2026-07-18 06:36:07 +0000",
+      "message": "feat(ui): add verification feed auto-rotation and update styles",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "0a0bcf1",
+      "date": "2026-07-18 06:10:57 +0000",
+      "message": "chore: update verification flags for flutterwave, okra, africas-talking",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "406b53e",
+      "date": "2026-07-18 06:03:40 +0000",
+      "message": "feat: update generated registry with new providers and logos",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "3cc14e7",
+      "date": "2026-07-18 05:51:21 +0000",
+      "message": "feat(ui): update VerificationBadge to sunburst circle shape",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "d8cd40e",
+      "date": "2026-07-18 05:41:16 +0000",
+      "message": "feat(ui): update verification badge design to starburst shape",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "0a1fa6b",
+      "date": "2026-07-18 05:33:48 +0000",
+      "message": "feat(ui): update verification badge to crown design, add provider logos",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "5b39fa6",
+      "date": "2026-07-18 05:14:48 +0000",
+      "message": "chore(verification): remove unused blusalt and buypower providers",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "10d0ff0",
+      "date": "2026-07-17 23:59:15 +0000",
+      "message": "feat: Add africas-talking provider to verification config",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "f693097",
+      "date": "2026-07-17 23:56:11 +0000",
+      "message": "feat: add provider logoUrl support, reformat provider data, update badge styling",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "876c11b",
+      "date": "2026-07-17 23:40:03 +0000",
+      "message": "fix(provider): update Kwik logo URL, add Kwik to verification list",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "ae38113",
+      "date": "2026-07-17 23:37:59 +0000",
+      "message": "feat(providers/kwik): update provider details and add logo",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "3886252",
+      "date": "2026-07-17 23:29:35 +0000",
+      "message": "feat(providers): add Termii provider with logo and verification entry",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "8e36e67",
+      "date": "2026-07-17 23:22:53 +0000",
+      "message": "feat(providers): add Mono logo and correct developer portal URL Adds official logo URL for the Mono provider entry and updates the developerPortal field to the dedicated /developers path, replacing the incorrect root domain URL to ensure users are directed to the proper developer resources.",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "eebef5b",
+      "date": "2026-07-17 22:34:07 +0000",
+      "message": "fix(providers/verification): update buypower verification method from pv to cv",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "f426052",
+      "date": "2026-07-17 22:31:50 +0000",
+      "message": "feat(verification): add buypower provider to verification list",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "5350c0b",
+      "date": "2026-07-17 22:28:44 +0000",
+      "message": "feat(verification): add blusalt provider",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "ed27920",
+      "date": "2026-07-17 22:21:54 +0000",
+      "message": "feat(ui): add verification badge display to API cards and pages",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "0cc5240",
+      "date": "2026-07-17 21:49:36 +0000",
+      "message": "feat: restructure API page layout and add empty state handling for code samples",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "94c9afc",
+      "date": "2026-07-17 19:46:27 +0000",
+      "message": "Update provider configurations: logo URL and verification status",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "7ad292a",
+      "date": "2026-07-17 19:35:53 +0000",
+      "message": "Refactor ReportIssuePage with Suspense and update imports Refactor ReportIssuePage component to use React Suspense for better loading UX. Rename main function to ReportIssueContent and wrap it in Suspense boundary. Standardize import paths using @ alias in sitemap.ts. Remove unused Supabase dependencies from package-lock.json and add development utilities.",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "2df75f5",
+      "date": "2026-07-17 13:24:58 +0000",
+      "message": "feat: add community issue reporting functionality",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "7693e50",
+      "date": "2026-07-17 12:55:05 +0000",
+      "message": "feat: add category pages, report issue functionality, and SEO improvements",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "d5788d7",
+      "date": "2026-07-17 11:13:22 +0000",
+      "message": "feat: add trending searches and provider logo support",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "3bf83de",
+      "date": "2026-07-17 00:41:17 +0000",
+      "message": "Minor fix",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "00baae8",
+      "date": "2026-07-16 15:53:22 +0000",
+      "message": "refactor: add similar APIs feature and extract shared provider utilities",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "1f39ac8",
+      "date": "2026-07-16 15:12:42 +0000",
+      "message": "refactor(api page): use ProviderLogo component and expand country/category data",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "340debb",
+      "date": "2026-07-16 12:16:10 +0000",
+      "message": "refactor: consolidate CSS design tokens and modernize color palette",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "e331ea6",
+      "date": "2026-07-16 09:32:25 +0000",
+      "message": "fix: Audited UI/UX and fix broken styles",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "333dfd9",
+      "date": "2026-07-16 08:01:28 +0000",
+      "message": "feat(changelog): add pagination and use CSS variables for styling",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "42b85e1",
+      "date": "2026-07-16 06:52:04 +0000",
+      "message": "Refactor type imports and fix provider status type handling",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "060a2fe",
+      "date": "2026-07-16 04:18:24 +0000",
+      "message": "refactor(docs): simplify README and restructure provider documentation",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "99c88a9",
+      "date": "2026-07-16 04:01:49 +0000",
+      "message": "Add features, description, and logoUrl to provider registry schema",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "44851b9",
+      "date": "2026-07-16 03:17:32 +0000",
+      "message": "fix: update categories and improve TypeScript typing in provider components",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "e9d021d",
+      "date": "2026-07-16 02:54:16 +0000",
+      "message": "fix: add fallback empty strings for API preview component props",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "35571d6",
+      "date": "2026-07-16 02:47:59 +0000",
+      "message": "Refactor API to use providers data with search-friendly format",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "e78f919",
+      "date": "2026-07-16 02:27:24 +0000",
+      "message": "Add loadProviderReadme import to data layer for provider readme loading",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "0f403fe",
+      "date": "2026-07-16 02:08:44 +0000",
+      "message": "refactor: rename API to Provider and consolidate data fetching logic",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "9162d22",
+      "date": "2026-07-15 15:27:51 +0000",
+      "message": "refactor: update design system with brand fonts and restructured color palette",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "384ebf3",
+      "date": "2026-07-15 10:59:03 +0000",
+      "message": "feat: add provider logos, key people metadata, and changelog tracking",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "7f1770e",
+      "date": "2026-07-15 10:14:08 +1200",
+      "message": "Implement Afrilayer design system with light theme and Outfit font",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "96df07b",
+      "date": "2026-07-14 20:48:49 +0000",
+      "message": "Add country flag display and linking to API pages and cards",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "fdb9912",
+      "date": "2026-07-14 19:16:25 +0000",
+      "message": "Merge pull request #1 from Afrilayer/vercel/install-vercel-web-analytics-i-tx31yw",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "f030fcc",
+      "date": "2026-07-14 19:07:56 +0000",
+      "message": "Install Vercel Web Analytics Integration",
+      "author": "Vercel"
+    },
+    {
+      "hash": "baf218d",
+      "date": "2026-07-14 18:50:39 +0000",
+      "message": "feat: add provider confidence indicators and restructure documentation",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "dcfd858",
+      "date": "2026-07-14 12:07:30 +0000",
+      "message": "Update README and metadata with design system, enhanced setup docs, and styling improvements",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "3361a40",
+      "date": "2026-07-14 10:57:48 +0000",
+      "message": "refactor(ui): improve page titles and emphasize API verification messaging",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "d488041",
+      "date": "2026-07-14 07:43:45 +0000",
+      "message": "Refactor API detail page to client component with simplified structure",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "4b4f135",
+      "date": "2026-07-14 05:50:40 +0000",
+      "message": "Update styling in New API page to use custom design system colors",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "aae6aa0",
+      "date": "2026-07-14 05:05:36 +0000",
+      "message": "feat: enhance admin dashboard with activity tracking and add dark mode support to header",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "f397cd1",
+      "date": "2026-07-14 04:28:18 +0000",
+      "message": "Update Next.js 15 compatibility and fix search page rendering",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "480786e",
+      "date": "2026-07-14 03:45:02 +0000",
+      "message": "Merge branch 'master' of https://github.com/mystrdan/afrilayer",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "9656bf9",
+      "date": "2026-07-14 03:44:50 +0000",
+      "message": "refactor: reorganize database schema with section headers and add admins table",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "5718c86",
+      "date": "2026-07-13 22:38:48 +0000",
+      "message": "Fix React Server Components CVE vulnerabilities (#1)",
+      "author": "vercel[bot]"
+    },
+    {
+      "hash": "ef3dd89",
+      "date": "2026-07-13 22:16:31 +0000",
+      "message": "config: simplify Supabase MCP server URL by removing features parameter",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "12d56a7",
+      "date": "2026-07-13 21:44:18 +0000",
+      "message": ".",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "b80c007",
+      "date": "2026-07-13 21:30:58 +0000",
+      "message": "fix: update lockfile with React 18 compatible versions",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "de4d110",
+      "date": "2026-07-13 21:12:48 +0000",
+      "message": "chore: update repository URL and revert React to v18 with dependency updates",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "6c32610",
+      "date": "2026-07-13 20:52:23 +0000",
+      "message": "feat: implement Afrilayer platform with complete project setup and branding",
+      "author": "mystrdan"
+    },
+    {
+      "hash": "e880c78",
+      "date": "2026-07-13 20:20:26 +0000",
+      "message": "Initial commit from Create Next App",
+      "author": "mystrdan"
+    }
+  ]
+}

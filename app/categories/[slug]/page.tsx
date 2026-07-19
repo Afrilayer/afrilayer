@@ -1,5 +1,5 @@
 export const dynamic = 'force-static';
-export const revalidate = 3600;
+export const dynamicParams = false;
 
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!categoryName) {
     return { title: 'Category Not Found' };
   }
-  
+
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  
+
   return {
     title: `${categoryName} APIs`,
     description: `Discover verified ${categoryName} APIs operating in African markets.`,
@@ -41,10 +41,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const providers = await getAllProvidersData();
-  
+
   // Get category name from slug
   const categoryName = SLUG_TO_CATEGORY[slug.toLowerCase()];
-  
+
   if (!categoryName) {
     return (
       <div className="max-w-5xl mx-auto px-6 md:px-10 py-20">

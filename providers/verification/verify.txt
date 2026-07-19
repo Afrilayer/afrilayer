@@ -1,4 +1,4 @@
-Afrilayer Provider Verification
+Afrilayer Provider(s) Verification
 
 onafriq: cv
 sendbyte: cv
