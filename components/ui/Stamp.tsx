@@ -14,17 +14,18 @@ export const Stamp: React.FC<StampProps> = ({ label, sublabel, size = "sm" }) =>
 
   return (
     <div
-      className={`${dims} rounded-full flex flex-col items-center justify-center shrink-0 select-none text-primary`}
+      className={`${dims} rounded-full flex flex-col items-center justify-center shrink-0 select-none`}
       style={{
-        border: "2px dashed var(--color-primary)",
+        border: "2px dashed var(--color-accent)",
         transform: "rotate(-9deg)",
+        color: "var(--color-accent)",
       }}
     >
       <span className={`${textSize} font-mono tracking-[0.2em] font-bold`}>{label}</span>
       {sublabel && (
         <span
           className={`${textSize} font-mono tracking-widest mt-1`}
-          style={{ color: "var(--color-primary-hover)" }}
+          style={{ color: "var(--color-accent-hover)" }}
         >
           {sublabel}
         </span>

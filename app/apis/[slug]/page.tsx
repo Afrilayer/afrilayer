@@ -66,7 +66,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
       {/* Back Link */}
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-xs font-mono mb-8 text-muted-dim hover:text-text transition-colors"
+        className="inline-flex items-center gap-1.5 text-xs font-mono mb-8 text-text-muted-dim hover:text-text transition-colors"
       >
         <ArrowLeft size={13} /> back to directory
       </Link>
@@ -76,7 +76,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
         <div>
           <div className="flex items-center gap-3 mb-3">
             <StatusPill status={provider.status} />
-            <span className="text-[10px] font-mono text-muted-dim">
+            <span className="text-[10px] font-mono text-text-muted-dim">
               uptime {api?.uptime || 'N/A'}
             </span>
           </div>
@@ -93,10 +93,10 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
               )}
             </h1>
           </div>
-          <p className="text-sm mt-1 font-mono text-muted">
+          <p className="text-sm mt-1 font-mono text-text-muted">
             {provider.name} &middot; {provider.categories[0]}
           </p>
-          <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted">
+          <p className="mt-4 max-w-lg text-sm leading-relaxed text-text-muted">
             {provider.description}
           </p>
         </div>
@@ -107,7 +107,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
       <div className="flex items-center gap-6 mt-5 flex-wrap">
         {provider.keyPeople && provider.keyPeople.length > 0 && (
           <div className="flex flex-col gap-2">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-muted-dim">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-text-muted-dim">
               Key People
             </span>
             <div className="flex flex-wrap gap-3">
@@ -119,12 +119,12 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
                       href={person.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="ml-1 text-[10px] text-muted hover:text-clay transition-colors"
+                      className="ml-1 text-[10px] text-accent hover:text-accent-hover transition-colors"
                     >
                       (@{person.github.split('/').pop()})
                     </a>
                   ) : null}
-                  <span className="text-muted-dim"> &middot; {person.role}</span>
+                  <span className="text-text-muted-dim"> &middot; {person.role}</span>
                 </div>
               ))}
             </div>
@@ -143,7 +143,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
               className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors"
               style={{
                 background: "var(--color-surface)",
-                color: "var(--color-muted)",
+                color: "var(--color-text-muted)",
                 border: "1px solid var(--color-border)",
               }}
             >
@@ -167,7 +167,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
               className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors"
               style={{
                 background: "var(--color-surface)",
-                color: "var(--color-muted)",
+                color: "var(--color-text-muted)",
                 border: "1px solid var(--color-border)",
               }}
             >
@@ -187,14 +187,14 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
             background: "var(--color-surface)",
           }}
         >
-          <div className="flex items-center gap-1.5 text-verified">
-            <span className="w-1.5 h-1.5 rounded-full bg-verified" />
+          <div className="flex items-center gap-1.5 text-status-verified">
+            <span className="w-1.5 h-1.5 rounded-full bg-status-verified" />
             <span>VERIFIED TODAY</span>
           </div>
-          <div className="flex items-center gap-1.5 text-muted">
+          <div className="flex items-center gap-1.5 text-text-muted">
             <span>Operational confidence: {provider.status}</span>
           </div>
-          <span className="text-muted-dim">Latency: {api?.latency || 'N/A'}</span>
+          <span className="text-text-muted-dim">Latency: {api?.latency || 'N/A'}</span>
         </div>
       </div>
 
@@ -213,7 +213,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
           {/* Pricing */}
           {api?.pricing && api.pricing.length > 0 && (
             <div>
-              <h2 className="text-xs font-mono uppercase tracking-widest mb-3 text-muted-dim">
+              <h2 className="text-xs font-mono uppercase tracking-widest mb-3 text-text-muted-dim">
                 Pricing tiers
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -226,11 +226,11 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
                         <span className="text-sm font-semibold text-text">
                           {p.tier}
                         </span>
-                        <span className="text-sm font-mono text-copper">
+                        <span className="text-sm font-mono text-accent">
                           {p.price}
                         </span>
                       </div>
-                      <p className="text-xs mt-1.5 text-muted">
+                      <p className="text-xs mt-1.5 text-text-muted">
                         {p.note}
                       </p>
                     </div>
@@ -242,7 +242,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
           {/* Info Grid */}
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-muted-dim">
+              <h3 className="text-[10px] font-mono uppercase tracking-widest text-text-muted-dim">
                 Auth Method
               </h3>
               <p className="text-sm font-mono mt-1 text-text">
@@ -250,7 +250,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
               </p>
             </div>
             <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-muted-dim">
+              <h3 className="text-[10px] font-mono uppercase tracking-widest text-text-muted-dim">
                 Rate Limit
               </h3>
               <p className="text-sm font-mono mt-1 text-text">
@@ -258,15 +258,15 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
               </p>
             </div>
             <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-muted-dim">
+              <h3 className="text-[10px] font-mono uppercase tracking-widest text-text-muted-dim">
                 Webhooks
               </h3>
-              <p className={`text-sm font-mono mt-1 ${api?.webhookSupport ? "text-verified" : "text-unavailable"}`}>
+              <p className={`text-sm font-mono mt-1 ${api?.webhookSupport ? "text-status-verified" : "text-status-unavailable"}`}>
                 {api?.webhookSupport ? "Supported" : "Not Supported"}
               </p>
             </div>
             <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-muted-dim">
+              <h3 className="text-[10px] font-mono uppercase tracking-widest text-text-muted-dim">
                 Version
               </h3>
               <p className="text-sm font-mono mt-1 text-text">
@@ -297,7 +297,7 @@ export default async function ApiPage({ params }: { params: Promise<{ slug: stri
           <div className="mt-4">
             <Link
               href={`/contribute/report?provider=${provider.slug}&name=${encodeURIComponent(provider.name)}`}
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 px-3 py-1.5 h-8 border border-border bg-surface hover:bg-surface-hover text-muted"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 px-3 py-1.5 h-8 border border-border bg-surface hover:bg-surface-hover text-text-muted"
             >
               Report Issue
             </Link>

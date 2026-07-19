@@ -21,7 +21,7 @@ export function Header() {
   return (
     <>
       {/* Skip link for accessibility */}
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 z-50 bg-primary text-bg px-3 py-1 rounded-full text-sm font-mono">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 z-50 bg-accent text-bg px-3 py-1 rounded-full text-sm font-mono">
         Skip to main content
       </a>
 
@@ -47,7 +47,7 @@ export function Header() {
                   href={item.href}
                   className={cn(
                     "text-xs font-mono transition-colors",
-                    pathname === item.href ? "text-primary font-semibold" : "text-text-muted"
+                    pathname === item.href ? "text-accent font-semibold" : "text-text-muted"
                   )}
                 >
                   {item.name}
@@ -63,7 +63,7 @@ export function Header() {
               className="flex items-center gap-2 pl-3 pr-4 py-2 rounded-full bg-surface border border-border text-xs font-mono text-text-muted hover:text-text transition-colors"
               aria-label="Search APIs and providers"
             >
-              <Search size={14} className="text-primary" />
+              <Search size={14} className="text-accent" />
               <span>Search</span>
             </Link>
 
@@ -101,7 +101,7 @@ export function Header() {
                     href={item.href}
                     className={cn(
                       "text-xs font-mono transition-colors",
-                      pathname === item.href && "font-semibold text-primary"
+                      pathname === item.href && "font-semibold text-accent"
                     )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

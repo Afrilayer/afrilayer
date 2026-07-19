@@ -75,7 +75,7 @@ export default async function CountryPage({ params }: { params: Promise<{ code: 
       {/* Back Link */}
       <Link
         href="/countries"
-        className="inline-flex items-center gap-1.5 text-xs font-mono mb-8 text-muted-dim hover:text-text transition-colors"
+        className="inline-flex items-center gap-1.5 text-xs font-mono mb-8 text-text-muted-dim hover:text-text transition-colors"
       >
         <ArrowLeft size={13} /> back to countries
       </Link>
@@ -85,7 +85,7 @@ export default async function CountryPage({ params }: { params: Promise<{ code: 
         <span className="text-4xl">{country.flag}</span>
         <div>
           <h1 className="text-3xl font-semibold text-text">{country.name}</h1>
-          <p className="text-sm text-muted mt-1 font-mono">
+          <p className="text-sm text-text-muted mt-1 font-mono">
             {stats.totalProviders} Provider{stats.totalProviders !== 1 ? 's' : ''}
           </p>
         </div>
@@ -93,13 +93,13 @@ export default async function CountryPage({ params }: { params: Promise<{ code: 
 
       {/* Categories represented */}
       {stats.categories.length > 0 && (
-        <p className="text-sm text-muted mb-6 font-mono">
+        <p className="text-sm text-text-muted mb-6 font-mono">
           {stats.categories.map((cat, i) => (
             <span key={cat}>
               {i > 0 && ' • '}
               <Link
                 href={`/categories/${cat.toLowerCase().replace(/\s+/g, '-')}`}
-                className="text-copper hover:text-amber transition-colors"
+                className="text-accent hover:text-accent-hover transition-colors"
               >
                 {cat}
               </Link>

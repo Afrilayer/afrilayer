@@ -84,7 +84,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       {/* Back Link */}
       <Link
         href="/categories"
-        className="inline-flex items-center gap-1.5 text-xs font-mono mb-8 text-muted-dim hover:text-text transition-colors"
+        className="inline-flex items-center gap-1.5 text-xs font-mono mb-8 text-text-muted-dim hover:text-text transition-colors"
       >
         <ArrowLeft size={13} /> back to categories
       </Link>
@@ -93,7 +93,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       <div className="flex items-center gap-4 mb-8">
         <div>
           <h1 className="text-3xl font-semibold text-text">{categoryName}</h1>
-          <p className="text-sm text-muted mt-1 font-mono">
+          <p className="text-sm text-text-muted mt-1 font-mono">
             {categoryProviders.length} Provider{categoryProviders.length !== 1 ? 's' : ''}
           </p>
         </div>

@@ -4,6 +4,7 @@
 /* ===========================================
    Design Tokens - 60-30-10 Rule
    For Professional Developer Platform
+   Unified Accent Theme
 =========================================== */
 
 /* Brand fonts & color tokens */
@@ -22,28 +23,23 @@
   /* 30% - Text & borders */
   --color-text: #1F1F1D;
   --color-text-dim: #4B5563;
-  --color-muted: #6B7280;
-  --color-muted-dim: #75716A;
+  --color-text-muted: #6B7280;
+  --color-text-muted-dim: #75716A;
   --color-border: #E5E7EB;
   --color-border-dark: #2E2D2A;
 
-  /* 10% - Accent & status */
-  --color-primary: #D4AF37;
-  --color-primary-hover: #B89B32;
+  /* 10% - Accent & status - UNIFIED ACCENT COLOR */
+  /* Deep terracotta inspired by African earth tones - replaces gold, clay, copper */
+  --color-accent: #C75B39;
+  --color-accent-hover: #A84A2E;
   --color-success: #2ECC71;
   --color-warning: #F39C12;
   --color-danger: #E74C3C;
 
-  /* Status pill colors (with semantic variants for dark mode) */
+  /* Status pill colors - also using unified accent */
   --color-status-verified: #2ECC71;
   --color-status-estimated: #F39C12;
   --color-status-unavailable: #E74C3C;
-
-  /* Additional accent & semantic tokens used in JSX */
-  --color-clay: #C76B3A;
-  --color-copper: #D48A5A;
-  --color-verified: #2ECC71;
-  --color-unavailable: #E74C3C;
 }
 
 /* ===========================================
@@ -59,15 +55,16 @@
 
   --color-text: #F5F5F2;
   --color-text-dim: #C7C5BE;
-  --color-muted: #A5A297;
-  --color-muted-dim: #7A7770;
+  --color-text-muted: #A5A297;
+  --color-text-muted-dim: #7A7770;
   --color-border: #2E2D2A;
   --color-border-dark: #1A1A19;
 
-  --color-clay: #D4835A;
-  --color-copper: #E09B6B;
-  --color-verified: #3DDC84;
-  --color-unavailable: #F05A4A;
+  --color-accent: #D4835A;
+  --color-accent-hover: #B87045;
+  --color-status-verified: #3DDC84;
+  --color-status-estimated: #FFB422;
+  --color-status-unavailable: #F05A4A;
 }
 
 @tailwind base;

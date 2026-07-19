@@ -49,14 +49,14 @@ const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
             {action.href ? (
               <a
                 href={action.href}
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-medium text-bg hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+                className="inline-flex items-center justify-center rounded-xl bg-accent px-4 py-2 text-sm font-medium text-bg hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-colors"
               >
                 {action.label}
               </a>
             ) : (
               <button
                 onClick={action.onClick}
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-medium text-bg hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+                className="inline-flex items-center justify-center rounded-xl bg-accent px-4 py-2 text-sm font-medium text-bg hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-colors"
               >
                 {action.label}
               </button>

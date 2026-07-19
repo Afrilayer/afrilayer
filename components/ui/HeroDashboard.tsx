@@ -43,7 +43,7 @@ export const HeroDashboard: React.FC<HeroDashboardProps> = ({ stats = defaultSta
             className="p-4 rounded-xl flex flex-col items-center justify-center text-center bg-surface border border-border shadow-sm"
           >
             <div className="flex items-center gap-2 mb-1">
-              {Icon && <Icon size={14} className="text-primary" />}
+{Icon && <Icon size={14} className="text-accent" />}
               <span className="text-2xl font-semibold font-mono text-text">
                 {stat.value}
               </span>

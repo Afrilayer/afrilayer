@@ -28,8 +28,8 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
   categoryCounts = {},
   countryCounts = {},
 }) => {
-  const selectCls = (active: boolean) =>
-    `text-xs font-mono px-3 py-1.5 rounded-full transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary ${active ? "font-semibold" : ""}`;
+const selectCls = (active: boolean) =>
+    `text-xs font-mono px-3 py-1.5 rounded-full transition-colors whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-accent ${active ? "font-semibold" : ""}`;
 
   return (
     <div className="flex flex-col gap-4">
@@ -57,7 +57,7 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
               <button
                 key={c}
                 onClick={() => onCategoryChange(c)}
-                className={`${selectCls(category === c)} ${category === c ? "bg-primary text-bg border-primary" : "bg-surface text-text-muted border-border"}`}
+className={`${selectCls(category === c)} ${category === c ? "bg-accent text-bg border-accent" : "bg-surface text-text-muted border-border"}`}
                 aria-pressed={category === c}
               >
                 <span className="flex items-center gap-1">
@@ -84,7 +84,7 @@ export const FacetedSearch: React.FC<FacetedSearchProps> = ({
               <button
                 key={c}
                 onClick={() => onCountryChange(c)}
-                className={`${selectCls(country === c)} ${country === c ? "bg-primary text-bg border-primary" : "bg-surface text-text-muted border-border"}`}
+className={`${selectCls(country === c)} ${country === c ? "bg-accent text-bg border-accent" : "bg-surface text-text-muted border-border"}`}
                 aria-pressed={country === c}
               >
                 <span className="flex items-center gap-1">

@@ -45,25 +45,68 @@ export default async function Home() {
 
   return (
     <div className="bg-bg min-h-screen">
-      {/* Hero Section */}
-      <section className="px-6 md:px-10 pt-16 pb-14 max-w-5xl mx-auto">
-        <div className="flex items-start justify-between gap-8 flex-wrap">
+      {/* Hero Section - Editorial Style */}
+      <section className="px-6 md:px-10 pt-20 pb-16 max-w-5xl mx-auto">
+        <div className="flex items-start justify-between gap-10 flex-wrap">
           <div className="max-w-xl">
-            <div className="flex items-center gap-2 mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              <span className="text-xs font-mono tracking-widest uppercase text-muted">
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-2 h-2 rounded-full bg-accent" />
+              <span className="text-xs font-mono tracking-widest uppercase text-text-muted">
                 {stats.liveApis}+ verified APIs
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-text">
+            <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-text font-serif">
               The verification layer for African digital infrastructure.
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-muted">
+            <p className="mt-6 text-lg leading-relaxed text-text-muted max-w-lg">
               Discover production-ready APIs powering Africa — payments, mobile money, KYC, SMS, and banking.
               Each listing is continuously monitored, verification-dated, and rated for operational confidence.
             </p>
           </div>
           <Stamp label={`${stats.liveApis} Verified`} sublabel={stats.averageVerificationAge} size="lg" />
+        </div>
+      </section>
+
+      {/* Before/After Comparison - Value Proposition */}
+      <section className="px-6 md:px-10 max-w-5xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* On Your Own */}
+          <div className="p-6 rounded-xl border border-border bg-bg">
+            <h3 className="text-sm font-mono uppercase tracking-widest text-text-muted mb-3">On Your Own</h3>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2 text-sm">
+                <span className="text-status-unavailable mt-0.5">×</span>
+                <span className="text-text-muted">Scattered documentation across multiple sources</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm">
+                <span className="text-status-unavailable mt-0.5">×</span>
+                <span className="text-text-muted">Unverified uptime and status information</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm">
+                <span className="text-status-unavailable mt-0.5">×</span>
+                <span className="text-text-muted">No centralized discovery for African APIs</span>
+              </li>
+            </ul>
+          </div>
+          
+          {/* With Afrilayer */}
+          <div className="p-6 rounded-xl border border-accent/40 bg-surface">
+            <h3 className="text-sm font-mono uppercase tracking-widest text-accent mb-3">With Afrilayer</h3>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2 text-sm">
+                <span className="text-status-verified mt-0.5">✓</span>
+                <span className="text-text">Verified, production-ready APIs</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm">
+                <span className="text-status-verified mt-0.5">✓</span>
+                <span className="text-text">Current operational data and uptime</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm">
+                <span className="text-status-verified mt-0.5">✓</span>
+                <span className="text-text">Centralized discovery for African infrastructure</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 

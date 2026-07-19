@@ -117,7 +117,7 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
-            className="text-xs font-mono bg-surface border border-border rounded-lg px-2.5 py-1 text-text focus:outline-none focus:ring-2 focus:ring-primary"
+            className="text-xs font-mono bg-surface border border-border rounded-lg px-2.5 py-1 text-text focus:outline-none focus:ring-2 focus:ring-accent"
           >
             <option value="lastUpdated">Last Updated</option>
             <option value="lastVerified">Last Verified</option>
@@ -156,7 +156,7 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Link href={`/apis/${api.id}`} className="block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-xl">
+                  <Link href={`/apis/${api.id}`} className="block focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded-xl">
                     <ApiCard api={api} showCountryLinks={true} showCategoryLink={true} />
                   </Link>
                 </motion.div>
@@ -183,7 +183,7 @@ export function ApiGrid({ apis, categories, countries }: ApiGridProps) {
                   onClick={() => setCurrentPage(page)}
                   className={`w-8 h-8 text-xs font-mono rounded-lg border transition-colors ${
                     page === currentPage
-                      ? "bg-primary text-bg border-primary"
+                      ? "bg-accent text-bg border-accent"
                       : "bg-surface text-text-muted border-border hover:text-text hover:bg-surface-hover"
                   }`}
                 >

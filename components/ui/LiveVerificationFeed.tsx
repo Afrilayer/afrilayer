@@ -31,7 +31,7 @@ export const LiveVerificationFeed = ({ verifications = [] }: { verifications?: V
     return (
       <div className="w-full overflow-hidden">
         <div className="flex items-center gap-2 mb-4">
-          <span className="w-1.5 h-1.5 rounded-full bg-status-verified" />
+          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
           <span className="text-xs font-mono tracking-widest uppercase text-text-muted">
             Live Verification Feed
           </span>
@@ -52,7 +52,7 @@ export const LiveVerificationFeed = ({ verifications = [] }: { verifications?: V
   return (
     <div className="w-full overflow-hidden">
       <div className="flex items-center gap-2 mb-4">
-        <span className="w-1.5 h-1.5 rounded-full bg-status-verified" />
+        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
         <span className="text-xs font-mono tracking-widest uppercase text-text-muted">
           Live Verification Feed
         </span>

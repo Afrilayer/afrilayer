@@ -9,10 +9,10 @@ import { ProviderLogo } from "./ProviderLogo";
 import { VerificationBadge } from "./VerificationBadge";
 import type { ApiMock } from "@/lib/types";
 import { CATEGORY_TO_SLUG, COUNTRY_TO_CODE } from "@/lib/constants";
+import Link from "next/link";
 
 interface ApiCardProps {
   api: ApiMock & { logoUrl?: string };
-  onClick?: () => void;
   showCountryLinks?: boolean;
   showCategoryLink?: boolean;
 }
@@ -25,7 +25,7 @@ interface MinimalProvider {
   logoUrl?: string;
 }
 
-export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks = false, showCategoryLink = false }) => {
+export const ApiCard: React.FC<ApiCardProps> = ({ api, showCountryLinks = false, showCategoryLink = false }) => {
   // Create minimal provider object for logo resolution
   const logoProvider: MinimalProvider = {
     slug: api.id,
@@ -39,17 +39,16 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
       return api.countries.slice(0, 3).map((c) => {
         const code = COUNTRY_TO_CODE[c] || c;
         return (
-          <a
+          <Link
             key={c}
             href={`/countries/${code.toLowerCase()}`}
             className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors bg-surface text-text-muted border border-border"
-            onClick={(e) => e.stopPropagation()}
           >
             <span className="flex items-center gap-1">
               <CountryFlag code={code} size="sm" />
               {c}
             </span>
-          </a>
+          </Link>
         );
       });
     }
@@ -64,15 +63,9 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
   };
 
   return (
-    <motion.button
-      onClick={onClick}
-      className="text-left rounded-xl p-5 flex flex-col gap-3 transition-colors w-full bg-surface shadow-sm"
-      whileHover={{
-        background: "var(--color-surface-hover)",
-      }}
-      whileTap={{
-        scale: 0.98,
-      }}
+    <Link
+      href={`/apis/${api.id}`}
+      className="block rounded-xl p-5 flex flex-col gap-3 transition-colors w-full bg-surface shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
     >
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-3">
@@ -103,13 +96,12 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
       <div className="flex flex-wrap gap-1.5 mt-1">
         {renderCountryTags()}
         {showCategoryLink && (
-          <a
+          <Link
             href={`/categories/${CATEGORY_TO_SLUG[api.category] || api.category.toLowerCase()}`}
             className="text-[10px] font-mono px-2 py-0.5 rounded hover:bg-surface-hover transition-colors bg-surface text-text-muted border border-border"
-            onClick={(e) => e.stopPropagation()}
           >
             {api.category}
-          </a>
+          </Link>
         )}
       </div>
 
@@ -117,9 +109,9 @@ export const ApiCard: React.FC<ApiCardProps> = ({ api, onClick, showCountryLinks
         <span className="text-[10px] font-mono text-text-muted">
           last checked {api.lastVerified}
         </span>
-        <ChevronRight size={14} className="text-primary" />
+        <ChevronRight size={14} className="text-accent" />
       </div>
-    </motion.button>
+    </Link>
   );
 };
 

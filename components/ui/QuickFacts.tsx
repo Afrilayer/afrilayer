@@ -84,7 +84,7 @@ export const QuickFacts: React.FC<QuickFactsProps> = ({
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-xs font-mono text-text-muted hover:text-primary transition-colors"
+className="flex items-center gap-2 text-xs font-mono text-text-muted hover:text-accent transition-colors"
                 >
                   <Icon size={12} />
                   <span>{link.label}</span>

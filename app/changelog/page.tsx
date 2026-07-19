@@ -69,7 +69,7 @@ export default function ChangelogPage() {
   return (
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-16">
       <div className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight text-text">
+        <h1 className="text-3xl font-bold tracking-tight text-text font-serif">
           Changelog
         </h1>
         <p className="mt-2 text-text-muted max-w-2xl">
@@ -79,7 +79,7 @@ export default function ChangelogPage() {
 
       <div className="mt-10">
         <div className="relative">
-          <div className="absolute left-4 top-0 h-full w-px bg-border" />
+          <div className="absolute left-4 top-0 h-full w-px bg-accent" />
           <div className="space-y-8">
             {loading && (
               <div className="text-center py-8">
@@ -88,7 +88,7 @@ export default function ChangelogPage() {
             )}
             {displayUpdates.map((update) => (
               <div key={update.id} className="relative pl-12">
-                <div className="absolute left-2 top-2 h-4 w-4 rounded-full border-2 bg-primary border-primary" />
+                <div className="absolute left-2 top-2 h-4 w-4 rounded-full border-2 bg-accent border-accent" />
                 <div>
                   <time className="text-sm text-text-muted">
                     {new Date(update.date).toLocaleDateString('en-US', {
@@ -107,7 +107,7 @@ export default function ChangelogPage() {
                         href={`https://github.com/${update.author}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:underline"
+                        className="text-accent hover:underline"
                       >
                         {update.author}
                       </a>
@@ -130,24 +130,24 @@ export default function ChangelogPage() {
             Page {currentPage} of {totalPages} · {allUpdates.length} total changes
           </div>
           <div className="flex items-center gap-2">
-                    <button
-                onClick={() => goToPage(currentPage - 1)}
-                disabled={currentPage === 1}
-                className="flex items-center gap-1 px-3 py-1.5 text-xs font-mono rounded-lg border border-border bg-surface text-text-muted hover:text-text hover:bg-surface-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                aria-label="Previous page"
-              >
-                <ChevronLeft size={14} />
-                Previous
-              </button>
-              <button
-                onClick={() => goToPage(currentPage + 1)}
-                disabled={currentPage === totalPages}
-                className="flex items-center gap-1 px-3 py-1.5 text-xs font-mono rounded-lg border border-border bg-surface text-text-muted hover:text-text hover:bg-surface-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                aria-label="Next page"
-              >
-                Next
-                <ChevronRight size={14} />
-              </button>
+            <button
+              onClick={() => goToPage(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="flex items-center gap-1 px-3 py-1.5 text-xs font-mono rounded-lg border border-border bg-surface text-text-muted hover:text-text hover:bg-surface-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              aria-label="Previous page"
+            >
+              <ChevronLeft size={14} />
+              Previous
+            </button>
+            <button
+              onClick={() => goToPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="flex items-center gap-1 px-3 py-1.5 text-xs font-mono rounded-lg border border-border bg-surface text-text-muted hover:text-text hover:bg-surface-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              aria-label="Next page"
+            >
+              Next
+              <ChevronRight size={14} />
+            </button>
           </div>
         </div>
       )}

@@ -27,7 +27,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Follow us on ${item.name}`}
-                className="hover:text-primary transition-colors"
+className="hover:text-accent transition-colors"
               >
                 <Icon size={14} />
               </a>

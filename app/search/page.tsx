@@ -64,14 +64,14 @@ export default function SearchPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 md:px-10 py-16">
-      <h1 className="text-3xl font-bold tracking-tight text-text mb-6">
+      <h1 className="text-3xl font-bold tracking-tight text-text mb-6 font-serif">
         Search APIs
       </h1>
 
       {/* Error state - fetch failed */}
       {loadError && (
-        <div className="mb-8 p-4 rounded-lg border border-red-500/20 bg-red-500/5">
-          <p className="text-sm text-red-400">
+        <div className="mb-8 p-4 rounded-lg border border-status-unavailable/20 bg-status-unavailable/5">
+          <p className="text-sm text-status-unavailable">
             Couldn't load search data. Please try refreshing the page.
           </p>
         </div>
@@ -79,12 +79,12 @@ export default function SearchPage() {
 
       <div className="mb-8 max-w-2xl">
         <div className="flex items-center gap-2 px-4 py-3 rounded-lg w-full bg-surface border border-border">
-          <SearchIcon size={16} className="text-muted-dim" />
+          <SearchIcon size={16} className="text-text-muted" />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search APIs, providers, categories..."
-            className="bg-transparent outline-none text-sm w-full font-mono text-text placeholder:text-muted-dim"
+            className="bg-transparent outline-none text-sm w-full font-mono text-text placeholder:text-text-muted-dim"
             aria-label="Search APIs and providers"
           />
         </div>
@@ -97,7 +97,7 @@ export default function SearchPage() {
 
       {/* Results count */}
       {query && !isLoading && !loadError && (
-        <p className="mb-4 text-sm text-muted" aria-live="polite">
+        <p className="mb-4 text-sm text-text-muted" aria-live="polite">
           Found <span className="font-medium text-text">{results.length}</span> results for "{query}"
         </p>
       )}
@@ -122,7 +122,7 @@ export default function SearchPage() {
             >
               <div className="flex items-start justify-between">
                   <div>
-                    <h2 className="text-xl font-semibold text-text hover:text-clay transition-colors flex items-center gap-1.5">
+                    <h2 className="text-xl font-semibold text-text hover:text-accent transition-colors flex items-center gap-1.5">
                       <span className="flex items-center gap-2">
                         <ProviderLogo provider={result} size={22} className="w-6 h-6 rounded-sm" />
                         <span className="flex items-center gap-1">
@@ -133,23 +133,23 @@ export default function SearchPage() {
                         </span>
                       </span>
                     </h2>
-                  <p className="mt-1 text-sm text-muted">
-                    {result.categories[0]}
-                  </p>
-                  <p className="mt-2 text-sm text-muted max-w-2xl">
-                    {result.description}
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-surface border border-border text-muted">
+                    <p className="mt-1 text-sm text-text-muted">
                       {result.categories[0]}
-                    </span>
-                    {result.countries?.slice(0, 3).map((c) => (
-                      <span key={c} className="text-[10px] font-mono px-2 py-0.5 rounded bg-surface border border-border text-muted">
-                        {c}
+                    </p>
+                    <p className="mt-2 text-sm text-text-muted max-w-2xl">
+                      {result.description}
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-surface border border-border text-text-muted">
+                        {result.categories[0]}
                       </span>
-                    ))}
+                      {result.countries?.slice(0, 3).map((c) => (
+                        <span key={c} className="text-[10px] font-mono px-2 py-0.5 rounded bg-surface border border-border text-text-muted">
+                          {c}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
               </div>
             </Link>
           ))}
@@ -160,7 +160,7 @@ export default function SearchPage() {
       {!isLoading && !query && !loadError && (
         <div className="text-center py-16 rounded-lg border border-dashed border-border">
           <h3 className="text-lg font-semibold text-text mb-2">Search for APIs and providers</h3>
-          <p className="text-sm text-muted">
+          <p className="text-sm text-text-muted">
             Enter a search term above to find APIs built for Africa. Try searching for payment APIs, 
             mobile money, KYC services, or specific providers.
           </p>
@@ -171,10 +171,10 @@ export default function SearchPage() {
       {!isLoading && query && !loadError && results.length === 0 && (
         <div className="text-center py-16 rounded-lg border border-dashed border-border">
           <h3 className="text-lg font-semibold text-text mb-2">No results found</h3>
-          <p className="text-sm text-muted">
+          <p className="text-sm text-text-muted">
             We couldn't find any APIs matching "{query}". Try searching with different keywords or browse our categories.
           </p>
-          <Link href="/" className="inline-block mt-4 text-xs font-mono text-clay hover:underline">
+          <Link href="/" className="inline-block mt-4 text-xs font-mono text-accent hover:underline">
             Browse Providers →
           </Link>
         </div>
@@ -193,7 +193,7 @@ function TrendingSection({ providers }: { providers: Provider[] }) {
   return (
     <div className="mb-8">
       <div className="flex items-center gap-2 mb-4">
-        <TrendingUp size={16} className="text-clay" />
+        <TrendingUp size={16} className="text-accent" />
         <h2 className="text-sm font-semibold text-text uppercase tracking-wider">Trending Searches</h2>
       </div>
       <div className="flex flex-wrap gap-2">
@@ -201,7 +201,7 @@ function TrendingSection({ providers }: { providers: Provider[] }) {
           <Link
             key={provider.slug}
             href={`/apis/${provider.slug}`}
-            className="px-3 py-1.5 text-xs font-mono rounded-md bg-surface border border-border text-muted hover:text-text hover:border-clay transition-colors inline-flex items-center gap-1.5"
+            className="px-3 py-1.5 text-xs font-mono rounded-md bg-surface border border-border text-text-muted hover:text-text hover:border-accent transition-colors inline-flex items-center gap-1.5"
           >
             <ProviderLogo provider={provider} size={14} className="w-3.5 h-3.5 rounded-sm" />
             {provider.name}

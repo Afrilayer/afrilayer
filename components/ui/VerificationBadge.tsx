@@ -46,7 +46,7 @@ export const VerificationBadge: React.FC<VerificationBadgeProps> = ({
   className = "",
 }) => {
   const message = VERIFICATION_MESSAGES[level];
-  const fillColor = level === 'provider' ? 'var(--color-status-verified)' : 'var(--color-text)';
+  const fillColor = level === 'provider' ? 'var(--color-status-verified)' : 'var(--color-accent)';
 
   return (
     <span
