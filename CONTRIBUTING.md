@@ -4,10 +4,56 @@ Thank you for your interest in contributing to Afrilayer! This document explains
 
 ## Quick Start
 
-1. Fork the repository
-2. Create a new branch for your changes
-3. Add/edit provider data in `/providers` folder
-4. Open a Pull Request
+New to Git? No problem! Follow these steps to make your first contribution.
+
+1. **Fork the repository** — Click the "Fork" button in the top-right of the [GitHub page](https://github.com/afrilayer/afrilayer). This creates your own copy of the project that you can edit.
+
+2. **Clone your fork to your computer** — This downloads your copy so you can work on it locally:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/afrilayer.git
+   cd afrilayer
+   ```
+   Why? You need the files on your computer to make changes.
+
+3. **Install dependencies** — This downloads all the code libraries the project needs to run:
+   ```bash
+   npm install
+   ```
+   Why? The project needs these files to work properly.
+
+4. **Create a new branch** — This keeps your changes organized and separate from other work:
+   ```bash
+   git checkout -b add-provider-name
+   ```
+   Why? If you make multiple changes, they go in different branches, keeping things organized.
+
+5. **Copy the template files and fill them in** — Copy these files to a new folder named after the provider (use lowercase letters with hyphens between words, like `mtn-momo`):
+   - [`providers/provider.template.json`](https://github.com/afrilayer/afrilayer/blob/main/providers/provider.template.json)
+   - [`providers/README.template.md`](https://github.com/afrilayer/afrilayer/blob/main/providers/README.template.md)
+   
+   Why? Templates give you the correct file structure to start with.
+
+6. **Preview your changes locally** — See your provider page before submitting:
+   ```bash
+   npm run dev
+   ```
+   This opens the site at `http://localhost:3000` in your browser. Why? To make sure your provider looks right before sharing it.
+
+7. **Validate your data catches mistakes before you submit**:
+   ```bash
+   npm run validate
+   ```
+   Why? This finds errors (like missing fields) before you submit.
+
+8. **Commit and push**:
+   ```bash
+   git add .
+   git commit -m "Add Provider Name to directory"
+   git push origin add-provider-name
+   ```
+   Why? This saves your changes and uploads them to your fork on GitHub.
+
+9. **Open the Pull Request** — Go to your fork on GitHub. You'll see a banner that says "Compare & pull request" – click it, describe what you added, and submit. Why? This asks the maintainers to review and add your changes to the main project.
 
 ## Provider Templates
 
@@ -24,7 +70,7 @@ Copy and customize these templates for your provider.
 ## Folder Structure
 
 ```
-/providers/{provider-slug}/       # URL-friendly slug (kebab-case)
+/providers/{provider-slug}/       # URL-friendly identifier (lowercase, hyphen-separated: "mtn-momo")
   ├── provider.json              # REQUIRED - Provider metadata
   ├── README.md                  # REQUIRED - Human documentation
   ├── api.json                   # OPTIONAL - Code samples, pricing, runtime data
@@ -36,36 +82,59 @@ Copy and customize these templates for your provider.
 
 ### provider.json
 
-Every provider must have a `provider.json` file with the following fields:
+Every provider must have a `provider.json` file. Copy this valid example and replace the placeholder values:
 
 ```json
 {
-  "slug": "provider-name",              // Required: kebab-case identifier
-  "name": "Provider Name",              // Required: Display name
-  "tagline": "Short tagline",           // Required: Short description
-  "logoUrl": "https://...",             // Recommended: URL to provider logo
-  "description": "Full description",      // Required: Detailed description
-  "website": "https://provider.com",      // Required: Provider website
-  "documentation": "https://docs.provider.com", // Required: API docs URL
-  "developerPortal": "https://developer.provider.com", // Optional: Separate dev portal
-  "categories": ["Payments"],           // Required: From canonical category list
-  "countries": ["Nigeria", "Ghana"],    // Required: From canonical country list
-  "features": ["Feature 1"],            // Required: API features
-  "authentication": "Bearer Token",         // Required: Auth method
-  "status": "Live",                     // Required: Live/Estimated/Cached/Unavailable
-  "verified": true,                     // Required: Verification status
-  "lastVerified": "2026-01-15",         // Required: Date (YYYY-MM-DD)
-  "lastUpdated": "2026-01-15",          // Required: Date (YYYY-MM-DD)
-  "pricingModel": "transaction",          // Required: Pricing model
-  "sandboxAvailable": true,             // Required: Sandbox availability
-  "productionReady": true,              // Required: Production readiness
-  "sdkLanguages": ["JavaScript", "Python"], // Optional: SDK languages
-  "openapiSpec": "https://...",         // Optional: OpenAPI spec URL/path
-  "keyPeople": [                        // Optional: Founders/CEOs
-    { "name": "Person Name", "role": "Co-founder & CEO", "github": "https://github.com/..." }
-  ]
+  "slug": "provider-name",
+  "name": "Provider Name",
+  "tagline": "Short tagline",
+  "description": "Full description of the provider and its API",
+  "website": "https://provider.com",
+  "documentation": "https://docs.provider.com",
+  "categories": ["Payments"],
+  "countries": ["Nigeria", "Ghana"],
+  "features": ["Feature 1", "Feature 2"],
+  "authentication": "API Key",
+  "status": "Live",
+  "verified": true,
+  "lastVerified": "2026-07-12",
+  "lastUpdated": "2026-07-12",
+  "pricingModel": "transaction",
+  "sandboxAvailable": true,
+  "productionReady": true
 }
 ```
+
+### Field Reference
+
+| Field | Required? | Description | Valid Values |
+|-------|-----------|-------------|------------|
+| `slug` | Required | URL-friendly identifier (lowercase, hyphen-separated words) | e.g., `mtn-momo`, `nalo-sms`, `flutterwave` |
+| `name` | Required | Display name shown on the site | Any string |
+| `tagline` | Required | Short description (1-2 sentences) | Any string |
+| `logoUrl` | Recommended | URL to provider logo image | Full URL starting with `https://` |
+| `description` | Required | Full description of the provider | Any string |
+| `website` | Required | Provider's main website | Full URL |
+| `documentation` | Required | API documentation URL | Full URL |
+| `developerPortal` | Optional | Separate developer portal URL | Full URL |
+| `supportEmail` | Optional | Support contact email | Email address |
+| `headquarters` | Optional | Company HQ location | e.g., "Nigeria", "South Africa" |
+| `categories` | Required | What the provider does | From canonical category list below |
+| `countries` | Required | Where the provider operates | Country names from canonical list below |
+| `features` | Required | Specific capabilities | e.g., "BVN verification", "Money transfer" |
+| `pricingModel` | Required | How pricing works | "transaction", "tiered", "subscription", "Contact" |
+| `authentication` | Required | Auth method | e.g., "API Key", "Bearer Token", "OAuth" |
+| `apiStyle` | Optional | API type | e.g., "REST", "GraphQL" |
+| `sdkLanguages` | Optional | Programming languages with SDKs | e.g., ["JavaScript", "Python", "Go"] |
+| `openapiSpec` | Optional | OpenAPI specification URL/path | Full URL or path |
+| `status` | Required | Current operational status | "Live", "Estimated", "Cached", "Unavailable" |
+| `sandboxAvailable` | Required | Is test environment available? | `true` or `false` |
+| `productionReady` | Required | Is it production-ready? | `true` or `false` |
+| `verified` | Required | Has it been verified? | `true` or `false` |
+| `lastVerified` | Required | Last verification date | Date in YYYY-MM-DD format |
+| `lastUpdated` | Required | Last update date | Date in YYYY-MM-DD format |
+| `keyPeople` | Optional | Founders/CEOs with optional GitHub links | Array of `{ name, role, github? }` objects |
 
 ### README.md
 
@@ -111,16 +180,20 @@ provider-slug: cv      # Community Verified
 provider-slug: pv      # Provider Verified
 ```
 
+- **cv = Community Verified** — Anyone can mark a provider this way after checking it works.
+- **pv = Provider Verified** — Reserved for confirmation directly from the provider's team, don't self-assign this.
+
 The verification status is automatically merged into the provider object at runtime.
 
 ## Naming Conventions
 
-- **Slug**: Use kebab-case (lowercase, hyphen-separated)
+- **Slug**: Use lowercase letters with hyphens between words (e.g., `mtn-momo`, `nalosms` → `nalo-sms`)
   - ✅ `flutterwave`, `mtn-momo`, `nalo-sms`
   - ❌ `Flutterwave`, `mtn_momo`, `Nalo SMS`
 
 - **Folder name**: Must match slug exactly
-- **JSON keys**: Use camelCase
+
+- **JSON keys**: Use camelCase (e.g., `lastVerified`, not `last-verified`)
 
 ## Pull Request Guidelines
 
@@ -174,29 +247,29 @@ Use exact values from the canonical list in `lib/constants.ts`:
 
 Use official country names (not ISO codes) from the canonical list in `lib/countries.ts`:
 
-- Nigeria (NG)
-- South Africa (ZA)
-- Ghana (GH)
-- Kenya (KE)
-- Uganda (UG)
-- Tanzania (TZ)
-- Egypt (EG)
-- Morocco (MA)
-- Côte d'Ivoire (CI)
-- Senegal (SN)
-- Rwanda (RW)
-- Tunisia (TN)
-- Cameroon (CM)
-- Zambia (ZM)
-- Ethiopia (ET)
-- Zimbabwe (ZW)
-- Botswana (BW)
-- Angola (AO)
-- Mozambique (MZ)
-- Malawi (MW)
-- Sierra Leone (SL)
-- Mali (ML)
-- Burkina Faso (BF)
+- Nigeria
+- South Africa
+- Ghana
+- Kenya
+- Uganda
+- Tanzania
+- Egypt
+- Morocco
+- Côte d'Ivoire
+- Senegal
+- Rwanda
+- Tunisia
+- Cameroon
+- Zambia
+- Ethiopia
+- Zimbabwe
+- Botswana
+- Angola
+- Mozambique
+- Malawi
+- Sierra Leone
+- Mali
+- Burkina Faso
 
 ## Questions?
 

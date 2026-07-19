@@ -4,6 +4,8 @@ Africa's API Infrastructure Platform — discover, compare, and evaluate trusted
 
 **Currently tracking 65+ verified African API providers across 15+ countries.**
 
+New to contributing? See [CONTRIBUTING.md](./CONTRIBUTING.md) for a full walkthrough.
+
 ## Features
 
 - **Provider Directory**: Discover African API providers with logos and verification badges

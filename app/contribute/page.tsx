@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, GitPullRequest, FilePlus, Edit, Bug, Code, FileText, Image } from "lucide-react";
+import { Github, GitPullRequest, FilePlus, Edit, Bug, Code, FileText, Image, FileCode } from "lucide-react";
 
 const contributionTypes = [
   {
@@ -50,6 +50,19 @@ export default function ContributePage() {
         by contributing provider data, documentation, and improvements.
       </p>
 
+      {/* Link to CONTRIBUTING.md */}
+      <div className="mb-8">
+        <Link 
+          href="https://github.com/afrilayer/afrilayer/blob/main/CONTRIBUTING.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-copper hover:underline"
+        >
+          <FileCode size={16} />
+          View full contribution guide with step-by-step instructions
+        </Link>
+      </div>
+
       {/* Ways to Contribute */}
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-text mb-6">Ways to Contribute</h2>
@@ -71,6 +84,22 @@ export default function ContributePage() {
         </div>
       </section>
 
+      {/* Your First Contribution in 5 Minutes */}
+      <section className="mb-12 p-6 rounded-lg border border-border bg-surface">
+        <h2 className="text-xl font-semibold text-text mb-4">Your First Contribution in 5 Minutes</h2>
+        <ol className="text-sm text-muted space-y-2 list-decimal list-inside">
+          <li>Fork the repo (click "Fork" top-right on GitHub) — <Link href="https://github.com/afrilayer/afrilayer" target="_blank" className="text-copper">Done here</Link></li>
+          <li>Clone and install: <code className="font-mono">git clone https://github.com/YOUR-USERNAME/afrilayer.git && cd afrilayer && npm install</code></li>
+          <li>Copy <Link href="https://github.com/afrilayer/afrilayer/blob/main/providers/provider.template.json" target="_blank" className="text-copper">the templates</Link> to a new folder</li>
+          <li>Preview locally: <code className="font-mono">npm run dev</code> opens at localhost:3000</li>
+          <li>Validate and push: <code className="font-mono">npm run validate && git commit -m "Add provider" && git push</code></li>
+          <li>Open a Pull Request on GitHub — follow the banner to "Compare & pull request"</li>
+        </ol>
+        <p className="text-xs text-muted-dim mt-3">
+          Each step explained in detail in <Link href="/CONTRIBUTING.md" className="text-copper">CONTRIBUTING.md</Link>.
+        </p>
+      </section>
+
       {/* Provider Folder Structure */}
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-text mb-6">Provider Folder Structure</h2>
@@ -82,7 +111,7 @@ export default function ContributePage() {
     provider.json     # Required: Core metadata
     README.md         # Required: Documentation
     api.json          # Optional: Code samples, pricing
-    /screenshots/     # Optional: UI screenshots
+    /screenshots/    # Optional: UI screenshots
     openapi.yaml      # Optional: OpenAPI spec`}
           </pre>
         </div>
@@ -97,12 +126,13 @@ export default function ContributePage() {
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-text mb-6">Required Files</h2>
         
+        <p className="text-xs text-muted mb-4">
+          Once you're set up locally, here's what goes in provider.json:
+        </p>
+        
         <div className="space-y-6">
           <div>
             <h3 className="text-sm font-semibold text-text mb-2">provider.json</h3>
-            <p className="text-xs text-muted mb-3">
-              Contains core provider metadata including name, description, categories, countries, and status.
-            </p>
             <div className="p-4 rounded-lg border border-border bg-bg">
               <pre className="text-xs font-mono text-muted overflow-x-auto">
 {`{
@@ -118,7 +148,11 @@ export default function ContributePage() {
   "authentication": "API Key",
   "status": "Live",
   "verified": true,
-  "lastVerified": "2026-07-12"
+  "lastVerified": "2026-07-12",
+  "lastUpdated": "2026-07-12",
+  "pricingModel": "transaction",
+  "sandboxAvailable": true,
+  "productionReady": true
 }`}
               </pre>
             </div>
