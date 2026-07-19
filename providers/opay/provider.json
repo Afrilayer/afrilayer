@@ -1,26 +1,32 @@
 {
   "slug": "opay",
   "name": "OPay",
-  "tagline": "Digital financial services platform with payments and transfer APIs.",
-  "description": "OPay provides APIs for payments, transfers, bill payments and airtime services across Nigeria and expanding African markets.",
-  "website": "https://opay.com",
-  "documentation": "https://developer.opay.com",
-  "developerPortal": "https://developer.opay.com",
-  "headquarters": "Nigeria",
+  "tagline": "Digital financial platform for payments and merchant services.",
+  "description": "OPay is a Nigerian fintech company offering digital payments, merchant acquiring, transfers, POS services, wallets, and financial services. It provides payment solutions for businesses and selected API integrations for enterprise partners.",
+  "website": "https://opayweb.com",
+  "documentation": "https://documentation.opaycheckout.com",
+  "developerPortal": "https://documentation.opaycheckout.com",
+  "supportEmail": "support@opay-inc.com",
+  "headquarters": "Lagos, Nigeria",
   "categories": [
     "Payments",
+    "Merchant Services",
     "Mobile Money"
   ],
   "countries": [
     "Nigeria"
   ],
   "features": [
-    "Money transfer",
-    "Bill payments",
-    "Airtime",
-    "QR payments"
+    "Online Payments",
+    "Merchant Checkout",
+    "Payment Gateway",
+    "POS Payments",
+    "Wallet Payments",
+    "Transfers",
+    "QR Payments",
+    "Webhooks"
   ],
-  "pricingModel": "transaction",
+  "pricingModel": "Transaction-based",
   "authentication": "API Key",
   "apiStyle": "REST",
   "sdkLanguages": [
@@ -32,7 +38,13 @@
   "productionReady": true,
   "status": "Live",
   "verified": true,
-  "lastVerified": "2026-07-16",
-  "lastUpdated": "2026-07-16",
-  "logoUrl": "https://logo.clearbit.com/opay.com"
+  "lastVerified": "2026-07-19",
+  "lastUpdated": "2026-07-19",
+  "keyPeople": [
+    {
+      "name": "Dauda Gotring",
+      "role": "Managing Director, OPay Nigeria"
+    }
+  ],
+  "logoUrl": "https://gstatic.opayweb.com/website-ng/img/opay-logo.684aa98.svg"
 }

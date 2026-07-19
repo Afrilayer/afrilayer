@@ -8,3 +8,6 @@ xend-finance: cv
 bachs: cv
 africas-talking: cv
 yoco: cv
+opay: cv
+youverify: cv
+valr: cv

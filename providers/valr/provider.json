@@ -1,29 +1,35 @@
 {
   "slug": "valr",
   "name": "VALR",
-  "tagline": "Cryptocurrency exchange and trading platform in Africa.",
-  "logoUrl": "/providers/valr/logo.svg",
-  "description": "VALR is a cryptocurrency exchange and trading platform offering digital asset trading, custody, and API services to individuals and institutions in South Africa and across Africa.",
+  "tagline": "Cryptocurrency exchange and digital asset infrastructure.",
+  "logoUrl": "https://cdn.valr.com/website-assets/brand/assets/valr-logo-dark-theme.svg",
+  "description": "VALR is a South African cryptocurrency exchange providing APIs for digital asset trading, market data, wallets, deposits, withdrawals, and institutional trading services.",
   "website": "https://www.valr.com",
   "documentation": "https://docs.valr.com",
   "developerPortal": "https://docs.valr.com",
   "supportEmail": "support@valr.com",
-  "headquarters": "South Africa",
+  "headquarters": "Johannesburg, South Africa",
   "categories": [
-    "Crypto"
+    "Crypto",
+    "Exchange",
+    "Trading"
   ],
   "countries": [
     "South Africa"
   ],
   "features": [
-    "Cryptocurrency trading",
-    "Digital asset custody",
-    "API trading",
-    "Market data",
-    "Instant swaps"
+    "Spot Trading",
+    "Market Data",
+    "Order Management",
+    "Wallet Management",
+    "Deposits",
+    "Withdrawals",
+    "Instant Swaps",
+    "WebSocket Streams",
+    "REST API"
   ],
-  "pricingModel": "transaction",
-  "authentication": "API Key",
+  "pricingModel": "Transaction-based",
+  "authentication": "API Key + HMAC Signature",
   "apiStyle": "REST",
   "sandboxAvailable": true,
   "productionReady": true,
@@ -34,17 +40,21 @@
     "PHP"
   ],
   "status": "Live",
-  "verified": false,
-  "lastVerified": "2026-07-22",
-  "lastUpdated": "2026-07-22",
+  "verified": true,
+  "lastVerified": "2026-07-19",
+  "lastUpdated": "2026-07-19",
   "keyPeople": [
     {
       "name": "Farzam Ehsani",
-      "role": "Co-founder & CEO"
+      "role": "Co-founder & Chief Executive Officer"
+    },
+    {
+      "name": "Badi Sudhakaran",
+      "role": "Co-founder"
     },
     {
       "name": "Chris Light",
-      "role": "Co-founder"
+      "role": "Chief Executive Officer, VALR Europe"
     }
   ]
 }

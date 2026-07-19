@@ -1,16 +1,18 @@
 {
   "slug": "youverify",
   "name": "Youverify",
-  "tagline": "Identity and compliance verification for Africa.",
-  "description": "Youverify provides KYC and compliance verification APIs for African businesses, supporting identity verification, document validation, and background checks.",
+  "tagline": "Identity verification and compliance infrastructure for Africa.",
+  "description": "Youverify provides APIs for identity verification, KYC, KYB, AML screening, document verification, background checks, and compliance automation across multiple African markets.",
   "website": "https://youverify.co",
-  "documentation": "https://doc.youverify.co/",
-  "developerPortal": "https://youverify.co/en/developers",
+  "documentation": "https://doc.youverify.co",
+  "developerPortal": "https://doc.youverify.co",
   "supportEmail": "support@youverify.co",
-  "headquarters": "Nigeria",
+  "headquarters": "Lagos, Nigeria",
   "categories": [
     "Identity",
-    "KYC"
+    "KYC",
+    "KYB",
+    "Compliance"
   ],
   "countries": [
     "Nigeria",
@@ -19,14 +21,22 @@
     "South Africa"
   ],
   "features": [
-    "BVN verification",
-    "NIN verification",
-    "Passport verification",
-    "Driver's license",
-    "AML screening",
-    "Background checks"
+    "BVN Verification",
+    "NIN Verification",
+    "Passport Verification",
+    "Driver's License Verification",
+    "Voter ID Verification",
+    "Business Verification",
+    "AML Screening",
+    "PEP Screening",
+    "Sanctions Screening",
+    "Document Verification",
+    "Face Match",
+    "Liveness Detection",
+    "Background Checks",
+    "Webhooks"
   ],
-  "pricingModel": "pay-as-you-go",
+  "pricingModel": "Pay-as-you-go",
   "authentication": "API Key",
   "apiStyle": "REST",
   "sdkLanguages": [
@@ -42,12 +52,12 @@
   "productionReady": true,
   "status": "Live",
   "verified": true,
-  "lastVerified": "2026-07-16",
-  "lastUpdated": "2026-07-16",
+  "lastVerified": "2026-07-19",
+  "lastUpdated": "2026-07-19",
   "keyPeople": [
     {
       "name": "Samuel Afolabi",
-      "role": "Co-founder & CEO"
+      "role": "Co-founder & Chief Executive Officer"
     }
   ],
   "logoUrl": "https://youverify.co/assets/logos/logo.svg"
