@@ -10,7 +10,7 @@ New to Git? No problem! Follow these steps to make your first contribution.
 
 2. **Clone your fork to your computer** — This downloads your copy so you can work on it locally:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/afrilayer.git
+   git clone https://github.com/afrilayer/afrilayer.git
    cd afrilayer
    ```
    Why? You need the files on your computer to make changes.
