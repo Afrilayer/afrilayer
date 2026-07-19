@@ -23,7 +23,7 @@ export default async function Home() {
     description: p.description,
     status: p.status,
     lastVerified: p.lastVerified,
-    uptime: p.apiData?.uptime || '99.9%',
+    uptime: p.apiData?.uptime || 'N/A',
     pricing: p.apiData?.pricing || [],
     curl: p.apiData?.curl || '',
     js: p.apiData?.js || '',
@@ -53,14 +53,14 @@ export default async function Home() {
           <div className="max-w-xl">
             <div className="flex items-center gap-2 mb-5">
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              <span className="text-xs font-mono tracking-widest uppercase text-text-muted">
+              <span className="text-xs font-mono tracking-widest uppercase text-muted">
                 {stats.liveApis}+ verified APIs
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-text">
               The verification layer for African digital infrastructure.
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-text-muted">
+            <p className="mt-5 text-base leading-relaxed text-muted">
               Discover production-ready APIs powering Africa — payments, mobile money, KYC, SMS, and banking.
               Each listing is continuously monitored, verification-dated, and rated for operational confidence.
             </p>

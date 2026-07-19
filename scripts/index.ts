@@ -1,7 +1,6 @@
-// Registry generator script
-// Runs generateRegistry and outputs statistics + data-quality report
+// Stats generator script
+// Outputs provider statistics for developer tooling
 
-import { generateRegistry } from '../lib/providers/indexer';
 import { getAllProviders } from '../lib/providers/loader';
 import { promises as fs } from 'fs';
 import path from 'path';
@@ -44,9 +43,6 @@ async function countScreenshots() {
 }
 
 async function main() {
-  // Generate registry
-  await generateRegistry();
-  
   const providers = await getAllProviders();
   
   // Count SDKs

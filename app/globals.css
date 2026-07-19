@@ -6,18 +6,12 @@
    For Professional Developer Platform
 =========================================== */
 
-/* Brand fonts */
-@theme inline {
+/* Brand fonts & color tokens */
+@theme {
   --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
   --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
-}
 
-/* ===========================================
-   Light mode (default)
-   60% Background | 30% Structure/Typography | 10% Accent
-=========================================== */
-:root {
   /* 60% - Background tones */
   --color-bg: #FAFAF8;
   --color-surface: #FFFFFF;
@@ -28,8 +22,8 @@
   /* 30% - Text & borders */
   --color-text: #1F1F1D;
   --color-text-dim: #4B5563;
-  --color-text-muted: #6B7280;
-  --color-text-muted-dim: #75716A;
+  --color-muted: #6B7280;
+  --color-muted-dim: #75716A;
   --color-border: #E5E7EB;
   --color-border-dark: #2E2D2A;
 
@@ -44,6 +38,12 @@
   --color-status-verified: #2ECC71;
   --color-status-estimated: #F39C12;
   --color-status-unavailable: #E74C3C;
+
+  /* Additional accent & semantic tokens used in JSX */
+  --color-clay: #C76B3A;
+  --color-copper: #D48A5A;
+  --color-verified: #2ECC71;
+  --color-unavailable: #E74C3C;
 }
 
 /* ===========================================
@@ -59,10 +59,15 @@
 
   --color-text: #F5F5F2;
   --color-text-dim: #C7C5BE;
-  --color-text-muted: #A5A297;
-  --color-text-muted-dim: #7A7770;
+  --color-muted: #A5A297;
+  --color-muted-dim: #7A7770;
   --color-border: #2E2D2A;
   --color-border-dark: #1A1A19;
+
+  --color-clay: #D4835A;
+  --color-copper: #E09B6B;
+  --color-verified: #3DDC84;
+  --color-unavailable: #F05A4A;
 }
 
 @tailwind base;

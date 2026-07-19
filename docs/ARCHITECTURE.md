@@ -7,20 +7,15 @@
 - **GitHub powers statistics and changelogs.**
 - **No traditional database, CMS, admin panel, or authentication.**
 
-## Build-Time Index Generation
+## Runtime Data Access
 
-During `next build`, a script generates `public/generated/registry.json`:
+All provider data is loaded at runtime via `lib/providers/loader.ts` and served through API endpoints:
 
-```
-/public/generated/
-├── registry.json          # Provider index, counts, search index
-└── providers/             # All provider logos (copied for CDN optimization)
-```
+- `/api/search-data` — Returns live provider data for search and programmatic access
+- `/api/logos/[slug]` — Serves provider logos dynamically
+- `/api/changelog-data` — Returns changelog entries
 
-This index enables:
-- Instant homepage statistics
-- Fast search without filesystem I/O
-- Clean separation between build and runtime
+Data is loaded dynamically with ISR (Incremental Static Regeneration) for fresh content on each request.
 
 ## Data Flow
 
@@ -137,9 +132,8 @@ afrilayer/
 ## Scripts
 
 - `npm run dev` — Start development server
-- `npm run build` — Build for production (includes registry generation)
+- `npm run build` — Build for production
 - `npm run validate` — Run provider validation script
-- `npm run generate` — Generate registry index
 
 ---
 

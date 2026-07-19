@@ -29,7 +29,7 @@ There are two verification levels:
 
 ## Is there an API for this data?
 
-Yes! Afrilayer generates static JSON files that can be consumed programmatically. Access provider data at `/public/generated/registry.json`.
+Yes! Afrilayer provides a live API endpoint at `/api/search-data` that returns provider data for programmatic access. This endpoint serves real-time data and is the recommended way to consume the registry data.
 
 ## How is this different from RapidAPI or other API directories?
 

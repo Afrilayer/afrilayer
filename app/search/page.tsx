@@ -14,13 +14,30 @@ export default function SearchPage() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [results, setResults] = React.useState<Provider[]>([]);
   const [allProviders, setAllProviders] = React.useState<Provider[]>([]);
+  const [loadError, setLoadError] = React.useState(false);
 
   // Load providers from registry on mount
   React.useEffect(() => {
-    fetch('/generated/registry.json')
-      .then(res => res.json())
-      .then(data => setAllProviders(data.index || []))
-      .catch(() => setAllProviders([]));
+    fetch('/api/search-data')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Failed to load search data');
+        }
+        return res.json();
+      })
+      .then(data => {
+        // Map API response to full Provider shape (add missing logoUrl and verification defaults)
+        const providers = (data.providers || []).map((p: any) => ({
+          ...p,
+          logoUrl: p.logoUrl || `/api/logos/${p.slug}`,
+          verification: p.verification,
+        }));
+        setAllProviders(providers as Provider[]);
+      })
+      .catch(() => {
+        setLoadError(true);
+        setAllProviders([]);
+      });
   }, []);
 
   // Perform search
@@ -51,6 +68,15 @@ export default function SearchPage() {
         Search APIs
       </h1>
 
+      {/* Error state - fetch failed */}
+      {loadError && (
+        <div className="mb-8 p-4 rounded-lg border border-red-500/20 bg-red-500/5">
+          <p className="text-sm text-red-400">
+            Couldn't load search data. Please try refreshing the page.
+          </p>
+        </div>
+      )}
+
       <div className="mb-8 max-w-2xl">
         <div className="flex items-center gap-2 px-4 py-3 rounded-lg w-full bg-surface border border-border">
           <SearchIcon size={16} className="text-muted-dim" />
@@ -65,12 +91,12 @@ export default function SearchPage() {
       </div>
 
       {/* Trending section - shown when no query */}
-      {!isLoading && !query && (
+      {!isLoading && !query && !loadError && (
         <TrendingSection providers={allProviders} />
       )}
 
       {/* Results count */}
-      {query && !isLoading && (
+      {query && !isLoading && !loadError && (
         <p className="mb-4 text-sm text-muted" aria-live="polite">
           Found <span className="font-medium text-text">{results.length}</span> results for "{query}"
         </p>
@@ -86,7 +112,7 @@ export default function SearchPage() {
       )}
 
       {/* Results */}
-      {!isLoading && query && results.length > 0 && (
+      {!isLoading && query && !loadError && results.length > 0 && (
         <div className="space-y-4 stagger-children">
           {results.map((result) => (
             <Link
@@ -131,7 +157,7 @@ export default function SearchPage() {
       )}
 
       {/* Empty state - no query */}
-      {!isLoading && !query && (
+      {!isLoading && !query && !loadError && (
         <div className="text-center py-16 rounded-lg border border-dashed border-border">
           <h3 className="text-lg font-semibold text-text mb-2">Search for APIs and providers</h3>
           <p className="text-sm text-muted">
@@ -142,7 +168,7 @@ export default function SearchPage() {
       )}
 
       {/* Empty state - no results */}
-      {!isLoading && query && results.length === 0 && (
+      {!isLoading && query && !loadError && results.length === 0 && (
         <div className="text-center py-16 rounded-lg border border-dashed border-border">
           <h3 className="text-lg font-semibold text-text mb-2">No results found</h3>
           <p className="text-sm text-muted">

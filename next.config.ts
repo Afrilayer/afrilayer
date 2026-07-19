@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  outputFileTracingIncludes: {
+    '/**': ['./providers/**']
+  },
 };
 
 export default nextConfig;
