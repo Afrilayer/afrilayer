@@ -1,26 +1,37 @@
 # WatuPay API
 
-Mobile money and payment solutions for East Africa.
+Payment gateway and checkout API for Nigerian businesses.
 
 ## Overview
 
-WatuPay provides API solutions for mobile money payments, bill payments, and financial services across East African markets including Kenya, Tanzania, and Uganda.
+WatuPay is a payment gateway and checkout platform for Nigerian businesses,
+part of the Watu ecosystem (watu.global). It provides card payments, bank
+transfer, mobile money collection, payment links, and bill payment APIs,
+plus a POS agent business line and a USSD-based voting/collection product.
 
 ## Products
 
-- Payments API - Process mobile money payments
-- Bill Payment API - Pay utility bills
-- Airtime API - Mobile top-up services
-- Bank Transfer API - Direct bank transfers
+- Checkout API — hosted and inline card checkout (Visa, Mastercard, Verve)
+- Direct Charge API — AES-encrypted direct card charge
+- Bank Transfer API — collect via Nigerian bank transfer
+- Mobile Money API — mobile money collection
+- Payment Links — shareable payment link generation
+- Bill Payment API — electricity (e.g. EKEDC) and cable TV (DSTV) payments
+- Airtime & Data API — mobile top-up and data bundle resale
+- USSD Voting/Collection — USSD-based voting and fund collection
 
 ## Authentication
 
-Uses API Key authentication. Register at watupay.com to get API credentials.
+Bearer token authentication using public, private, secret, and encryption
+keys. Test keys are prefixed `WTP-T-`, live keys `WTP-L-`. Sign up and get
+API keys via the Watu dashboard (dashboard.watu.global).
 
 ## Sandbox
 
-Sandbox environment available for testing integrations.
+Full Test Mode available with dedicated test cards, test bank accounts
+(Access Bank), and test OTPs. Switch between Test and Live mode from the
+dashboard; API keys change accordingly.
 
 ## Coverage
 
-Available in Kenya, Tanzania, and Uganda.
+Nigeria.

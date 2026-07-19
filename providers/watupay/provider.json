@@ -1,47 +1,41 @@
 {
   "slug": "watupay",
   "name": "WatuPay",
-  "tagline": "Mobile money and payment solutions for East Africa.",
-  "description": "WatuPay provides API solutions for mobile money payments, bill payments, and financial services across East African markets.",
+  "tagline": "Payment gateway and checkout API for Nigerian businesses.",
+  "description": "WatuPay is a payment gateway and checkout platform for Nigerian businesses, part of the Watu ecosystem. It provides hosted and inline card checkout, direct card charge, bank transfer collection, mobile money collection, payment links, and bill payment APIs (electricity, cable TV), plus airtime/data resale and a POS agent business line.",
+  "logoUrl": "https://pbs.twimg.com/profile_images/1252572689916661762/IicmFboy_400x400.jpg",
   "website": "https://watupay.com",
   "documentation": "https://docs.watupay.com",
-  "developerPortal": "https://watupay.com",
+  "developerPortal": "https://watu.global",
   "supportEmail": "support@watupay.com",
-  "headquarters": "Kenya",
-  "categories": [
-    "Payments",
-    "Mobile Money"
-  ],
-  "countries": [
-    "Kenya",
-    "Tanzania",
-    "Uganda"
-  ],
+  "headquarters": "Nigeria",
+  "categories": ["Payments", "Airtime"],
+  "countries": ["Nigeria"],
   "features": [
-    "Mobile money payments",
-    "Bill payments",
-    "Airtime top-up",
-    "Bank transfers"
+    "Hosted & inline checkout",
+    "Direct card charge (AES-encrypted)",
+    "Bank transfer collection",
+    "Mobile money collection",
+    "Payment links",
+    "Electricity bill payments",
+    "Cable TV subscription payments",
+    "Airtime & data resale",
+    "POS agent business",
+    "USSD voting/collection"
   ],
   "pricingModel": "transaction",
-  "authentication": "API Key",
+  "authentication": "API Key (Bearer token — public/private/secret/encryption keys)",
   "apiStyle": "REST",
-  "sdkLanguages": [
-    "JavaScript",
-    "Python",
-    "PHP"
-  ],
+  "sdkLanguages": [],
   "sandboxAvailable": true,
   "productionReady": true,
   "status": "Live",
   "verified": true,
-  "lastVerified": "2026-07-16",
-  "lastUpdated": "2026-07-16",
+  "lastVerified": "2026-07-19",
+  "lastUpdated": "2026-07-19",
   "keyPeople": [
     {
-      "name": "Michael Mwangi",
-      "role": "Co-founder"
-    }
-  ],
-  "logoUrl": "https://logo.clearbit.com/watupay.com"
+      "name": "Olumide Omotoso",
+      "role": "CEO"
+    }]
 }

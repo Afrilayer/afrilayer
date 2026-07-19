@@ -1,10 +1,9 @@
 Afrilayer Provider Verification
 
-paystack: cv
-flutterwave: cv
-mono: cv
-youverify: cv
-okra: cv
-termii: cv
-kwik: cv
+onafriq: cv
+sendbyte: cv
+vtpass: cv
+watupay: cv
+xend-finance: cv
+bachs: cv
 africas-talking: cv

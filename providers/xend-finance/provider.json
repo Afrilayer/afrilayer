@@ -2,47 +2,35 @@
   "slug": "xend-finance",
   "name": "Xend Finance",
   "tagline": "DeFi platform for African credit unions and cooperatives.",
-  "logoUrl": "/providers/xend-finance/logo.svg",
-  "description": "Xend Finance is a decentralized finance (DeFi) platform that provides yield farming and cryptocurrency services to credit unions and cooperatives in Nigeria and across Africa.",
-  "website": "https://xend.finance",
+  "description": "Xend Finance is a decentralized finance (DeFi) platform, backed by Binance Labs and Google for Startups, that lets credit unions and cooperatives channel member savings into stablecoin-denominated yield products. Registered as Xend Tech Limited (Enugu, Nigeria), the company has since expanded into Asset Chain, an EVM-compatible Layer-1 blockchain for real-world asset tokenization.",
+  "logoUrl": "https://pbs.twimg.com/profile_images/2010742043044130816/17VbXr_F_400x400.jpg",
+  "website": "https://xend.africa",
   "documentation": "https://docs.xend.finance",
   "developerPortal": "https://docs.xend.finance",
   "supportEmail": "support@xend.finance",
   "headquarters": "Nigeria",
-  "categories": [
-    "Crypto"
-  ],
-  "countries": [
-    "Nigeria"
-  ],
+  "categories": ["Crypto"],
+  "countries": ["Nigeria"],
   "features": [
     "DeFi yield farming",
-    "Stablecoins",
+    "Stablecoin savings",
     "Credit union integration",
     "Cooperative savings",
-    "Cryptocurrency wallets"
+    "Cryptocurrency wallets",
+    "Web SDK (@xend-finance/web-sdk)"
   ],
   "pricingModel": "transaction",
   "authentication": "API Key",
   "apiStyle": "REST",
   "sandboxAvailable": true,
   "productionReady": true,
-  "sdkLanguages": [
-    "JavaScript",
-    "Python"
-  ],
+  "sdkLanguages": ["JavaScript"],
   "status": "Live",
-  "verified": false,
-  "lastVerified": "2026-07-22",
-  "lastUpdated": "2026-07-22",
+  "verified": true,
+  "lastVerified": "2026-07-19",
+  "lastUpdated": "2026-07-19",
   "keyPeople": [
-    {
-      "name": "Chibuike Anyanwu",
-      "role": "Co-founder & CEO"
-    },
-    {
-      "name": "Ariella Ola",
-      "role": "Co-founder & CTO"
-    }
+    { "name": "Ugochukwu Aronu", "role": "Founder & CEO" },
+    { "name": "Abafor Chima", "role": "Co-founder" }
   ]
 }
