@@ -56,7 +56,7 @@ export default async function Home() {
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-text font-serif">
-              The African API you found six months ago might already be lying to you.
+              One API directory, 50+ verified African providers. Payments, identity, SMS & banking - checked, dated, re-checked.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-text-muted max-w-lg">
               Afrilayer is where developers check what's actually still live — payments,
