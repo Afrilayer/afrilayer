@@ -52,11 +52,11 @@ export default async function Home() {
             <div className="flex items-center gap-2 mb-6">
               <span className="w-2 h-2 rounded-full bg-accent" />
               <span className="text-xs font-mono tracking-widest uppercase text-text-muted">
-                {stats.liveApis}+ verified APIs
+                {stats.liveApis}+ verified providers.
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-text font-serif">
-              Build Fast with 50+ Vetted African APIs.
+              Build Fast with Vetted African APIs.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-text-muted max-w-lg">
               The ultimate directory for verified payments, identity, SMS, banking integrations and more.

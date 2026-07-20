@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://afrilayer.com",
-    title: "Afrilayer — Africa's API Infrastructure Platform",
+    title: "Afrilayer — Build Fast with Vetted African APIs.",
     description:
       "The trusted infrastructure layer connecting developers to Africa's digital ecosystem. Every API listing includes verification dates, uptime, and confidence scores.",
     siteName: "Afrilayer",
@@ -50,13 +50,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Afrilayer - Africa's API Infrastructure Platform",
+        alt: "Afrilayer - Build Fast with Vetted African APIs.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Afrilayer — Africa's API Infrastructure Platform",
+    title: "Afrilayer — Build Fast with Vetted African APIs.",
     description:
       "Infrastructure intelligence for Africa's digital ecosystem. Verified APIs with operational transparency.",
     images: ["/og-image.png"],
