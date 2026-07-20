@@ -20,8 +20,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Afrilayer — Africa's API Infrastructure Platform",
-    template: "%s — Afrilayer",
+    default: "Afrilayer - Build Fast with Vetted African APIs.",
+    template: "%s - Afrilayer",
   },
   description:
     "Afrilayer checks which African payment, identity, SMS and banking APIs are actually still live — verified and re-checked, not just listed.",
