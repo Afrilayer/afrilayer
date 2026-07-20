@@ -24,30 +24,18 @@ export const metadata: Metadata = {
     template: "%s — Afrilayer",
   },
   description:
-    "Discover, compare, and evaluate trusted African APIs for payments, mobile money, identity, KYC, SMS, Airtime, telecom, government, and digital infrastructure. Every listing carries verification metadata.",
+    "Afrilayer checks which African payment, identity, SMS and banking APIs are actually still live — verified and re-checked, not just listed.",
   keywords:
     "Africa, API, payments, mobile money, KYC, identity, banking, SMS, airtime, developers, infrastructure, verification, uptime, latency",
   authors: [{ name: "Afrilayer" }],
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
-    other: [
-      {
-        rel: "android-chrome-192x192",
-        url: "/android-chrome-192x192.png",
-      },
-      {
-        rel: "android-chrome-512x512",
-        url: "/android-chrome-512x512.png",
-      },
-    ],
   },
   openGraph: {
     type: "website",

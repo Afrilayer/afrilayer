@@ -1,1 +1,0 @@
-OG image placeholder - create og-image.png (1200x630) for social sharing

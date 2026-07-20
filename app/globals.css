@@ -33,8 +33,8 @@
 
   /* 10% - Accent & status - UNIFIED ACCENT COLOR */
   /* Deep terracotta inspired by African earth tones - replaces gold, clay, copper */
-  --color-accent: #C75B39;
-  --color-accent-hover: #A84A2E;
+  --color-accent: #DF520D;
+  --color-accent-hover: #C24509;
   --color-success: #2ECC71;
   --color-warning: #F39C12;
   --color-danger: #E74C3C;
@@ -63,8 +63,8 @@
   --color-border: #2E2D2A;
   --color-border-dark: #1A1A19;
 
-  --color-accent: #D4835A;
-  --color-accent-hover: #B87045;
+  --color-accent: #E56B2C;
+  --color-accent-hover: #C95A22;
   --color-status-verified: #3DDC84;
   --color-status-estimated: #FFB422;
   --color-status-unavailable: #F05A4A;

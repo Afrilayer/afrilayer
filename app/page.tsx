@@ -56,11 +56,12 @@ export default async function Home() {
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-text font-serif">
-              The verification layer for African digital infrastructure.
+              The African API you found six months ago might already be lying to you.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-text-muted max-w-lg">
-              Discover production-ready APIs powering Africa — payments, mobile money, KYC, SMS, and banking.
-              Each listing is continuously monitored, verification-dated, and rated for operational confidence.
+              Afrilayer is where developers check what's actually still live — payments,
+              mobile money, KYC, SMS and banking APIs across Africa, each one dated,
+              verified, and re-checked on a real schedule.
             </p>
           </div>
           <Stamp label={`${stats.liveApis} Verified`} sublabel={stats.averageVerificationAge} size="lg" />
