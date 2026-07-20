@@ -29,12 +29,11 @@ export function Header() {
         <div className="max-w-5xl mx-auto flex h-14 items-center justify-between px-6 md:px-10">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2" aria-label="Afrilayer home">
-              {/* Logo mark: 20x20 inline SVG */}
+              {/* Logo mark: 20x20 stacked-diamond inline SVG */}
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="5" cy="15" r="2.5" fill="var(--color-text-muted)" />
-                <circle cx="15" cy="15" r="2.5" fill="var(--color-text-muted)" />
-                <circle cx="10" cy="9" r="3" fill="var(--color-surface-dark)" />
-                <circle cx="10" cy="9" r="1.2" fill="var(--color-status-verified)" />
+                <polygon points="10,2 18,6 10,10 2,6" fill="var(--color-accent)" />
+                <polygon points="10,6.5 18,10.5 10,14.5 2,10.5" fill="var(--color-accent)" />
+                <polygon points="10,11 18,15 10,19 2,15" fill="var(--color-accent)" />
               </svg>
               <span className="font-outfit font-semibold tracking-tight text-sm text-text">
                 Afrilayer
