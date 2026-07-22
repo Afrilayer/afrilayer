@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeProvider";
 
 const navigation = [
+  { name: "APIs", href: "/providers" },
   { name: "Categories", href: "/categories" },
   { name: "Countries", href: "/countries" },
-  { name: "Providers", href: "/providers" },
   { name: "Changelog", href: "/changelog" },
 ];
 
