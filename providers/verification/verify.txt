@@ -1,7 +1,7 @@
 Afrilayer Provider(s) Verification
 
 onafriq: cv
-sendbyte: cv
+sendbyte: pv
 vtpass: cv
 watupay: cv
 xend-finance: cv
