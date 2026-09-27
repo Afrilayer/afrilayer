@@ -19,7 +19,7 @@ export async function getAviationSignals():Promise<NormalizedSignal[]>{
   const altitude=baroAltitude==null?"altitude unavailable":Math.round(baroAltitude*3.28084).toLocaleString()+" ft";
   const speed=velocity==null?"speed unavailable":Math.round(velocity*1.94384)+" kt";
   return normalizeSignal({
-   id:"aircraft-"+icao+"-"+index,
+   id:"aircraft-"+icao,
    title:label,
    summary:`Live aircraft position · ${altitude} · ${speed}.`,
    city:"Airspace",
