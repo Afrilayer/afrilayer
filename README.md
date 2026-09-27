@@ -4,7 +4,7 @@
 
 Afrilayer is an interactive, map-first activity layer for discovering what is happening across Africa by place, category and time.
 
-## Current build — 0.19.0
+## Current build — 0.20.0
 
 The current MVP combines a map-first interface with live weather, GDELT geographic news signals and live ADS-B aircraft positions, while keeping remaining prototype activity clearly labelled. It now has:
 
@@ -17,6 +17,7 @@ The current MVP combines a map-first interface with live weather, GDELT geograph
 - Source attribution fields in the event model
 - Zoom controls and map legend
 - Country activity counts on the map
+- Compact country signal breakdown by category when a country is selected
 - Live weather status and provenance in the interface
 - A clean separation between demo signals and future source ingestion
 
@@ -103,6 +104,7 @@ Then open `http://localhost:3000`.
 ### Next
 - [x] Replace the stylized country geometry with a complete geographic dataset while preserving pan/zoom interaction
 - [x] Add lightweight country-level signal density visualization
+- [x] Add compact country signal breakdown by category
 - [x] Define and register the first non-weather source adapter
 - [x] Add deduplication and confidence fields
 - [ ] Persist normalized signals
@@ -136,7 +138,7 @@ The GDELT adapter currently limits the initial request window and result count s
 
 ### Geographic positioning
 
-Live and prototype signals are now projected from their latitude/longitude into the current Africa map bounds instead of using the previous rough center-based formula. This improves marker placement for the existing prototype geometry, but the country shapes are still intentionally incomplete and are **not** an authoritative geographic boundary dataset.
+Live and prototype signals are now projected from their latitude/longitude into the current Africa map bounds instead of using the previous rough center-based formula. This improves marker placement for the existing prototype geometry, and is **not** an authoritative geographic boundary dataset.
 
 ### Aviation layer
 
