@@ -7,7 +7,7 @@ import {X,Plus,Minus,MapPin,ExternalLink,RefreshCw} from "lucide-react";
 const categories=["All","Business","Infrastructure","Tech","Event","Weather"] as const;
 const ranges=["LIVE","24H","7D","30D"] as const;
 const maxAge=(range:string)=>range==="LIVE"?0:range==="24H"?1:range==="7D"?7:30;
-const project=(lat:number,lng:number)=>({x:50+(lng/40),y:48-(lat/37)});
+const project=(lat:number,lng:number)=>({x:13+((lng+25)*74/100),y:8+((37-lat)*82/72)});
 
 export default function Home(){
  const [range,setRange]=useState<typeof ranges[number]>("LIVE");
