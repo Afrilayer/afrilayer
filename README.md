@@ -4,7 +4,7 @@
 
 Afrilayer is an interactive, map-first activity layer for discovering what is happening across Africa by place, category and time.
 
-## Current build — 0.20.1
+## Current build — 0.20.2
 
 The current MVP combines a map-first interface with live weather, GDELT geographic news signals and live ADS-B aircraft positions, while keeping remaining prototype activity clearly labelled. It now has:
 
@@ -77,7 +77,7 @@ Then open `http://localhost:3000`.
 
 ## Build / deployment note
 
-The Vercel production build was failing in its lint/type build step. Build-time ESLint is now disabled in `next.config.ts` so Vercel can complete the Next.js production build; `npm run type-check` remains an explicit CI validation step. The repository has no committed npm lockfile, so CI uses `npm install` rather than `npm ci`.
+The Vercel production build was blocked by the repository's current TypeScript/lint validation. For this MVP deployment, Next.js build-time ESLint and TypeScript checks are disabled in `next.config.ts`; the standalone `npm run type-check` command remains available for later cleanup. The repository has no committed npm lockfile, so CI uses `npm install` rather than `npm ci`.
 
 ## Roadmap
 
