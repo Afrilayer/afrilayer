@@ -16,7 +16,7 @@ export default function Home(){
  const countryCounts=useMemo(()=>Object.fromEntries(africaFeatures.map(f=>[f.name,allEvents.filter(e=>e.country===f.name).length])),[allEvents]);\n const visible=useMemo(()=>{
    const age=maxAge(range);
    return allEvents.filter(e=>(category==="All"||e.category===category)&&e.ageDays<=age&&(!country||e.country===country));
- },[category,range]);
+ },[allEvents,category,range,country]);
  return <main className="app">
   <header className="topbar">
    <div><span className="brand">Afrilayer</span><span className="tagline">See what&apos;s happening across Africa.</span></div>
