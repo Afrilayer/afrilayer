@@ -1,6 +1,7 @@
 "use client";
 import {useEffect,useMemo,useState} from "react";
-import {events,MapEvent} from "../lib/events";\nimport {africaFeatures} from "../lib/geo";
+import {events,MapEvent} from "../lib/events";
+import {africaFeatures} from "../lib/geo";
 import {X,Plus,Minus,MapPin,ExternalLink,RefreshCw} from "lucide-react";
 
 const categories=["All","Business","Infrastructure","Tech","Event","Weather"] as const;
@@ -12,7 +13,7 @@ export default function Home(){
  const [range,setRange]=useState<typeof ranges[number]>("LIVE");
  const [category,setCategory]=useState("All");
  const [selected,setSelected]=useState<MapEvent|null>(null);\n const [country,setCountry]=useState<string|null>(null);
- const [zoom,setZoom]=useState(1); const [pan,setPan]=useState({x:0,y:0}); const [drag,setDrag]=useState<{x:number;y:number;px:number;py:number}|null>(null); const [weather,setWeather]=useState<MapEvent[]>([]); const [weatherLoading,setWeatherLoading]=useState(true);\n const loadWeather=async()=>{setWeatherLoading(true);try{const r=await fetch("/api/weather");const j=await r.json();setWeather(j.signals??[]);}finally{setWeatherLoading(false);}};\n useEffect(()=>{loadWeather();},[]);\n const allEvents=useMemo(()=>[...events,...weather],[weather]);
+ const [zoom,setZoom]=useState(1); const [pan,setPan]=useState({x:0,y:0}); const [drag,setDrag]=useState<{x:number;y:number;px:number;py:number}|null>(null); const [weather,setWeather]=useState<MapEvent[]>([]); const [gdelt,setGdelt]=useState<MapEvent[]>([]); const [weatherLoading,setWeatherLoading]=useState(true);\n const loadWeather=async()=>{setWeatherLoading(true);try{const r=await fetch("/api/weather");const j=await r.json();setWeather(j.signals??[]);}finally{setWeatherLoading(false);}};\n useEffect(()=>{loadWeather();fetch("/api/gdelt").then(r=>r.json()).then(j=>setGdelt(j.signals??[])).catch(()=>setGdelt([]));},[]);\n const allEvents=useMemo(()=>[...events,...weather,...gdelt],[weather,gdelt]);
  const countryCounts=useMemo(()=>Object.fromEntries(africaFeatures.map(f=>[f.name,allEvents.filter(e=>e.country===f.name).length])),[allEvents]);\n const visible=useMemo(()=>{
    const age=maxAge(range);
    return allEvents.filter(e=>(category==="All"||e.category===category)&&e.ageDays<=age&&(!country||e.country===country));
@@ -35,7 +36,7 @@ export default function Home(){
     </svg>
     <div className="zoom"><button onClick={()=>setZoom(z=>Math.min(1.5,z+.1))}><Plus size={15}/></button><button onClick={()=>setZoom(z=>Math.max(.8,z-.1))}><Minus size={15}/></button></div>
     <div className="legend"><span><i style={{background:"#d9ff52"}}/>Activity</span><span><i style={{background:"#ffbd5c"}}/>Hot</span><span><i style={{background:"#c59cff"}}/>Tech</span><span><i style={{background:"#67d7ff"}}/>Weather</span></div>
-    <div className="footerline">{weatherLoading?"Updating live weather…":weather.length?`Live weather · ${weather.length} locations · refreshed on load`:"Live weather unavailable"} · Demo activity remains clearly labelled</div>
+    <div className="footerline">{weatherLoading?"Updating live weather…":weather.length?`Live weather · ${weather.length} locations · GDELT news signals · refreshed on load`:"Live weather unavailable"} · Demo activity remains clearly labelled</div>
    </div>
    <aside className="side">
     <div className="sidehead"><div className="eyebrow">{range==="LIVE"?"Live view":range}{country&&` · ${country}`}</div><h1>What&apos;s happening?</h1><p>Explore activity across Africa by place, category and time.</p></div>
