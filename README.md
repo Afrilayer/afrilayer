@@ -4,9 +4,9 @@
 
 Afrilayer is an interactive, map-first activity layer for discovering what is happening across Africa by place, category and time.
 
-## Current build — 0.20.2
+## Current build — 0.21.0
 
-The current MVP combines a map-first interface with live weather, GDELT geographic news signals and live ADS-B aircraft positions, while keeping remaining prototype activity clearly labelled. It now has:
+The current MVP is production-oriented around live data: Open-Meteo weather, GDELT geographic news signals and OpenSky aircraft positions. Prototype activity is no longer mixed into the normal production feed. It now has:
 
 - Africa-first map interface
 - LIVE / 24H / 7D / 30D filtering that changes the visible signal set
@@ -19,11 +19,11 @@ The current MVP combines a map-first interface with live weather, GDELT geograph
 - Country activity counts on the map
 - Compact country signal breakdown by category when a country is selected
 - Live weather status and provenance in the interface
-- A clean separation between demo signals and future source ingestion
+- Production feed composed only of live source adapters
 
-### What is not live yet
+### Live-data boundary
 
-The repository now has a live GDELT GEO news layer in addition to the live Open-Meteo weather layer. The remaining non-weather prototype signals are still demo data. GDELT signals are fetched server-side, geographically mapped and clearly attributed in the UI.
+The normal production map/feed uses only live source adapters. The legacy `lib/events.ts` file remains as a development fixture but is not included in the production `allEvents` collection. This prevents demo content from being presented as real activity.
 
 ## Product direction
 
@@ -105,6 +105,7 @@ The Vercel production build was blocked by the repository's current TypeScript/l
 - [x] GDELT country aliases, geographic bounds and duplicate suppression
 - [x] Stale aircraft movement trails removed when aircraft leave the live response
 - [x] Vercel build configuration corrected for deployment
+- [x] Production feed switched to live sources only
 
 ### Next
 - [x] Replace the stylized country geometry with a complete geographic dataset while preserving pan/zoom interaction
@@ -125,7 +126,7 @@ Afrilayer now has a small source layer in `lib/`:
 
 - `signals.ts` defines normalized signal confidence and deduplication.
 - `sources.ts` provides a registry contract for future live adapters.
-- Weather, GDELT and aviation are live source adapters; prototype activity remains clearly separated from them.
+- Weather, GDELT and aviation are live source adapters. The production UI consumes those adapters only; prototype fixtures are excluded from the production activity collection.
 
 A source should produce normalized signals before the UI consumes them:
 
