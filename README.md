@@ -4,7 +4,7 @@
 
 Afrilayer is an interactive, map-first activity layer for discovering what is happening across Africa by place, category and time.
 
-## Current build — 0.15.0
+## Current build — 0.16.0
 
 The current MVP combines a map-first interface with live weather, GDELT geographic news signals and live ADS-B aircraft positions, while keeping remaining prototype activity clearly labelled. It now has:
 
@@ -88,7 +88,10 @@ Then open `http://localhost:3000`.
 - [x] Signal normalization and deduplication foundation
 - [x] First live non-weather source: GDELT GEO
 - [x] Geographic coordinate projection aligned with the current Africa map bounds
-- [x] Live-source refresh control and loading state\n- [x] Live aircraft layer with directional markers
+- [x] Live-source refresh control and loading state
+- [x] Live aircraft layer with directional markers
+- [x] Short-lived aircraft movement trails from successive live positions
+- [x] Periodic aviation refresh with conservative five-minute polling
 - [x] Source registry foundation
 - [x] README kept current with product state
 
@@ -121,7 +124,8 @@ A source should produce normalized signals before the UI consumes them:
 ### Live sources
 
 - **Open-Meteo** — current weather for the initial mapped cities.
-- **GDELT GEO** — recent geographically mapped news coverage.\n- **OpenSky Network** — live ADS-B state vectors for aircraft inside the initial Africa bounding box. GDELT's GEO API supports GeoJSON output and geographic news mapping; Afrilayer uses it as a source layer rather than treating every article as an independent high-value event. citeturn0search3turn0search2
+- **GDELT GEO** — recent geographically mapped news coverage.
+- **OpenSky Network** — live ADS-B state vectors for aircraft inside the initial Africa bounding box. GDELT's GEO API supports GeoJSON output and geographic news mapping; Afrilayer uses it as a source layer rather than treating every article as an independent high-value event. citeturn0search3turn0search2
 
 The GDELT adapter currently limits the initial request window and result count so the map does not become an uncontrolled firehose.
 
@@ -131,6 +135,6 @@ Live and prototype signals are now projected from their latitude/longitude into 
 
 ### Aviation layer
 
-Afrilayer now includes aircraft as a distinct live map layer. The OpenSky API provides live state vectors including position, altitude, speed and track; Afrilayer converts those into lightweight directional map markers. The current server cache is intentionally conservative because OpenSky applies request-credit and rate-limit rules. citeturn0search0turn0search2
+Afrilayer now includes aircraft as a distinct live map layer. The OpenSky API provides live state vectors including position, altitude, speed and track; Afrilayer converts those into lightweight directional map markers. The current server cache and five-minute client refresh are intentionally conservative because OpenSky applies request-credit and rate-limit rules. citeturn0search0turn0search2
 
 Aircraft are visual context, not activity signals to be interpreted as news. They can be filtered separately with the **Aviation** category.
