@@ -4,7 +4,7 @@
 
 Afrilayer is an interactive, map-first activity layer for discovering what is happening across Africa by place, category and time.
 
-## Current build — 0.13.0
+## Current build — 0.14.0
 
 The current MVP combines a map-first interface with live weather and GDELT geographic news signals, while keeping remaining prototype activity clearly labelled. It now has:
 
@@ -88,6 +88,7 @@ Then open `http://localhost:3000`.
 - [x] Signal normalization and deduplication foundation
 - [x] First live non-weather source: GDELT GEO
 - [x] Geographic coordinate projection aligned with the current Africa map bounds
+- [x] Live-source refresh control and loading state
 - [x] Source registry foundation
 - [x] README kept current with product state
 
@@ -97,7 +98,7 @@ Then open `http://localhost:3000`.
 - [x] Define and register the first non-weather source adapter
 - [x] Add deduplication and confidence fields
 - [ ] Persist normalized signals
-- [ ] Add real-time/periodic refresh without turning the map into a noisy feed
+- [ ] Add periodic background refresh without turning the map into a noisy feed
 
 ## License
 
