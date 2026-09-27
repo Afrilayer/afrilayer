@@ -12,8 +12,12 @@ const project=(lat:number,lng:number)=>({x:13+((lng+25)*74/100),y:8+((37-lat)*82
 export default function Home(){
  const [range,setRange]=useState<typeof ranges[number]>("LIVE");
  const [category,setCategory]=useState("All");
- const [selected,setSelected]=useState<MapEvent|null>(null);\n const [country,setCountry]=useState<string|null>(null);
- const [zoom,setZoom]=useState(1); const [pan,setPan]=useState({x:0,y:0}); const [drag,setDrag]=useState<{x:number;y:number;px:number;py:number;moved:boolean}|null>(null); const [weather,setWeather]=useState<MapEvent[]>([]); const [gdelt,setGdelt]=useState<MapEvent[]>([]); const [aviation,setAviation]=useState<MapEvent[]>([]); const aviationTrackRef=useRef<Record<string,{lat:number;lng:number}[]>>({}); const [aviationTracks,setAviationTracks]=useState<Record<string,{lat:number;lng:number}[]>>({}); const [weatherLoading,setWeatherLoading]=useState(true); const [gdeltLoading,setGdeltLoading]=useState(true); const [aviationLoading,setAviationLoading]=useState(true);\n const loadWeather=async()=>{setWeatherLoading(true);try{const r=await fetch("/api/weather");const j=await r.json();setWeather(j.signals??[]);}finally{setWeatherLoading(false);}};\n const loadGdelt=async()=>{setGdeltLoading(true);try{const r=await fetch("/api/gdelt");const j=await r.json();setGdelt(j.signals??[]);}finally{setGdeltLoading(false);}};\n const loadAviation=async()=>{
+ const [selected,setSelected]=useState<MapEvent|null>(null);
+ const [country,setCountry]=useState<string|null>(null);
+ const [zoom,setZoom]=useState(1); const [pan,setPan]=useState({x:0,y:0}); const [drag,setDrag]=useState<{x:number;y:number;px:number;py:number;moved:boolean}|null>(null); const [weather,setWeather]=useState<MapEvent[]>([]); const [gdelt,setGdelt]=useState<MapEvent[]>([]); const [aviation,setAviation]=useState<MapEvent[]>([]); const aviationTrackRef=useRef<Record<string,{lat:number;lng:number}[]>>({}); const [aviationTracks,setAviationTracks]=useState<Record<string,{lat:number;lng:number}[]>>({}); const [weatherLoading,setWeatherLoading]=useState(true); const [gdeltLoading,setGdeltLoading]=useState(true); const [aviationLoading,setAviationLoading]=useState(true);
+ const loadWeather=async()=>{setWeatherLoading(true);try{const r=await fetch("/api/weather");const j=await r.json();setWeather(j.signals??[]);}finally{setWeatherLoading(false);}};
+ const loadGdelt=async()=>{setGdeltLoading(true);try{const r=await fetch("/api/gdelt");const j=await r.json();setGdelt(j.signals??[]);}finally{setGdeltLoading(false);}};
+ const loadAviation=async()=>{
   setAviationLoading(true);
   try{
    const r=await fetch("/api/aviation");
@@ -34,8 +38,11 @@ export default function Home(){
  useEffect(()=>{
   const id=window.setInterval(loadAviation,300000);
   return()=>window.clearInterval(id);
- },[]);\n useEffect(()=>{loadWeather();loadGdelt();loadAviation();},[]);\n const allEvents=useMemo(()=>[...events,...weather,...gdelt,...aviation],[weather,gdelt,aviation]);
- const countryCounts=useMemo(()=>Object.fromEntries(africaFeatures.map(f=>[f.name,allEvents.filter(e=>e.country===f.name).length])),[allEvents]);\n const visible=useMemo(()=>{
+ },[]);
+ useEffect(()=>{loadWeather();loadGdelt();loadAviation();},[]);
+ const allEvents=useMemo(()=>[...events,...weather,...gdelt,...aviation],[weather,gdelt,aviation]);
+ const countryCounts=useMemo(()=>Object.fromEntries(africaFeatures.map(f=>[f.name,allEvents.filter(e=>e.country===f.name).length])),[allEvents]);
+ const visible=useMemo(()=>{
    const age=maxAge(range);
    return allEvents.filter(e=>(category==="All"||e.category===category)&&e.ageDays<=age&&(!country||e.country===country));
  },[allEvents,category,range,country]);
@@ -51,7 +58,8 @@ export default function Home(){
     <svg className="map" viewBox="0 0 100 100" preserveAspectRatio="none" style={{transform:`translate(${pan.x}px,${pan.y}px) scale(${zoom})`,transformOrigin:"50% 50%",cursor:drag?"grabbing":"grab",touchAction:"none"}} onPointerDown={e=>{e.currentTarget.setPointerCapture(e.pointerId);setDrag({x:pan.x,y:pan.y,px:e.clientX,py:e.clientY,moved:false})}} onPointerMove={e=>{if(!drag)return;const dx=e.clientX-drag.px,dy=e.clientY-drag.py;setDrag({...drag,moved:drag.moved||Math.abs(dx)+Math.abs(dy)>4});setPan({x:drag.x+dx,y:drag.y+dy})}} onPointerUp={()=>setDrag(null)} onPointerCancel={()=>setDrag(null)}>
       <defs><pattern id="grid" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0H0V5" fill="none" stroke="#758089" strokeWidth=".08"/></pattern></defs>
       <rect width="100" height="100" fill="url(#grid)" className="mapgrid"/>
-      <path d="M40 5 L35 8 31 15 29 20 25 24 24 30 28 34 26 39 29 44 27 50 30 57 34 62 36 69 40 75 43 82 48 91 53 96 57 90 61 82 65 75 67 67 70 60 72 52 76 45 74 38 78 31 75 25 77 19 72 14 66 13 62 9 56 8 51 5 46 6Z" fill="#1b2529" stroke="#536067" strokeWidth=".25"/>\n      {africaFeatures.map(f=><g key={f.id}><path d={f.path} className={`country ${country===f.name?"selectedcountry":""}`} title={f.name} onClick={()=>{setCountry(f.name);setSelected(null)}}/>{countryCounts[f.name]>0&&<text className="countrycount" x={f.labelX} y={f.labelY}>{countryCounts[f.name]}</text>}</g>)}
+      <path d="M40 5 L35 8 31 15 29 20 25 24 24 30 28 34 26 39 29 44 27 50 30 57 34 62 36 69 40 75 43 82 48 91 53 96 57 90 61 82 65 75 67 67 70 60 72 52 76 45 74 38 78 31 75 25 77 19 72 14 66 13 62 9 56 8 51 5 46 6Z" fill="#1b2529" stroke="#536067" strokeWidth=".25"/>
+      {africaFeatures.map(f=><g key={f.id}><path d={f.path} className={`country ${country===f.name?"selectedcountry":""}`} title={f.name} onClick={()=>{setCountry(f.name);setSelected(null)}}/>{countryCounts[f.name]>0&&<text className="countrycount" x={f.labelX} y={f.labelY}>{countryCounts[f.name]}</text>}</g>)}
       <path d="M30 26L39 23 48 25 57 22 67 25 73 31M28 39L39 38 50 40 61 37 73 41M30 52L41 50 52 53 65 49 71 54M35 64L46 62 57 65 67 60M40 76L50 73 60 76" fill="none" stroke="#3b474e" strokeWidth=".18" opacity=".8"/>
       {visible.map(e=>{const p=project(e.lat,e.lng);const track=aviationTracks[e.id]??[];return <g key={e.id} onClick={()=>{if(!drag?.moved)setSelected(e)}}>{e.category==="Aviation"&&track.length>1&&<polyline className="flighttrail" points={track.map(point=>{const q=project(point.lat,point.lng);return `${q.x},${q.y}`}).join(" ")}/>}<circle className={`marker ${e.category==="Aviation"?"aircraft":e.hot?"hot":e.category==="Event"?"event":e.category==="Tech"?"tech":""}`} cx={p.x} cy={p.y} r={e.category==="Aviation"?1.05:e.hot?1.25:.85}/>{e.category==="Aviation"&&<path className="plane" d={`M ${p.x} ${p.y-1.8} L ${p.x+.65} ${p.y+.9} L ${p.x} ${p.y+.35} L ${p.x-.65} ${p.y+.9} Z`} transform={`rotate(${e.heading??0} ${p.x} ${p.y})`}/>}{e.hot&&<circle cx={p.x} cy={p.y} r="2.3" fill="none" stroke="#ffbd5c" strokeWidth=".18" opacity=".7"/>}</g>})}
     </svg>
