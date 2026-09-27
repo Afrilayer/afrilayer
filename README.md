@@ -4,7 +4,7 @@
 
 Afrilayer is an interactive, map-first activity layer for discovering what is happening across Africa by place, category and time.
 
-## Current build — 0.5.0
+## Current build — 0.6.0
 
 The current MVP is intentionally a product shell with clearly labelled prototype signals. It now has:
 
