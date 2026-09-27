@@ -1,4 +1,4 @@
-export type EventCategory="Business"|"Infrastructure"|"Tech"|"Event"|"Weather";
+export type EventCategory="Business"|"Infrastructure"|"Tech"|"Event"|"Weather"|"Aviation";
 
 export type MapEvent={
  id:string;
