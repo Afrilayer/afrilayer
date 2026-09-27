@@ -4,7 +4,7 @@
 
 Afrilayer is an interactive, map-first activity layer for discovering what is happening across Africa by place, category and time.
 
-## Current build — 0.17.0
+## Current build — 0.18.0
 
 The current MVP combines a map-first interface with live weather, GDELT geographic news signals and live ADS-B aircraft positions, while keeping remaining prototype activity clearly labelled. It now has:
 
@@ -95,11 +95,11 @@ Then open `http://localhost:3000`.
 - [x] Complete Africa country geometry from Natural Earth 1:110m data
 - [x] Shared geographic projection for country boundaries and activity markers
 - [x] Source registry foundation
-- [x] README kept current with product state
+- [x] README kept current with product state\n- [x] Signal confidence surfaced in feed and detail views\n- [x] GDELT country aliases, geographic bounds and duplicate suppression\n- [x] Stale aircraft movement trails removed when aircraft leave the live response
 
 ### Next
 - [x] Replace the stylized country geometry with a complete geographic dataset while preserving pan/zoom interaction
-- [ ] Add richer country-level signal density and confidence visualization
+- [ ] Add richer country-level signal density visualization
 - [x] Define and register the first non-weather source adapter
 - [x] Add deduplication and confidence fields
 - [ ] Persist normalized signals
