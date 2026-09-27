@@ -6,7 +6,7 @@ import {X,Plus,Minus,MapPin,ExternalLink,RefreshCw} from "lucide-react";
 
 const categories=["All","Business","Infrastructure","Tech","Event","Weather","Aviation"] as const;
 const ranges=["LIVE","24H","7D","30D"] as const;
-const maxAge=(range:string)=>range==="LIVE"?0:range==="24H"?1:range==="7D"?7:30;
+const maxAge=(range:string)=>range==="LIVE"?0:range==="24H"?1:range==="7D"?7:30;\nconst confidenceOf=(event:MapEvent)=>{const value=(event as MapEvent & {confidence?:string}).confidence;return value==="high"||value==="medium"||value==="low"?value:"unknown"};
 const project=(lat:number,lng:number)=>({x:5+((lng+25)*90/80),y:5+((37-lat)*90/73)});
 
 export default function Home(){
@@ -54,7 +54,7 @@ export default function Home(){
   <section className="workspace">
    <div className="mapwrap">
     <div className="maptitle"><strong>{country||"Africa"}</strong><small>{visible.length} activity signals</small>{country&&<button className="clearcountry" onClick={()=>setCountry(null)}>Clear country</button>}</div>
-    {selected&&visible.some(e=>e.id===selected.id)&&<div className="selectedpanel"><button className="close" onClick={()=>setSelected(null)}><X size={16}/></button><div className="eyebrow">{selected.category} · {selected.time}</div><h3>{selected.title}</h3><p>{selected.summary}</p><div className="location"><MapPin size={12} style={{verticalAlign:"-2px"}}/> {selected.city}, {selected.country}</div><div className="source">Source: {selected.source}{selected.sourceUrl&&<a href={selected.sourceUrl} target="_blank" rel="noreferrer">Open source <ExternalLink size={11}/></a>}</div></div>}
+    {selected&&visible.some(e=>e.id===selected.id)&&<div className="selectedpanel"><button className="close" onClick={()=>setSelected(null)}><X size={16}/></button><div className="eyebrow">{selected.category} · {selected.time}</div><h3>{selected.title}</h3><p>{selected.summary}</p><div className="location"><MapPin size={12} style={{verticalAlign:"-2px"}}/> {selected.city}, {selected.country}</div><div className="source">Source: {selected.source} · Confidence: {confidenceOf(selected)}{selected.sourceUrl&&<a href={selected.sourceUrl} target="_blank" rel="noreferrer">Open source <ExternalLink size={11}/></a>}</div></div>}
     <svg className="map" viewBox="0 0 100 100" preserveAspectRatio="none" style={{transform:`translate(${pan.x}px,${pan.y}px) scale(${zoom})`,transformOrigin:"50% 50%",cursor:drag?"grabbing":"grab",touchAction:"none"}} onPointerDown={e=>{e.currentTarget.setPointerCapture(e.pointerId);wasDraggingRef.current=false;setDrag({x:pan.x,y:pan.y,px:e.clientX,py:e.clientY,moved:false})}} onPointerMove={e=>{if(!drag)return;const dx=e.clientX-drag.px,dy=e.clientY-drag.py;const moved=drag.moved||Math.abs(dx)+Math.abs(dy)>4; if(moved)wasDraggingRef.current=true; setDrag({...drag,moved});setPan({x:drag.x+dx,y:drag.y+dy})}} onPointerUp={()=>{setDrag(null)}} onPointerCancel={()=>setDrag(null)}>
       <defs><pattern id="grid" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0H0V5" fill="none" stroke="#758089" strokeWidth=".08"/></pattern></defs>
       <rect width="100" height="100" fill="url(#grid)" className="mapgrid"/>
@@ -70,7 +70,7 @@ export default function Home(){
    <aside className="side">
     <div className="sidehead"><div className="eyebrow">{range==="LIVE"?"Live view":range}{country&&` · ${country}`}</div><h1>What&apos;s happening?</h1><p>Explore activity across Africa by place, category and time.</p></div>
     <div className="filters">{categories.map(c=><button key={c} className={`control ${category===c?"active":""}`} onClick={()=>setCategory(c)}>{c}</button>)}</div>
-    <div className="feed">{visible.map(e=><article key={e.id} className={`card ${selected?.id===e.id?"selected":""}`} onClick={()=>setSelected(e)}><div className="meta"><span><i className="dot"/> {e.category}</span><span>{e.time}</span></div><h2>{e.title}</h2><p>{e.summary}</p><div className="location">{e.city}, {e.country}</div><div className="signal-source"><span className={e.source==="Demo signal"?"demo-badge":"live-badge"}>{e.source==="Demo signal"?"DEMO":"LIVE"}</span><span>{e.source}</span></div></article>)}{visible.length===0&&<div className="empty">No activity in this layer yet.</div>}</div>
+    <div className="feed">{visible.map(e=><article key={e.id} className={`card ${selected?.id===e.id?"selected":""}`} onClick={()=>setSelected(e)}><div className="meta"><span><i className="dot"/> {e.category}</span><span>{e.time}</span></div><h2>{e.title}</h2><p>{e.summary}</p><div className="location">{e.city}, {e.country}</div><div className="signal-source"><span className={e.source==="Demo signal"?"demo-badge":"live-badge"}>{e.source==="Demo signal"?"DEMO":"LIVE"}</span><span>{e.source}</span><span className={`confidence confidence-${confidenceOf(e)}`}>{confidenceOf(e)}</span></div></article>)}{visible.length===0&&<div className="empty">No activity in this layer yet.</div>}</div>
    </aside>
   </section>
  </main>
