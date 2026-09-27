@@ -15,7 +15,7 @@ export default function Home(){
  const [zoom,setZoom]=useState(1); const [weather,setWeather]=useState<MapEvent[]>([]); const [weatherLoading,setWeatherLoading]=useState(true);\n const loadWeather=async()=>{setWeatherLoading(true);try{const r=await fetch("/api/weather");const j=await r.json();setWeather(j.signals??[]);}finally{setWeatherLoading(false);}};\n useEffect(()=>{loadWeather();},[]);\n const allEvents=useMemo(()=>[...events,...weather],[weather]);
  const visible=useMemo(()=>{
    const age=maxAge(range);
-   return events.filter(e=>(category==="All"||e.category===category)&&e.ageDays<=age);
+   return allEvents.filter(e=>(category==="All"||e.category===category)&&e.ageDays<=age&&(!country||e.country===country));
  },[category,range]);
  return <main className="app">
   <header className="topbar">
@@ -40,7 +40,7 @@ export default function Home(){
    <aside className="side">
     <div className="sidehead"><div className="eyebrow">{range==="LIVE"?"Live view":range}{country&&` · ${country}`}</div><h1>What&apos;s happening?</h1><p>Explore activity across Africa by place, category and time.</p></div>
     <div className="filters">{categories.map(c=><button key={c} className={`control ${category===c?"active":""}`} onClick={()=>setCategory(c)}>{c}</button>)}</div>
-    <div className="feed">{visible.map(e=><article key={e.id} className={`card ${selected?.id===e.id?"selected":""}`} onClick={()=>setSelected(e)}><div className="meta"><span><i className="dot"/> {e.category}</span><span>{e.time}</span></div><h2>{e.title}</h2><p>{e.summary}</p><div className="location">{e.city}, {e.country}</div></article>)}{visible.length===0&&<div className="empty">No activity in this layer yet.</div>}</div>
+    <div className="feed">{visible.map(e=><article key={e.id} className={`card ${selected?.id===e.id?"selected":""}`} onClick={()=>setSelected(e)}><div className="meta"><span><i className="dot"/> {e.category}</span><span>{e.time}</span></div><h2>{e.title}</h2><p>{e.summary}</p><div className="location">{e.city}, {e.country}</div><div className="signal-source"><span className={e.source==="Demo signal"?"demo-badge":"live-badge"}>{e.source==="Demo signal"?"DEMO":"LIVE"}</span><span>{e.source}</span></div></article>)}{visible.length===0&&<div className="empty">No activity in this layer yet.</div>}</div>
    </aside>
   </section>
  </main>
