@@ -95,7 +95,10 @@ Then open `http://localhost:3000`.
 - [x] Complete Africa country geometry from Natural Earth 1:110m data
 - [x] Shared geographic projection for country boundaries and activity markers
 - [x] Source registry foundation
-- [x] README kept current with product state\n- [x] Signal confidence surfaced in feed and detail views\n- [x] GDELT country aliases, geographic bounds and duplicate suppression\n- [x] Stale aircraft movement trails removed when aircraft leave the live response
+- [x] README kept current with product state
+- [x] Signal confidence surfaced in feed and detail views
+- [x] GDELT country aliases, geographic bounds and duplicate suppression
+- [x] Stale aircraft movement trails removed when aircraft leave the live response
 
 ### Next
 - [x] Replace the stylized country geometry with a complete geographic dataset while preserving pan/zoom interaction
