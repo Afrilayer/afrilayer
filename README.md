@@ -4,7 +4,7 @@
 
 Afrilayer is an interactive, map-first activity layer for discovering what is happening across Africa by place, category and time.
 
-## Current build — 0.12.0
+## Current build — 0.13.0
 
 The current MVP is intentionally a product shell with clearly labelled prototype signals. It now has:
 
@@ -85,10 +85,10 @@ Then open `http://localhost:3000`.
 - [x] Event/source data model foundation
 - [x] Country activity counts and live weather status
 - [x] Drag-to-pan map interaction
-- [x] Signal normalization and deduplication foundation\n- [x] First live non-weather source: GDELT GEO\n- [x] Source registry foundation\n- [x] README kept current with product state
+- [x] Signal normalization and deduplication foundation\n- [x] First live non-weather source: GDELT GEO\n- [x] Geographic coordinate projection aligned with the current Africa map bounds\n- [x] Source registry foundation\n- [x] README kept current with product state
 
 ### Next
-- [ ] Replace the stylized map with a real geographic map layer while preserving pan/zoom interaction
+- [ ] Replace the stylized country geometry with a complete geographic dataset while preserving pan/zoom interaction
 - [ ] Add richer country-level signal density and confidence visualization
 - [x] Define and register the first non-weather source adapter
 - [ ] Add the first high-quality public source
@@ -121,3 +121,7 @@ A source should produce normalized signals before the UI consumes them:
 - **GDELT GEO** — recent geographically mapped news coverage. GDELT's GEO API supports GeoJSON output and geographic news mapping; Afrilayer uses it as a source layer rather than treating every article as an independent high-value event. citeturn0search3turn0search2
 
 The GDELT adapter currently limits the initial request window and result count so the map does not become an uncontrolled firehose.
+
+### Geographic positioning
+
+Live and prototype signals are now projected from their latitude/longitude into the current Africa map bounds instead of using the previous rough center-based formula. This improves marker placement for the existing prototype geometry, but the country shapes are still intentionally incomplete and are **not** an authoritative geographic boundary dataset.
