@@ -6,7 +6,8 @@ import {X,Plus,Minus,MapPin,ExternalLink,RefreshCw} from "lucide-react";
 
 const categories=["All","Business","Infrastructure","Tech","Event","Weather","Aviation"] as const;
 const ranges=["LIVE","24H","7D","30D"] as const;
-const maxAge=(range:string)=>range==="LIVE"?0:range==="24H"?1:range==="7D"?7:30;\nconst confidenceOf=(event:MapEvent)=>{const value=(event as MapEvent & {confidence?:string}).confidence;return value==="high"||value==="medium"||value==="low"?value:"unknown"};
+const maxAge=(range:string)=>range==="LIVE"?0:range==="24H"?1:range==="7D"?7:30;
+const confidenceOf=(event:MapEvent)=>{const value=(event as MapEvent & {confidence?:string}).confidence;return value==="high"||value==="medium"||value==="low"?value:"unknown"};
 const project=(lat:number,lng:number)=>({x:5+((lng+25)*90/80),y:5+((37-lat)*90/73)});
 
 export default function Home(){
