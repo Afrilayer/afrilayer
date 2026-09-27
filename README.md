@@ -4,7 +4,7 @@
 
 Afrilayer is an interactive, map-first activity layer for discovering what is happening across Africa by place, category and time.
 
-## Current build — 0.7.0
+## Current build — 0.8.0
 
 The current MVP is intentionally a product shell with clearly labelled prototype signals. It now has:
 
@@ -15,12 +15,12 @@ The current MVP is intentionally a product shell with clearly labelled prototype
 - Synchronized activity feed
 - Activity detail panel
 - Source attribution fields in the event model
-- Zoom controls and map legend
+- Zoom controls and map legend\n- Country activity counts on the map\n- Live weather status and provenance in the interface
 - A clean separation between demo signals and future source ingestion
 
 ### What is not live yet
 
-The repository does **not** currently claim to ingest live news, public datasets, events or infrastructure feeds. The visible signals are demo data used to validate the product interaction.
+The repository does **not** currently claim to ingest live news, public datasets, events or infrastructure feeds. The visible non-weather activity signals are demo data used to validate the product interaction. Weather is a live Open-Meteo layer and is clearly attributed in the UI.
 
 ## Product direction
 
@@ -84,7 +84,7 @@ Then open `http://localhost:3000`.
 - [x] README kept current with product state
 
 ### Next
-- [ ] Replace the stylized map with a real geographic map layer
+- [ ] Replace the stylized map with a real geographic map layer\n- [ ] Add country-level signal density and confidence visualization
 - [ ] Define source adapters and ingestion contracts
 - [ ] Add the first high-quality public source
 - [ ] Normalize locations to coordinates
