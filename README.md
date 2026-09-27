@@ -116,7 +116,7 @@ Afrilayer now has a small source layer in `lib/`:
 
 - `signals.ts` defines normalized signal confidence and deduplication.
 - `sources.ts` provides a registry contract for future live adapters.
-- Weather remains the first live source and is kept separate from prototype activity.
+- Weather, GDELT and aviation are live source adapters; prototype activity remains clearly separated from them.
 
 A source should produce normalized signals before the UI consumes them:
 
