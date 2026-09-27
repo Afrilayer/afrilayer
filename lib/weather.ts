@@ -4,7 +4,7 @@ export type WeatherSignal={
  source:string; sourceUrl:string; hot?:boolean;
 };
 
-const cities=[
+type OpenMeteoRow={current:{temperature_2m:number;weather_code:number;wind_speed_10m:number}};\n\nconst cities=[
  {id:"acc",city:"Accra",country:"Ghana",lat:5.6037,lng:-0.187},
  {id:"lag",city:"Lagos",country:"Nigeria",lat:6.5244,lng:3.3792},
  {id:"nbo",city:"Nairobi",country:"Kenya",lat:-1.2864,lng:36.8172},
@@ -34,7 +34,7 @@ export async function getWeatherSignals():Promise<WeatherSignal[]>{
  if(!response.ok) throw new Error("Weather source unavailable");
  const data=await response.json();
  const rows=Array.isArray(data)?data:[data];
- return rows.map((row:any,index:number)=>{
+ return rows.map((row:OpenMeteoRow,index:number)=>{
    const c=cities[index];
    const temp=Math.round(row.current.temperature_2m);
    const code=Number(row.current.weather_code);
