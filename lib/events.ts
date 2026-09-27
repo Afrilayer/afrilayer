@@ -12,5 +12,4 @@ export const events:MapEvent[]=[
 {id:"cai-1",title:"Business activity",summary:"A new activity signal has been recorded around Cairo.",city:"Cairo",country:"Egypt",lat:30.0444,lng:31.2357,category:"Business",time:"Yesterday",ageDays:1,source:"Demo signal"},
 {id:"dkr-1",title:"Event activity",summary:"An event signal has been added around Dakar.",city:"Dakar",country:"Senegal",lat:14.7167,lng:-17.4677,category:"Event",time:"2 days ago",ageDays:2,source:"Demo signal"},
 {id:"kig-1",title:"Infrastructure activity",summary:"A new infrastructure signal has been recorded around Kigali.",city:"Kigali",country:"Rwanda",lat:-1.9441,lng:30.0619,category:"Infrastructure",time:"2 days ago",ageDays:2,source:"Demo signal"},
-{id:"cas-1",title:"Weather activity",summary:"Weather-related activity signal around Casablanca.",city:"Casablanca",country:"Morocco",lat:33.5731,lng:-7.5898,category:"Weather",time:"2 days ago",ageDays:2,source:"Demo signal"}
-];
+{id:"cas-1",title:"Weather activity",summary:"Weather-related activity signal around Casablanca.",city:"Casablanca",country:"Morocco",lat:33.5731,lng:-7.5898,];
