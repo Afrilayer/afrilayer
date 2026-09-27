@@ -20,7 +20,17 @@ const africaCountries=[
  "Zambia","Zimbabwe"
 ];
 
-const africaQuery=africaCountries.map(country=>`"${country}"`).join(" OR ");
+const countryAliases:Record<string,string>={
+ "democratic republic of the congo":"DR Congo",
+ "dem. rep. congo":"DR Congo",
+ "republic of the congo":"Congo",
+ "equatorial guinea":"Equatorial Guinea",
+ "ivory coast":"Côte d'Ivoire",
+ "south sudan":"South Sudan",
+ "swaziland":"Eswatini"
+};
+
+const africaQuery=africaCountries.map(country=>\`"${country}"\`).join(" OR ");
 
 function text(value:unknown){
  return typeof value==="string"?value.trim():"";
@@ -49,7 +59,7 @@ function toSignal(feature:GdeltFeature,index:number):NormalizedSignal|null{
  const city=text(p.location)||text(p.fullname)||country;
  const timestamp=text(p.date)||text(p.datetime);
  return normalizeSignal({
-  id:`gdelt-${index}-${encodeURIComponent(url||title)}`,
+  id:`gdelt-${encodeURIComponent(url||[title,city,country,timestamp].join("|"))}`,
   title,
   summary:`Recent news coverage mentioning ${city}. GDELT geographic signal.`,
   city,
