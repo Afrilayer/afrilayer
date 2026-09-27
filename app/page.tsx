@@ -1,7 +1,7 @@
 "use client";
-import {useMemo,useState} from "react";
+import {useEffect,useMemo,useState} from "react";
 import {events,MapEvent} from "../lib/events";
-import {X,Plus,Minus,MapPin,ExternalLink} from "lucide-react";
+import {X,Plus,Minus,MapPin,ExternalLink,RefreshCw} from "lucide-react";
 
 const categories=["All","Business","Infrastructure","Tech","Event","Weather"] as const;
 const ranges=["LIVE","24H","7D","30D"] as const;
@@ -12,7 +12,7 @@ export default function Home(){
  const [range,setRange]=useState<typeof ranges[number]>("LIVE");
  const [category,setCategory]=useState("All");
  const [selected,setSelected]=useState<MapEvent|null>(null);
- const [zoom,setZoom]=useState(1);
+ const [zoom,setZoom]=useState(1); const [weather,setWeather]=useState<MapEvent[]>([]); const [weatherLoading,setWeatherLoading]=useState(true);\n const loadWeather=async()=>{setWeatherLoading(true);try{const r=await fetch("/api/weather");const j=await r.json();setWeather(j.signals??[]);}finally{setWeatherLoading(false);}};\n useEffect(()=>{loadWeather();},[]);\n const allEvents=useMemo(()=>[...events,...weather],[weather]);
  const visible=useMemo(()=>{
    const age=maxAge(range);
    return events.filter(e=>(category==="All"||e.category===category)&&e.ageDays<=age);
@@ -20,7 +20,7 @@ export default function Home(){
  return <main className="app">
   <header className="topbar">
    <div><span className="brand">Afrilayer</span><span className="tagline">See what&apos;s happening across Africa.</span></div>
-   <div className="controls">{ranges.map(r=><button key={r} className={`control ${range===r?"active":""}`} onClick={()=>setRange(r)}>{r}</button>)}</div>
+   <div className="controls">{ranges.map(r=><button key={r} className={`control ${range===r?"active":""}`} onClick={()=>setRange(r)}>{r}</button>)}<button className="control" onClick={loadWeather} title="Refresh weather"><RefreshCw size={14}/></button></div>
   </header>
   <section className="workspace">
    <div className="mapwrap">
@@ -34,7 +34,7 @@ export default function Home(){
       {visible.map(e=>{const p=project(e.lat,e.lng);return <g key={e.id} onClick={()=>setSelected(e)}><circle className={`marker ${e.hot?"hot":e.category==="Event"?"event":e.category==="Tech"?"tech":""}`} cx={p.x} cy={p.y} r={e.hot?1.25:.85}/>{e.hot&&<circle cx={p.x} cy={p.y} r="2.3" fill="none" stroke="#ffbd5c" strokeWidth=".18" opacity=".7"/>}</g>})}
     </svg>
     <div className="zoom"><button onClick={()=>setZoom(z=>Math.min(1.5,z+.1))}><Plus size={15}/></button><button onClick={()=>setZoom(z=>Math.max(.8,z-.1))}><Minus size={15}/></button></div>
-    <div className="legend"><span><i style={{background:"#d9ff52"}}/>Activity</span><span><i style={{background:"#ffbd5c"}}/>Hot</span><span><i style={{background:"#c59cff"}}/>Tech</span></div>
+    <div className="legend"><span><i style={{background:"#d9ff52"}}/>Activity</span><span><i style={{background:"#ffbd5c"}}/>Hot</span><span><i style={{background:"#c59cff"}}/>Tech</span><span><i style={{background:"#67d7ff"}}/>Weather</span></div>
     <div className="footerline">Prototype signals · source ingestion is the next layer</div>
    </div>
    <aside className="side">
