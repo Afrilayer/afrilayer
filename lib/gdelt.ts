@@ -30,7 +30,7 @@ const countryAliases:Record<string,string>={
  "swaziland":"Eswatini"
 };
 
-const africaQuery=africaCountries.map(country=>\`"${country}"\`).join(" OR ");
+const africaQuery=africaCountries.map(country=>`"${country}"`).join(" OR ");
 
 function text(value:unknown){
  return typeof value==="string"?value.trim():"";
@@ -38,24 +38,28 @@ function text(value:unknown){
 
 function coordinates(feature:GdeltFeature){
  const c=feature.geometry?.coordinates;
- if(Array.isArray(c)&&typeof c[0]==="number") return [Number(c[0]),Number(c[1])] as const;
+ if(Array.isArray(c)&&typeof c[0]==="number"&&typeof c[1]==="number") return [Number(c[0]),Number(c[1])] as const;
  return null;
 }
 
 function countryFrom(properties:Record<string,unknown>){
  const raw=text(properties.countryname)||text(properties.country)||text(properties.name);
- return africaCountries.find(country=>raw.toLowerCase().includes(country.toLowerCase()))||"Africa";
+ const lower=raw.toLowerCase();
+ const alias=Object.entries(countryAliases).find(([key])=>lower.includes(key));
+ if(alias)return alias[1];
+ return africaCountries.find(country=>lower.includes(country.toLowerCase()))||"";
 }
 
-function toSignal(feature:GdeltFeature,index:number):NormalizedSignal|null{
+function toSignal(feature:GdeltFeature):NormalizedSignal|null{
  const coordinatesResult=coordinates(feature);
  if(!coordinatesResult)return null;
  const [lng,lat]=coordinatesResult;
- if(!Number.isFinite(lat)||!Number.isFinite(lng))return null;
+ if(!Number.isFinite(lat)||!Number.isFinite(lng)||lat<-36||lat>38||lng<-20||lng>55)return null;
  const p=feature.properties??{};
  const title=text(p.name)||text(p.title)||"News activity";
  const url=text(p.url);
  const country=countryFrom(p);
+ if(!country)return null;
  const city=text(p.location)||text(p.fullname)||country;
  const timestamp=text(p.date)||text(p.datetime);
  return normalizeSignal({
@@ -84,9 +88,15 @@ export async function getGdeltSignals():Promise<NormalizedSignal[]>{
   timespan:"360"
  });
  const response=await fetch("https://api.gdeltproject.org/api/v2/geo/geo?"+params.toString(),{next:{revalidate:900}});
- if(!response.ok) throw new Error("GDELT source unavailable");
+ if(!response.ok)throw new Error("GDELT source unavailable");
  const data=(await response.json()) as GdeltGeoJson;
- return data.features.map(toSignal).filter((signal):signal is NormalizedSignal=>Boolean(signal)).slice(0,80);
+ const seen=new Set<string>();
+ return data.features.map(toSignal).filter((signal):signal is NormalizedSignal=>Boolean(signal)).filter(signal=>{
+  const key=[signal.title.toLowerCase(),signal.city.toLowerCase(),signal.country].join("|");
+  if(seen.has(key))return false;
+  seen.add(key);
+  return true;
+ }).slice(0,80);
 }
 
 export const gdeltSource=registerSource({
