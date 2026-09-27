@@ -1,22 +1,31 @@
 "use client";
 import {useMemo,useState} from "react";
 import {events,MapEvent} from "../lib/events";
-import {X,Plus,Minus,MapPin} from "lucide-react";
+import {X,Plus,Minus,MapPin,ExternalLink} from "lucide-react";
 
 const categories=["All","Business","Infrastructure","Tech","Event","Weather"] as const;
+const ranges=["LIVE","24H","7D","30D"] as const;
+const maxAge=(range:string)=>range==="LIVE"?0:range==="24H"?1:range==="7D"?7:30;
 const project=(lat:number,lng:number)=>({x:50+(lng/40),y:48-(lat/37)});
+
 export default function Home(){
- const [range,setRange]=useState("LIVE"); const [category,setCategory]=useState("All"); const [selected,setSelected]=useState<MapEvent|null>(null); const [zoom,setZoom]=useState(1);
- const visible=useMemo(()=>category==="All"?events:events.filter(e=>e.category===category),[category]);
+ const [range,setRange]=useState<typeof ranges[number]>("LIVE");
+ const [category,setCategory]=useState("All");
+ const [selected,setSelected]=useState<MapEvent|null>(null);
+ const [zoom,setZoom]=useState(1);
+ const visible=useMemo(()=>{
+   const age=maxAge(range);
+   return events.filter(e=>(category==="All"||e.category===category)&&e.ageDays<=age);
+ },[category,range]);
  return <main className="app">
   <header className="topbar">
    <div><span className="brand">Afrilayer</span><span className="tagline">See what&apos;s happening across Africa.</span></div>
-   <div className="controls">{["LIVE","24H","7D","30D"].map(r=><button key={r} className={`control ${range===r?"active":""}`} onClick={()=>setRange(r)}>{r}</button>)}</div>
+   <div className="controls">{ranges.map(r=><button key={r} className={`control ${range===r?"active":""}`} onClick={()=>setRange(r)}>{r}</button>)}</div>
   </header>
   <section className="workspace">
    <div className="mapwrap">
     <div className="maptitle"><strong>Africa</strong><small>{visible.length} activity signals</small></div>
-    {selected&&<div className="selectedpanel"><button className="close" onClick={()=>setSelected(null)}><X size={16}/></button><div className="eyebrow">{selected.category} · {selected.time}</div><h3>{selected.title}</h3><p>{selected.summary}</p><div className="location"><MapPin size={12} style={{verticalAlign:"-2px"}}/> {selected.city}, {selected.country}</div></div>}
+    {selected&&visible.some(e=>e.id===selected.id)&&<div className="selectedpanel"><button className="close" onClick={()=>setSelected(null)}><X size={16}/></button><div className="eyebrow">{selected.category} · {selected.time}</div><h3>{selected.title}</h3><p>{selected.summary}</p><div className="location"><MapPin size={12} style={{verticalAlign:"-2px"}}/> {selected.city}, {selected.country}</div><div className="source">Source: {selected.source}{selected.sourceUrl&&<a href={selected.sourceUrl} target="_blank" rel="noreferrer">Open source <ExternalLink size={11}/></a>}</div></div>}
     <svg className="map" viewBox="0 0 100 100" preserveAspectRatio="none" style={{transform:`scale(${zoom})`}}>
       <defs><pattern id="grid" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0H0V5" fill="none" stroke="#758089" strokeWidth=".08"/></pattern></defs>
       <rect width="100" height="100" fill="url(#grid)" className="mapgrid"/>
@@ -26,7 +35,7 @@ export default function Home(){
     </svg>
     <div className="zoom"><button onClick={()=>setZoom(z=>Math.min(1.5,z+.1))}><Plus size={15}/></button><button onClick={()=>setZoom(z=>Math.max(.8,z-.1))}><Minus size={15}/></button></div>
     <div className="legend"><span><i style={{background:"#d9ff52"}}/>Activity</span><span><i style={{background:"#ffbd5c"}}/>Hot</span><span><i style={{background:"#c59cff"}}/>Tech</span></div>
-    <div className="footerline">Early map · data sources will expand as ingestion goes live</div>
+    <div className="footerline">Prototype signals · source ingestion is the next layer</div>
    </div>
    <aside className="side">
     <div className="sidehead"><div className="eyebrow">{range==="LIVE"?"Live view":range}</div><h1>What&apos;s happening?</h1><p>Explore activity across Africa by place, category and time.</p></div>
