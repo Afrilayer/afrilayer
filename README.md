@@ -4,7 +4,7 @@
 
 Afrilayer is an interactive, map-first activity layer for discovering what is happening across Africa by place, category and time.
 
-## Current build — 0.11.0
+## Current build — 0.12.0
 
 The current MVP is intentionally a product shell with clearly labelled prototype signals. It now has:
 
@@ -22,7 +22,7 @@ The current MVP is intentionally a product shell with clearly labelled prototype
 
 ### What is not live yet
 
-The repository does **not** currently claim to ingest live news, public datasets, events or infrastructure feeds. The visible non-weather activity signals are demo data used to validate the product interaction. Weather is a live Open-Meteo layer and is clearly attributed in the UI.
+The repository now has a live GDELT GEO news layer in addition to the live Open-Meteo weather layer. The remaining non-weather prototype signals are still demo data. GDELT signals are fetched server-side, geographically mapped and clearly attributed in the UI.
 
 ## Product direction
 
@@ -85,12 +85,12 @@ Then open `http://localhost:3000`.
 - [x] Event/source data model foundation
 - [x] Country activity counts and live weather status
 - [x] Drag-to-pan map interaction
-- [x] Signal normalization and deduplication foundation\n- [x] Source registry foundation\n- [x] README kept current with product state
+- [x] Signal normalization and deduplication foundation\n- [x] First live non-weather source: GDELT GEO\n- [x] Source registry foundation\n- [x] README kept current with product state
 
 ### Next
 - [ ] Replace the stylized map with a real geographic map layer while preserving pan/zoom interaction
 - [ ] Add richer country-level signal density and confidence visualization
-- [ ] Define and register the first non-weather source adapter
+- [x] Define and register the first non-weather source adapter
 - [ ] Add the first high-quality public source
 - [ ] Normalize locations to coordinates
 - [x] Add deduplication and confidence fields
@@ -113,3 +113,11 @@ Afrilayer now has a small source layer in `lib/`:
 A source should produce normalized signals before the UI consumes them:
 
 `source → normalize → deduplicate → display`
+
+
+### Live sources
+
+- **Open-Meteo** — current weather for the initial mapped cities.
+- **GDELT GEO** — recent geographically mapped news coverage. GDELT's GEO API supports GeoJSON output and geographic news mapping; Afrilayer uses it as a source layer rather than treating every article as an independent high-value event. citeturn0search3turn0search2
+
+The GDELT adapter currently limits the initial request window and result count so the map does not become an uncontrolled firehose.
