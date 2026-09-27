@@ -4,7 +4,9 @@ export type WeatherSignal={
  source:string; sourceUrl:string; hot?:boolean;
 };
 
-type OpenMeteoRow={current:{temperature_2m:number;weather_code:number;wind_speed_10m:number}};\n\nconst cities=[
+type OpenMeteoRow={current:{temperature_2m:number;weather_code:number;wind_speed_10m:number}};
+
+const cities=[
  {id:"acc",city:"Accra",country:"Ghana",lat:5.6037,lng:-0.187},
  {id:"lag",city:"Lagos",country:"Nigeria",lat:6.5244,lng:3.3792},
  {id:"nbo",city:"Nairobi",country:"Kenya",lat:-1.2864,lng:36.8172},
