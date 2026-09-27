@@ -13,7 +13,8 @@ export type MapEvent={
  ageDays:number;
  source:string;
  sourceUrl?:string;
- hot?:boolean;\n heading?:number;
+ hot?:boolean;
+ heading?:number;
 };
 
 export const events:MapEvent[]=[
